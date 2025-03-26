@@ -1,2 +1,3 @@
 These are some test injections. The first few are using `target_eos.npz`, which is Set A maximum a posteriori EOS from the Koehn+ EOS overview paper, just for testing purposes.
-- `injection_1` -- `injection_5`: Testing things out. The number of epochs might be a bit too strong now.
+- `injection_1` -- `injection_5`: Testing things out. The number of epochs might be a bit too strong now. Noticed that if we reach a global acceptance of 0.10, there are roughly 20 000 effective samples. So, we can downsample the final samples a bit to make them more lightweight. Need to think about the best way to store the output samples in the end for the paper. Runtime is around 10 minutes now.
+- `injection_6` -- `injection_10`: Now, the number of epochs is probably too low! Need to find something in the middle therefore.
