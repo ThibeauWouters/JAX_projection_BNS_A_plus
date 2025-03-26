@@ -19,7 +19,7 @@ from astropy.cosmology import z_at_value
 
 ### Stuff for nice plots
 params = {"axes.grid": True,
-        "text.usetex" : False,
+        "text.usetex" : True,
         "font.family" : "serif",
         "ytick.color" : "black",
         "xtick.color" : "black",
@@ -53,18 +53,59 @@ default_corner_kwargs = dict(bins=40,
                         density=True,
                         save=False)
 
+import argparse
 import jax
 import jax.numpy as jnp
 import equinox as eqx
 from flowjax.flows import block_neural_autoregressive_flow
 from flowjax.train import fit_to_data
 from flowjax.distributions import Normal
-# jax.config.update("jax_enable_x64", True)
+jax.config.update("jax_enable_x64", True) # this needs to be activated if we wish to have x64 in the EOS inference
 
 print("GPU found?")
 print(jax.devices())
 
-GW_PATH = "../GW/"
+GW_PATH = "/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/GW"
+NF_PATH = "/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF"
+ALLOWED_EOS = ["HQC18", "MPA1", "SLY230A"]
+c = 299_792.458 # km/s
+H0 = 67.74 # km/s/Mpc
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Trains an NF to approximate the marginal of the component masses and the tidal deformabilities")
+    parser.add_argument("--eos", 
+                        type=str, 
+                        help="Name of the EOS. Choose from [HQC18, MPA1, SLY230A].")
+    parser.add_argument("--id", 
+                        type=int, 
+                        help="Identifier of the GW injection for that EOS.")
+    # Now come the flowjax kwargs etc:
+    parser.add_argument("--num_epochs",
+                        type=int,
+                        default=600,
+                        help="Number of epochs for the training.")
+    parser.add_argument("--learning_rate",
+                        type=float,
+                        default=1e-3,
+                        help="Learning rate for the training.")
+    parser.add_argument("--max_patience",
+                        type=int,
+                        default=50,
+                        help="Maximum patience for the training.")
+    parser.add_argument("--nn_depth",
+                        type=int,
+                        default=5,
+                        help="Depth of the neural network blocks.")
+    parser.add_argument("--nn_block_dim",
+                        type=int,
+                        default=8,
+                        help="Dimension of the neural network blocks.")
+    parser.add_argument("--nb_samples_train",
+                        type=int,
+                        default=20_000,
+                        help="Number of samples to train the NF on.")
+    
+    return parser.parse_args()
 
 def make_cornerplot(chains_1: np.array, 
                     chains_2: np.array,
@@ -87,7 +128,7 @@ def make_cornerplot(chains_1: np.array,
     corner_kwargs["color"] = "red"
     hist_1d_kwargs = {"density": True, "color": "red"}
     corner_kwargs["hist_kwargs"] = hist_1d_kwargs
-    corner.corner(chains_2, range=range, fig = fig, **corner_kwargs)
+    corner.corner(chains_2, range=range, truths=truths, fig=fig, **corner_kwargs)
 
     # Make a textbox just because that makes the plot cooler
     fs = 32
@@ -100,6 +141,9 @@ def make_cornerplot(chains_1: np.array,
 def get_source_masses(M_c: float, q: float, d_L: float):
     """
     Given the detector-frame chirp mass, the mass ratio and the redshift, compute the component masses
+    FIXME: Using the linear Hubble relation for now. Make this work with astropy or at least with more accurate cosmology -- perhaps get some "surrogate"
+
+    The value of the Hubble constant is chosen similar to https://inspirehep.net/literature/2669070
 
     Args:
         M_c (float): Detector frame chirp mass
@@ -107,15 +151,34 @@ def get_source_masses(M_c: float, q: float, d_L: float):
         d_L (float): Luminosity distance in megaparsecs
 
     Returns:
-        tuple[float, float]: Source frame component masses ()
+        tuple[float, float]: Source frame component masses (primary, secondary)
     """
-    d_L_units = d_L * u.Mpc
-    z = z_at_value(Planck18.luminosity_distance, d_L_units)
+    # TODO: this is more accurate, but is not jax-compatible yet!
+    # d_L_units = d_L * u.Mpc
+    # z = z_at_value(Planck18.luminosity_distance, d_L_units)
     
+    z = d_L * H0 / c
+    print("redshift is roughly", jnp.median(z))
     M_c_source = M_c / (1 + z)
     m_1 = M_c_source * ((1 + q) ** (1/5))/((q) ** (3/5))
     m_2 = M_c_source * ((q) ** (2/5)) * ((1+q) ** (1/5))
     return m_1, m_2
+
+def make_flow(flow_key,
+              nn_depth: int = 5,
+              nn_block_dim: int = 8):
+    """
+    Simple function to make a flow just to unify this across the code.
+    Documentation for the current default flow architecture can be found here: https://danielward27.github.io/flowjax/api/flows.html#flowjax.flows.block_neural_autoregressive_flow
+    """
+    
+    flow = block_neural_autoregressive_flow(
+            key=flow_key,
+            base_dist=Normal(jnp.zeros(4)),
+            nn_depth=nn_depth,
+            nn_block_dim=nn_block_dim,
+        )
+    return flow
 
 class NFTrainer:
     """Class to train an NF to approximate the marginal of the component masses and the tidal deformabilities"""
@@ -124,13 +187,13 @@ class NFTrainer:
                  # general args
                  eos_name: str,
                  injection_idx: int,
-                 nb_samples_train: int = 1_000,
+                 nb_samples_train: int,
                  # flowjax kwargs
-                 num_epochs: int = 600,
-                 learning_rate: float = 5e-4,
-                 max_patience: int = 50,
-                 nn_depth: int = 5,
-                 nn_block_dim: int = 8):
+                 num_epochs: int,
+                 learning_rate: float,
+                 max_patience: int,
+                 nn_depth: int,
+                 nn_block_dim: int):
         
         # Set attributes
         self.eos_name = eos_name
@@ -199,6 +262,8 @@ class NFTrainer:
         self.lambda_1_true = injection_dict["lambda_1"]
         self.lambda_2_true = injection_dict["lambda_2"]
         
+        print(f"The true values are {m1_true}, {m2_true}, {self.lambda_1_true}, {self.lambda_2_true}")
+        
     def train(self):
         """
         Train the NF on the GW data to convergence and check the final result
@@ -212,25 +277,19 @@ class NFTrainer:
         x = data_np.T
         
         # Get range from the data for plotting
+        # TODO: fix this please
         my_range = np.array([[np.min(x.T[i]), np.max(x.T[i])] for i in range(n_dim)])
         widen_array = np.array([[-0.1, 0.1], [-0.1, 0.1], [-100, 100], [-20, 20]])
         my_range += widen_array
         
-        flow = block_neural_autoregressive_flow(
-            key=flow_key,
-            base_dist=Normal(jnp.zeros(x.shape[1])),
-            nn_depth=self.nn_depth,
-            nn_block_dim=self.nn_block_dim,
-        )
-        
-        flow, losses = fit_to_data(
-            key=train_key,
-            dist=flow,
-            x=x,
-            learning_rate=self.learning_rate,
-            max_epochs=self.num_epochs,
-            max_patience=self.max_patience
-            )
+        flow = make_flow(flow_key, nn_depth=self.nn_depth, nn_block_dim=self.nn_block_dim)
+        flow, losses = fit_to_data(key=train_key,
+                                   dist=flow,
+                                   x=x,
+                                   learning_rate=self.learning_rate,
+                                   max_epochs=self.num_epochs,
+                                   max_patience=self.max_patience
+                                   )
         
         # Plot learning curves
         plt.figure(figsize = (12, 8))
@@ -238,7 +297,7 @@ class NFTrainer:
         plt.plot(losses["val"], label = "Val", color = "blue")
         plt.yscale("log")
         plt.legend()
-        plt.savefig(f"./figures/loss_{self.eos_name}_{self.injection_idx}.png", bbox_inches = "tight")
+        plt.savefig(f"./figures/{self.eos_name}_{self.injection_idx}_loss.png", bbox_inches = "tight")
         plt.close()
         
         # And sample the distribution
@@ -250,106 +309,37 @@ class NFTrainer:
         else:
             truths = None
         
-        corner_name = f"./figures/corner_{self.eos_name}_{self.injection_idx}.png"
+        corner_name = f"./figures/{self.eos_name}_{self.injection_idx}_corner.png"
         make_cornerplot(data_np, nf_samples_np, my_range, corner_name, truths=truths)
         
+        # Save the model
+        save_path = f"./models/{self.eos_name}_{self.injection_idx}.eqx"
+        print(f"Saving the model weights to {save_path}")
+        eqx.tree_serialise_leaves(save_path, flow)
+        
+        kwargs_save_path = f"./models/{self.eos_name}_{self.injection_idx}_kwargs.json"
+        print(f"Saving the model to kwargs_save_path")
+        # Also dump all the flowjax kwargs so we can reproduce the NF architecture easily
+        nf_kwargs = {"num_epochs": self.num_epochs, "learning_rate": self.learning_rate, "max_patience": self.max_patience, "nn_depth": self.nn_depth, "nn_block_dim": self.nn_block_dim}
+        with open(kwargs_save_path, "w") as f:
+            json.dump(nf_kwargs, f)
+            
+        print(f"Training of the NF for {self.eos_name} and injection {self.injection_idx} was successful")
 
-
-# def train(WHICH: str):
-    
-#     if WHICH not in PATHS_DICT.keys():
-#         raise ValueError(f"WHICH must be one of {PATHS_DICT.keys()}s")
-
-#     print(f"\n\n\nTraining the NF for the {WHICH} data run . . . \n\n\n")
-
-#     ############
-#     ### BODY ###
-#     ############
-
-#     data = load_complete_data(WHICH)
-
-#     print(f"Loaded data with shape {np.shape(data)}")
-#     n_dim, n_samples = np.shape(data)
-#     print(f"ndim = {n_dim}, nsamples = {n_samples}")
-#     data_np = np.array(data)
-
-#     N_samples_plot = 10_000
-#     flow_key, train_key, sample_key = jax.random.split(jax.random.key(0), 3)
-
-#     x = data.T # shape must be (n_samples, n_dim)
-#     x = np.array(x)
-#     print("np.shape(x)")
-#     print(np.shape(x))
-
-#     # Get range from the data for plotting
-#     if n_dim == 4 and WHICH != "NF_prior":
-#         # This is for the GW run
-#         my_range = np.array([[np.min(x.T[i]), np.max(x.T[i])] for i in range(n_dim)])
-#         widen_array = np.array([[-0.2, 0.2], [-0.2, 0.2], [-100, 100], [-20, 20]])
-#         my_range += widen_array
-#         num_epochs = 600
-#     elif WHICH == "NF_prior":
-#         num_epochs = 1_000
-#         my_range = np.array([[0.75, 3.5],
-#                              [0.75, 3.5],
-#                              [-10.0, 2000.0],
-#                              [-10.0, 6000.0]])
-#     else:
-#         my_range = None
-#         num_epochs = 100
-#     print(f"The range is {my_range}")
-
-#     flow = block_neural_autoregressive_flow(
-#         key=flow_key,
-#         base_dist=Normal(jnp.zeros(x.shape[1])),
-#         nn_depth=5,
-#         nn_block_dim=8,
-#     )
-
-#     flow, losses = fit_to_data(
-#         key=train_key,
-#         dist=flow,
-#         x=x,
-#         learning_rate=5e-4,
-#         max_epochs=num_epochs,
-#         max_patience=50
-#         )
-
-#     plt.plot(losses["train"], label = "Train", color = "red")
-#     plt.plot(losses["val"], label = "Val", color = "blue")
-#     plt.yscale("log")
-#     plt.legend()
-#     plt.savefig(f"./figures/NF_training_losses_{WHICH}.png")
-#     plt.close()
-
-#     # And sample the distribution
-#     nf_samples = flow.sample(sample_key, (N_samples_plot, ))
-#     nf_samples_np = np.array(nf_samples)
-
-#     make_cornerplot(data_np, nf_samples_np, range=my_range, name=f"./figures/NF_corner_{WHICH}.png")
-
-#     # Save the model
-#     save_path = f"./NF/NF_model_{WHICH}.eqx"
-#     eqx.tree_serialise_leaves(save_path, flow)
-
-#     loaded_model = eqx.tree_deserialise_leaves(save_path, like=flow)
-
-#     # And sample the distribution
-#     nf_samples_loaded = loaded_model.sample(sample_key, (N_samples_plot, ))
-#     nf_samples_loaded_np = np.array(nf_samples_loaded)
-
-#     log_prob = loaded_model.log_prob(nf_samples_loaded)
-
-#     make_cornerplot(data_np, nf_samples_loaded_np, range=my_range, name=f"./figures/NF_corner_{WHICH}_reloaded.png")
-
+        
 def main():
-    # # Get the "which" argument from the command line
-    # if len(sys.argv) < 2:
-    #     raise ValueError("Usage: python train_normalizing_flow.py <which>")
-    # WHICH = sys.argv[1]
-    # train(WHICH)
+    # Get the args:
+    args = parse_arguments()
     
-    trainer = NFTrainer("HQC18", 3)
+    trainer = NFTrainer(eos_name = args.eos,
+                        injection_idx = args.id,
+                        nb_samples_train = args.nb_samples_train,
+                        num_epochs = args.num_epochs,
+                        learning_rate = args.learning_rate,
+                        max_patience = args.max_patience,
+                        nn_depth = args.nn_depth,
+                        nn_block_dim = args.nn_block_dim)
+    trainer.train()
     
     
 if __name__ == "__main__":

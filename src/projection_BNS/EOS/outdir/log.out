@@ -1,0 +1,76 @@
+Wed Mar 26 22:48:01 CET 2025
+NVIDIA H100
+GPU found?
+[CudaDevice(id=0)]
+GPU found?
+[CudaDevice(id=0)]
+Ignoring the Q and Z NEP parameters
+Using CSE grid with 8 points
+Fixed params loaded inside the MicroToMacroTransform:
+    E_sat: -16.0
+Loaded the NF for run HQC18_3
+nf_samples
+[[  1.8346303    1.30151875 206.31205864 171.49995454]
+ [  1.70386665   1.42470561 248.81803311 147.88808368]
+ [  1.56474121   1.50232695 354.20568846 407.93300875]
+ ...
+ [  1.7696052    1.41466402 226.96825825 244.58215155]
+ [  1.58924095   1.51544578  41.30077235 286.25170894]
+ [  1.95568852   1.24040402  92.67604001 625.0160975 ]]
+np.shape(nf_samples)
+(2000, 4)
+The range of m1 for HQC18_3 is: 1.5266834944486618 to 2.2500459104776382
+The range of m2 for HQC18_3 is: 1.091618463397026 to 1.6031094640493393
+Loading data necessary for the Chiral EFT
+Sanity checking: likelihoods_list = [<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1527d6f157e0>, <projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1527d6ebd5a0>, <projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1515b7776230>, <projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1515b760fee0>, <projection_BNS.EOS.inference_utils.ChiEFTLikelihood object at 0x1527d6cb3670>]
+len(likelihoods_list) = 5
+Prior parameter 0: E_sym
+Prior parameter 1: L_sym
+Prior parameter 2: K_sym
+Prior parameter 3: K_sat
+Prior parameter 4: nbreak
+Prior parameter 5: n_CSE_0_u
+Prior parameter 6: cs2_CSE_0
+Prior parameter 7: n_CSE_1_u
+Prior parameter 8: cs2_CSE_1
+Prior parameter 9: n_CSE_2_u
+Prior parameter 10: cs2_CSE_2
+Prior parameter 11: n_CSE_3_u
+Prior parameter 12: cs2_CSE_3
+Prior parameter 13: n_CSE_4_u
+Prior parameter 14: cs2_CSE_4
+Prior parameter 15: n_CSE_5_u
+Prior parameter 16: cs2_CSE_5
+Prior parameter 17: n_CSE_6_u
+Prior parameter 18: cs2_CSE_6
+Prior parameter 19: n_CSE_7_u
+Prior parameter 20: cs2_CSE_7
+Prior parameter 21: cs2_CSE_8
+Prior parameter 22: m1_HQC18_3
+Prior parameter 23: m2_HQC18_3
+Fixed params loaded inside the MicroToMacroTransform:
+    E_sat: -16.0
+We are going to give these kwargs to Jim:
+{'n_loop_training': 20, 'n_loop_production': 50, 'n_chains': 1000, 'n_local_steps': 2, 'n_global_steps': 100, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
+We are going to sample the following parameters:
+['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'm1_HQC18_3', 'm2_HQC18_3']
+No sample transforms provided. Using prior parameters as sampling parameters
+['n_dim', 'n_chains', 'n_local_steps', 'n_global_steps', 'n_loop', 'output_thinning', 'verbose']
+log_prob
+[-63.65188597 -71.80592645 -57.86436071]
+Sampling seed is set to: 11
+Global Tuning:   0%|          | 0/20 [00:00<?, ?it/s]slurmstepd: error: *** JOB 10819781 ON gcn131 CANCELLED AT 2025-03-26T22:51:24 ***
+
+JOB STATISTICS
+==============
+Job ID: 10819781
+Cluster: snellius
+User/Group: twouters2/twouters2
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:56:48 core-walltime
+Job Wall-clock time: 00:03:33
+Memory Utilized: 2.26 GB
+Memory Efficiency: 11.32% of 20.00 GB
