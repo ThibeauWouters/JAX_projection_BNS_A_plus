@@ -1,0 +1,2 @@
+These are some test injections. The first few are using `target_eos.npz`, which is Set A maximum a posteriori EOS from the Koehn+ EOS overview paper, just for testing purposes.
+- `injection_1` -- `injection_5`: Testing things out. The number of epochs might be a bit too strong now.
