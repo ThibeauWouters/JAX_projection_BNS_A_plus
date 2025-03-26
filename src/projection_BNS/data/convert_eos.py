@@ -8,11 +8,11 @@ Note to self: use the bilby_pipe conda environment for the transformation. This 
 
 import numpy as np
 import matplotlib.pyplot as plt
-import bilby
+import lalsimulation as lalsim
 
-from bilby.gw.eos import TabularEOS, EOSFamily
-from bilby.gw.eos.eos import conversion_dict
-from bilby.gw.eos.tov_solver import IntegrateTOV
+M_SUN = 1.988409870698050731911960804878414216e30 # LAL_MSUN_SI
+G = 6.67430e-11
+c = 299792458e0
 
 params = {"axes.grid": True,
         "text.usetex" : True,
@@ -40,29 +40,41 @@ plt.subplots(nrows = 1, ncols = 2, figsize=(12, 6))
 for col, eos_name in zip(COLORS, EOS_NAMES):
     print(f"Checking out the EOS and NS for {eos_name}")
     
-    # Load the EOS and get the NS family
-    tabular_eos = TabularEOS(eos_name)
-    family = EOSFamily(tabular_eos, npts=1_000)
+    eos = lalsim.SimNeutronStarEOSByName(eos_name)
+    family = lalsim.CreateSimNeutronStarFamily(eos)
     
-    mass = np.array(family.mass) * conversion_dict["mass"]["m_sol"]
-    radius = np.array(family.radius) * conversion_dict["radius"]["km"]
-    tidal_deformability = np.array(family.tidal_deformability)
+    # Construct the array of masses
+    m_max = lalsim.SimNeutronStarMaximumMass(family)
+    masses_array = np.linspace(0.50 * M_SUN, m_max, 1_000)
     
-    eos_dict[eos_name] = {"mass_EOS": mass, 
-                          "radii_EOS": radius,
-                          "Lambdas_EOS": tidal_deformability}
+    # Calculate the radius and the Love number
+    radius = []
+    k2 = []
+    for m in masses_array:
+        radius.append(lalsim.SimNeutronStarRadius(m, family))
+        k2.append(lalsim.SimNeutronStarLoveNumberK2(m, family))
+    radius = np.array(radius)
+    k2 = np.array(k2)
+    
+    # Calculate the tidal deformability -- note the annoying units
+    m_meter = masses_array * G / c / c
+    lambdas = [2. / 3. * k2_ * r ** 5. / m ** 5. for k2_, r, m in zip(k2, radius, m_meter)]
+    
+    # Convert units
+    masses_array /= M_SUN
+    radius /= 1e3 # convert to km
+    lambdas = np.array(lambdas)
     
     # Save it as npz file
-    np.savez(f"{eos_name}.npz", masses_EOS=mass, radii_EOS=radius, Lambdas_EOS=tidal_deformability)
+    np.savez(f"{eos_name}.npz", masses_EOS=masses_array, radii_EOS=radius, Lambdas_EOS=lambdas)
     
     # For plotting, mask to make the plot more readable
-    
-    mask = mass > 0.99
+    mask = masses_array > 0.99
     plt.subplot(121)
-    plt.plot(radius[mask], mass[mask], label=eos_name, color=col)
+    plt.plot(radius[mask], masses_array[mask], label=eos_name, color=col)
     
     plt.subplot(122)
-    plt.plot(mass[mask], tidal_deformability[mask], label=eos_name, color=col)
+    plt.plot(masses_array[mask], lambdas[mask], label=eos_name, color=col)
 
 plt.subplot(121)
 plt.xlabel(r"$R$ [km]")
@@ -74,6 +86,6 @@ plt.ylabel(r"$\Lambda$")
 plt.yscale("log")
 plt.legend()
     
-plt.savefig("./figures/check_eos.png", bbox_inches = "tight")
+plt.savefig("./figures/check_eos.pdf", bbox_inches = "tight")
 plt.close()
     
