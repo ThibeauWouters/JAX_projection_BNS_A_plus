@@ -230,3 +230,91 @@ def foo(...):
 13:09 ninjax INFO    : Using GW HeterodynedTransientLikelihoodFD. Initializing likelihood
 13:09 ninjax INFO    : Using the injection parameters as reference parameters for the relative binning
 13:09 ninjax INFO    : Using the following kwargs for the GW likelihood: {}
+13:12 ninjax INFO    : Initialization of HeterodynedTransientLikelihoodFD took 144.40727138519287 seconds = 2.4067878564198812 minutes
+13:12 ninjax INFO    : The priors are not modified after their initialization
+13:12 ninjax INFO    : Required keys for the likelihood: ['M_c', 'eta', 's1_z', 's2_z', 'lambda_1', 'lambda_2', 'd_L', 'phase_c', 'iota', 't_c', 'psi', 'ra', 'dec']
+13:12 ninjax INFO    : Checking the setup between prior, transforms, and likelihood
+13:12 ninjax INFO    : sample: {'M_c': Array([1.82705111, 2.1302653 , 1.71423814], dtype=float64), 'q': Array([0.6618944 , 0.40850887, 0.55504591], dtype=float64), 's1_z': Array([ 0.02132982, -0.02165194, -0.00455396], dtype=float64), 's2_z': Array([ 0.04458372, -0.03071835, -0.02558782], dtype=float64), 'lambda_1': Array([3841.08876296, 3960.81836013, 3622.40963046], dtype=float64), 'lambda_2': Array([1535.81332386, 1615.09303597, 4470.53782984], dtype=float64), 'cos_iota': Array([ 0.63101004, -0.5647659 , -0.6496501 ], dtype=float64), 'd_L': Array([190.46414494, 229.19272533, 282.36582424], dtype=float64), 't_c': Array([-0.0167912 ,  0.03110525,  0.02668797], dtype=float64), 'phase_c': Array([5.36573714, 1.09318602, 2.6064594 ], dtype=float64), 'psi': Array([0.07451723, 1.73465324, 0.16150431], dtype=float64), 'ra': Array([4.68812407, 3.17563743, 2.41446068], dtype=float64), 'sin_dec': Array([-0.30521373, -0.49587987,  0.8649745 ], dtype=float64)}
+13:12 ninjax INFO    : log_prob: [-563.20121016 -311.23240243 -207.51715869]
+13:12 ninjax INFO    : Checking log_prob at injection parameters: {'M_c': 1.8786363671597561, 'q': 0.387892447343197, 's1_z': -0.019927102125107645, 's2_z': -0.004875382909501, 'lambda_1': 5.2203813963268075, 'lambda_2': 579.2693235989715, 'cos_iota': 0.6232562965213471, 'd_L': 242.6312057440306, 't_c': -0.02989670640816562, 'phase_c': 3.9473219392903283, 'psi': 1.850144594262869, 'ra': 0.49652462830211724, 'sin_dec': -0.16436978860649365, 'eta': 0.20137228527707218, 'iota': Array(0.89789653, dtype=float64, weak_type=True), 'dec': Array(-0.16511908, dtype=float64, weak_type=True), 'H1_SNR': 12.145395204901742, 'L1_SNR': 13.656011724320958, 'V1_SNR': 12.207996609175654, 'network_SNR': 21.977999501949352, 'epoch': 126.0, 'gmst': 2.7288901910520846, 'duration': 128.0}
+13:12 ninjax INFO    : log_prob at the injection parameters is: 182.03285701943707
+13:12 ninjax INFO    : Will plot these keys: ['M_c', 'q', 's1_z', 's2_z', 'lambda_1', 'lambda_2', 'd_L', 't_c', 'phase_c', 'iota', 'psi', 'ra', 'dec']
+13:12 ninjax INFO    : Will plot the labels: ['$M_c/M_\\odot$', '$q$', '$\\chi_1$', '$\\chi_2$', '$\\Lambda_1$', '$\\Lambda_2$', '$d_{\\rm{L}}/{\\rm Mpc}$', '$t_c$', '$\\phi_c$', '$\\iota$', '$\\psi$', '$\\alpha$', '$\\delta$']
+13:12 ninjax INFO    : Ninjax setup complete.
+13:12 ninjax INFO    : Saving output to ./outdir/injection_1/
+13:12 ninjax INFO    : Using polynomial learning rate scheduler
+13:12 ninjax INFO    : The hyperparameters passed to flowMC and jim are
+13:12 ninjax INFO    :    n_loop_training: 10
+13:12 ninjax INFO    :    n_loop_production: 10
+13:12 ninjax INFO    :    n_local_steps: 100
+13:12 ninjax INFO    :    n_global_steps: 1000
+13:12 ninjax INFO    :    n_epochs: 10
+13:12 ninjax INFO    :    n_chains: 1000
+13:12 ninjax INFO    :    learning_rate: <function polynomial_schedule.<locals>.schedule at 0x145bd6a737f0>
+13:12 ninjax INFO    :    max_samples: 50000
+13:12 ninjax INFO    :    momentum: 0.9
+13:12 ninjax INFO    :    batch_size: 30000
+13:12 ninjax INFO    :    use_global: True
+13:12 ninjax INFO    :    keep_quantile: 0.0
+13:12 ninjax INFO    :    train_thinning: 1
+13:12 ninjax INFO    :    output_thinning: 10
+13:12 ninjax INFO    :    n_sample_max: 10000
+13:12 ninjax INFO    :    num_layers: 10
+13:12 ninjax INFO    :    hidden_size: [128, 128]
+13:12 ninjax INFO    :    num_bins: 8
+13:12 ninjax INFO    :    save_training_chains: False
+13:12 ninjax INFO    :    eps_mass_matrix: 1e-06
+13:12 ninjax INFO    :    use_scheduler: True
+13:12 ninjax INFO    :    use_temperature: False
+13:12 ninjax INFO    :    which_temperature_schedule: exponential
+13:12 ninjax INFO    :    starting_temperature: 2.0
+13:12 ninjax INFO    :    stop_tempering_iteration: 75
+13:12 ninjax INFO    :    stopping_criterion_global_acc: 1.0
+13:12 ninjax INFO    :    stopping_criterion_loss: -inf
+13:12 ninjax INFO    :    nf_model_kwargs: {}
+13:12 ninjax INFO    :    local sampler arg not shown (pretty print)
+13:12 ninjax INFO    : Fetching the injected values for plotting
+Checking the noise that was generated in inject_signal ifo:
+[ 3.63130669e-23  3.16236048e-23  1.97552426e-23  5.50351032e-23
+ -3.63458720e-23  2.94470660e-23  7.65281470e-23  1.10268469e-22
+  1.45531883e-23  2.04026662e-23]
+[-4.77897421e-23 -3.78297459e-24  2.41136513e-23 -6.32797486e-24
+  5.85532997e-23  6.10886039e-24 -1.05330092e-22  5.62211186e-23
+ -2.20491579e-23 -6.91684664e-23]
+Checking the noise that was generated in inject_signal ifo:
+[ 5.03985643e-23  8.35888943e-23  2.62611337e-23 -3.62005453e-24
+ -4.65659173e-24  4.77274965e-23  2.53716916e-23 -1.58321649e-23
+  6.29172188e-24 -5.68716684e-23]
+[-3.40873818e-23  4.25381169e-23  3.03073247e-23  1.73636250e-23
+  1.68483596e-23  6.80210531e-23  3.49782149e-23  5.54472590e-23
+  2.94009127e-23 -4.51633780e-23]
+Checking the noise that was generated in inject_signal ifo:
+[-4.13524703e-23  2.37188651e-26 -8.24497634e-23  7.80045709e-23
+ -5.67028933e-23 -5.78479677e-23 -5.50818001e-23 -5.84088136e-23
+  7.75762199e-25 -9.81405446e-24]
+[ 3.04360292e-23 -4.50541311e-23  2.58952266e-23 -4.63213301e-23
+  3.79601496e-23 -4.30208354e-23 -7.23806534e-23  2.00986535e-23
+  5.20711403e-23  3.29137513e-23]
+NOTE: we are given a reference waveform!
+Initializing heterodyned likelihood..
+Comparing against relative binning in bilby
+Using 5941 bins for relative binning for epsilon 0.01
+Time for binning scheme: 0.10861015319824219 seconds
+Using provided reference parameters:
+ref_params for relative binning:
+{'M_c': 1.8786363671597561, 'q': 0.387892447343197, 's1_z': -0.019927102125107645, 's2_z': -0.004875382909501, 'lambda_1': 5.2203813963268075, 'lambda_2': 579.2693235989715, 'cos_iota': 0.6232562965213471, 'd_L': 242.6312057440306, 't_c': -0.02989670640816562, 'phase_c': 3.9473219392903283, 'psi': 1.850144594262869, 'ra': 0.49652462830211724, 'sin_dec': -0.16436978860649365, 'eta': 0.20137228527707218, 'iota': Array(0.89789653, dtype=float64, weak_type=True), 'dec': Array(-0.16511908, dtype=float64, weak_type=True), 'H1_SNR': 12.145395204901742, 'L1_SNR': 13.656011724320958, 'V1_SNR': 12.207996609175654, 'network_SNR': 21.977999501949352, 'epoch': 126.0, 'gmst': 2.7288901910520846, 'duration': 128.0}
+Constructing reference waveforms. . .
+Time for reference waveforms: 0.5121245384216309 seconds
+Time for h_sky_low and h_sky_center: 5.249840021133423 seconds
+Going to compute the masks . . .
+Time taken for f_index_array calculation is 0.697624683380127
+Going to compute coefficients . . .
+Time for computing coefficients: 122.58397173881531 seconds
+Time for computing coefficients: 7.3747334480285645 seconds
+Time for computing coefficients: 7.343953609466553 seconds
+['M_c', 'eta', 's1_z', 's2_z', 'lambda_1', 'lambda_2', 'd_L', 'phase_c', 'iota', 't_c', 'psi', 'ra', 'dec']
+INFO: Using MALA as local sampler
+Setting up a single Gaussian distribution
+No autotune found, use input sampler_params
+Training normalizing flow
+Tuning global sampler:   0%|          | 0/10 [00:00<?, ?it/s]
