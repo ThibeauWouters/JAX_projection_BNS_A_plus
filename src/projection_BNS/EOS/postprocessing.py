@@ -56,13 +56,9 @@ EOS_CURVE_COLOR = "darkgreen"
 DATA_PATH = "/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/"
 
 # TODO: change this again, but I am testing now
-# COLORS_TARGET_DICT = {"HQC18": "blue",
-#                       "SLY230": "green",
-#                       "MPA1": "red"}
-
-COLORS_TARGET_DICT = {"HQC18": "red",
-                      "SLY230": "red",
-                      "MPA1": "red"}
+TARGET_KWARGS = {"zorder": 1e10,
+                 "lw": 2,
+                 "linestyle": "--"}
 
 def plot_corner(outdir,
                 samples,
@@ -144,13 +140,9 @@ def make_plots(outdir: str,
 
     plt.subplots(1, 2, figsize=(11, 6))
 
-    m_min, m_max = 0.3, 3.75
-    r_min, r_max = 5.5, 18.0
+    m_min, m_max = 0.5, 3.0
+    r_min, r_max = 8.0, 16.0
     
-    if "all" in outdir:
-        m_min, m_max = 0.3, 3.0
-        r_min, r_max = 9.0, 18.0
-
     # Sample requested number of indices randomly:
     log_prob = data["log_prob"]
     log_prob = np.exp(log_prob) # so actually no longer log prob but prob... whatever
@@ -173,13 +165,8 @@ def make_plots(outdir: str,
             # Get color
             normalized_value = norm(log_prob[i])
             color = cmap(normalized_value)
-            if "prior" in outdir:
-                samples_kwargs["color"] = "gray"
-                samples_kwargs["zorder"] = 1e2
-                samples_kwargs["alpha"] = 0.1
-            else:
-                samples_kwargs["color"] = color
-                samples_kwargs["zorder"] = 1e2 + normalized_value
+            samples_kwargs["color"] = color
+            samples_kwargs["zorder"] = 1e2 + normalized_value
             
             if any(np.isnan(m[i])) or any(np.isnan(r[i])) or any(np.isnan(l[i])):
                 bad_counter += 1
@@ -201,7 +188,7 @@ def make_plots(outdir: str,
             plt.xlim(r_min, r_max)
             plt.ylim(m_min, m_max)
             
-            # Pressure as a function of density
+            # Pressure as a function of density TODO: rather, plot M-Lambda curves here
             plt.subplot(122)
             last_pc = pc_EOS[i, -1]
             n_TOV = np.interp(last_pc, p[i], n[i])
@@ -211,7 +198,7 @@ def make_plots(outdir: str,
         print(f"Bad counter: {bad_counter}")
         # Beautify the plots a bit
         plt.subplot(121)
-        plt.plot(r_target, m_target, color=COLORS_TARGET_DICT[eos_name], linestyle = "--", lw=4, label="Injection", zorder = 1e10)
+        plt.plot(r_target, m_target, color="red", label=eos_name, **TARGET_KWARGS)
         plt.xlabel(r"$R$ [km]")
         plt.ylabel(r"$M$ [$M_{\odot}$]")
         plt.xlim(r_min, r_max)
@@ -239,6 +226,7 @@ def make_plots(outdir: str,
         cbar.ax.xaxis.get_offset_text().set_visible(False)
         cbar.set_label(r"Normalized posterior probability")
 
+        plt.legend()
         plt.savefig(os.path.join(outdir, "postprocessing_NS.pdf"), bbox_inches = "tight", dpi=300)
         plt.close()
         print("Creating NS plot . . . DONE")
@@ -387,14 +375,14 @@ def make_plots(outdir: str,
         _m_target = m_target[mask_target]
         _r_target = r_target[mask_target]
         _l_target = l_target[mask_target]
-        plt.plot(_r_target, _m_target, color=COLORS_TARGET_DICT[eos_name], linestyle = "--", lw=4, zorder = 1e10)
+        plt.plot(_r_target, _m_target, color="red", **TARGET_KWARGS)
         plt.xlabel(r"$R$ [km]")
         plt.ylabel(r"$M$ [$M_{\odot}$]")
         plt.ylim(bottom = cutoff_mass)
         
         plt.subplot(122)
         plt.plot(_m[mask_jester], _l[mask_jester], color="blue", lw=2)
-        plt.plot(_m_target, _l_target, color=COLORS_TARGET_DICT[eos_name], linestyle = "--", lw=4, zorder = 1e10)
+        plt.plot(_m_target, _l_target, color="red", **TARGET_KWARGS)
         plt.yscale("log")
         plt.xlabel(r"$M$ [$M_{\odot}$]")
         plt.ylabel(r"$\Lambda$")
@@ -592,7 +580,7 @@ def main():
                plot_R_and_p=True,
                plot_histograms=True,
                make_master_plot=False) # FIXME: this is broken?
-    make_haukeplot(outdir)
+    # make_haukeplot(outdir) # not making this now, uninformative
     
 if __name__ == "__main__":
     main()
