@@ -1,4 +1,4 @@
-Wed Mar 26 22:48:01 CET 2025
+Wed Mar 26 22:52:00 CET 2025
 NVIDIA H100
 GPU found?
 [CudaDevice(id=0)]
@@ -22,7 +22,7 @@ np.shape(nf_samples)
 The range of m1 for HQC18_3 is: 1.5266834944486618 to 2.2500459104776382
 The range of m2 for HQC18_3 is: 1.091618463397026 to 1.6031094640493393
 Loading data necessary for the Chiral EFT
-Sanity checking: likelihoods_list = [<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1527d6f157e0>, <projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1527d6ebd5a0>, <projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1515b7776230>, <projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1515b760fee0>, <projection_BNS.EOS.inference_utils.ChiEFTLikelihood object at 0x1527d6cb3670>]
+Sanity checking: likelihoods_list = [<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1476ca026f20>, <projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1476ca01a560>, <projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1476c9073b50>, <projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1476c8feb070>, <projection_BNS.EOS.inference_utils.ChiEFTLikelihood object at 0x1476c8283700>]
 len(likelihoods_list) = 5
 Prior parameter 0: E_sym
 Prior parameter 1: L_sym
@@ -51,7 +51,7 @@ Prior parameter 23: m2_HQC18_3
 Fixed params loaded inside the MicroToMacroTransform:
     E_sat: -16.0
 We are going to give these kwargs to Jim:
-{'n_loop_training': 20, 'n_loop_production': 50, 'n_chains': 1000, 'n_local_steps': 2, 'n_global_steps': 100, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
+{'n_loop_training': 20, 'n_loop_production': 20, 'n_chains': 1000, 'n_local_steps': 2, 'n_global_steps': 100, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
 We are going to sample the following parameters:
 ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'm1_HQC18_3', 'm2_HQC18_3']
 No sample transforms provided. Using prior parameters as sampling parameters
@@ -59,18 +59,87 @@ No sample transforms provided. Using prior parameters as sampling parameters
 log_prob
 [-63.65188597 -71.80592645 -57.86436071]
 Sampling seed is set to: 11
-Global Tuning:   0%|          | 0/20 [00:00<?, ?it/s]slurmstepd: error: *** JOB 10819781 ON gcn131 CANCELLED AT 2025-03-26T22:51:24 ***
+Global Tuning:   0%|          | 0/20 [00:00<?, ?it/s]Global Tuning:   5%|▌         | 1/20 [02:31<47:58, 151.52s/it]Global Tuning:  10%|█         | 2/20 [03:42<31:13, 104.06s/it]Global Tuning:  15%|█▌        | 3/20 [04:44<24:06, 85.08s/it] Global Tuning:  20%|██        | 4/20 [05:56<21:17, 79.82s/it]Global Tuning:  25%|██▌       | 5/20 [07:09<19:21, 77.40s/it]Global Tuning:  30%|███       | 6/20 [08:20<17:31, 75.11s/it]Global Tuning:  35%|███▌      | 7/20 [09:25<15:35, 71.98s/it]Global Tuning:  40%|████      | 8/20 [10:36<14:19, 71.66s/it]Global Tuning:  45%|████▌     | 9/20 [11:45<12:57, 70.68s/it]Global Tuning:  50%|█████     | 10/20 [12:56<11:48, 70.83s/it]Global Tuning:  55%|█████▌    | 11/20 [14:01<10:21, 69.05s/it]Global Tuning:  60%|██████    | 12/20 [15:12<09:16, 69.59s/it]Global Tuning:  65%|██████▌   | 13/20 [16:17<07:57, 68.17s/it]Global Tuning:  70%|███████   | 14/20 [17:27<06:53, 68.87s/it]Global Tuning:  75%|███████▌  | 15/20 [18:39<05:48, 69.67s/it]Global Tuning:  80%|████████  | 16/20 [19:47<04:36, 69.14s/it]Global Tuning:  85%|████████▌ | 17/20 [20:54<03:25, 68.64s/it]Global Tuning:  90%|█████████ | 18/20 [22:02<02:16, 68.50s/it]Global Tuning:  95%|█████████▌| 19/20 [23:11<01:08, 68.60s/it]Global Tuning: 100%|██████████| 20/20 [24:19<00:00, 68.34s/it]Global Tuning: 100%|██████████| 20/20 [24:19<00:00, 72.97s/it]
+Compiling MALA body
+Global Sampling:   0%|          | 0/20 [00:00<?, ?it/s]Global Sampling:   5%|▌         | 1/20 [01:10<22:10, 70.02s/it]Global Sampling:  10%|█         | 2/20 [02:18<20:42, 69.05s/it]Global Sampling:  15%|█▌        | 3/20 [03:26<19:26, 68.61s/it]Global Sampling:  20%|██        | 4/20 [04:38<18:39, 69.96s/it]Global Sampling:  25%|██▌       | 5/20 [05:47<17:24, 69.62s/it]Global Sampling:  30%|███       | 6/20 [06:55<16:08, 69.15s/it]Global Sampling:  35%|███▌      | 7/20 [08:04<14:56, 68.95s/it]Global Sampling:  40%|████      | 8/20 [09:13<13:49, 69.11s/it]Global Sampling:  45%|████▌     | 9/20 [10:22<12:37, 68.86s/it]Global Sampling:  50%|█████     | 10/20 [11:30<11:28, 68.83s/it]Global Sampling:  55%|█████▌    | 11/20 [12:39<10:18, 68.71s/it]Global Sampling:  60%|██████    | 12/20 [13:49<09:13, 69.23s/it]Global Sampling:  65%|██████▌   | 13/20 [15:00<08:07, 69.66s/it]Global Sampling:  70%|███████   | 14/20 [16:07<06:52, 68.77s/it]Global Sampling:  75%|███████▌  | 15/20 [17:14<05:42, 68.43s/it]Global Sampling:  80%|████████  | 16/20 [18:26<04:37, 69.32s/it]Global Sampling:  85%|████████▌ | 17/20 [19:37<03:29, 69.85s/it]Global Sampling:  90%|█████████ | 18/20 [20:46<02:19, 69.57s/it]Global Sampling:  95%|█████████▌| 19/20 [21:55<01:09, 69.48s/it]Global Sampling: 100%|██████████| 20/20 [23:04<00:00, 69.26s/it]Global Sampling: 100%|██████████| 20/20 [23:04<00:00, 69.20s/it]
+Training summary
+==========
+E_sym: 36.785 +/- 4.870
+L_sym: 44.699 +/- 22.492
+K_sym: -146.299 +/- 103.365
+K_sat: 216.859 +/- 42.038
+nbreak: 0.259 +/- 0.042
+n_CSE_0_u: 0.506 +/- 0.282
+cs2_CSE_0: 0.459 +/- 0.268
+n_CSE_1_u: 0.505 +/- 0.282
+cs2_CSE_1: 0.531 +/- 0.275
+n_CSE_2_u: 0.499 +/- 0.281
+cs2_CSE_2: 0.536 +/- 0.282
+n_CSE_3_u: 0.503 +/- 0.281
+cs2_CSE_3: 0.529 +/- 0.284
+n_CSE_4_u: 0.499 +/- 0.284
+cs2_CSE_4: 0.521 +/- 0.285
+n_CSE_5_u: 0.503 +/- 0.282
+cs2_CSE_5: 0.503 +/- 0.286
+n_CSE_6_u: 0.508 +/- 0.282
+cs2_CSE_6: 0.505 +/- 0.289
+n_CSE_7_u: 0.496 +/- 0.283
+cs2_CSE_7: 0.501 +/- 0.286
+cs2_CSE_8: 0.503 +/- 0.288
+m1_HQC18_3: 1.802 +/- 0.144
+m2_HQC18_3: 1.351 +/- 0.102
+Log probability: -157.248 +/- 3735.337
+Local acceptance: 0.965 +/- 0.184
+Global acceptance: 0.141 +/- 0.348
+Max loss: 38.791, Min loss: 28.719
+Production summary
+==========
+E_sym: 36.716 +/- 4.840
+L_sym: 43.805 +/- 21.840
+K_sym: -149.624 +/- 102.887
+K_sat: 215.771 +/- 41.741
+nbreak: 0.259 +/- 0.042
+n_CSE_0_u: 0.498 +/- 0.285
+cs2_CSE_0: 0.460 +/- 0.268
+n_CSE_1_u: 0.502 +/- 0.288
+cs2_CSE_1: 0.532 +/- 0.280
+n_CSE_2_u: 0.496 +/- 0.282
+cs2_CSE_2: 0.543 +/- 0.289
+n_CSE_3_u: 0.501 +/- 0.282
+cs2_CSE_3: 0.531 +/- 0.285
+n_CSE_4_u: 0.496 +/- 0.281
+cs2_CSE_4: 0.515 +/- 0.285
+n_CSE_5_u: 0.508 +/- 0.287
+cs2_CSE_5: 0.484 +/- 0.293
+n_CSE_6_u: 0.504 +/- 0.279
+cs2_CSE_6: 0.507 +/- 0.289
+n_CSE_7_u: 0.502 +/- 0.281
+cs2_CSE_7: 0.500 +/- 0.289
+cs2_CSE_8: 0.476 +/- 0.294
+m1_HQC18_3: 1.795 +/- 0.146
+m2_HQC18_3: 1.355 +/- 0.103
+Log probability: -37.294 +/- 1.314
+Local acceptance: 0.956 +/- 0.205
+Global acceptance: 0.107 +/- 0.309
+S has been successful, now we will do some postprocessing. Sampling time: roughly 48 mins
+Saving the final results
+Number of samples generated in training: 420000
+Number of samples generated in production: 420000
+Number of samples generated: 840000
+Time taken for TOV map: 2.2247629165649414 s
+DONE entire script
+DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10819781
+Job ID: 10819856
 Cluster: snellius
 User/Group: twouters2/twouters2
-State: CANCELLED (exit code 0)
+State: COMPLETED (exit code 0)
 Nodes: 1
 Cores per node: 16
-CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 00:56:48 core-walltime
-Job Wall-clock time: 00:03:33
-Memory Utilized: 2.26 GB
-Memory Efficiency: 11.32% of 20.00 GB
+CPU Utilized: 00:50:07
+CPU Efficiency: 6.28% of 13:17:36 core-walltime
+Job Wall-clock time: 00:49:51
+Memory Utilized: 2.83 GB
+Memory Efficiency: 14.17% of 20.00 GB

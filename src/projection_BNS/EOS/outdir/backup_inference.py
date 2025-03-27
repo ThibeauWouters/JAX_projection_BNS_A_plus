@@ -79,7 +79,7 @@ def parse_arguments():
                         help="Number of flowMC training loops.)")
     parser.add_argument("--n-loop-production", 
                         type=int, 
-                        default=50,
+                        default=20,
                         help="Number of flowMC production loops.)")
     parser.add_argument("--eps-mass-matrix", 
                         type=float, 
