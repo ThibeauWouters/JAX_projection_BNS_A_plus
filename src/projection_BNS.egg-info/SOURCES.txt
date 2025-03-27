@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.cfg
+src/projection_BNS.egg-info/PKG-INFO
+src/projection_BNS.egg-info/SOURCES.txt
+src/projection_BNS.egg-info/dependency_links.txt
+src/projection_BNS.egg-info/top_level.txt

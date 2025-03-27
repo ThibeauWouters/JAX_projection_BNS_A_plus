@@ -5,7 +5,7 @@ OUTDIR="./outdir"
 TEMPLATE_FILE="template.sh"
 EOS="HQC18"
 
-for ID in $(seq 3 3); do
+for ID in $(seq 7 9); do
   NEW_SCRIPT="./slurm_scripts/submit_${EOS}_${ID}.sh"
 
   echo

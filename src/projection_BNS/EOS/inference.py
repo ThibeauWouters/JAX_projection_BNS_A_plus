@@ -226,7 +226,12 @@ def main(args):
 
         # Total likelihoods list:
         likelihoods_list = likelihoods_list_GW + likelihoods_list_radio + likelihoods_list_chiEFT
-        print(f"Sanity checking: likelihoods_list = {likelihoods_list}\nlen(likelihoods_list) = {len(likelihoods_list)}")
+        print(f"Sanity checking: len(likelihoods_list) = {len(likelihoods_list)}")
+        print(f"Now showing likelihoods:")
+        for l in likelihoods_list:
+            print(l)
+            
+        # Combine into a full likelihood
         likelihood = utils.CombinedLikelihood(likelihoods_list)
         
     # Construct the transform object

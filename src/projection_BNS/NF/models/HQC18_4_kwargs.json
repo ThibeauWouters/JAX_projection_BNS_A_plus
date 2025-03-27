@@ -1,0 +1,1 @@
+{"num_epochs": 600, "learning_rate": 0.001, "max_patience": 50, "nn_depth": 5, "nn_block_dim": 8}
