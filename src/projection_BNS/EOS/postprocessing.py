@@ -138,7 +138,7 @@ def make_plots(outdir: str,
                       "alpha": 1.0,
                       "rasterized": True}
 
-    plt.subplots(1, 2, figsize=(11, 6))
+    plt.subplots(1, 2, figsize=(12, 8))
 
     m_min, m_max = 0.5, 3.0
     r_min, r_max = 8.0, 16.0
@@ -154,7 +154,6 @@ def make_plots(outdir: str,
     # Get a colorbar for log prob, but normalized
     norm = plt.Normalize(vmin=np.min(log_prob), vmax=np.max(log_prob))
     cmap = sns.color_palette("crest", as_cmap=True)
-
     sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
 
     if plot_R_and_p:
@@ -183,17 +182,16 @@ def make_plots(outdir: str,
             # Mass-radius plot
             plt.subplot(121)
             plt.plot(r[i], m[i], **samples_kwargs)
-            plt.xlabel(r"$R$ [km]")
-            plt.ylabel(r"$M$ [$M_{\odot}$]")
             plt.xlim(r_min, r_max)
             plt.ylim(m_min, m_max)
             
             # Pressure as a function of density TODO: rather, plot M-Lambda curves here
             plt.subplot(122)
-            last_pc = pc_EOS[i, -1]
-            n_TOV = np.interp(last_pc, p[i], n[i])
-            mask = (n[i] > 0.5) * (n[i] < n_TOV)
-            plt.plot(n[i][mask], p[i][mask], **samples_kwargs)
+            plt.plot(m[i], l[i], **samples_kwargs)
+            # last_pc = pc_EOS[i, -1]
+            # n_TOV = np.interp(last_pc, p[i], n[i])
+            # mask = (n[i] > 0.5) * (n[i] < n_TOV)
+            # plt.plot(n[i][mask], p[i][mask], **samples_kwargs)
             
         print(f"Bad counter: {bad_counter}")
         # Beautify the plots a bit
@@ -203,12 +201,14 @@ def make_plots(outdir: str,
         plt.ylabel(r"$M$ [$M_{\odot}$]")
         plt.xlim(r_min, r_max)
         plt.ylim(m_min, m_max)
+        plt.legend()
         
         plt.subplot(122)
-        # plt.xlim(m_min, m_max)
-        # plt.ylim(l_min, l_max)
-        plt.xlabel(r"$n$ [$n_{\rm{sat}}$]")
-        plt.ylabel(r"$p$ [MeV fm$^{-3}$]")
+        plt.plot(m_target, l_target, color="red", label=eos_name, **TARGET_KWARGS)
+        plt.xlabel(r"$M$ [$M_{\odot}$]")
+        plt.ylabel(r"$\Lambda$")
+        plt.xlim(m_min, m_max)
+        plt.ylim(0.0, 5000.0)
         
         # Save
         sm.set_array([])
@@ -226,7 +226,6 @@ def make_plots(outdir: str,
         cbar.ax.xaxis.get_offset_text().set_visible(False)
         cbar.set_label(r"Normalized posterior probability")
 
-        plt.legend()
         plt.savefig(os.path.join(outdir, "postprocessing_NS.pdf"), bbox_inches = "tight", dpi=300)
         plt.close()
         print("Creating NS plot . . . DONE")

@@ -1,4 +1,4 @@
-Fri Mar 28 09:15:41 CET 2025
+Fri Mar 28 14:49:14 CET 2025
 NVIDIA H100
 GPU found?
 [CudaDevice(id=0)]
@@ -8,67 +8,115 @@ Ignoring the Q and Z NEP parameters
 Using CSE grid with 8 points
 Fixed params loaded inside the MicroToMacroTransform:
     E_sat: -16.0
+Loaded the NF for run HQC18_1
+The range of m1 for HQC18_1 is: 1.5951060503721237 to 1.9727715104818344
+The range of m2 for HQC18_1 is: 1.312011256814003 to 1.6153650730848312
+Loaded the NF for run HQC18_2
+The range of m1 for HQC18_2 is: 1.3507076352834702 to 1.786174550652504
+The range of m2 for HQC18_2 is: 1.023673191666603 to 1.3354357331991196
 Loaded the NF for run HQC18_3
-nf_samples
-[[  1.8346303    1.30151875 206.31205864 171.49995454]
- [  1.70386665   1.42470561 248.81803311 147.88808368]
- [  1.56474121   1.50232695 354.20568846 407.93300875]
- ...
- [  1.7696052    1.41466402 226.96825825 244.58215155]
- [  1.58924095   1.51544578  41.30077235 286.25170894]
- [  1.95568852   1.24040402  92.67604001 625.0160975 ]]
-np.shape(nf_samples)
-(2000, 4)
-The range of m1 for HQC18_3 is: 1.5266834944486618 to 2.2500459104776382
-The range of m2 for HQC18_3 is: 1.091618463397026 to 1.6031094640493393
+The range of m1 for HQC18_3 is: 1.6290701180696487 to 2.099888101220131
+The range of m2 for HQC18_3 is: 1.2507999688386917 to 1.5923646837472916
 Loaded the NF for run HQC18_4
-nf_samples
-[[1.79595135e+00 1.07637502e+00 2.52441662e+01 9.97118028e+02]
- [1.82388805e+00 1.13419153e+00 4.20943455e+02 1.45760695e+03]
- [1.39713667e+00 1.36915781e+00 4.77383936e+03 2.66790357e+03]
- ...
- [1.43987589e+00 1.34162702e+00 5.90897021e+02 2.14929521e+03]
- [1.54664777e+00 1.32406451e+00 3.13530143e+02 3.36848004e+03]
- [1.67836718e+00 1.18959896e+00 9.70888602e+02 2.40312289e+02]]
-np.shape(nf_samples)
-(2000, 4)
-The range of m1 for HQC18_4 is: 1.378624364733696 to 2.0699916034936905
-The range of m2 for HQC18_4 is: 0.9757844358682632 to 1.4703554660081863
+The range of m1 for HQC18_4 is: 1.5584642440080643 to 2.062421664595604
+The range of m2 for HQC18_4 is: 0.9600573033094406 to 1.2403257936239243
 Loaded the NF for run HQC18_5
-nf_samples
-[[3.02923106e+00 7.59082511e-01 6.50785138e+01 1.64126742e+03]
- [3.14114057e+00 7.39182904e-01 1.36045408e+01 1.33932975e+03]
- [2.91762687e+00 7.88588896e-01 1.94348343e+02 3.48323885e+02]
- ...
- [2.97638260e+00 7.67688826e-01 1.59136000e+01 1.54689764e+03]
- [3.20701055e+00 7.38942400e-01 1.93417070e+01 3.28701655e+03]
- [3.19848619e+00 7.38012418e-01 6.89831115e+00 2.89220139e+03]]
-np.shape(nf_samples)
-(2000, 4)
-The range of m1 for HQC18_5 is: 2.817193642258644 to 3.472491279244423
-The range of m2 for HQC18_5 is: 0.7056421786546707 to 0.8400147408246994
+The range of m1 for HQC18_5 is: 1.67008675634861 to 2.057117149233818
+The range of m2 for HQC18_5 is: 1.3671474903821945 to 1.6765356808900833
 Loaded the NF for run HQC18_6
-nf_samples
-[[2.91815065e+00 7.67058656e-01 1.37042252e+02 3.25826179e+03]
- [2.88292371e+00 7.73809031e-01 6.03790589e+01 1.84842060e+03]
- [2.84159921e+00 7.73228481e-01 1.40574567e+00 3.70619750e+03]
- ...
- [3.22175391e+00 7.52039924e-01 1.20789900e+01 3.15422970e+03]
- [2.97847204e+00 7.59862885e-01 8.92941777e+01 4.37233926e+02]
- [3.12062807e+00 7.29962066e-01 4.17842145e+01 1.87151647e+03]]
-np.shape(nf_samples)
-(2000, 4)
-The range of m1 for HQC18_6 is: 2.7850263565778732 to 3.427100107073784
-The range of m2 for HQC18_6 is: 0.6841746717691422 to 0.8142704516649246
-Sanity checking: len(likelihoods_list) = 7
-Now showing likelihoods:
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14cd3286f430>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14cd326b8970>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14cd327d89a0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bb230b4f40>
-<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x14d0b287fa00>
-<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x14bb214384f0>
-<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x14bb22cb2860>
+The range of m1 for HQC18_6 is: 1.1361979693174362 to 1.4794949442148209
+The range of m2 for HQC18_6 is: 0.8818090707063675 to 1.13137386739254
+Loaded the NF for run HQC18_7
+The range of m1 for HQC18_7 is: 1.7870812863111496 to 2.304913178086281
+The range of m2 for HQC18_7 is: 1.4346552640199661 to 1.8429436534643173
+Loaded the NF for run HQC18_12
+The range of m1 for HQC18_12 is: 1.66061170399189 to 1.9239985197782516
+The range of m2 for HQC18_12 is: 1.459236815571785 to 1.6910477727651596
+Loaded the NF for run HQC18_13
+The range of m1 for HQC18_13 is: 1.6817798465490341 to 2.0142198354005814
+The range of m2 for HQC18_13 is: 1.4166057854890823 to 1.6893094033002853
+Loaded the NF for run HQC18_14
+The range of m1 for HQC18_14 is: 1.643306389451027 to 2.126822993159294
+The range of m2 for HQC18_14 is: 1.2689968198537827 to 1.6267383843660355
+Loaded the NF for run HQC18_15
+The range of m1 for HQC18_15 is: 1.6534648090600967 to 2.069587931036949
+The range of m2 for HQC18_15 is: 1.3299521058797836 to 1.6542019695043564
+Loaded the NF for run HQC18_16
+The range of m1 for HQC18_16 is: 1.2702766805887222 to 1.6785194724798203
+The range of m2 for HQC18_16 is: 0.9570945054292679 to 1.2461737543344498
+Loaded the NF for run HQC18_17
+The range of m1 for HQC18_17 is: 1.0954854637384415 to 1.3143808394670486
+The range of m2 for HQC18_17 is: 0.9297224134206772 to 1.1162815243005753
+Loaded the NF for run HQC18_18
+The range of m1 for HQC18_18 is: 1.3345586508512497 to 1.631796881556511
+The range of m2 for HQC18_18 is: 1.1032555252313614 to 1.3428717106580734
+Loaded the NF for run HQC18_19
+The range of m1 for HQC18_19 is: 1.5412283688783646 to 1.8304475396871567
+The range of m2 for HQC18_19 is: 1.320493444800377 to 1.5590701252222061
+Loaded the NF for run HQC18_20
+The range of m1 for HQC18_20 is: 1.2487291544675827 to 1.59328393638134
+The range of m2 for HQC18_20 is: 0.9851013869047165 to 1.2506156414747238
+Loaded the NF for run HQC18_21
+The range of m1 for HQC18_21 is: 1.695428118109703 to 2.161746099591255
+The range of m2 for HQC18_21 is: 1.0139400511980057 to 1.2619898468255997
+Loaded the NF for run HQC18_22
+The range of m1 for HQC18_22 is: 1.9432900100946426 to 2.205295190215111
+The range of m2 for HQC18_22 is: 1.7251013964414597 to 1.9702353328466415
+Loaded the NF for run HQC18_23
+The range of m1 for HQC18_23 is: 1.3943470269441605 to 1.7417339235544205
+The range of m2 for HQC18_23 is: 1.1198443919420242 to 1.3842437416315079
+Loaded the NF for run HQC18_24
+The range of m1 for HQC18_24 is: 1.3948815315961838 to 1.65255106985569
+The range of m2 for HQC18_24 is: 1.1904708296060562 to 1.4119010418653488
+Loaded the NF for run HQC18_25
+The range of m1 for HQC18_25 is: 1.2313468009233475 to 1.3984744995832443
+The range of m2 for HQC18_25 is: 1.108437106013298 to 1.2619716674089432
+Loaded the NF for run HQC18_26
+The range of m1 for HQC18_26 is: 1.419844850897789 to 1.7667853087186813
+The range of m2 for HQC18_26 is: 1.1578283458948135 to 1.431824192404747
+Loaded the NF for run HQC18_27
+The range of m1 for HQC18_27 is: 1.3795337826013565 to 1.6694211214780807
+The range of m2 for HQC18_27 is: 1.1480871587991714 to 1.3885294646024704
+Loaded the NF for run HQC18_28
+The range of m1 for HQC18_28 is: 1.6497201472520828 to 1.9742632657289505
+The range of m2 for HQC18_28 is: 1.4062830060720444 to 1.6916242986917496
+Loaded the NF for run HQC18_29
+The range of m1 for HQC18_29 is: 1.386878713965416 to 1.8093433231115341
+The range of m2 for HQC18_29 is: 1.0671614855527878 to 1.3700776547193527
+Loaded the NF for run HQC18_30
+The range of m1 for HQC18_30 is: 1.5022317320108414 to 2.0323429256677628
+The range of m2 for HQC18_30 is: 1.1093393713235855 to 1.4572136849164963
+There are 26 GW likelihoods used now
+We are also sampling the radio timing mass measurement pulsars for MTOV constraints
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14633e84c220>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14633e698c70>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14513c0f6200>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512f0d2470>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512ecb3a00>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512da173d0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512d276410>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512eede9e0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512ec876a0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512cbeada0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512d5672e0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512c22bb50>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512c317c70>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512cf176d0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512c678d30>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512cc6c190>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14510f52fd30>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14512cc1c040>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14510f988250>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14510f09ef80>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14510f93fa00>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14510ed00ee0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14510e073070>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14510f034dc0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14510e8eaa40>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14510e1513f0>
+<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1466be84ffd0>
+<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x14510d032470>
+<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x14510d075000>
 Prior parameter 0: E_sym
 Prior parameter 1: L_sym
 Prior parameter 2: K_sym
@@ -91,120 +139,272 @@ Prior parameter 18: cs2_CSE_6
 Prior parameter 19: n_CSE_7_u
 Prior parameter 20: cs2_CSE_7
 Prior parameter 21: cs2_CSE_8
-Prior parameter 22: m1_HQC18_3
-Prior parameter 23: m2_HQC18_3
-Prior parameter 24: m1_HQC18_4
-Prior parameter 25: m2_HQC18_4
-Prior parameter 26: m1_HQC18_5
-Prior parameter 27: m2_HQC18_5
-Prior parameter 28: m1_HQC18_6
-Prior parameter 29: m2_HQC18_6
+Prior parameter 22: m1_HQC18_1
+Prior parameter 23: m2_HQC18_1
+Prior parameter 24: m1_HQC18_2
+Prior parameter 25: m2_HQC18_2
+Prior parameter 26: m1_HQC18_3
+Prior parameter 27: m2_HQC18_3
+Prior parameter 28: m1_HQC18_4
+Prior parameter 29: m2_HQC18_4
+Prior parameter 30: m1_HQC18_5
+Prior parameter 31: m2_HQC18_5
+Prior parameter 32: m1_HQC18_6
+Prior parameter 33: m2_HQC18_6
+Prior parameter 34: m1_HQC18_7
+Prior parameter 35: m2_HQC18_7
+Prior parameter 36: m1_HQC18_12
+Prior parameter 37: m2_HQC18_12
+Prior parameter 38: m1_HQC18_13
+Prior parameter 39: m2_HQC18_13
+Prior parameter 40: m1_HQC18_14
+Prior parameter 41: m2_HQC18_14
+Prior parameter 42: m1_HQC18_15
+Prior parameter 43: m2_HQC18_15
+Prior parameter 44: m1_HQC18_16
+Prior parameter 45: m2_HQC18_16
+Prior parameter 46: m1_HQC18_17
+Prior parameter 47: m2_HQC18_17
+Prior parameter 48: m1_HQC18_18
+Prior parameter 49: m2_HQC18_18
+Prior parameter 50: m1_HQC18_19
+Prior parameter 51: m2_HQC18_19
+Prior parameter 52: m1_HQC18_20
+Prior parameter 53: m2_HQC18_20
+Prior parameter 54: m1_HQC18_21
+Prior parameter 55: m2_HQC18_21
+Prior parameter 56: m1_HQC18_22
+Prior parameter 57: m2_HQC18_22
+Prior parameter 58: m1_HQC18_23
+Prior parameter 59: m2_HQC18_23
+Prior parameter 60: m1_HQC18_24
+Prior parameter 61: m2_HQC18_24
+Prior parameter 62: m1_HQC18_25
+Prior parameter 63: m2_HQC18_25
+Prior parameter 64: m1_HQC18_26
+Prior parameter 65: m2_HQC18_26
+Prior parameter 66: m1_HQC18_27
+Prior parameter 67: m2_HQC18_27
+Prior parameter 68: m1_HQC18_28
+Prior parameter 69: m2_HQC18_28
+Prior parameter 70: m1_HQC18_29
+Prior parameter 71: m2_HQC18_29
+Prior parameter 72: m1_HQC18_30
+Prior parameter 73: m2_HQC18_30
 Fixed params loaded inside the MicroToMacroTransform:
     E_sat: -16.0
 We are going to give these kwargs to Jim:
-{'n_loop_training': 20, 'n_loop_production': 20, 'n_chains': 1000, 'n_local_steps': 2, 'n_global_steps': 100, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
+{'n_loop_training': 5, 'n_loop_production': 5, 'n_chains': 1000, 'n_local_steps': 2, 'n_global_steps': 100, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
 We are going to sample the following parameters:
-['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'm1_HQC18_3', 'm2_HQC18_3', 'm1_HQC18_4', 'm2_HQC18_4', 'm1_HQC18_5', 'm2_HQC18_5', 'm1_HQC18_6', 'm2_HQC18_6']
+['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'm1_HQC18_1', 'm2_HQC18_1', 'm1_HQC18_2', 'm2_HQC18_2', 'm1_HQC18_3', 'm2_HQC18_3', 'm1_HQC18_4', 'm2_HQC18_4', 'm1_HQC18_5', 'm2_HQC18_5', 'm1_HQC18_6', 'm2_HQC18_6', 'm1_HQC18_7', 'm2_HQC18_7', 'm1_HQC18_12', 'm2_HQC18_12', 'm1_HQC18_13', 'm2_HQC18_13', 'm1_HQC18_14', 'm2_HQC18_14', 'm1_HQC18_15', 'm2_HQC18_15', 'm1_HQC18_16', 'm2_HQC18_16', 'm1_HQC18_17', 'm2_HQC18_17', 'm1_HQC18_18', 'm2_HQC18_18', 'm1_HQC18_19', 'm2_HQC18_19', 'm1_HQC18_20', 'm2_HQC18_20', 'm1_HQC18_21', 'm2_HQC18_21', 'm1_HQC18_22', 'm2_HQC18_22', 'm1_HQC18_23', 'm2_HQC18_23', 'm1_HQC18_24', 'm2_HQC18_24', 'm1_HQC18_25', 'm2_HQC18_25', 'm1_HQC18_26', 'm2_HQC18_26', 'm1_HQC18_27', 'm2_HQC18_27', 'm1_HQC18_28', 'm2_HQC18_28', 'm1_HQC18_29', 'm2_HQC18_29', 'm1_HQC18_30', 'm2_HQC18_30']
 No sample transforms provided. Using prior parameters as sampling parameters
-Jim received the local sampler name: GaussianRandomWalk
-Step size given was a matrix, converting to diagonal for GaussianRandomWalk
+Jim received the local sampler name: MALA
 ['n_dim', 'n_chains', 'n_local_steps', 'n_global_steps', 'n_loop', 'output_thinning', 'verbose']
 log_prob
-[-200211.21217091 -200387.90113686 -200397.18715908]
+[-455.04485672 -474.78590293 -553.88725147]
 Sampling seed is set to: 11
-Global Tuning:   0%|          | 0/20 [00:00<?, ?it/s]Global Tuning:   5%|▌         | 1/20 [01:43<32:44, 103.41s/it]Global Tuning:  10%|█         | 2/20 [02:13<18:07, 60.41s/it] Global Tuning:  15%|█▌        | 3/20 [02:38<12:32, 44.29s/it]Global Tuning:  20%|██        | 4/20 [03:03<09:43, 36.45s/it]Global Tuning:  25%|██▌       | 5/20 [03:29<08:12, 32.87s/it]Global Tuning:  30%|███       | 6/20 [03:56<07:12, 30.91s/it]Global Tuning:  35%|███▌      | 7/20 [04:25<06:30, 30.05s/it]Global Tuning:  40%|████      | 8/20 [04:54<05:56, 29.71s/it]Global Tuning:  45%|████▌     | 9/20 [05:24<05:28, 29.88s/it]Global Tuning:  50%|█████     | 10/20 [05:55<05:03, 30.30s/it]Global Tuning:  55%|█████▌    | 11/20 [06:26<04:34, 30.48s/it]Global Tuning:  60%|██████    | 12/20 [06:57<04:04, 30.59s/it]Global Tuning:  65%|██████▌   | 13/20 [07:28<03:34, 30.65s/it]Global Tuning:  70%|███████   | 14/20 [07:59<03:05, 30.93s/it]Global Tuning:  75%|███████▌  | 15/20 [08:32<02:37, 31.45s/it]Global Tuning:  80%|████████  | 16/20 [09:03<02:05, 31.45s/it]Global Tuning:  85%|████████▌ | 17/20 [09:35<01:34, 31.57s/it]Global Tuning:  90%|█████████ | 18/20 [10:06<01:02, 31.36s/it]Global Tuning:  95%|█████████▌| 19/20 [10:37<00:31, 31.32s/it]Global Tuning: 100%|██████████| 20/20 [11:09<00:00, 31.39s/it]Global Tuning: 100%|██████████| 20/20 [11:09<00:00, 33.47s/it]
-Global Sampling:   0%|          | 0/20 [00:00<?, ?it/s]Global Sampling:   5%|▌         | 1/20 [00:31<09:49, 31.05s/it]Global Sampling:  10%|█         | 2/20 [01:01<09:15, 30.85s/it]Global Sampling:  15%|█▌        | 3/20 [01:32<08:46, 30.95s/it]Global Sampling:  20%|██        | 4/20 [02:04<08:16, 31.04s/it]Global Sampling:  25%|██▌       | 5/20 [02:34<07:45, 31.00s/it]Global Sampling:  30%|███       | 6/20 [03:06<07:14, 31.04s/it]Global Sampling:  35%|███▌      | 7/20 [03:36<06:41, 30.86s/it]Global Sampling:  40%|████      | 8/20 [04:07<06:11, 30.93s/it]Global Sampling:  45%|████▌     | 9/20 [04:38<05:38, 30.79s/it]Global Sampling:  50%|█████     | 10/20 [05:09<05:08, 30.90s/it]Global Sampling:  55%|█████▌    | 11/20 [05:40<04:37, 30.87s/it]Global Sampling:  60%|██████    | 12/20 [06:11<04:07, 30.96s/it]Global Sampling:  65%|██████▌   | 13/20 [06:41<03:36, 30.90s/it]Global Sampling:  70%|███████   | 14/20 [07:12<03:04, 30.76s/it]Global Sampling:  75%|███████▌  | 15/20 [07:44<02:35, 31.02s/it]Global Sampling:  80%|████████  | 16/20 [08:14<02:03, 30.89s/it]Global Sampling:  85%|████████▌ | 17/20 [08:45<01:32, 30.92s/it]Global Sampling:  90%|█████████ | 18/20 [09:16<01:01, 30.97s/it]Global Sampling:  95%|█████████▌| 19/20 [09:46<00:30, 30.76s/it]Global Sampling: 100%|██████████| 20/20 [10:18<00:00, 30.88s/it]Global Sampling: 100%|██████████| 20/20 [10:18<00:00, 30.91s/it]
+
+Global Tuning:   0%|          | 0/5 [00:00<?, ?it/s]
+Global Tuning:  20%|██        | 1/5 [05:44<22:58, 344.62s/it]
+Global Tuning:  40%|████      | 2/5 [07:02<09:22, 187.57s/it]
+Global Tuning:  60%|██████    | 3/5 [08:07<04:23, 131.56s/it]
+Global Tuning:  80%|████████  | 4/5 [09:16<01:46, 106.84s/it]
+Global Tuning: 100%|██████████| 5/5 [10:25<00:00, 93.42s/it] 
+Global Tuning: 100%|██████████| 5/5 [10:25<00:00, 125.15s/it]
+Compiling MALA body
+
+Global Sampling:   0%|          | 0/5 [00:00<?, ?it/s]
+Global Sampling:  20%|██        | 1/5 [01:07<04:29, 67.42s/it]
+Global Sampling:  40%|████      | 2/5 [02:13<03:20, 66.84s/it]
+Global Sampling:  60%|██████    | 3/5 [03:21<02:14, 67.43s/it]
+Global Sampling:  80%|████████  | 4/5 [04:29<01:07, 67.46s/it]
+Global Sampling: 100%|██████████| 5/5 [05:40<00:00, 68.75s/it]
+Global Sampling: 100%|██████████| 5/5 [05:40<00:00, 68.11s/it]
 Training summary
 ==========
-E_sym: 34.435 +/- 4.114
-L_sym: 26.949 +/- 21.524
-K_sym: -233.275 +/- 82.457
-K_sat: 202.586 +/- 28.502
-nbreak: 0.251 +/- 0.031
-n_CSE_0_u: 0.419 +/- 0.246
-cs2_CSE_0: 0.911 +/- 0.131
-n_CSE_1_u: 0.372 +/- 0.293
-cs2_CSE_1: 0.878 +/- 0.147
-n_CSE_2_u: 0.586 +/- 0.244
-cs2_CSE_2: 0.689 +/- 0.246
-n_CSE_3_u: 0.516 +/- 0.249
-cs2_CSE_3: 0.596 +/- 0.270
-n_CSE_4_u: 0.389 +/- 0.258
-cs2_CSE_4: 0.467 +/- 0.274
-n_CSE_5_u: 0.493 +/- 0.255
-cs2_CSE_5: 0.455 +/- 0.272
-n_CSE_6_u: 0.419 +/- 0.259
-cs2_CSE_6: 0.479 +/- 0.259
-n_CSE_7_u: 0.438 +/- 0.260
-cs2_CSE_7: 0.415 +/- 0.259
-cs2_CSE_8: 0.473 +/- 0.270
-m1_HQC18_3: 1.853 +/- 0.145
-m2_HQC18_3: 1.317 +/- 0.104
-m1_HQC18_4: 1.659 +/- 0.138
-m2_HQC18_4: 1.213 +/- 0.098
-m1_HQC18_5: 2.904 +/- 0.088
-m2_HQC18_5: 0.814 +/- 0.024
-m1_HQC18_6: 2.897 +/- 0.090
-m2_HQC18_6: 0.789 +/- 0.021
-Log probability: -10399.336 +/- 43318.301
-Local acceptance: 0.652 +/- 0.476
-Global acceptance: 0.027 +/- 0.163
-Max loss: 51.034, Min loss: 31.940
+E_sym: 36.276 +/- 4.725
+L_sym: 50.981 +/- 28.902
+K_sym: -135.908 +/- 102.768
+K_sat: 213.992 +/- 39.609
+nbreak: 0.254 +/- 0.040
+n_CSE_0_u: 0.456 +/- 0.282
+cs2_CSE_0: 0.579 +/- 0.261
+n_CSE_1_u: 0.513 +/- 0.266
+cs2_CSE_1: 0.610 +/- 0.256
+n_CSE_2_u: 0.503 +/- 0.268
+cs2_CSE_2: 0.538 +/- 0.265
+n_CSE_3_u: 0.491 +/- 0.281
+cs2_CSE_3: 0.577 +/- 0.264
+n_CSE_4_u: 0.455 +/- 0.277
+cs2_CSE_4: 0.503 +/- 0.274
+n_CSE_5_u: 0.491 +/- 0.278
+cs2_CSE_5: 0.494 +/- 0.277
+n_CSE_6_u: 0.509 +/- 0.269
+cs2_CSE_6: 0.453 +/- 0.264
+n_CSE_7_u: 0.495 +/- 0.289
+cs2_CSE_7: 0.508 +/- 0.273
+cs2_CSE_8: 0.513 +/- 0.283
+m1_HQC18_1: 1.798 +/- 0.102
+m2_HQC18_1: 1.467 +/- 0.081
+m1_HQC18_2: 1.579 +/- 0.115
+m2_HQC18_2: 1.167 +/- 0.084
+m1_HQC18_3: 1.865 +/- 0.117
+m2_HQC18_3: 1.422 +/- 0.087
+m1_HQC18_4: 1.812 +/- 0.128
+m2_HQC18_4: 1.106 +/- 0.073
+m1_HQC18_5: 1.850 +/- 0.098
+m2_HQC18_5: 1.518 +/- 0.079
+m1_HQC18_6: 1.303 +/- 0.086
+m2_HQC18_6: 1.022 +/- 0.065
+m1_HQC18_7: 2.016 +/- 0.127
+m2_HQC18_7: 1.642 +/- 0.109
+m1_HQC18_12: 1.790 +/- 0.071
+m2_HQC18_12: 1.575 +/- 0.062
+m1_HQC18_13: 1.860 +/- 0.087
+m2_HQC18_13: 1.559 +/- 0.071
+m1_HQC18_14: 1.907 +/- 0.122
+m2_HQC18_14: 1.449 +/- 0.091
+m1_HQC18_15: 1.872 +/- 0.104
+m2_HQC18_15: 1.501 +/- 0.080
+m1_HQC18_16: 1.468 +/- 0.108
+m2_HQC18_16: 1.103 +/- 0.076
+m1_HQC18_17: 1.207 +/- 0.059
+m2_HQC18_17: 1.027 +/- 0.049
+m1_HQC18_18: 1.492 +/- 0.077
+m2_HQC18_18: 1.232 +/- 0.061
+m1_HQC18_19: 1.689 +/- 0.076
+m2_HQC18_19: 1.446 +/- 0.065
+m1_HQC18_20: 1.435 +/- 0.092
+m2_HQC18_20: 1.124 +/- 0.070
+m1_HQC18_21: 1.926 +/- 0.115
+m2_HQC18_21: 1.144 +/- 0.061
+m1_HQC18_22: 2.074 +/- 0.066
+m2_HQC18_22: 1.857 +/- 0.061
+m1_HQC18_23: 1.567 +/- 0.087
+m2_HQC18_23: 1.264 +/- 0.065
+m1_HQC18_24: 1.523 +/- 0.071
+m2_HQC18_24: 1.302 +/- 0.062
+m1_HQC18_25: 1.317 +/- 0.043
+m2_HQC18_25: 1.190 +/- 0.041
+m1_HQC18_26: 1.603 +/- 0.087
+m2_HQC18_26: 1.293 +/- 0.071
+m1_HQC18_27: 1.524 +/- 0.078
+m2_HQC18_27: 1.269 +/- 0.064
+m1_HQC18_28: 1.811 +/- 0.085
+m2_HQC18_28: 1.552 +/- 0.077
+m1_HQC18_29: 1.596 +/- 0.108
+m2_HQC18_29: 1.214 +/- 0.078
+m1_HQC18_30: 1.762 +/- 0.137
+m2_HQC18_30: 1.276 +/- 0.093
+Log probability: -55358.177 +/- 314381.386
+Local acceptance: 0.853 +/- 0.354
+Global acceptance: 0.027 +/- 0.162
+Max loss: 121.290, Min loss: 84.564
 Production summary
 ==========
-E_sym: 33.030 +/- 3.331
-L_sym: 16.110 +/- 3.549
-K_sym: -279.344 +/- 13.091
-K_sat: 200.204 +/- 16.802
-nbreak: 0.285 +/- 0.007
-n_CSE_0_u: 0.399 +/- 0.201
-cs2_CSE_0: 0.970 +/- 0.018
-n_CSE_1_u: 0.072 +/- 0.112
-cs2_CSE_1: 0.968 +/- 0.023
-n_CSE_2_u: 0.630 +/- 0.204
-cs2_CSE_2: 0.760 +/- 0.214
-n_CSE_3_u: 0.504 +/- 0.224
-cs2_CSE_3: 0.585 +/- 0.288
-n_CSE_4_u: 0.399 +/- 0.195
-cs2_CSE_4: 0.504 +/- 0.283
-n_CSE_5_u: 0.522 +/- 0.223
-cs2_CSE_5: 0.414 +/- 0.274
-n_CSE_6_u: 0.414 +/- 0.172
-cs2_CSE_6: 0.449 +/- 0.278
-n_CSE_7_u: 0.444 +/- 0.198
-cs2_CSE_7: 0.332 +/- 0.243
-cs2_CSE_8: 0.373 +/- 0.253
-m1_HQC18_3: 1.883 +/- 0.134
-m2_HQC18_3: 1.290 +/- 0.090
-m1_HQC18_4: 1.580 +/- 0.105
-m2_HQC18_4: 1.265 +/- 0.084
-m1_HQC18_5: 2.853 +/- 0.020
-m2_HQC18_5: 0.819 +/- 0.006
-m1_HQC18_6: 2.857 +/- 0.019
-m2_HQC18_6: 0.808 +/- 0.004
-Log probability: -80.601 +/- 3.076
-Local acceptance: 0.422 +/- 0.494
-Global acceptance: 0.005 +/- 0.069
-Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 22 mins
+E_sym: 36.120 +/- 4.661
+L_sym: 37.348 +/- 18.641
+K_sym: -179.461 +/- 74.293
+K_sat: 201.437 +/- 34.062
+nbreak: 0.272 +/- 0.030
+n_CSE_0_u: 0.463 +/- 0.263
+cs2_CSE_0: 0.574 +/- 0.257
+n_CSE_1_u: 0.519 +/- 0.258
+cs2_CSE_1: 0.678 +/- 0.223
+n_CSE_2_u: 0.492 +/- 0.267
+cs2_CSE_2: 0.568 +/- 0.249
+n_CSE_3_u: 0.499 +/- 0.279
+cs2_CSE_3: 0.617 +/- 0.250
+n_CSE_4_u: 0.459 +/- 0.272
+cs2_CSE_4: 0.509 +/- 0.278
+n_CSE_5_u: 0.499 +/- 0.276
+cs2_CSE_5: 0.469 +/- 0.282
+n_CSE_6_u: 0.490 +/- 0.268
+cs2_CSE_6: 0.461 +/- 0.263
+n_CSE_7_u: 0.520 +/- 0.292
+cs2_CSE_7: 0.491 +/- 0.265
+cs2_CSE_8: 0.515 +/- 0.289
+m1_HQC18_1: 1.800 +/- 0.095
+m2_HQC18_1: 1.469 +/- 0.076
+m1_HQC18_2: 1.598 +/- 0.099
+m2_HQC18_2: 1.151 +/- 0.072
+m1_HQC18_3: 1.884 +/- 0.106
+m2_HQC18_3: 1.416 +/- 0.080
+m1_HQC18_4: 1.814 +/- 0.114
+m2_HQC18_4: 1.096 +/- 0.064
+m1_HQC18_5: 1.848 +/- 0.093
+m2_HQC18_5: 1.522 +/- 0.073
+m1_HQC18_6: 1.297 +/- 0.082
+m2_HQC18_6: 1.020 +/- 0.062
+m1_HQC18_7: 2.007 +/- 0.112
+m2_HQC18_7: 1.650 +/- 0.100
+m1_HQC18_12: 1.788 +/- 0.068
+m2_HQC18_12: 1.576 +/- 0.057
+m1_HQC18_13: 1.852 +/- 0.081
+m2_HQC18_13: 1.565 +/- 0.066
+m1_HQC18_14: 1.911 +/- 0.112
+m2_HQC18_14: 1.435 +/- 0.082
+m1_HQC18_15: 1.851 +/- 0.091
+m2_HQC18_15: 1.508 +/- 0.072
+m1_HQC18_16: 1.468 +/- 0.100
+m2_HQC18_16: 1.103 +/- 0.071
+m1_HQC18_17: 1.206 +/- 0.056
+m2_HQC18_17: 1.031 +/- 0.045
+m1_HQC18_18: 1.486 +/- 0.071
+m2_HQC18_18: 1.231 +/- 0.056
+m1_HQC18_19: 1.684 +/- 0.072
+m2_HQC18_19: 1.444 +/- 0.061
+m1_HQC18_20: 1.436 +/- 0.083
+m2_HQC18_20: 1.129 +/- 0.064
+m1_HQC18_21: 1.935 +/- 0.098
+m2_HQC18_21: 1.133 +/- 0.054
+m1_HQC18_22: 2.069 +/- 0.058
+m2_HQC18_22: 1.868 +/- 0.052
+m1_HQC18_23: 1.549 +/- 0.082
+m2_HQC18_23: 1.269 +/- 0.061
+m1_HQC18_24: 1.526 +/- 0.069
+m2_HQC18_24: 1.298 +/- 0.058
+m1_HQC18_25: 1.314 +/- 0.039
+m2_HQC18_25: 1.192 +/- 0.036
+m1_HQC18_26: 1.598 +/- 0.081
+m2_HQC18_26: 1.292 +/- 0.066
+m1_HQC18_27: 1.528 +/- 0.074
+m2_HQC18_27: 1.273 +/- 0.061
+m1_HQC18_28: 1.810 +/- 0.081
+m2_HQC18_28: 1.565 +/- 0.070
+m1_HQC18_29: 1.610 +/- 0.100
+m2_HQC18_29: 1.209 +/- 0.075
+m1_HQC18_30: 1.776 +/- 0.118
+m2_HQC18_30: 1.252 +/- 0.084
+Log probability: -263.761 +/- 5.275
+Local acceptance: 0.945 +/- 0.227
+Global acceptance: 0.005 +/- 0.071
+Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 19 mins
 Saving the final results
-Number of samples generated in training: 420000
-Number of samples generated in production: 420000
-Number of samples generated: 840000
-Time taken for TOV map: 2.6418890953063965 s
-DONE entire script
+Number of samples generated in training: 105000
+Number of samples generated in production: 105000
+Number of samples generated: 210000
+Time taken for TOV map: 2.2522449493408203 s
+The corner plot will plot the parameters: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'E_sat', 'Lambdas_EOS', 'cs2', 'dloge_dlogp', 'e', 'h', 'logpc_EOS', 'masses_EOS', 'n', 'p', 'radii_EOS']
+Traceback (most recent call last):
+  File "/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/EOS/inference.py", line 373, in <module>
+    main(args)
+  File "/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/EOS/inference.py", line 361, in main
+    samples_for_corner_values = np.array(list(samples_for_corner.values())).T
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (33,) + inhomogeneous part.
 DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10856049
+Job ID: 10864997
 Cluster: snellius
 User/Group: twouters2/twouters2
 State: RUNNING
 Nodes: 1
 Cores per node: 16
 CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 06:36:00 core-walltime
-Job Wall-clock time: 00:24:45
+CPU Efficiency: 0.00% of 05:42:08 core-walltime
+Job Wall-clock time: 00:21:23
 Memory Utilized: 0.00 MB (estimated maximum)
 Memory Efficiency: 0.00% of 20.00 GB (20.00 GB/node)
 WARNING: Efficiency statistics may be misleading for RUNNING jobs.

@@ -45,8 +45,7 @@ for col, eos_name in zip(COLORS, EOS_NAMES):
     
     # Construct the array of masses
     m_max = lalsim.SimNeutronStarMaximumMass(family)
-    print(f"M_Max is {m_max / M_SUN}")
-    masses_array = np.linspace(0.25 * M_SUN, m_max, 1_000)
+    masses_array = np.linspace(0.50 * M_SUN, m_max, 1_000)
     
     # Calculate the radius and the Love number
     radius = []

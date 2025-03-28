@@ -6,6 +6,7 @@ from jaxtyping import Float
 import copy
 import os
 import json
+import arviz
 
 from jimgw.base import LikelihoodBase
 from jimgw.transforms import NtoMTransform
@@ -200,7 +201,8 @@ class GWlikelihood_with_masses(LikelihoodBase):
                  id: str,
                  transform: MicroToMacroTransform = None,
                  very_negative_value: float = -99999.0,
-                 N_samples_masses: int = 2_000):
+                 N_samples_masses: int = 2_000,
+                 hdi_prob: float = 0.90):
         
         self.eos = eos
         self.id = id
@@ -219,14 +221,6 @@ class GWlikelihood_with_masses(LikelihoodBase):
         with open(nf_kwargs_file, "r") as f:
             nf_kwargs = json.load(f)
             
-        # TODO: remove me if I can be removed
-        # like_flow = block_neural_autoregressive_flow(
-        #     key=jax.random.PRNGKey(0),
-        #     base_dist=Normal(jnp.zeros(4)),
-        #     nn_depth=nf_kwargs["nn_depth"],
-        #     nn_block_dim=nf_kwargs["nn_block_dim"]
-        # )
-        
         like_flow = make_flow(jax.random.PRNGKey(0), nf_kwargs["nn_depth"], nf_kwargs["nn_block_dim"])
         
         # Load the normalizing flow
@@ -245,11 +239,16 @@ class GWlikelihood_with_masses(LikelihoodBase):
         m1 = nf_samples[:, 0]
         m2 = nf_samples[:, 1]
         
-        self.m1_min = float(jnp.min(m1))
-        self.m1_max = float(jnp.max(m1))
+        # # Old method
+        # self.m1_min = float(jnp.min(m1))
+        # self.m1_max = float(jnp.max(m1))
         
-        self.m2_min = float(jnp.min(m2))
-        self.m2_max = float(jnp.max(m2))
+        # self.m2_min = float(jnp.min(m2))
+        # self.m2_max = float(jnp.max(m2))
+        
+        # Instead, we use the 99% credible interval:
+        self.m1_min, self.m1_max = arviz.hdi(np.array(m1), hdi_prob=hdi_prob)
+        self.m2_min, self.m2_max = arviz.hdi(np.array(m2), hdi_prob=hdi_prob)
         
         print(f"The range of m1 for {self.eos}_{self.id} is: {self.m1_min} to {self.m1_max}")
         print(f"The range of m2 for {self.eos}_{self.id} is: {self.m2_min} to {self.m2_max}")

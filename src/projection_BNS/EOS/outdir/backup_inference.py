@@ -202,6 +202,7 @@ def main(args):
     else:
         # Likelihoods from GW posteriors
         likelihoods_list_GW = [utils.GWlikelihood_with_masses(args.eos, idx) for idx in args.id_list]
+        print(f"There are {len(likelihoods_list_GW)} GW likelihoods used now")
         
         # Add masses to the priors
         mass_priors = []
@@ -217,6 +218,7 @@ def main(args):
         # Radio timing mass measurement pulsars
         likelihoods_list_radio = []
         if args.sample_radio:
+            print(f"We are also sampling the radio timing mass measurement pulsars for MTOV constraints")
             likelihoods_list_radio += [utils.RadioTimingLikelihood("J1614", 1.94, 0.06)]
             likelihoods_list_radio += [utils.RadioTimingLikelihood("J0348", 2.01, 0.08)]
             likelihoods_list_radio += [utils.RadioTimingLikelihood("J0740", 2.08, 0.14)]
@@ -230,8 +232,6 @@ def main(args):
 
         # Total likelihoods list:
         likelihoods_list = likelihoods_list_GW + likelihoods_list_radio + likelihoods_list_chiEFT
-        print(f"Sanity checking: len(likelihoods_list) = {len(likelihoods_list)}")
-        print(f"Now showing likelihoods:")
         for l in likelihoods_list:
             print(l)
             
@@ -354,9 +354,15 @@ def main(args):
     log_prob = log_prob[idx_2]
     np.savez(os.path.join(args.outdir, "eos_samples.npz"), log_prob=log_prob, **chosen_samples)
     
+    samples_for_corner = {k: v.flatten() for k, v in chosen_samples.items()}
+    samples_for_corner = {k: v for k, v in samples_for_corner.items() if ("m1_" not in k and "m2_" not in k)}
+    keys_to_plot = list(samples_for_corner.keys())
+    print(f"The corner plot will plot the parameters: {keys_to_plot}")
+    samples_for_corner_values = np.array(list(samples_for_corner.values())).T
+    
     if args.make_cornerplot:
         try:    
-            postprocessing.plot_corner(outdir, samples, keys)
+            postprocessing.plot_corner(outdir, samples_for_corner_values, keys_to_plot)
         except Exception as e:
             print(f"Could not make the corner plot, because of the following error: {e}")
     

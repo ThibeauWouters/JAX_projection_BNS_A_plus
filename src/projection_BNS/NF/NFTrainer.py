@@ -193,7 +193,8 @@ class NFTrainer:
                  learning_rate: float,
                  max_patience: int,
                  nn_depth: int,
-                 nn_block_dim: int):
+                 nn_block_dim: int,
+                 plot_learning_curves: bool = False):
         
         # Set attributes
         self.eos_name = eos_name
@@ -205,6 +206,8 @@ class NFTrainer:
         self.max_patience = max_patience
         self.nn_depth = nn_depth
         self.nn_block_dim = nn_block_dim
+        
+        self.plot_learning_curves = plot_learning_curves
         
         # Get the full path
         self.directory = os.path.join(GW_PATH, self.eos_name, "outdir", f"injection_{self.injection_idx}")
@@ -292,13 +295,14 @@ class NFTrainer:
                                    )
         
         # Plot learning curves
-        plt.figure(figsize = (12, 8))
-        plt.plot(losses["train"], label = "Train", color = "red")
-        plt.plot(losses["val"], label = "Val", color = "blue")
-        plt.yscale("log")
-        plt.legend()
-        plt.savefig(f"./figures/{self.eos_name}_{self.injection_idx}_loss.png", bbox_inches = "tight")
-        plt.close()
+        if self.plot_learning_curves:
+            plt.figure(figsize = (12, 8))
+            plt.plot(losses["train"], label = "Train", color = "red")
+            plt.plot(losses["val"], label = "Val", color = "blue")
+            plt.yscale("log")
+            plt.legend()
+            plt.savefig(f"./figures/{self.eos_name}_{self.injection_idx}_loss.png", bbox_inches = "tight")
+            plt.close()
         
         # And sample the distribution
         nf_samples = flow.sample(sample_key, (N_samples_plot, ))
