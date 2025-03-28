@@ -1,4 +1,4 @@
-Mc_prior = Uniform(1.0, 2.2, naming=["M_c"])
+mass_1_prior = Uniform(0.125, 1.0, naming=["q"])
 q_prior = Uniform(0.125, 1.0, naming=["q"])
 s1_prior = Uniform(-0.05, 0.05, naming=["s1"])
 s2_prior = Uniform(-0.05, 0.05, naming=["s2"])
