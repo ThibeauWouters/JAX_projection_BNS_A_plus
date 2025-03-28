@@ -36,6 +36,10 @@ def parse_arguments():
                         type=str, 
                         nargs='+',
                         help="List of identifier of the GW injection for that EOS.")
+    parser.add_argument("--local-sampler-name", 
+                        type=str, 
+                        default="GaussianRandomWalk", 
+                        help="Name of the local sampler to use. Choose from [MALA, GaussianRandomWalk].")
     parser.add_argument("--make-cornerplot", 
                         type=bool, 
                         default=True, 
@@ -226,7 +230,12 @@ def main(args):
 
         # Total likelihoods list:
         likelihoods_list = likelihoods_list_GW + likelihoods_list_radio + likelihoods_list_chiEFT
-        print(f"Sanity checking: likelihoods_list = {likelihoods_list}\nlen(likelihoods_list) = {len(likelihoods_list)}")
+        print(f"Sanity checking: len(likelihoods_list) = {len(likelihoods_list)}")
+        print(f"Now showing likelihoods:")
+        for l in likelihoods_list:
+            print(l)
+            
+        # Combine into a full likelihood
         likelihood = utils.CombinedLikelihood(likelihoods_list)
         
     # Construct the transform object
@@ -260,6 +269,9 @@ def main(args):
     
     print("We are going to sample the following parameters:")
     print(prior.parameter_names)
+    
+    # Pass on the local sampler to Jim
+    kwargs["local_sampler_name"] = args.local_sampler_name
 
     # Define the Jim object here
     jim = Jim(likelihood,
@@ -284,7 +296,7 @@ def main(args):
     end = time.time()
     runtime = end - start
 
-    print(f"S has been successful, now we will do some postprocessing. Sampling time: roughly {int(runtime / 60)} mins")
+    print(f"Sampling has been successful, now we will do some postprocessing. Sampling time: roughly {int(runtime / 60)} mins")
 
     ### POSTPROCESSING ###
         

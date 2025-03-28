@@ -24,7 +24,7 @@ nvidia-smi --query-gpu=name --format=csv,noheader
 # Run the script
 python inference.py \
     --eos HQC18 \
-    --id 3 4 5 6 8 9 \
+    --id 3 4 5 6 \
     --outdir ./outdir/ \
     --sample-radio True
     # --sample-chiEFT True \

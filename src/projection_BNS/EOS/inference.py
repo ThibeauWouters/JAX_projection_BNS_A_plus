@@ -36,6 +36,10 @@ def parse_arguments():
                         type=str, 
                         nargs='+',
                         help="List of identifier of the GW injection for that EOS.")
+    parser.add_argument("--local-sampler-name", 
+                        type=str, 
+                        default="GaussianRandomWalk", 
+                        help="Name of the local sampler to use. Choose from [MALA, GaussianRandomWalk].")
     parser.add_argument("--make-cornerplot", 
                         type=bool, 
                         default=True, 
@@ -265,6 +269,9 @@ def main(args):
     
     print("We are going to sample the following parameters:")
     print(prior.parameter_names)
+    
+    # Pass on the local sampler to Jim
+    kwargs["local_sampler_name"] = args.local_sampler_name
 
     # Define the Jim object here
     jim = Jim(likelihood,
@@ -289,7 +296,7 @@ def main(args):
     end = time.time()
     runtime = end - start
 
-    print(f"S has been successful, now we will do some postprocessing. Sampling time: roughly {int(runtime / 60)} mins")
+    print(f"Sampling has been successful, now we will do some postprocessing. Sampling time: roughly {int(runtime / 60)} mins")
 
     ### POSTPROCESSING ###
         

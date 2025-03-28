@@ -241,13 +241,7 @@ class GWlikelihood_with_masses(LikelihoodBase):
         # Generate some samples from the NS posterior to know the mass range
         nf_samples = self.NS_posterior.sample(subkey, (N_samples_masses,))
         
-        print("nf_samples")
-        print(nf_samples)
-        
-        print("np.shape(nf_samples)")
-        print(np.shape(nf_samples))
-        
-        # use it to get the range of m1 and m2
+        # Use it to get the range of m1 and m2
         m1 = nf_samples[:, 0]
         m2 = nf_samples[:, 1]
         
