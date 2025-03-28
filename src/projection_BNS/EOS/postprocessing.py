@@ -54,11 +54,15 @@ default_corner_kwargs = dict(bins=40,
 
 EOS_CURVE_COLOR = "darkgreen"
 DATA_PATH = "/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/"
+# These are the colors of the jax logo (order J, A, X)
+TARGET_COLORS_DICT = {"HQC18": "#5e97f6", 
+                      "SLY230A": "#26a69a",
+                      "MPA1": "#9c27b0"}
 
 # TODO: change this again, but I am testing now
 TARGET_KWARGS = {"zorder": 1e10,
                  "lw": 2,
-                 "linestyle": "--"}
+                 "linestyle": "-"}
 
 def plot_corner(outdir,
                 samples,
@@ -106,18 +110,27 @@ def check_convergence(outdir: str):
         print(f"    ess = {ess}")
 
 def make_plots(outdir: str,
-               eos_name: str,
-               plot_R_and_p: bool = True,
                plot_histograms: bool = True,
                make_master_plot: bool = True,
                max_samples: int = 3_000):
     
     filename = os.path.join(outdir, "eos_samples.npz")
     
-    # Load the target
-    target_filepath = os.path.join(DATA_PATH, f"{eos_name}.npz")
-    target_filepath = np.load(target_filepath)
-    m_target, r_target, l_target = target_filepath["masses_EOS"], target_filepath["radii_EOS"], target_filepath["Lambdas_EOS"]
+    targets_dict = {"HQC18": {},
+                    "SLY230A": {},
+                    "MPA1": {},
+                    }
+    all_eos_names = list(targets_dict.keys())
+    
+    # Load the targets
+    for eos_name in all_eos_names:
+        target_filepath = os.path.join(DATA_PATH, f"{eos_name}.npz")
+        target_filepath = np.load(target_filepath)
+        m_target, r_target, l_target = target_filepath["masses_EOS"], target_filepath["radii_EOS"], target_filepath["Lambdas_EOS"]
+        
+        targets_dict[eos_name]["m_target"] = m_target
+        targets_dict[eos_name]["r_target"] = r_target
+        targets_dict[eos_name]["l_target"] = l_target
     
     data = np.load(filename)
     m, r, l = data["masses_EOS"], data["radii_EOS"], data["Lambdas_EOS"]
@@ -134,14 +147,15 @@ def make_plots(outdir: str,
     print(f"Number of samples: {nb_samples}")
 
     # Plotting
-    samples_kwargs = {"color": "black",
-                      "alpha": 1.0,
+    samples_kwargs = {"color": "gray",
+                      "alpha": 0.1,
                       "rasterized": True}
 
     plt.subplots(1, 2, figsize=(12, 8))
 
-    m_min, m_max = 0.5, 3.0
-    r_min, r_max = 8.0, 16.0
+    m_min, m_max = 0.975, 3.0
+    r_min, r_max = 9.0, 14.0
+    l_min, l_max = 2.0, 1e4
     
     # Sample requested number of indices randomly:
     log_prob = data["log_prob"]
@@ -151,84 +165,103 @@ def make_plots(outdir: str,
     indices = np.random.choice(nb_samples, max_samples, replace=False) # p=log_prob/np.sum(log_prob)
     indices = np.append(indices, max_log_prob_idx)
 
-    # Get a colorbar for log prob, but normalized
-    norm = plt.Normalize(vmin=np.min(log_prob), vmax=np.max(log_prob))
-    cmap = sns.color_palette("crest", as_cmap=True)
-    sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+    # # Get a colorbar for log prob, but normalized
+    # norm = plt.Normalize(vmin=np.min(log_prob), vmax=np.max(log_prob))
+    # cmap = sns.color_palette("crest", as_cmap=True)
+    # sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
 
-    if plot_R_and_p:
-        print("Creating NS plot . . .")
-        bad_counter = 0
-        for i in tqdm.tqdm(indices):
+    print("Creating NS plot . . .")
+    bad_counter = 0
+    for i in tqdm.tqdm(indices):
 
-            # Get color
-            normalized_value = norm(log_prob[i])
-            color = cmap(normalized_value)
-            samples_kwargs["color"] = color
-            samples_kwargs["zorder"] = 1e2 + normalized_value
-            
-            if any(np.isnan(m[i])) or any(np.isnan(r[i])) or any(np.isnan(l[i])):
-                bad_counter += 1
-                continue
+        # # Get color
+        # normalized_value = norm(log_prob[i])
+        # color = cmap(normalized_value)
+        # samples_kwargs["color"] = color
+        # samples_kwargs["zorder"] = 1e2 + normalized_value
         
-            if any(l[i] < 0):
-                bad_counter += 1
-                continue
-            
-            if any((m[i] > 1.0) * (r[i] > 20.0)):
-                bad_counter += 1
-                continue
-            
-            # Mass-radius plot
-            plt.subplot(121)
-            plt.plot(r[i], m[i], **samples_kwargs)
-            plt.xlim(r_min, r_max)
-            plt.ylim(m_min, m_max)
-            
-            # Pressure as a function of density TODO: rather, plot M-Lambda curves here
-            plt.subplot(122)
-            plt.plot(m[i], l[i], **samples_kwargs)
-            # last_pc = pc_EOS[i, -1]
-            # n_TOV = np.interp(last_pc, p[i], n[i])
-            # mask = (n[i] > 0.5) * (n[i] < n_TOV)
-            # plt.plot(n[i][mask], p[i][mask], **samples_kwargs)
-            
-        print(f"Bad counter: {bad_counter}")
-        # Beautify the plots a bit
+        if any(np.isnan(m[i])) or any(np.isnan(r[i])) or any(np.isnan(l[i])):
+            bad_counter += 1
+            continue
+    
+        if any(l[i] < 0):
+            bad_counter += 1
+            continue
+        
+        if any((m[i] > 1.0) * (r[i] > 20.0)):
+            bad_counter += 1
+            continue
+        
+        # Mass-radius plot
         plt.subplot(121)
-        plt.plot(r_target, m_target, color="red", label=eos_name, **TARGET_KWARGS)
-        plt.xlabel(r"$R$ [km]")
-        plt.ylabel(r"$M$ [$M_{\odot}$]")
+        plt.plot(r[i], m[i], **samples_kwargs)
         plt.xlim(r_min, r_max)
         plt.ylim(m_min, m_max)
-        plt.legend()
+        
+        # Pressure as a function of density TODO: rather, plot M-Lambda curves here
+        plt.subplot(122)
+        plt.plot(m[i], l[i], **samples_kwargs)
+        # last_pc = pc_EOS[i, -1]
+        # n_TOV = np.interp(last_pc, p[i], n[i])
+        # mask = (n[i] > 0.5) * (n[i] < n_TOV)
+        # plt.plot(n[i][mask], p[i][mask], **samples_kwargs)
+        
+    # Plot the max log prob values in black alpha = 1.0
+    plt.subplot(121)
+    plt.plot(r[max_log_prob_idx], m[max_log_prob_idx], color="black", lw=2)
+    plt.subplot(122)
+    plt.plot(m[max_log_prob_idx], l[max_log_prob_idx], color="black", lw=2)
+        
+    print(f"Bad counter: {bad_counter}")
+    # Beautify the plots a bit
+    plt.subplot(121)
+    plt.xlabel(r"$R$ [km]")
+    plt.ylabel(r"$M$ [$M_{\odot}$]")
+    plt.xlim(r_min, r_max)
+    plt.ylim(m_min, m_max)
+    
+    plt.subplot(122)
+    plt.xlabel(r"$M$ [$M_{\odot}$]")
+    plt.ylabel(r"$\Lambda$")
+    plt.xlim(m_min, m_max)
+    plt.ylim(l_min, l_max)
+    plt.yscale("log")
+    
+    # Plot the targets
+    for eos_name in all_eos_names:
+        r_target, m_target, l_target = targets_dict[eos_name]["r_target"], targets_dict[eos_name]["m_target"], targets_dict[eos_name]["l_target"]
+        color = TARGET_COLORS_DICT[eos_name]
+        
+        plt.subplot(121)
+        plt.plot(r_target, m_target, color=color, label=eos_name, **TARGET_KWARGS)
         
         plt.subplot(122)
-        plt.plot(m_target, l_target, color="red", label=eos_name, **TARGET_KWARGS)
-        plt.xlabel(r"$M$ [$M_{\odot}$]")
-        plt.ylabel(r"$\Lambda$")
-        plt.xlim(m_min, m_max)
-        plt.ylim(0.0, 5000.0)
-        
-        # Save
-        sm.set_array([])
-        # Add the colorbar
-        fig = plt.gcf()
-        # cbar = plt.colorbar(sm, ax=fig.axes)
-        # Add a single colorbar at the top spanning both subplots
-        cbar_ax = fig.add_axes([0.15, 0.94, 0.7, 0.03])  # [left, bottom, width, height]
-        cbar = plt.colorbar(sm, cax=cbar_ax, orientation='horizontal')
-        cbar.set_label("Normalized posterior probability", fontsize = 16)
-        cbar.set_ticks([])
-        cbar.ax.xaxis.labelpad = 5
-        cbar.ax.tick_params(labelsize=0, length=0)
-        cbar.ax.xaxis.set_label_position('top')
-        cbar.ax.xaxis.get_offset_text().set_visible(False)
-        cbar.set_label(r"Normalized posterior probability")
+        plt.plot(m_target, l_target, color=color, label=eos_name, **TARGET_KWARGS)
+    
+    plt.subplot(121)
+    plt.legend()
+    
+    # # Set the colorbar
+    # sm.set_array([])
+    # cbar_ax = fig.add_axes([0.15, 0.94, 0.7, 0.03])  # [left, bottom, width, height]
+    # cbar = plt.colorbar(sm, cax=cbar_ax, orientation='horizontal')
+    # cbar.set_label("Normalized posterior probability", fontsize = 16)
+    # cbar.set_ticks([])
+    # cbar.ax.xaxis.labelpad = 5
+    # cbar.ax.tick_params(labelsize=0, length=0)
+    # cbar.ax.xaxis.set_label_position('top')
+    # cbar.ax.xaxis.get_offset_text().set_visible(False)
+    # cbar.set_label(r"Normalized posterior probability")
+    
+    # Save
+    # Add the colorbar
+    fig = plt.gcf()
+    # cbar = plt.colorbar(sm, ax=fig.axes)
+    # Add a single colorbar at the top spanning both subplots
 
-        plt.savefig(os.path.join(outdir, "postprocessing_NS.pdf"), bbox_inches = "tight", dpi=300)
-        plt.close()
-        print("Creating NS plot . . . DONE")
+    plt.savefig(os.path.join(outdir, "postprocessing_NS.pdf"), bbox_inches = "tight", dpi=300)
+    plt.close()
+    print("Creating NS plot . . . DONE")
     
     if plot_histograms:
         # TODO: get the injected value of MTOV, R1.4 and plot them on the histograms
@@ -569,15 +602,12 @@ def main():
     
     # FIXME: in the end, we should have the EOS name in the outdir and therefore only one argument
     outdir = sys.argv[1]
-    eos_name = sys.argv[2]
     
     check_convergence(outdir)
     
     print(f"Making plots for {outdir}")
     make_plots(outdir,
-               eos_name,
-               plot_R_and_p=True,
-               plot_histograms=True,
+               plot_histograms=False,
                make_master_plot=False) # FIXME: this is broken?
     # make_haukeplot(outdir) # not making this now, uninformative
     

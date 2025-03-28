@@ -22,6 +22,6 @@ conda activate /home/twouters2/miniconda3/envs/jose
 nvidia-smi --query-gpu=name --format=csv,noheader
 
 ### Run the script(s)
-python postprocessing.py ./outdir/ HQC18
+python postprocessing.py ./outdir/
 
 echo "DONE"
