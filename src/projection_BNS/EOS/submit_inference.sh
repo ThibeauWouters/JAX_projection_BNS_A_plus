@@ -28,8 +28,7 @@ python inference.py \
     --outdir ./outdir/ \
     --sample-radio True \
     --local-sampler-name MALA \
-    --n-loop-training 5 \
-    --n-loop-production 5 \
+    --eps-mass-matrix 1e-5 \
     # --sample-chiEFT True \
     
 echo "DONE"
