@@ -3,7 +3,7 @@
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -p gpu_h100
-#SBATCH -t 03:00:00
+#SBATCH -t 04:00:00
 #SBATCH --gpus-per-node=1
 #SBATCH --cpus-per-gpu=1
 #SBATCH --mem-per-gpu=20G
@@ -26,9 +26,11 @@ python inference.py \
     --eos HQC18 \
     --id 1 2 3 4 5 6 7 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 \
     --outdir ./outdir/ \
-    --sample-radio True \
     --local-sampler-name MALA \
     --eps-mass-matrix 1e-5 \
+    --n-loop-training 30 \
+    --n-loop-production 30 \
+    # --sample-radio True \
     # --sample-chiEFT True \
     
 echo "DONE"

@@ -38,7 +38,7 @@ def parse_arguments():
                         help="List of identifier of the GW injection for that EOS.")
     parser.add_argument("--local-sampler-name", 
                         type=str, 
-                        default="GaussianRandomWalk", 
+                        default="MALA", 
                         help="Name of the local sampler to use. Choose from [MALA, GaussianRandomWalk].")
     parser.add_argument("--make-cornerplot", 
                         type=bool, 
@@ -50,7 +50,7 @@ def parse_arguments():
                         help="Whether to sample the higher-order metamodel parameters Q_sym, Q_sat, Z_sym, Z_sat. Recommended to set to True due to the MM degeneracy (see Jester paper).")
     parser.add_argument("--sample-radio", 
                         type=bool, 
-                        default=True,
+                        default=False,
                         help="Whether to sample the radio timing mass measurement pulsars. Do all of them at once.")
     parser.add_argument("--sample-chiEFT", 
                         type=bool, 
@@ -240,8 +240,17 @@ def main(args):
         
     # Construct the transform object
     TOV_output_keys = ["masses_EOS", "radii_EOS", "Lambdas_EOS"]
+    prior_keys = [p.parameter_names[0] for p in prior_list]
+    print("prior_keys")
+    print(prior_keys)
+    
     full_prior_list = prior_list + mass_priors
     prior = CombinePrior(full_prior_list)
+    all_prior_keys = prior.parameter_names
+    
+    print("all_prior_keys")
+    print(all_prior_keys)
+    
     for i in range(len(prior.parameter_names)):
         print(f"Prior parameter {i}: {prior.parameter_names[i]}")
     sampled_param_names = prior.parameter_names
@@ -355,7 +364,7 @@ def main(args):
     np.savez(os.path.join(args.outdir, "eos_samples.npz"), log_prob=log_prob, **chosen_samples)
     
     samples_for_corner = {k: v.flatten() for k, v in chosen_samples.items()}
-    samples_for_corner = {k: v for k, v in samples_for_corner.items() if ("m1_" not in k and "m2_" not in k)}
+    samples_for_corner = {k: v for k, v in samples_for_corner.items() if k in prior_keys}
     keys_to_plot = list(samples_for_corner.keys())
     print(f"The corner plot will plot the parameters: {keys_to_plot}")
     samples_for_corner_values = np.array(list(samples_for_corner.values())).T
