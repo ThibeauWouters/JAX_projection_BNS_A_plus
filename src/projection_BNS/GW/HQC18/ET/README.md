@@ -1,0 +1,4 @@
+- `injection_1` -- `injection_20`: First few test runs. I think `injection_18` is the highest SNR run.
+    - `6`, `8`, `9`, `11`, `12`, `14`, `18`: Mode collapse?
+    - `13`: Distance is off
+- `injection_21` -- `injection_30`: More test runs but perhaps a bit higher SNRs. Also, copying the settings found in the ET BNS directory.
