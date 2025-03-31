@@ -204,7 +204,7 @@ def main(args):
     
     else:
         # Likelihoods from GW posteriors
-        likelihoods_list_GW = [utils.GWlikelihood_with_masses(args.eos, idx) for idx in args.id_list]
+        likelihoods_list_GW = [utils.GWlikelihood_with_masses(args.eos, args.ifo_network, idx) for idx in args.id_list]
         print(f"There are {len(likelihoods_list_GW)} GW likelihoods used now")
         
         # Add masses to the priors

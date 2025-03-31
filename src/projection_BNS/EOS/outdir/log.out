@@ -1,4 +1,4 @@
-Sun Mar 30 19:36:36 CEST 2025
+Mon Mar 31 13:19:52 CEST 2025
 NVIDIA H100
 GPU found?
 [CudaDevice(id=0)]
@@ -8,390 +8,27 @@ Ignoring the Q and Z NEP parameters
 Using CSE grid with 8 points
 Fixed params loaded inside the MicroToMacroTransform:
     E_sat: -16.0
-Loaded the NF for run HQC18_1
-The range of m1 for HQC18_1 is: 1.5951060503721237 to 1.9727715104818344
-The range of m2 for HQC18_1 is: 1.312011256814003 to 1.6153650730848312
-Loaded the NF for run HQC18_2
-The range of m1 for HQC18_2 is: 1.3507076352834702 to 1.786174550652504
-The range of m2 for HQC18_2 is: 1.023673191666603 to 1.3354357331991196
-Loaded the NF for run HQC18_3
-The range of m1 for HQC18_3 is: 1.6290701180696487 to 2.099888101220131
-The range of m2 for HQC18_3 is: 1.2507999688386917 to 1.5923646837472916
-Loaded the NF for run HQC18_4
-The range of m1 for HQC18_4 is: 1.5584642440080643 to 2.062421664595604
-The range of m2 for HQC18_4 is: 0.9600573033094406 to 1.2403257936239243
-Loaded the NF for run HQC18_5
-The range of m1 for HQC18_5 is: 1.67008675634861 to 2.057117149233818
-The range of m2 for HQC18_5 is: 1.3671474903821945 to 1.6765356808900833
-Loaded the NF for run HQC18_6
-The range of m1 for HQC18_6 is: 1.1361979693174362 to 1.4794949442148209
-The range of m2 for HQC18_6 is: 0.8818090707063675 to 1.13137386739254
-Loaded the NF for run HQC18_7
-The range of m1 for HQC18_7 is: 1.7870812863111496 to 2.304913178086281
-The range of m2 for HQC18_7 is: 1.4346552640199661 to 1.8429436534643173
-Loaded the NF for run HQC18_12
-The range of m1 for HQC18_12 is: 1.66061170399189 to 1.9239985197782516
-The range of m2 for HQC18_12 is: 1.459236815571785 to 1.6910477727651596
-Loaded the NF for run HQC18_13
-The range of m1 for HQC18_13 is: 1.6817798465490341 to 2.0142198354005814
-The range of m2 for HQC18_13 is: 1.4166057854890823 to 1.6893094033002853
-Loaded the NF for run HQC18_14
-The range of m1 for HQC18_14 is: 1.643306389451027 to 2.126822993159294
-The range of m2 for HQC18_14 is: 1.2689968198537827 to 1.6267383843660355
-Loaded the NF for run HQC18_15
-The range of m1 for HQC18_15 is: 1.6534648090600967 to 2.069587931036949
-The range of m2 for HQC18_15 is: 1.3299521058797836 to 1.6542019695043564
-Loaded the NF for run HQC18_16
-The range of m1 for HQC18_16 is: 1.2702766805887222 to 1.6785194724798203
-The range of m2 for HQC18_16 is: 0.9570945054292679 to 1.2461737543344498
-Loaded the NF for run HQC18_17
-The range of m1 for HQC18_17 is: 1.0954854637384415 to 1.3143808394670486
-The range of m2 for HQC18_17 is: 0.9297224134206772 to 1.1162815243005753
-Loaded the NF for run HQC18_18
-The range of m1 for HQC18_18 is: 1.3345586508512497 to 1.631796881556511
-The range of m2 for HQC18_18 is: 1.1032555252313614 to 1.3428717106580734
-Loaded the NF for run HQC18_19
-The range of m1 for HQC18_19 is: 1.5412283688783646 to 1.8304475396871567
-The range of m2 for HQC18_19 is: 1.320493444800377 to 1.5590701252222061
-Loaded the NF for run HQC18_20
-The range of m1 for HQC18_20 is: 1.2487291544675827 to 1.59328393638134
-The range of m2 for HQC18_20 is: 0.9851013869047165 to 1.2506156414747238
-Loaded the NF for run HQC18_21
-The range of m1 for HQC18_21 is: 1.695428118109703 to 2.161746099591255
-The range of m2 for HQC18_21 is: 1.0139400511980057 to 1.2619898468255997
-Loaded the NF for run HQC18_22
-The range of m1 for HQC18_22 is: 1.9432900100946426 to 2.205295190215111
-The range of m2 for HQC18_22 is: 1.7251013964414597 to 1.9702353328466415
-Loaded the NF for run HQC18_23
-The range of m1 for HQC18_23 is: 1.3943470269441605 to 1.7417339235544205
-The range of m2 for HQC18_23 is: 1.1198443919420242 to 1.3842437416315079
-Loaded the NF for run HQC18_24
-The range of m1 for HQC18_24 is: 1.3948815315961838 to 1.65255106985569
-The range of m2 for HQC18_24 is: 1.1904708296060562 to 1.4119010418653488
-Loaded the NF for run HQC18_25
-The range of m1 for HQC18_25 is: 1.2313468009233475 to 1.3984744995832443
-The range of m2 for HQC18_25 is: 1.108437106013298 to 1.2619716674089432
-Loaded the NF for run HQC18_26
-The range of m1 for HQC18_26 is: 1.419844850897789 to 1.7667853087186813
-The range of m2 for HQC18_26 is: 1.1578283458948135 to 1.431824192404747
-Loaded the NF for run HQC18_27
-The range of m1 for HQC18_27 is: 1.3795337826013565 to 1.6694211214780807
-The range of m2 for HQC18_27 is: 1.1480871587991714 to 1.3885294646024704
-Loaded the NF for run HQC18_28
-The range of m1 for HQC18_28 is: 1.6497201472520828 to 1.9742632657289505
-The range of m2 for HQC18_28 is: 1.4062830060720444 to 1.6916242986917496
-Loaded the NF for run HQC18_29
-The range of m1 for HQC18_29 is: 1.386878713965416 to 1.8093433231115341
-The range of m2 for HQC18_29 is: 1.0671614855527878 to 1.3700776547193527
-Loaded the NF for run HQC18_30
-The range of m1 for HQC18_30 is: 1.5022317320108414 to 2.0323429256677628
-The range of m2 for HQC18_30 is: 1.1093393713235855 to 1.4572136849164963
-There are 26 GW likelihoods used now
-We are also sampling the radio timing mass measurement pulsars for MTOV constraints
-Loading data necessary for the Chiral EFT
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1495327a02b0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148323ec83a0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148323cffbb0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148322fea620>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148322e95db0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148321435060>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148322be3d90>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148320ca3e50>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148320b0e4d0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148320e35e40>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148320b770d0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148320898dc0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14832054ae30>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148320177910>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1482c3d2f910>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1483215b0520>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148320334640>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1482c3d70340>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148320379240>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1482c34bdbd0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1482c34cf490>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1482c3a35600>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x148320337760>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1482c2491480>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1482bdb2bb80>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1482bd55c5e0>
-<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1498b2787fd0>
-<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1482bd0f4850>
-<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x1482bcc02e30>
-<projection_BNS.EOS.inference_utils.ChiEFTLikelihood object at 0x1482bcc035b0>
-prior_keys
-['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
-all_prior_keys
-['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'm1_HQC18_1', 'm2_HQC18_1', 'm1_HQC18_2', 'm2_HQC18_2', 'm1_HQC18_3', 'm2_HQC18_3', 'm1_HQC18_4', 'm2_HQC18_4', 'm1_HQC18_5', 'm2_HQC18_5', 'm1_HQC18_6', 'm2_HQC18_6', 'm1_HQC18_7', 'm2_HQC18_7', 'm1_HQC18_12', 'm2_HQC18_12', 'm1_HQC18_13', 'm2_HQC18_13', 'm1_HQC18_14', 'm2_HQC18_14', 'm1_HQC18_15', 'm2_HQC18_15', 'm1_HQC18_16', 'm2_HQC18_16', 'm1_HQC18_17', 'm2_HQC18_17', 'm1_HQC18_18', 'm2_HQC18_18', 'm1_HQC18_19', 'm2_HQC18_19', 'm1_HQC18_20', 'm2_HQC18_20', 'm1_HQC18_21', 'm2_HQC18_21', 'm1_HQC18_22', 'm2_HQC18_22', 'm1_HQC18_23', 'm2_HQC18_23', 'm1_HQC18_24', 'm2_HQC18_24', 'm1_HQC18_25', 'm2_HQC18_25', 'm1_HQC18_26', 'm2_HQC18_26', 'm1_HQC18_27', 'm2_HQC18_27', 'm1_HQC18_28', 'm2_HQC18_28', 'm1_HQC18_29', 'm2_HQC18_29', 'm1_HQC18_30', 'm2_HQC18_30']
-Prior parameter 0: E_sym
-Prior parameter 1: L_sym
-Prior parameter 2: K_sym
-Prior parameter 3: K_sat
-Prior parameter 4: nbreak
-Prior parameter 5: n_CSE_0_u
-Prior parameter 6: cs2_CSE_0
-Prior parameter 7: n_CSE_1_u
-Prior parameter 8: cs2_CSE_1
-Prior parameter 9: n_CSE_2_u
-Prior parameter 10: cs2_CSE_2
-Prior parameter 11: n_CSE_3_u
-Prior parameter 12: cs2_CSE_3
-Prior parameter 13: n_CSE_4_u
-Prior parameter 14: cs2_CSE_4
-Prior parameter 15: n_CSE_5_u
-Prior parameter 16: cs2_CSE_5
-Prior parameter 17: n_CSE_6_u
-Prior parameter 18: cs2_CSE_6
-Prior parameter 19: n_CSE_7_u
-Prior parameter 20: cs2_CSE_7
-Prior parameter 21: cs2_CSE_8
-Prior parameter 22: m1_HQC18_1
-Prior parameter 23: m2_HQC18_1
-Prior parameter 24: m1_HQC18_2
-Prior parameter 25: m2_HQC18_2
-Prior parameter 26: m1_HQC18_3
-Prior parameter 27: m2_HQC18_3
-Prior parameter 28: m1_HQC18_4
-Prior parameter 29: m2_HQC18_4
-Prior parameter 30: m1_HQC18_5
-Prior parameter 31: m2_HQC18_5
-Prior parameter 32: m1_HQC18_6
-Prior parameter 33: m2_HQC18_6
-Prior parameter 34: m1_HQC18_7
-Prior parameter 35: m2_HQC18_7
-Prior parameter 36: m1_HQC18_12
-Prior parameter 37: m2_HQC18_12
-Prior parameter 38: m1_HQC18_13
-Prior parameter 39: m2_HQC18_13
-Prior parameter 40: m1_HQC18_14
-Prior parameter 41: m2_HQC18_14
-Prior parameter 42: m1_HQC18_15
-Prior parameter 43: m2_HQC18_15
-Prior parameter 44: m1_HQC18_16
-Prior parameter 45: m2_HQC18_16
-Prior parameter 46: m1_HQC18_17
-Prior parameter 47: m2_HQC18_17
-Prior parameter 48: m1_HQC18_18
-Prior parameter 49: m2_HQC18_18
-Prior parameter 50: m1_HQC18_19
-Prior parameter 51: m2_HQC18_19
-Prior parameter 52: m1_HQC18_20
-Prior parameter 53: m2_HQC18_20
-Prior parameter 54: m1_HQC18_21
-Prior parameter 55: m2_HQC18_21
-Prior parameter 56: m1_HQC18_22
-Prior parameter 57: m2_HQC18_22
-Prior parameter 58: m1_HQC18_23
-Prior parameter 59: m2_HQC18_23
-Prior parameter 60: m1_HQC18_24
-Prior parameter 61: m2_HQC18_24
-Prior parameter 62: m1_HQC18_25
-Prior parameter 63: m2_HQC18_25
-Prior parameter 64: m1_HQC18_26
-Prior parameter 65: m2_HQC18_26
-Prior parameter 66: m1_HQC18_27
-Prior parameter 67: m2_HQC18_27
-Prior parameter 68: m1_HQC18_28
-Prior parameter 69: m2_HQC18_28
-Prior parameter 70: m1_HQC18_29
-Prior parameter 71: m2_HQC18_29
-Prior parameter 72: m1_HQC18_30
-Prior parameter 73: m2_HQC18_30
-Fixed params loaded inside the MicroToMacroTransform:
-    E_sat: -16.0
-We are going to give these kwargs to Jim:
-{'n_loop_training': 30, 'n_loop_production': 30, 'n_chains': 1000, 'n_local_steps': 2, 'n_global_steps': 100, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
-We are going to sample the following parameters:
-['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'm1_HQC18_1', 'm2_HQC18_1', 'm1_HQC18_2', 'm2_HQC18_2', 'm1_HQC18_3', 'm2_HQC18_3', 'm1_HQC18_4', 'm2_HQC18_4', 'm1_HQC18_5', 'm2_HQC18_5', 'm1_HQC18_6', 'm2_HQC18_6', 'm1_HQC18_7', 'm2_HQC18_7', 'm1_HQC18_12', 'm2_HQC18_12', 'm1_HQC18_13', 'm2_HQC18_13', 'm1_HQC18_14', 'm2_HQC18_14', 'm1_HQC18_15', 'm2_HQC18_15', 'm1_HQC18_16', 'm2_HQC18_16', 'm1_HQC18_17', 'm2_HQC18_17', 'm1_HQC18_18', 'm2_HQC18_18', 'm1_HQC18_19', 'm2_HQC18_19', 'm1_HQC18_20', 'm2_HQC18_20', 'm1_HQC18_21', 'm2_HQC18_21', 'm1_HQC18_22', 'm2_HQC18_22', 'm1_HQC18_23', 'm2_HQC18_23', 'm1_HQC18_24', 'm2_HQC18_24', 'm1_HQC18_25', 'm2_HQC18_25', 'm1_HQC18_26', 'm2_HQC18_26', 'm1_HQC18_27', 'm2_HQC18_27', 'm1_HQC18_28', 'm2_HQC18_28', 'm1_HQC18_29', 'm2_HQC18_29', 'm1_HQC18_30', 'm2_HQC18_30']
-No sample transforms provided. Using prior parameters as sampling parameters
-Jim received the local sampler name: MALA
-['n_dim', 'n_chains', 'n_local_steps', 'n_global_steps', 'n_loop', 'output_thinning', 'verbose']
-log_prob
-[-459.7236508  -476.40038242 -553.25399732]
-Sampling seed is set to: 11
-Global Tuning:   0%|          | 0/30 [00:00<?, ?it/s]Global Tuning:   3%|▎         | 1/30 [05:51<2:50:07, 351.97s/it]Global Tuning:   7%|▋         | 2/30 [07:04<1:27:30, 187.52s/it]Global Tuning:  10%|█         | 3/30 [08:09<59:17, 131.74s/it]  Global Tuning:  13%|█▎        | 4/30 [09:16<45:54, 105.95s/it]Global Tuning:  17%|█▋        | 5/30 [10:26<38:51, 93.27s/it] Global Tuning:  20%|██        | 6/30 [11:35<33:57, 84.88s/it]Global Tuning:  23%|██▎       | 7/30 [12:43<30:25, 79.35s/it]Global Tuning:  27%|██▋       | 8/30 [13:50<27:38, 75.38s/it]Global Tuning:  30%|███       | 9/30 [14:56<25:22, 72.51s/it]Global Tuning:  33%|███▎      | 10/30 [16:07<23:57, 71.87s/it]Global Tuning:  37%|███▋      | 11/30 [17:15<22:25, 70.80s/it]Global Tuning:  40%|████      | 12/30 [18:22<20:53, 69.66s/it]Global Tuning:  43%|████▎     | 13/30 [19:33<19:52, 70.13s/it]Global Tuning:  47%|████▋     | 14/30 [20:41<18:31, 69.46s/it]Global Tuning:  50%|█████     | 15/30 [21:49<17:16, 69.11s/it]Global Tuning:  53%|█████▎    | 16/30 [22:59<16:09, 69.22s/it]Global Tuning:  57%|█████▋    | 17/30 [24:06<14:52, 68.66s/it]Global Tuning:  60%|██████    | 18/30 [25:12<13:35, 67.92s/it]Global Tuning:  63%|██████▎   | 19/30 [26:07<11:42, 63.84s/it]Global Tuning:  67%|██████▋   | 20/30 [27:16<10:53, 65.38s/it]Global Tuning:  70%|███████   | 21/30 [28:25<09:59, 66.56s/it]Global Tuning:  73%|███████▎  | 22/30 [29:23<08:31, 63.99s/it]Global Tuning:  77%|███████▋  | 23/30 [30:28<07:30, 64.34s/it]Global Tuning:  80%|████████  | 24/30 [31:37<06:33, 65.65s/it]Global Tuning:  83%|████████▎ | 25/30 [32:45<05:31, 66.38s/it]Global Tuning:  87%|████████▋ | 26/30 [33:51<04:25, 66.31s/it]Global Tuning:  90%|█████████ | 27/30 [35:02<03:23, 67.78s/it]Global Tuning:  93%|█████████▎| 28/30 [36:11<02:16, 68.12s/it]Global Tuning:  97%|█████████▋| 29/30 [37:17<01:07, 67.56s/it]Global Tuning: 100%|██████████| 30/30 [38:24<00:00, 67.13s/it]Global Tuning: 100%|██████████| 30/30 [38:24<00:00, 76.80s/it]
-Compiling MALA body
-Global Sampling:   0%|          | 0/30 [00:00<?, ?it/s]Global Sampling:   3%|▎         | 1/30 [01:07<32:50, 67.94s/it]Global Sampling:   7%|▋         | 2/30 [02:15<31:35, 67.68s/it]Global Sampling:  10%|█         | 3/30 [03:22<30:22, 67.50s/it]Global Sampling:  13%|█▎        | 4/30 [04:28<28:59, 66.92s/it]Global Sampling:  17%|█▋        | 5/30 [05:35<27:52, 66.89s/it]Global Sampling:  20%|██        | 6/30 [06:43<26:49, 67.07s/it]Global Sampling:  23%|██▎       | 7/30 [07:51<25:50, 67.41s/it]Global Sampling:  27%|██▋       | 8/30 [09:00<24:56, 68.04s/it]Global Sampling:  30%|███       | 9/30 [10:07<23:41, 67.71s/it]Global Sampling:  33%|███▎      | 10/30 [11:03<21:21, 64.06s/it]Global Sampling:  37%|███▋      | 11/30 [12:12<20:45, 65.57s/it]Global Sampling:  40%|████      | 12/30 [13:21<19:59, 66.63s/it]Global Sampling:  43%|████▎     | 13/30 [14:28<18:54, 66.76s/it]Global Sampling:  47%|████▋     | 14/30 [15:35<17:49, 66.84s/it]Global Sampling:  50%|█████     | 15/30 [16:43<16:49, 67.30s/it]Global Sampling:  53%|█████▎    | 16/30 [17:50<15:37, 66.96s/it]Global Sampling:  57%|█████▋    | 17/30 [18:57<14:33, 67.19s/it]Global Sampling:  60%|██████    | 18/30 [20:03<13:20, 66.70s/it]Global Sampling:  63%|██████▎   | 19/30 [21:08<12:08, 66.20s/it]Global Sampling:  67%|██████▋   | 20/30 [22:15<11:03, 66.34s/it]Global Sampling:  70%|███████   | 21/30 [23:21<09:58, 66.50s/it]Global Sampling:  73%|███████▎  | 22/30 [24:28<08:51, 66.42s/it]Global Sampling:  77%|███████▋  | 23/30 [25:35<07:47, 66.82s/it]Global Sampling:  80%|████████  | 24/30 [26:41<06:37, 66.33s/it]Global Sampling:  83%|████████▎ | 25/30 [27:48<05:32, 66.55s/it]Global Sampling:  87%|████████▋ | 26/30 [28:53<04:24, 66.22s/it]Global Sampling:  90%|█████████ | 27/30 [29:59<03:18, 66.09s/it]Global Sampling:  93%|█████████▎| 28/30 [31:05<02:12, 66.09s/it]Global Sampling:  97%|█████████▋| 29/30 [32:12<01:06, 66.51s/it]Global Sampling: 100%|██████████| 30/30 [33:18<00:00, 66.24s/it]Global Sampling: 100%|██████████| 30/30 [33:18<00:00, 66.62s/it]
-Training summary
-==========
-E_sym: 35.981 +/- 4.747
-L_sym: 39.230 +/- 19.390
-K_sym: -179.455 +/- 78.956
-K_sat: 205.690 +/- 37.445
-nbreak: 0.280 +/- 0.032
-n_CSE_0_u: 0.465 +/- 0.270
-cs2_CSE_0: 0.597 +/- 0.250
-n_CSE_1_u: 0.525 +/- 0.273
-cs2_CSE_1: 0.648 +/- 0.239
-n_CSE_2_u: 0.482 +/- 0.270
-cs2_CSE_2: 0.563 +/- 0.264
-n_CSE_3_u: 0.510 +/- 0.269
-cs2_CSE_3: 0.600 +/- 0.266
-n_CSE_4_u: 0.478 +/- 0.270
-cs2_CSE_4: 0.550 +/- 0.275
-n_CSE_5_u: 0.529 +/- 0.274
-cs2_CSE_5: 0.467 +/- 0.277
-n_CSE_6_u: 0.486 +/- 0.272
-cs2_CSE_6: 0.473 +/- 0.275
-n_CSE_7_u: 0.511 +/- 0.272
-cs2_CSE_7: 0.478 +/- 0.279
-cs2_CSE_8: 0.543 +/- 0.283
-m1_HQC18_1: 1.795 +/- 0.095
-m2_HQC18_1: 1.480 +/- 0.076
-m1_HQC18_2: 1.627 +/- 0.096
-m2_HQC18_2: 1.137 +/- 0.067
-m1_HQC18_3: 1.893 +/- 0.114
-m2_HQC18_3: 1.415 +/- 0.082
-m1_HQC18_4: 1.868 +/- 0.106
-m2_HQC18_4: 1.076 +/- 0.057
-m1_HQC18_5: 1.849 +/- 0.095
-m2_HQC18_5: 1.527 +/- 0.075
-m1_HQC18_6: 1.293 +/- 0.087
-m2_HQC18_6: 1.019 +/- 0.063
-m1_HQC18_7: 1.996 +/- 0.114
-m2_HQC18_7: 1.646 +/- 0.095
-m1_HQC18_12: 1.789 +/- 0.064
-m2_HQC18_12: 1.577 +/- 0.057
-m1_HQC18_13: 1.843 +/- 0.086
-m2_HQC18_13: 1.564 +/- 0.068
-m1_HQC18_14: 1.923 +/- 0.117
-m2_HQC18_14: 1.426 +/- 0.084
-m1_HQC18_15: 1.858 +/- 0.100
-m2_HQC18_15: 1.503 +/- 0.077
-m1_HQC18_16: 1.491 +/- 0.102
-m2_HQC18_16: 1.097 +/- 0.071
-m1_HQC18_17: 1.193 +/- 0.053
-m2_HQC18_17: 1.038 +/- 0.044
-m1_HQC18_18: 1.477 +/- 0.074
-m2_HQC18_18: 1.237 +/- 0.058
-m1_HQC18_19: 1.677 +/- 0.073
-m2_HQC18_19: 1.447 +/- 0.061
-m1_HQC18_20: 1.438 +/- 0.084
-m2_HQC18_20: 1.129 +/- 0.063
-m1_HQC18_21: 1.958 +/- 0.098
-m2_HQC18_21: 1.116 +/- 0.053
-m1_HQC18_22: 2.056 +/- 0.062
-m2_HQC18_22: 1.869 +/- 0.054
-m1_HQC18_23: 1.560 +/- 0.087
-m2_HQC18_23: 1.259 +/- 0.066
-m1_HQC18_24: 1.523 +/- 0.067
-m2_HQC18_24: 1.296 +/- 0.056
-m1_HQC18_25: 1.308 +/- 0.038
-m2_HQC18_25: 1.196 +/- 0.036
-m1_HQC18_26: 1.594 +/- 0.087
-m2_HQC18_26: 1.295 +/- 0.068
-m1_HQC18_27: 1.535 +/- 0.072
-m2_HQC18_27: 1.277 +/- 0.059
-m1_HQC18_28: 1.802 +/- 0.079
-m2_HQC18_28: 1.567 +/- 0.068
-m1_HQC18_29: 1.625 +/- 0.105
-m2_HQC18_29: 1.201 +/- 0.074
-m1_HQC18_30: 1.792 +/- 0.119
-m2_HQC18_30: 1.248 +/- 0.077
-Log probability: -9422.127 +/- 129869.947
-Local acceptance: 0.991 +/- 0.096
-Global acceptance: 0.032 +/- 0.177
-Max loss: 121.290, Min loss: 75.102
-Production summary
-==========
-E_sym: 36.077 +/- 5.079
-L_sym: 35.812 +/- 15.875
-K_sym: -171.903 +/- 72.816
-K_sat: 198.071 +/- 32.330
-nbreak: 0.292 +/- 0.025
-n_CSE_0_u: 0.401 +/- 0.248
-cs2_CSE_0: 0.622 +/- 0.235
-n_CSE_1_u: 0.571 +/- 0.272
-cs2_CSE_1: 0.686 +/- 0.229
-n_CSE_2_u: 0.439 +/- 0.261
-cs2_CSE_2: 0.531 +/- 0.277
-n_CSE_3_u: 0.491 +/- 0.260
-cs2_CSE_3: 0.646 +/- 0.263
-n_CSE_4_u: 0.439 +/- 0.257
-cs2_CSE_4: 0.587 +/- 0.274
-n_CSE_5_u: 0.585 +/- 0.266
-cs2_CSE_5: 0.419 +/- 0.275
-n_CSE_6_u: 0.495 +/- 0.265
-cs2_CSE_6: 0.408 +/- 0.269
-n_CSE_7_u: 0.510 +/- 0.258
-cs2_CSE_7: 0.416 +/- 0.275
-cs2_CSE_8: 0.599 +/- 0.283
-m1_HQC18_1: 1.804 +/- 0.091
-m2_HQC18_1: 1.489 +/- 0.071
-m1_HQC18_2: 1.659 +/- 0.080
-m2_HQC18_2: 1.123 +/- 0.055
-m1_HQC18_3: 1.901 +/- 0.114
-m2_HQC18_3: 1.428 +/- 0.081
-m1_HQC18_4: 1.878 +/- 0.097
-m2_HQC18_4: 1.096 +/- 0.047
-m1_HQC18_5: 1.850 +/- 0.092
-m2_HQC18_5: 1.536 +/- 0.072
-m1_HQC18_6: 1.271 +/- 0.088
-m2_HQC18_6: 1.036 +/- 0.063
-m1_HQC18_7: 1.970 +/- 0.108
-m2_HQC18_7: 1.645 +/- 0.088
-m1_HQC18_12: 1.806 +/- 0.064
-m2_HQC18_12: 1.566 +/- 0.055
-m1_HQC18_13: 1.863 +/- 0.083
-m2_HQC18_13: 1.540 +/- 0.062
-m1_HQC18_14: 1.944 +/- 0.105
-m2_HQC18_14: 1.419 +/- 0.075
-m1_HQC18_15: 1.878 +/- 0.099
-m2_HQC18_15: 1.497 +/- 0.079
-m1_HQC18_16: 1.500 +/- 0.103
-m2_HQC18_16: 1.104 +/- 0.072
-m1_HQC18_17: 1.180 +/- 0.050
-m2_HQC18_17: 1.055 +/- 0.039
-m1_HQC18_18: 1.478 +/- 0.073
-m2_HQC18_18: 1.240 +/- 0.058
-m1_HQC18_19: 1.665 +/- 0.073
-m2_HQC18_19: 1.465 +/- 0.059
-m1_HQC18_20: 1.458 +/- 0.080
-m2_HQC18_20: 1.138 +/- 0.060
-m1_HQC18_21: 1.958 +/- 0.094
-m2_HQC18_21: 1.120 +/- 0.047
-m1_HQC18_22: 2.049 +/- 0.062
-m2_HQC18_22: 1.872 +/- 0.052
-m1_HQC18_23: 1.571 +/- 0.090
-m2_HQC18_23: 1.256 +/- 0.064
-m1_HQC18_24: 1.533 +/- 0.066
-m2_HQC18_24: 1.284 +/- 0.053
-m1_HQC18_25: 1.303 +/- 0.036
-m2_HQC18_25: 1.206 +/- 0.033
-m1_HQC18_26: 1.591 +/- 0.089
-m2_HQC18_26: 1.307 +/- 0.069
-m1_HQC18_27: 1.558 +/- 0.066
-m2_HQC18_27: 1.269 +/- 0.058
-m1_HQC18_28: 1.778 +/- 0.078
-m2_HQC18_28: 1.584 +/- 0.063
-m1_HQC18_29: 1.643 +/- 0.103
-m2_HQC18_29: 1.204 +/- 0.073
-m1_HQC18_30: 1.799 +/- 0.112
-m2_HQC18_30: 1.233 +/- 0.064
-Log probability: -253.826 +/- 4.375
-Local acceptance: 0.992 +/- 0.087
-Global acceptance: 0.002 +/- 0.049
-Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 75 mins
-Saving the final results
-Number of samples generated in training: 630000
-Number of samples generated in production: 630000
-Number of samples generated: 1260000
-Time taken for TOV map: 2.2058608531951904 s
-The corner plot will plot the parameters: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
-DONE entire script
+Traceback (most recent call last):
+  File "/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/EOS/inference.py", line 385, in <module>
+    main(args)
+  File "/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/EOS/inference.py", line 207, in main
+    likelihoods_list_GW = [utils.GWlikelihood_with_masses(args.eos, idx) for idx in args.id_list]
+  File "/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/EOS/inference.py", line 207, in <listcomp>
+    likelihoods_list_GW = [utils.GWlikelihood_with_masses(args.eos, idx) for idx in args.id_list]
+TypeError: GWlikelihood_with_masses.__init__() missing 1 required positional argument: 'id'
 DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10885721
+Job ID: 10886499
 Cluster: snellius
 User/Group: twouters2/twouters2
 State: RUNNING
 Nodes: 1
 Cores per node: 16
 CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 20:37:04 core-walltime
-Job Wall-clock time: 01:17:19
-Memory Utilized: 0.00 MB (estimated maximum)
+CPU Efficiency: 0.00% of 00:07:28 core-walltime
+Job Wall-clock time: 00:00:28
+Memory Utilized: 0.00 MB
 Memory Efficiency: 0.00% of 20.00 GB (20.00 GB/node)
-WARNING: Efficiency statistics may be misleading for RUNNING jobs.
+WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.

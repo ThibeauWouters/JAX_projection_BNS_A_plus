@@ -1,5 +1,7 @@
-- `injection_8`: has to be rerun
-- `injection_10`: t_c is off
-- `injection_11`: High SNR, local acceptances dropped, so we have to rerun with a finer step size for the local sampler.
-- `injection_27`: Might have needed a bit longer runtime to fully converge. But let's still consider it OK.
-- `injection_30`: The posterior looks a bit funny to me.
+- `injection_1` -- `injection_30`: Some initial test runs done
+    - `injection_8`: has to be rerun
+    - `injection_10`: t_c is off
+    - `injection_11`: High SNR, local acceptances dropped, so we have to rerun with a finer step size for the local sampler.
+    - `injection_27`: Might have needed a bit longer runtime to fully converge. But let's still consider it OK.
+    - `injection_30`: The posterior looks a bit funny to me.
+- `injection_31`: High SNR test run, agnostic prior on Lambdas as before.

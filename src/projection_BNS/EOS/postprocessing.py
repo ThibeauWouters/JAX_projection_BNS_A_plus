@@ -19,6 +19,8 @@ import seaborn as sns
 from joseTOV import utils
 import joseTOV.utils as jose_utils
 
+from projection_BNS.utils import DATA_PATH, TARGET_COLORS_DICT
+
 mpl_params = {"axes.grid": True,
               "text.usetex" : True,
               "font.family" : "serif",
@@ -51,13 +53,6 @@ default_corner_kwargs = dict(bins=40,
                         max_n_ticks=4, 
                         min_n_ticks=3,
                         save=False)
-
-EOS_CURVE_COLOR = "darkgreen"
-DATA_PATH = "/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/"
-# These are the colors of the jax logo (order J, A, X)
-TARGET_COLORS_DICT = {"HQC18": "#5e97f6", 
-                      "SLY230A": "#26a69a",
-                      "MPA1": "#9c27b0"}
 
 # TODO: change this again, but I am testing now
 TARGET_KWARGS = {"zorder": 1e10,

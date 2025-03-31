@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # List of GW event IDs (replace with actual IDs as needed)
-OUTDIR="./ET"
+OUTDIR="./Aplus"
 TEMPLATE_FILE="template.sh" # Path to the submission bash template, located in PWD
 TEMPLATE_CONFIG=$OUTDIR/template.ini  # Path to the config template, located in $OUTDIR
 TEMPLATE_PRIOR=$OUTDIR/template.prior  # Path to the config template, located in $OUTDIR
 TEMPLATE_GENERATION_PRIOR=$OUTDIR/template_generation.prior  # Path to the config template, located in $OUTDIR
 
 # Loop over each GW event ID
-for ID in $(seq 21 30); do
+for ID in $(seq 31 31); do
   EVENT_DIR="${OUTDIR}/injection_${ID}"
   NEW_SCRIPT="./slurm_scripts/submit_${ID}.sh"
 
