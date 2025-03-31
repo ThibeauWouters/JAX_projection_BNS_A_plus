@@ -76,6 +76,9 @@ def parse_arguments():
     parser.add_argument("--eos", 
                         type=str, 
                         help="Name of the EOS. Choose from [HQC18, MPA1, SLY230A].")
+    parser.add_argument("--ifo-network", 
+                        type=str, 
+                        help="Name of the network of detectors. Choose from [Aplus, Asharp, ET].")
     parser.add_argument("--id", 
                         type=int, 
                         help="Identifier of the GW injection for that EOS.")
@@ -186,6 +189,7 @@ class NFTrainer:
     def __init__(self, 
                  # general args
                  eos_name: str,
+                 ifo_network: str,
                  injection_idx: int,
                  nb_samples_train: int,
                  # flowjax kwargs
@@ -198,8 +202,12 @@ class NFTrainer:
         
         # Set attributes
         self.eos_name = eos_name
+        self.ifo_network = ifo_network
         self.injection_idx = injection_idx
         self.nb_samples_train = nb_samples_train
+        
+        self.figure_save_location = f"./figures/{self.eos_name}/{self.ifo_network}/{self.injection_idx}_"
+        self.model_save_location = f"./models/{self.eos_name}/{self.ifo_network}/{self.injection_idx}"
         
         self.num_epochs = num_epochs
         self.learning_rate = learning_rate
@@ -210,8 +218,8 @@ class NFTrainer:
         self.plot_learning_curves = plot_learning_curves
         
         # Get the full path
-        self.directory = os.path.join(GW_PATH, self.eos_name, "outdir", f"injection_{self.injection_idx}")
-        print(f"We are looking at the directory {self.directory}")
+        self.directory = os.path.join(GW_PATH, self.eos_name, self.ifo_network, f"injection_{self.injection_idx}")
+        print(f"We are looking at the directory {self.directory} for GW inference data")
         
         self.chains_path = os.path.join(self.directory, "chains_production.npz")
         self.injection_path = os.path.join(self.directory, "injection.json")
@@ -301,7 +309,7 @@ class NFTrainer:
             plt.plot(losses["val"], label = "Val", color = "blue")
             plt.yscale("log")
             plt.legend()
-            plt.savefig(f"./figures/{self.eos_name}_{self.injection_idx}_loss.png", bbox_inches = "tight")
+            plt.savefig(self.figure_save_location + "loss.png", bbox_inches = "tight")
             plt.close()
         
         # And sample the distribution
@@ -313,17 +321,17 @@ class NFTrainer:
         else:
             truths = None
         
-        corner_name = f"./figures/{self.eos_name}_{self.injection_idx}_corner.png"
+        corner_name = self.figure_save_location + "corner.png"
         make_cornerplot(data_np, nf_samples_np, my_range, corner_name, truths=truths)
         
-        # Save the model
-        save_path = f"./models/{self.eos_name}_{self.injection_idx}.eqx"
+        # Save the model weights
+        save_path = self.model_save_location + ".eqx"
         print(f"Saving the model weights to {save_path}")
         eqx.tree_serialise_leaves(save_path, flow)
         
-        kwargs_save_path = f"./models/{self.eos_name}_{self.injection_idx}_kwargs.json"
-        print(f"Saving the model to kwargs_save_path")
         # Also dump all the flowjax kwargs so we can reproduce the NF architecture easily
+        kwargs_save_path = self.model_save_location + ".eqx"
+        print(f"Saving the model kwargs to {kwargs_save_path}")
         nf_kwargs = {"num_epochs": self.num_epochs, "learning_rate": self.learning_rate, "max_patience": self.max_patience, "nn_depth": self.nn_depth, "nn_block_dim": self.nn_block_dim}
         with open(kwargs_save_path, "w") as f:
             json.dump(nf_kwargs, f)
@@ -336,6 +344,7 @@ def main():
     args = parse_arguments()
     
     trainer = NFTrainer(eos_name = args.eos,
+                        ifo_network = args.ifo_network,
                         injection_idx = args.id,
                         nb_samples_train = args.nb_samples_train,
                         num_epochs = args.num_epochs,

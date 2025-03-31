@@ -4,15 +4,16 @@
 OUTDIR="./outdir"
 TEMPLATE_FILE="template.sh"
 EOS="HQC18"
+IFO_NETWORK="ET"
 
-for ID in $(seq 11 30); do
+for ID in $(seq 21 30); do
   NEW_SCRIPT="./slurm_scripts/submit_${EOS}_${ID}.sh"
 
   echo
   echo
   echo
 
-  echo "==== Submitting NF training job for ${EOS} and GW event ID ${ID} ===="
+  echo "==== Submitting NF training job for ${EOS} IFO ${IFO_NETWORK} and GW event ID ${ID} ===="
   echo
   
   # Create a unique SLURM script
@@ -21,10 +22,11 @@ for ID in $(seq 11 30); do
   # Replace placeholders in the SLURM script
   sed -i "s|{{{EOS}}}|$EOS|g" "$NEW_SCRIPT"
   sed -i "s|{{{ID}}}|$ID|g" "$NEW_SCRIPT"
+  sed -i "s|{{{IFO_NETWORK}}}|$IFO_NETWORK|g" "$NEW_SCRIPT"
   
   # Submit the job to SLURM
   sbatch "$NEW_SCRIPT"
-  echo "==== Submitted NF training job for ${EOS} and GW event ID ${ID} ===="
+  echo "==== Submitted NF training job for ${EOS} IFO ${IFO_NETWORK} and GW event ID ${ID} ===="
   
   echo
   echo

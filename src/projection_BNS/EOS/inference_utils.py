@@ -198,6 +198,7 @@ class GWlikelihood_with_masses(LikelihoodBase):
 
     def __init__(self,
                  eos: str,
+                 ifo_network: str,
                  id: str,
                  transform: MicroToMacroTransform = None,
                  very_negative_value: float = -99999.0,
@@ -205,14 +206,17 @@ class GWlikelihood_with_masses(LikelihoodBase):
                  hdi_prob: float = 0.90):
         
         self.eos = eos
+        self.ifo_network = ifo_network
         self.id = id
-        self.name = f"{self.eos}_{self.id}"
+        self.name = f"{self.eos}_{self.ifo_network}_{self.id}"
         self.transform = transform
         self.very_negative_value = very_negative_value
         
         # Locate the file
-        nf_file = os.path.join(NF_PATH, f"models/{self.eos}_{self.id}.eqx")
-        nf_kwargs_file = os.path.join(NF_PATH, f"models/{self.eos}_{self.id}_kwargs.json")
+        saved_location = f"models/{self.eos}/{self.ifo_network}/{self.id}"
+        print(f"Loading the trained NF model from: {saved_location}")
+        nf_file = os.path.join(NF_PATH, saved_location + ".eqx")
+        nf_kwargs_file = os.path.join(NF_PATH, saved_location + "_kwargs.json")
         
         if not os.path.exists(nf_file):
             print(f"Tried looking for the NF architecture at path {nf_file}, but it doesn't exist!")

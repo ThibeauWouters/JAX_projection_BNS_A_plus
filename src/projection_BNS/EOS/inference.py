@@ -32,6 +32,9 @@ def parse_arguments():
     parser.add_argument("--eos", 
                         type=str, 
                         help="Name of the EOS. Choose from [HQC18, MPA1, SLY230A].")
+    parser.add_argument("--ifo-network", 
+                        type=str, 
+                        help="Name of the network of detectors. Choose from [Aplus, Asharp, ET].")
     parser.add_argument("--id-list", 
                         type=str, 
                         nargs='+',
