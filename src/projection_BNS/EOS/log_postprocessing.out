@@ -1,17 +1,100 @@
-Tue Apr  1 13:25:53 CEST 2025
+Tue Apr  1 15:01:57 CEST 2025
 NVIDIA H100
-slurmstepd: error: *** JOB 10902411 ON gcn128 CANCELLED AT 2025-04-01T13:25:57 ***
+Checking the convergence for ./outdir/
+list(data.keys())
+['log_prob', 'E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
+Key: E_sym
+    rhat = 1.3712838596678545
+    ess = 2230.345018044215
+Key: L_sym
+    rhat = 1.4188039287841696
+    ess = 2070.389256983815
+Key: K_sym
+    rhat = 1.4072800607090155
+    ess = 2120.5614296524755
+Key: K_sat
+    rhat = 1.3788916719693736
+    ess = 2207.845337491047
+Key: nbreak
+    rhat = 1.3880897356063415
+    ess = 2180.98641472534
+Key: n_CSE_0_u
+    rhat = 1.3910420339723706
+    ess = 2170.6025573737543
+Key: cs2_CSE_0
+    rhat = 1.452146868171207
+    ess = 1982.9195473921066
+Key: n_CSE_1_u
+    rhat = 1.4135233153966704
+    ess = 2086.0866735269237
+Key: cs2_CSE_1
+    rhat = 1.3970668830044168
+    ess = 2144.2678472528805
+Key: n_CSE_2_u
+    rhat = 1.3851004491858603
+    ess = 2255.8034920285736
+Key: cs2_CSE_2
+    rhat = 1.3778304401511912
+    ess = 2215.6208830524497
+Key: n_CSE_3_u
+    rhat = 1.3768872993411665
+    ess = 2221.328562101791
+Key: cs2_CSE_3
+    rhat = 1.4089255107550502
+    ess = 2105.548751550519
+Key: n_CSE_4_u
+    rhat = 1.4016656469522941
+    ess = 2324.0638052457
+Key: cs2_CSE_4
+    rhat = 1.387873709351143
+    ess = 2172.907935461399
+Key: n_CSE_5_u
+    rhat = 1.3783306579630652
+    ess = 2210.0210524309387
+Key: cs2_CSE_5
+    rhat = 1.3706185980998904
+    ess = 2249.8239812252255
+Key: n_CSE_6_u
+    rhat = 1.389146888200157
+    ess = 2199.4820122378287
+Key: cs2_CSE_6
+    rhat = 1.3678324219246203
+    ess = 2315.035868469635
+Key: n_CSE_7_u
+    rhat = 1.368874642993741
+    ess = 2263.7092482449325
+Key: cs2_CSE_7
+    rhat = 1.4010063042732233
+    ess = 2125.7824233245
+Key: cs2_CSE_8
+    rhat = 1.384294344953861
+    ess = 2184.1414962607178
+Key: key
+    rhat = 1.625260823361251
+    ess = 1659.8570658793299
+Making plots for ./outdir/
+Number of samples: 10000
+Creating NS plot . . .
+  0%|          | 0/3001 [00:00<?, ?it/s]  5%|▌         | 153/3001 [00:00<00:01, 1523.10it/s] 10%|█         | 309/3001 [00:00<00:01, 1544.67it/s] 15%|█▌        | 464/3001 [00:00<00:02, 1131.77it/s] 21%|██        | 622/3001 [00:00<00:01, 1274.61it/s] 26%|██▌       | 781/3001 [00:00<00:01, 1372.13it/s] 31%|███▏      | 941/3001 [00:00<00:01, 1442.22it/s] 36%|███▋      | 1091/3001 [00:00<00:01, 1141.60it/s] 42%|████▏     | 1252/3001 [00:00<00:01, 1260.90it/s] 47%|████▋     | 1413/3001 [00:01<00:01, 1352.61it/s] 52%|█████▏    | 1572/3001 [00:01<00:01, 1417.88it/s] 58%|█████▊    | 1731/3001 [00:01<00:00, 1466.09it/s] 63%|██████▎   | 1883/3001 [00:01<00:01, 1097.19it/s] 68%|██████▊   | 2044/3001 [00:01<00:00, 1215.99it/s] 73%|███████▎  | 2204/3001 [00:01<00:00, 1310.26it/s] 79%|███████▉  | 2365/3001 [00:01<00:00, 1386.64it/s] 84%|████████▍ | 2526/3001 [00:01<00:00, 1445.96it/s] 89%|████████▉ | 2679/3001 [00:02<00:00, 1010.25it/s] 95%|█████████▍| 2839/3001 [00:02<00:00, 1136.42it/s]100%|█████████▉| 3000/3001 [00:02<00:00, 1246.91it/s]100%|██████████| 3001/3001 [00:02<00:00, 1270.98it/s]
+Bad counter: 11
+Creating NS plot . . . DONE
+Making the master plot
+np.shape(interp_array)
+(100, 10000)
+np.shape(interp_array)
+(100, 10000)
+DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10902411
+Job ID: 10905120
 Cluster: snellius
 User/Group: twouters2/twouters2
-State: CANCELLED (exit code 0)
+State: COMPLETED (exit code 0)
 Nodes: 1
 Cores per node: 16
-CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 00:04:00 core-walltime
-Job Wall-clock time: 00:00:15
-Memory Utilized: 1.58 MB
+CPU Utilized: 00:00:28
+CPU Efficiency: 4.61% of 00:10:08 core-walltime
+Job Wall-clock time: 00:00:38
+Memory Utilized: 1.60 MB
 Memory Efficiency: 0.05% of 3.00 GB (3.00 GB/node)

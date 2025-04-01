@@ -466,6 +466,7 @@ def make_plots(outdir: str,
         plt.xlabel(r"$M$ [$M_\odot$]")
         plt.ylabel(r"$\Lambda$")
         plt.xlim(m_min, m_max)
+        plt.ylim(2, 4e3)
         plt.yscale("log")
         
         # Plot the three target EOS

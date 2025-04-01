@@ -23,15 +23,15 @@ nvidia-smi --query-gpu=name --format=csv,noheader
 
 # Run the script
 python inference.py \
-    --eos HQC18 \
+    --eos MPA1 \
     --ifo-network Aplus \
     --id-begin 1 \
     --id-end 30 \
-    --outdir ./outdir/ \
+    --outdir ./outdir_MPA1/ \
     --local-sampler-name GaussianRandomWalk \
     --eps-mass-matrix 1e-5 \
-    --n-loop-training 30 \
-    --n-loop-production 30 \
+    --n-loop-training 50 \
+    --n-loop-production 50 \
     # --sample-radio True \
     # --sample-chiEFT True \
     

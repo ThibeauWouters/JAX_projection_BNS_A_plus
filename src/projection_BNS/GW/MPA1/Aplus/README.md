@@ -1,3 +1,6 @@
 - `injection_5`: Mode collapse
 - `injection_7`: Mode collapse
 - `injection_14`: Mode collapse
+- `injection_23`: Distance is off
+- `injection_26`: Distance is off
+- `injection_29`: Distance is off

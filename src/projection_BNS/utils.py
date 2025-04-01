@@ -47,7 +47,9 @@ def load_eos(eos_filename):
     return m, r, l
 
 def distance_to_redshift(dL: float):
-    return (H0/c) * dL
+    z = (H0/c) * dL
+    return 
 
 def redshift_to_distance(z: float):
-    return (c/H0) * z
+    dL = (c/H0) * z
+    return dL

@@ -2,12 +2,13 @@
 
 # List of GW event IDs (replace with actual IDs as needed)
 OUTDIR="./Aplus"
-TEMPLATE_FILE="template.sh" # Path to the submission bash template, located in PWD
-TEMPLATE_CONFIG=$OUTDIR/template.ini  # Path to the config template, located in $OUTDIR
-TEMPLATE_PRIOR=$OUTDIR/template.prior  # Path to the config template, located in $OUTDIR
+TEMPLATE_FILE="template.sh"
+TEMPLATE_CONFIG=$OUTDIR/template.ini
+TEMPLATE_PRIOR=$OUTDIR/template.prior
+TEMPLATE_GENERATION_PRIOR=$OUTDIR/template_generation.prior
 
 # Loop over each GW event ID
-for ID in $(seq 1 20); do
+for ID in $(seq 1 30); do
   EVENT_DIR="${OUTDIR}/injection_${ID}"
   NEW_SCRIPT="./slurm_scripts/submit_${ID}.sh"
 
@@ -28,6 +29,7 @@ for ID in $(seq 1 20); do
     echo "Copying template config file to $EVENT_DIR."
     cp "$TEMPLATE_CONFIG" "$EVENT_DIR/config.ini"
     cp "$TEMPLATE_PRIOR" "$EVENT_DIR/prior.prior"
+    cp "$TEMPLATE_GENERATION_PRIOR" "$EVENT_DIR/generation_prior.prior"
   fi
   
   # Create a unique SLURM script for each GW event

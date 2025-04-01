@@ -5,17 +5,13 @@ Get cosmology in bilby uses Planck15 by default https://git.ligo.org/lscsoft/bil
 """
 
 import os 
-import sys
-
 import matplotlib.pyplot as plt
 import corner
 import numpy as np
 import copy
 import json
 
-from astropy.cosmology import Planck18 
-from astropy import units as u
-from astropy.cosmology import z_at_value
+from projection_BNS.utils import distance_to_redshift
 
 ### Stuff for nice plots
 params = {"axes.grid": True,
@@ -156,15 +152,21 @@ def get_source_masses(M_c: float, q: float, d_L: float):
     Returns:
         tuple[float, float]: Source frame component masses (primary, secondary)
     """
-    # TODO: this is more accurate, but is not jax-compatible yet!
-    # d_L_units = d_L * u.Mpc
-    # z = z_at_value(Planck18.luminosity_distance, d_L_units)
-    
-    z = d_L * H0 / c
+    z = distance_to_redshift(d_L)
     print("redshift is roughly", jnp.median(z))
     M_c_source = M_c / (1 + z)
-    m_1 = M_c_source * ((1 + q) ** (1/5))/((q) ** (3/5))
-    m_2 = M_c_source * ((q) ** (2/5)) * ((1+q) ** (1/5))
+    eta = q / ((1 + q) ** 2)
+
+    M = M_c_source / (eta ** (3 / 5))
+    m_2_tmp = (M - np.sqrt(M**2 - 4 * M**2 * eta)) / 2
+    m_1_tmp = M - m_2_tmp
+    
+    m_1 = jnp.where(m_1_tmp > m_2_tmp, m_1_tmp, m_2_tmp)
+    m_2 = jnp.where(m_1_tmp > m_2_tmp, m_2_tmp, m_1_tmp)
+    
+    # # Old code: TODO: check this
+    # m_1 = M_c_source * ((1 + q) ** (1/5))/((q) ** (3/5))
+    # m_2 = M_c_source * ((q) ** (2/5)) * ((1+q) ** (1/5))
     return m_1, m_2
 
 def make_flow(flow_key,
@@ -330,7 +332,7 @@ class NFTrainer:
         eqx.tree_serialise_leaves(save_path, flow)
         
         # Also dump all the flowjax kwargs so we can reproduce the NF architecture easily
-        kwargs_save_path = self.model_save_location + ".eqx"
+        kwargs_save_path = self.model_save_location + "_kwargs.json"
         print(f"Saving the model kwargs to {kwargs_save_path}")
         nf_kwargs = {"num_epochs": self.num_epochs, "learning_rate": self.learning_rate, "max_patience": self.max_patience, "nn_depth": self.nn_depth, "nn_block_dim": self.nn_block_dim}
         with open(kwargs_save_path, "w") as f:
