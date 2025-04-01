@@ -405,54 +405,59 @@ def make_plots(outdir: str,
         # Get the maximum log prob index
         max_log_prob_idx = np.argmax(log_prob)
         
+        # TODO: decide whether to ignore/delete this
         # First comparison plot of max log prob:
         cutoff_mass = 0.6
-        plt.subplots(1, 2, figsize=(12, 6))
-        plt.subplot(121)
-        _r, _m, _l = r[max_log_prob_idx], m[max_log_prob_idx], l[max_log_prob_idx]
-        mask_jester = _m > cutoff_mass
+        # plt.subplots(1, 2, figsize=(12, 6))
+        # plt.subplot(121)
+        # _r, _m, _l = r[max_log_prob_idx], m[max_log_prob_idx], l[max_log_prob_idx]
+        # mask_jester = _m > cutoff_mass
         
-        plt.plot(_r[mask_jester], _m[mask_jester], color="blue", lw=2)
-        # Plot the target as well:
-        mask_target = m_target > cutoff_mass
-        _m_target = m_target[mask_target]
-        _r_target = r_target[mask_target]
-        _l_target = l_target[mask_target]
-        plt.plot(_r_target, _m_target, color="red", **TARGET_KWARGS)
-        plt.xlabel(r"$R$ [km]")
-        plt.ylabel(r"$M$ [$M_{\odot}$]")
-        plt.ylim(bottom = cutoff_mass)
+        # plt.plot(_r[mask_jester], _m[mask_jester], color="blue", lw=2)
+        # # Plot the target as well:
+        # mask_target = m_target > cutoff_mass
+        # _m_target = m_target[mask_target]
+        # _r_target = r_target[mask_target]
+        # _l_target = l_target[mask_target]
+        # plt.plot(_r_target, _m_target, color="red", **TARGET_KWARGS)
+        # plt.xlabel(r"$R$ [km]")
+        # plt.ylabel(r"$M$ [$M_{\odot}$]")
+        # plt.ylim(bottom = cutoff_mass)
         
-        plt.subplot(122)
-        plt.plot(_m[mask_jester], _l[mask_jester], color="blue", lw=2)
-        plt.plot(_m_target, _l_target, color="red", **TARGET_KWARGS)
-        plt.yscale("log")
-        plt.xlabel(r"$M$ [$M_{\odot}$]")
-        plt.ylabel(r"$\Lambda$")
-        plt.xlim(left = cutoff_mass)
-        plt.legend()
+        # plt.subplot(122)
+        # plt.plot(_m[mask_jester], _l[mask_jester], color="blue", lw=2)
+        # plt.plot(_m_target, _l_target, color="red", **TARGET_KWARGS)
+        # plt.yscale("log")
+        # plt.xlabel(r"$M$ [$M_{\odot}$]")
+        # plt.ylabel(r"$\Lambda$")
+        # plt.xlim(left = cutoff_mass)
+        # plt.legend()
         
-        plt.savefig(os.path.join(outdir, "master_max_log_prob_comparison.pdf"), bbox_inches = "tight")
-        plt.close()
+        # plt.savefig(os.path.join(outdir, "master_max_log_prob_comparison.pdf"), bbox_inches = "tight")
+        # plt.close()
         
-        # Now, for the combined posteriors plots for EOS and NS, taking inspiration from Fig 26 of Koehn+
-        
-        # TODO: do subplots, but as test case, let us check out cs2
-        n_grid = np.linspace(nmin_grid, nmax_grid, NB_POINTS)
+        # Interpolate for the NS quantities
         m_grid = np.linspace(cutoff_mass, 3.0, NB_POINTS)
-        
-        # Interpolate all EOS cs2 on this n_grid
-        cs2_interp_array = np.array([np.interp(n_grid, n[i], cs2[i]) for i in range(nb_samples)]).T
         r_interp_array = np.array([np.interp(m_grid, m[i], r[i], left = -1, right = -1) for i in range(nb_samples)]).T
+        l_interp_array = np.array([np.interp(m_grid, m[i], l[i], left = -1, right = -1) for i in range(nb_samples)]).T
         
+        # Interpolate for the EOS quantities
+        # # Check the EOS -- for instance the speed of sound
+        # n_grid = np.linspace(nmin_grid, nmax_grid, NB_POINTS)
+        # cs2_interp_array = np.array([np.interp(n_grid, n[i], cs2[i]) for i in range(nb_samples)]).T
+        
+        # Neutron stars:
         plt.subplots(nrows = 1, ncols = 2, figsize=(12, 6))
-        arrays = [r_interp_array, cs2_interp_array]
+        arrays = [r_interp_array, l_interp_array]
         for plot_idx in range(2):
             plt.subplot(1, 2, plot_idx + 1)
             interp_array = arrays[plot_idx]
             median_values = []
             low_values = []
             high_values = []
+            
+            print("np.shape(interp_array)")
+            print(np.shape(interp_array))
             
             for i in range(NB_POINTS):
                 # Determine median
@@ -470,158 +475,43 @@ def make_plots(outdir: str,
             # Now, make the final plot
             if plot_idx == 0:
                 m_max, r_max = m[max_log_prob_idx], r[max_log_prob_idx]
-                mask = m_max > 0.75
-                plt.plot(r_max[mask], m_max[mask], color="blue")
-                plt.fill_betweenx(m_grid, low_values, high_values, color="blue", alpha=0.25)
+                mask = m_max > 1.0
+                plt.plot(r_max[mask], m_max[mask], color="blue") # maximal log prob
+                plt.fill_betweenx(m_grid, low_values, high_values, color="blue", alpha=0.25) # 95% CI
             else:
-                cs2_max = cs2_interp_array.T[max_log_prob_idx]
-                plt.plot(n_grid, median_values, color="blue")
-                plt.plot(n_grid, cs2_max, color="green")
-                plt.fill_between(n_grid, low_values, high_values, color="blue", alpha=0.25)
+                m_max, r_max = m[max_log_prob_idx], r[max_log_prob_idx]
+                mask = m_max > 0.75
+                plt.plot(m_max[mask], l_max[mask], color="blue")
+                plt.fill_betweenx(m_grid, low_values, high_values, color="blue", alpha=0.25)
         
         # Add the labels here manually
         plt.subplot(121)
         plt.xlabel(r"$R$ [km]")
         plt.ylabel(r"$M$ [$M_\odot$]")
-        plt.ylim(bottom = 0.75, top = 2.5)
+        plt.ylim(bottom = 1.0, top = 2.5)
         
         # Add the labels here manually
         plt.subplot(122)
-        plt.xlabel(r"$n$ [$n_{\rm{sat}}$]")
-        plt.ylabel(r"$c_s^2$")
-        plt.axhline(0.33, linestyle = "--", color="black")
+        plt.xlabel(r"$M$ [$M_\odot$]")
+        plt.ylabel(r"$\Lambda$")
+        plt.xlim(bottom = 1.0, top = 2.5)
+        plt.yscale("log")
+        
+        # Save it
         plt.savefig(os.path.join(outdir, "master_plot.pdf"), bbox_inches = "tight")
         plt.close()
         
-        ### Check how many cs2 curves are above or below 0.33
-        counter_cs2_above_033 = 0
-        for i in range(nb_samples):
-            mask = n[i] < 4.0
-            if np.any(cs2[i][mask] > 0.33):
-                counter_cs2_above_033 += 1
-        
-        print(f"Percentage of EOS samples that are above 0.33: {(counter_cs2_above_033 / nb_samples) * 100:.2f}%")
-   
-def make_haukeplot(outdir: str,
-                   nb_samples: int = 3_000):
-    print(f"Going to make the Hauke combination plot for outdir = {outdir}")
-    
-    filename = os.path.join(outdir, "eos_samples.npz")
-    
-    data = np.load(filename)
-    log_prob = data["log_prob"]
-    
-    m_min = 1.0
-    m, r, l = data["masses_EOS"], data["radii_EOS"], data["Lambdas_EOS"]
-    
-    # Now, make the MR plot as before, color according to nb samples
-    log_prob = data["log_prob"]
-    log_prob = np.exp(log_prob) # so actually no longer log prob but prob... whatever
-    
-    max_log_prob_idx = np.argmax(log_prob)
-    indices = np.random.choice(len(m), nb_samples, replace=False) # p=log_prob/np.sum(log_prob)
-    indices = np.append(indices, max_log_prob_idx)
-
-    # Get a colorbar for log prob, but normalized
-    norm = plt.Normalize(vmin=np.min(log_prob), vmax=np.max(log_prob))
-    cmap = sns.color_palette("crest", as_cmap=True)
-
-    sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
-    
-    fig, axs = plt.subplots(
-        2, 2,
-        figsize=(10, 12),
-        gridspec_kw={'width_ratios': [3, 1], 'height_ratios': [5, 1]}
-    )
-    
-    main_plot = axs[0, 0]
-    mtov_plot = axs[0, 1]
-    r14_plot = axs[1, 0]
-    
-    plt.subplot(221)
-    for i in tqdm.tqdm(indices):
-        # Get color
-        normalized_value = norm(log_prob[i])
-        color = cmap(normalized_value)
-        samples_kwargs = {"color": color, "alpha": 1.0, "rasterized": True, "zorder": 1e10 + normalized_value}
-        
-        if any(np.isnan(m[i])) or any(np.isnan(r[i])) or any(np.isnan(l[i])):
-            continue
-        
-        if any(l[i] < 0):
-            continue
-        
-        if any((m[i] > 1.0) * (r[i] > 20.0)):
-            continue
-        
-        mask = m[i] > 0.5
-        plt.plot(r[i][mask], m[i][mask], **samples_kwargs)
-        
-    plt.xlim(9.5, 15)
-    plt.ylim(0.5, 3)
-    plt.ylabel(r"$M$ [$M_{\odot}$]")
-    plt.grid(False)
-    
-    # Here comes the MTOV histogram plot
-    plt.subplot(222)
-    mtov_list = []
-    r14_list = []
-    hist_kwargs = {"color": "blue", 
-                   "histtype": "step", 
-                   "density": True,
-                   "linewidth": 2,
-                   "bins": 50}
-    
-    for i in range(len(m)):
-        _m, _r, _l = m[i], r[i], l[i]
-        bad_radii = np.any((_m > 1.0) * (_r > 20.0))
-        bad_lambdas = np.any((_m > 1.0) * (_l < 0.0))
-        if bad_radii or bad_lambdas:
-            continue
-        else:
-            mtov_list.append(np.max(_m))
-            r14_list.append(np.interp(1.4, _m, _r))
-    plt.hist(mtov_list, orientation = "horizontal", label = r"$M_{\rm{TOV}}$", **hist_kwargs)
-    plt.legend()
-    plt.grid(False)
-    
-    plt.subplot(223)
-    plt.hist(r14_list, label = r"$R_{1.4}$", **hist_kwargs)
-    plt.legend()
-    plt.xlabel(r"$R$ [km]")
-    plt.grid(False)
-    
-    r14_plot.sharex(main_plot)
-    mtov_plot.sharey(main_plot)
-    
-    plt.setp(main_plot.get_xticklabels(), visible=False)
-    plt.setp(mtov_plot.get_xticklabels(), visible=False)
-    plt.setp(mtov_plot.get_yticklabels(), visible=False)
-    plt.setp(r14_plot.get_yticklabels(), visible=False)
-    
-    # Set tick lengths to zero
-    mtov_plot.tick_params(axis='x', length=0)
-    r14_plot.tick_params(axis='y', length=0)
-    
-    # Remove the final subplot, adjust spacing, and finally, save
-    fig.delaxes(axs[1, 1])
-    fig.subplots_adjust(wspace=0.05, hspace=0.05)
-    plt.savefig(os.path.join(outdir, "haukeplot.pdf"), bbox_inches = "tight")
-    plt.close()
-    
 def main():
     
-    # FIXME: in the end, we should have the EOS name in the outdir and therefore only one argument
     outdir = sys.argv[1]
     
     check_convergence(outdir)
-    plot_corner(outdir)
+    # plot_corner(outdir)
     
     print(f"Making plots for {outdir}")
     make_plots(outdir,
                plot_histograms=False,
-               make_master_plot=False) # FIXME: this is broken?
-    # make_haukeplot(outdir) # not making this now, uninformative
+               make_master_plot=True)
     
 if __name__ == "__main__":
     main()
