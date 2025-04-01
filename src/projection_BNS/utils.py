@@ -1,4 +1,5 @@
 import os
+import copy
 import numpy as np 
 
 c = 299_792.458 # km/s
@@ -33,6 +34,12 @@ def get_eos_name_from_dirname(dirname: str):
         eos_name = "SLY230A"
     elif "MPA1" in dirname:
         eos_name = "MPA1"
+    elif "jester_soft" in dirname:
+        eos_name = "jester_soft"
+    elif "jester_middle" in dirname:
+        eos_name = "jester_middle"
+    elif "jester_hard" in dirname:
+        eos_name = "jester_middle"
     else:
         raise ValueError("EOS name not found for target directory {}".format(dirname))
     return eos_name

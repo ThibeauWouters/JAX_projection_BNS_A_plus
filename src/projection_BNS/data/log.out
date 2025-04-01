@@ -1,0 +1,17 @@
+Tue Apr  1 21:17:04 CEST 2025
+NVIDIA H100
+slurmstepd: error: *** JOB 10914044 ON gcn147 CANCELLED AT 2025-04-01T21:18:42 ***
+
+JOB STATISTICS
+==============
+Job ID: 10914044
+Cluster: snellius
+User/Group: twouters2/twouters2
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:28:48 core-walltime
+Job Wall-clock time: 00:01:48
+Memory Utilized: 651.03 MB
+Memory Efficiency: 6.36% of 10.00 GB (10.00 GB/node)
