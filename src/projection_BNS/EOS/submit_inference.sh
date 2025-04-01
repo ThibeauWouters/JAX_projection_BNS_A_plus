@@ -7,7 +7,7 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --cpus-per-gpu=1
 #SBATCH --mem-per-gpu=20G
-#SBATCH --output="./outdir/log.out"
+#SBATCH --output="./outdir_MPA1/log.out"
 #SBATCH --job-name="inference"
 
 now=$(date)
@@ -30,8 +30,8 @@ python inference.py \
     --outdir ./outdir_MPA1/ \
     --local-sampler-name GaussianRandomWalk \
     --eps-mass-matrix 1e-5 \
-    --n-loop-training 50 \
-    --n-loop-production 50 \
+    --n-loop-training 30 \
+    --n-loop-production 30 \
     # --sample-radio True \
     # --sample-chiEFT True \
     
