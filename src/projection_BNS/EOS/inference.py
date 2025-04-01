@@ -399,12 +399,6 @@ def main(args):
     print(f"The corner plot will plot the parameters: {keys_to_plot}")
     samples_for_corner_values = np.array(list(samples_for_corner.values())).T
     
-    if args.make_cornerplot:
-        try:    
-            postprocessing.plot_corner(outdir, samples_for_corner_values, keys_to_plot)
-        except Exception as e:
-            print(f"Could not make the corner plot, because of the following error: {e}")
-    
     print("DONE entire script")
     
 if __name__ == "__main__":

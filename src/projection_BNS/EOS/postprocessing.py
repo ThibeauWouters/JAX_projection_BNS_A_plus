@@ -59,11 +59,27 @@ TARGET_KWARGS = {"zorder": 1e10,
                  "lw": 2,
                  "linestyle": "-"}
 
-def plot_corner(outdir,
-                samples,
-                keys):
+def plot_corner(outdir):
+    print(f"Plotting the cornerplot for {outdir}")
     
-    samples = np.reshape(samples, (len(keys), -1))
+    # Load the chains:
+    samples = np.load(os.path.join(outdir, "eos_samples.npz"))
+    all_keys = list(samples.keys())
+    keys = []
+    
+    # Only take the EOS parameters -- this is a bit messy but ensures we get all of them.
+    for key in all_keys:
+        if "_sym" in key or "_sat" in key or "CSE" in key or key == "nbreak":
+            if key == "E_sat":
+                continue
+            keys.append(key)
+            
+    print(f"Making the cornerplot, these are the chains: {keys}")
+    samples = {k: v.flatten() for k, v in samples.items() if k in keys}
+    samples = np.array(list(samples.values()))
+    
+    print(np.shape(samples))
+    
     corner.corner(samples.T, labels = keys, **default_corner_kwargs)
     plt.savefig(os.path.join(outdir, "corner.pdf"), bbox_inches = "tight")
     plt.close()
@@ -599,6 +615,7 @@ def main():
     outdir = sys.argv[1]
     
     check_convergence(outdir)
+    plot_corner(outdir)
     
     print(f"Making plots for {outdir}")
     make_plots(outdir,
