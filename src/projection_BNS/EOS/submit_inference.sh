@@ -30,8 +30,8 @@ python inference.py \
     --outdir ./outdir_MPA1/ \
     --local-sampler-name GaussianRandomWalk \
     --eps-mass-matrix 1e-5 \
-    --n-loop-training 30 \
-    --n-loop-production 30 \
+    --n-loop-training 60 \
+    --n-loop-production 20 \
     # --sample-radio True \
     # --sample-chiEFT True \
     

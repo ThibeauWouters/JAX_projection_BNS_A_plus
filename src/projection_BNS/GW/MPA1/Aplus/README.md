@@ -1,6 +1,3 @@
-- `injection_5`: Mode collapse
-- `injection_7`: Mode collapse
-- `injection_14`: Mode collapse
-- `injection_23`: Distance is off
-- `injection_26`: Distance is off
-- `injection_29`: Distance is off
+- `injection_20`: Extrinsic parameters are off.
+- `injection_28`: Failed
+- `injection_29`: Distance is a bit off

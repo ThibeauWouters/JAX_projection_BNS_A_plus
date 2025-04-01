@@ -493,7 +493,7 @@ def main():
     outdir = sys.argv[1]
     
     check_convergence(outdir)
-    # plot_corner(outdir)
+    plot_corner(outdir)
     
     print(f"Making plots for {outdir}")
     make_plots(outdir,

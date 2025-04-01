@@ -1,4 +1,4 @@
-Tue Apr  1 15:34:23 CEST 2025
+Tue Apr  1 15:41:21 CEST 2025
 NVIDIA H100
 /gpfs/home6/twouters2/ninjax_dev/jim/src/jimgw/prior.py:94: UserWarning: As of jaxtyping version 0.2.24, jaxtyping now prefers the syntax
 ```
@@ -120,1027 +120,296 @@ def foo(...):
 ```
 
   def load_psd(
-15:34 ninjax INFO    : Checking and setting outdir
-15:34 ninjax INFO    : Found generation prior file ./Aplus/injection_14/generation_prior.prior
-15:34 ninjax INFO    : The outdir is set to ./Aplus/injection_14
-15:34 ninjax INFO    : Loading the given config
-15:34 ninjax WARNING : Unrecognized keys given: {'n_max_examples', 'generation_seed'}. These will be ignored
-15:34 ninjax INFO    : Arguments loaded into the config: {'likelihood': 'HeterodynedTransientLikelihoodFD', 'gw_injection': 'True', 'gw_load_existing_injection': 'False', 'gw_dump_injection_data': 'False', 'gw_SNR_threshold_low': '30.0', 'gw_SNR_threshold_high': '100', 'waveform_approximant': 'IMRPhenomD_NRTidalv2', 'waveform_approximant_1': 'None', 'waveform_approximant_2': 'None', 'gw_overlapping_tight_priors': 'False', 'ifos': 'H1,L1,V1', 'eos_file': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz', 'fmin': '20.0', 'fref': '20.0', 'fmax': '2048.0', 'duration': 'None', 'post_trigger_duration': '2.0', 'trigger_time': '1187008882.4', 'psd_file_H1': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/AplusDesign_PSD.txt', 'psd_file_L1': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/AplusDesign_PSD.txt', 'psd_file_V1': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/avirgo_O5high_NEW_PSD.txt', 'psd_file_ET1': '/home/twouters2/psds/ET_D_psd.txt', 'psd_file_ET2': '/home/twouters2/psds/ET_D_psd.txt', 'psd_file_ET3': '/home/twouters2/psds/ET_D_psd.txt', 'psd_file_CE': '/home/twouters2/psds/CE_psd.txt', 'data_file_H1': 'None', 'data_file_L1': 'None', 'data_file_V1': 'None', 'data_file_ET1': 'None', 'data_file_ET2': 'None', 'data_file_ET3': 'None', 'relative_binning_binsize': '1000', 'relative_binning_ref_params_equal_true_params': 'True', 'relative_binning_ref_params': 'None', 'transforms': 'q_to_eta,cos_iota_to_iota,sin_dec_to_dec', 'gw_kwargs': 'None', 'filters': 'None', 'tmin': '0.05', 'tmax': '15.0', 'em_injection': 'False', 'em_trigger_time': '0.0', 'em_data_path': 'None', 'KN_model_name': 'None', 'KN_class_name': 'None', 'KN_model_dir': 'None', 'GRB_model_name': 'None', 'GRB_class_name': 'None', 'GRB_model_dir': 'None', 'detection_limit': 'None', 'n_loop_training': '200', 'n_loop_production': '10', 'n_local_steps': '100', 'n_global_steps': '1_000', 'n_epochs': '25', 'n_chains': '1_000', 'learning_rate': '0.001', 'max_samples': '50000', 'momentum': '0.9', 'batch_size': '30000', 'use_global': 'True', 'keep_quantile': '0.0', 'train_thinning': '10', 'output_thinning': '50', 'n_sample_max': '10000', 'verbose': 'False', 'save_training_chains': 'False', 'eps_mass_matrix': '1e-5', 'use_scheduler': 'True', 'use_temperature': 'False', 'which_temperature_schedule': 'exponential', 'starting_temperature': '2.0', 'stop_tempering_iteration': '75', 'stopping_criterion_global_acc': '0.10', 'stopping_criterion_loss': '-inf', 'seed': '123', 'sampling_seed': '123', 'injection_generation_seed': 'None', 'num_layers': '10', 'hidden_size': '128,128', 'num_bins': '8', 'nf_model_kwargs': 'None', 'run_sampler': 'True', 'keys_to_plot': 'M_c, q, s1_z, s2_z, lambda_1, lambda_2, d_L, t_c, phase_c, iota, psi, ra, dec'}
-15:34 ninjax INFO    : Complete config file written to /gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/GW/MPA1/Aplus/injection_14/complete_config.json
-15:34 ninjax INFO    : No injection_generation_seed specified. Generating a random injection_generation_seed: 911315
-15:34 ninjax INFO    : Loading the priors
-15:34 ninjax INFO    : Setting up the prior
-15:34 ninjax INFO    :    Mc_prior = Uniform(0.98, 2.6, naming=["M_c"])
-15:34 ninjax INFO    :    q_prior = Uniform(0.125, 1.0, naming=["q"])
-15:34 ninjax INFO    :    s1_z_prior = Uniform(-0.05, 0.05, naming=["s1_z"])
-15:34 ninjax INFO    :    s2_z_prior = Uniform(-0.05, 0.05, naming=["s2_z"])
-15:34 ninjax INFO    :    lambda1_prior = Uniform(0.0, 5000.0, naming=["lambda_1"])
-15:34 ninjax INFO    :    lambda2_prior = Uniform(0.0, 5000.0, naming=["lambda_2"])
-15:34 ninjax INFO    :    cos_iota_prior = Uniform(-1.0, 1.0, naming=["cos_iota"])
-15:34 ninjax INFO    :    dL_prior = PowerLaw(10.0, 1000.0, 2.0, naming=["d_L"])
-15:34 ninjax INFO    :    t_c_prior = Uniform(-0.1, 0.1, naming=["t_c"])
-15:34 ninjax INFO    :    phase_c_prior = Uniform(0.0, 2 * jnp.pi, naming=["phase_c"])
-15:34 ninjax INFO    :    psi_prior = Uniform(0.0, jnp.pi, naming=["psi"])
-15:34 ninjax INFO    :    ra_prior = Uniform(0.0, 2 * jnp.pi, naming=["ra"])
-15:34 ninjax INFO    :    sin_dec_prior = Uniform(-1.0, 1.0, naming=["sin_dec"])
-15:34 ninjax INFO    : Setting up the generation prior
-15:34 ninjax INFO    :    mass_1_source_prior = Uniform(1.0, 2.468645554845655, naming=["mass_1_source"])
-15:34 ninjax INFO    :    mass_2_source_prior = Uniform(1.0, 2.468645554845655, naming=["mass_2_source"])
-15:34 ninjax INFO    :    s1_z_prior = Uniform(-0.05, 0.05, naming=["s1_z"])
-15:34 ninjax INFO    :    s2_z_prior = Uniform(-0.05, 0.05, naming=["s2_z"])
-15:34 ninjax INFO    :    cos_iota_prior = Uniform(-1.0, 1.0, naming=["cos_iota"])
-15:34 ninjax INFO    :    dL_prior = PowerLaw(10.0, 460.0, 2.0, naming=["d_L"])
-15:34 ninjax INFO    :    t_c_prior = Uniform(-0.1, 0.1, naming=["t_c"])
-15:34 ninjax INFO    :    phase_c_prior = Uniform(0.0, 2 * jnp.pi, naming=["phase_c"])
-15:34 ninjax INFO    :    psi_prior = Uniform(0.0, jnp.pi, naming=["psi"])
-15:34 ninjax INFO    :    ra_prior = Uniform(0.0, 2 * jnp.pi, naming=["ra"])
-15:34 ninjax INFO    :    sin_dec_prior = Uniform(-1.0, 1.0, naming=["sin_dec"])
-15:34 ninjax INFO    : Finished prior setup
-15:34 ninjax INFO    : Setting the transforms
-15:34 ninjax INFO    : Raw transforms list is q_to_eta,cos_iota_to_iota,sin_dec_to_dec
-15:34 ninjax INFO    : transforms_str_list has 3 elements
-15:34 ninjax INFO    : DEBUG: Checking that all_transforms is OK: the list is ['binary_Love', 'binary_love_fit', 'cos_iota1_to_iota1', 'cos_iota2_to_iota2', 'cos_iota_to_iota', 'log_lambda_to_lambda', 'm1_m2_to_Mc_q', 'q1_to_eta1', 'q2_to_eta2', 'q_to_eta', 'sin_dec1_to_dec1', 'sin_dec2_to_dec2', 'sin_dec_to_dec', 'spin_sphere_to_cartesian_s1', 'spin_sphere_to_cartesian_s2', 'swap_lambdas_eos', 't_c_dt_to_tcs']
-15:34 ninjax INFO    : Setting the likelihood
-15:34 ninjax INFO    : GW likelihood provided, setting up the GW pipe
-15:34 ninjax INFO    : eos_file is /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz
-15:34 ninjax INFO    : Using eos_file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz for BNS injections
-15:34 ninjax INFO    : Note: No specific waveform approximant 1 so defaulting to IMRPhenomD_NRTidalv2
-15:34 ninjax INFO    : self.is_BNS_run is True
-15:34 ninjax INFO    : Using IMRPhenomD_NRTidalv2 waveform. Therefore, we will use no taper as the reference waveform for the likelihood if relative binning is used
-15:34 ninjax INFO    : GW run is an injection
-15:34 ninjax INFO    : Setting up GW injection . . . 
-15:34 ninjax INFO    : The SNR thresholds are: 30.0 - 100.0
-15:34 ninjax INFO    : Generating new injection
-15:34 ninjax INFO    : Sanity check: generated parameters:
-15:34 ninjax INFO    : {'mass_1_source': 1.305643743176614, 'mass_2_source': 1.4232725024504702, 's1_z': 0.042248393657136424, 's2_z': -0.011458703007481932, 'cos_iota': 0.37144211418000195, 'd_L': 353.21688326762575, 't_c': -0.05852556595766916, 'phase_c': 1.1207196722015031, 'psi': 1.6135670298549378, 'ra': 3.67525073187115, 'sin_dec': 0.9794773914830732}
-15:34 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:34 ninjax INFO    : Injected lambda_1: 465.82162822222654
-15:34 ninjax INFO    : Injected lambda_2: 761.7932900884387
-15:34 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.2812019537877903 is 256.0
-15:34 ninjax INFO    : After transforms, the injection parameters are:
-15:34 ninjax INFO    : {'mass_1_source': 1.4232725024504702, 'mass_2_source': 1.305643743176614, 's1_z': 0.042248393657136424, 's2_z': -0.011458703007481932, 'cos_iota': 0.37144211418000195, 'd_L': 353.21688326762575, 't_c': -0.05852556595766916, 'phase_c': 1.1207196722015031, 'psi': 1.6135670298549378, 'ra': 3.67525073187115, 'sin_dec': 0.9794773914830732, 'q': 0.9173533114204532, 'M_c': 1.2812019537877903, 'eta': 0.2495354990275474, 'iota': Array(1.19023455, dtype=float64, weak_type=True), 'dec': Array(1.36785204, dtype=float64, weak_type=True), 'lambda_1': 465.82162822222654, 'lambda_2': 761.7932900884387}
-15:34 ninjax INFO    : The trial injection parameters are {'M_c': 1.2812019537877903, 'eta': 0.2495354990275474, 's1_z': 0.042248393657136424, 's2_z': -0.011458703007481932, 'lambda_1': 465.82162822222654, 'lambda_2': 761.7932900884387, 'd_L': 353.21688326762575, 'phase_c': 1.1207196722015031, 'iota': 1.190234548834696, 't_c': -0.05852556595766916, 'psi': 1.6135670298549378, 'ra': 3.67525073187115, 'dec': 1.3678520414564075}
-15:34 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
+15:41 ninjax INFO    : Checking and setting outdir
+15:41 ninjax INFO    : Found generation prior file ./Aplus/injection_14/generation_prior.prior
+15:41 ninjax INFO    : The outdir is set to ./Aplus/injection_14
+15:41 ninjax INFO    : Loading the given config
+15:41 ninjax WARNING : Unrecognized keys given: {'n_max_examples'}. These will be ignored
+15:41 ninjax INFO    : Arguments loaded into the config: {'likelihood': 'HeterodynedTransientLikelihoodFD', 'gw_injection': 'True', 'gw_load_existing_injection': 'False', 'gw_dump_injection_data': 'False', 'gw_SNR_threshold_low': '11.2', 'gw_SNR_threshold_high': '100', 'waveform_approximant': 'IMRPhenomD_NRTidalv2', 'waveform_approximant_1': 'None', 'waveform_approximant_2': 'None', 'gw_overlapping_tight_priors': 'False', 'ifos': 'H1,L1,V1', 'eos_file': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz', 'fmin': '20.0', 'fref': '20.0', 'fmax': '2048.0', 'duration': 'None', 'post_trigger_duration': '2.0', 'trigger_time': '1187008882.4', 'psd_file_H1': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/AplusDesign_PSD.txt', 'psd_file_L1': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/AplusDesign_PSD.txt', 'psd_file_V1': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/avirgo_O5high_NEW_PSD.txt', 'psd_file_ET1': '/home/twouters2/psds/ET_D_psd.txt', 'psd_file_ET2': '/home/twouters2/psds/ET_D_psd.txt', 'psd_file_ET3': '/home/twouters2/psds/ET_D_psd.txt', 'psd_file_CE': '/home/twouters2/psds/CE_psd.txt', 'data_file_H1': 'None', 'data_file_L1': 'None', 'data_file_V1': 'None', 'data_file_ET1': 'None', 'data_file_ET2': 'None', 'data_file_ET3': 'None', 'relative_binning_binsize': '1000', 'relative_binning_ref_params_equal_true_params': 'True', 'relative_binning_ref_params': 'None', 'transforms': 'q_to_eta,cos_iota_to_iota,sin_dec_to_dec', 'gw_kwargs': 'None', 'filters': 'None', 'tmin': '0.05', 'tmax': '15.0', 'em_injection': 'False', 'em_trigger_time': '0.0', 'em_data_path': 'None', 'KN_model_name': 'None', 'KN_class_name': 'None', 'KN_model_dir': 'None', 'GRB_model_name': 'None', 'GRB_class_name': 'None', 'GRB_model_dir': 'None', 'detection_limit': 'None', 'n_loop_training': '200', 'n_loop_production': '10', 'n_local_steps': '100', 'n_global_steps': '1_000', 'n_epochs': '25', 'n_chains': '1_000', 'learning_rate': '0.001', 'max_samples': '50000', 'momentum': '0.9', 'batch_size': '30000', 'use_global': 'True', 'keep_quantile': '0.0', 'train_thinning': '10', 'output_thinning': '50', 'n_sample_max': '10000', 'verbose': 'False', 'save_training_chains': 'False', 'eps_mass_matrix': '1e-5', 'use_scheduler': 'True', 'use_temperature': 'False', 'which_temperature_schedule': 'exponential', 'starting_temperature': '2.0', 'stop_tempering_iteration': '75', 'stopping_criterion_global_acc': '0.10', 'stopping_criterion_loss': '-inf', 'seed': 'None', 'sampling_seed': 'None', 'injection_generation_seed': 'None', 'num_layers': '10', 'hidden_size': '128,128', 'num_bins': '8', 'nf_model_kwargs': 'None', 'run_sampler': 'True', 'keys_to_plot': 'M_c, q, s1_z, s2_z, lambda_1, lambda_2, d_L, t_c, phase_c, iota, psi, ra, dec'}
+15:41 ninjax INFO    : Complete config file written to /gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/GW/MPA1/Aplus/injection_14/complete_config.json
+15:41 ninjax INFO    : No seed specified. Generating a random seed: 269914
+15:41 ninjax INFO    : No sampling_seed specified. Generating a random sampling_seed: 875382
+15:41 ninjax INFO    : No injection_generation_seed specified. Generating a random injection_generation_seed: 486612
+15:41 ninjax INFO    : Loading the priors
+15:41 ninjax INFO    : Setting up the prior
+15:41 ninjax INFO    :    Mc_prior = Uniform(0.98, 2.6, naming=["M_c"])
+15:41 ninjax INFO    :    q_prior = Uniform(0.125, 1.0, naming=["q"])
+15:41 ninjax INFO    :    s1_z_prior = Uniform(-0.05, 0.05, naming=["s1_z"])
+15:41 ninjax INFO    :    s2_z_prior = Uniform(-0.05, 0.05, naming=["s2_z"])
+15:41 ninjax INFO    :    lambda1_prior = Uniform(0.0, 5000.0, naming=["lambda_1"])
+15:41 ninjax INFO    :    lambda2_prior = Uniform(0.0, 5000.0, naming=["lambda_2"])
+15:41 ninjax INFO    :    cos_iota_prior = Uniform(-1.0, 1.0, naming=["cos_iota"])
+15:41 ninjax INFO    :    dL_prior = PowerLaw(10.0, 1000.0, 2.0, naming=["d_L"])
+15:41 ninjax INFO    :    t_c_prior = Uniform(-0.1, 0.1, naming=["t_c"])
+15:41 ninjax INFO    :    phase_c_prior = Uniform(0.0, 2 * jnp.pi, naming=["phase_c"])
+15:41 ninjax INFO    :    psi_prior = Uniform(0.0, jnp.pi, naming=["psi"])
+15:41 ninjax INFO    :    ra_prior = Uniform(0.0, 2 * jnp.pi, naming=["ra"])
+15:41 ninjax INFO    :    sin_dec_prior = Uniform(-1.0, 1.0, naming=["sin_dec"])
+15:41 ninjax INFO    : Setting up the generation prior
+15:41 ninjax INFO    :    mass_1_source_prior = Uniform(1.0, 2.468645554845655, naming=["mass_1_source"])
+15:41 ninjax INFO    :    mass_2_source_prior = Uniform(1.0, 2.468645554845655, naming=["mass_2_source"])
+15:41 ninjax INFO    :    s1_z_prior = Uniform(-0.05, 0.05, naming=["s1_z"])
+15:41 ninjax INFO    :    s2_z_prior = Uniform(-0.05, 0.05, naming=["s2_z"])
+15:41 ninjax INFO    :    cos_iota_prior = Uniform(-1.0, 1.0, naming=["cos_iota"])
+15:41 ninjax INFO    :    dL_prior = PowerLaw(10.0, 460.0, 2.0, naming=["d_L"])
+15:41 ninjax INFO    :    t_c_prior = Uniform(-0.1, 0.1, naming=["t_c"])
+15:41 ninjax INFO    :    phase_c_prior = Uniform(0.0, 2 * jnp.pi, naming=["phase_c"])
+15:41 ninjax INFO    :    psi_prior = Uniform(0.0, jnp.pi, naming=["psi"])
+15:41 ninjax INFO    :    ra_prior = Uniform(0.0, 2 * jnp.pi, naming=["ra"])
+15:41 ninjax INFO    :    sin_dec_prior = Uniform(-1.0, 1.0, naming=["sin_dec"])
+15:41 ninjax INFO    : Finished prior setup
+15:41 ninjax INFO    : Setting the transforms
+15:41 ninjax INFO    : Raw transforms list is q_to_eta,cos_iota_to_iota,sin_dec_to_dec
+15:41 ninjax INFO    : transforms_str_list has 3 elements
+15:41 ninjax INFO    : DEBUG: Checking that all_transforms is OK: the list is ['binary_Love', 'binary_love_fit', 'cos_iota1_to_iota1', 'cos_iota2_to_iota2', 'cos_iota_to_iota', 'log_lambda_to_lambda', 'm1_m2_to_Mc_q', 'q1_to_eta1', 'q2_to_eta2', 'q_to_eta', 'sin_dec1_to_dec1', 'sin_dec2_to_dec2', 'sin_dec_to_dec', 'spin_sphere_to_cartesian_s1', 'spin_sphere_to_cartesian_s2', 'swap_lambdas_eos', 't_c_dt_to_tcs']
+15:41 ninjax INFO    : Setting the likelihood
+15:41 ninjax INFO    : GW likelihood provided, setting up the GW pipe
+15:41 ninjax INFO    : eos_file is /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz
+15:41 ninjax INFO    : Using eos_file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz for BNS injections
+15:41 ninjax INFO    : Note: No specific waveform approximant 1 so defaulting to IMRPhenomD_NRTidalv2
+15:41 ninjax INFO    : self.is_BNS_run is True
+15:41 ninjax INFO    : Using IMRPhenomD_NRTidalv2 waveform. Therefore, we will use no taper as the reference waveform for the likelihood if relative binning is used
+15:41 ninjax INFO    : GW run is an injection
+15:41 ninjax INFO    : Setting up GW injection . . . 
+15:41 ninjax INFO    : The SNR thresholds are: 11.2 - 100.0
+15:41 ninjax INFO    : Generating new injection
+15:41 ninjax INFO    : Sanity check: generated parameters:
+15:41 ninjax INFO    : {'mass_1_source': 1.424108129513599, 'mass_2_source': 1.531855205788581, 's1_z': -0.010161884789743357, 's2_z': -0.041397462114416285, 'cos_iota': 0.4356053647459319, 'd_L': 136.57851248628876, 't_c': -0.0996414168197243, 'phase_c': 2.359986448121261, 'psi': 2.7100657786740525, 'ra': 1.2068449020797782, 'sin_dec': -0.3728727789570274}
+15:41 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
+15:41 ninjax INFO    : Injected lambda_1: 300.90026851482503
+15:41 ninjax INFO    : Injected lambda_2: 464.2285086549516
+15:41 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.3253073812581442 is 256.0
+15:41 ninjax INFO    : After transforms, the injection parameters are:
+15:41 ninjax INFO    : {'mass_1_source': 1.531855205788581, 'mass_2_source': 1.424108129513599, 's1_z': -0.010161884789743357, 's2_z': -0.041397462114416285, 'cos_iota': 0.4356053647459319, 'd_L': 136.57851248628876, 't_c': -0.0996414168197243, 'phase_c': 2.359986448121261, 'psi': 2.7100657786740525, 'ra': 1.2068449020797782, 'sin_dec': -0.3728727789570274, 'q': 0.929662362429669, 'M_c': 1.3253073812581442, 'eta': 0.24966783573243223, 'iota': Array(1.12008563, dtype=float64, weak_type=True), 'dec': Array(-0.38210316, dtype=float64, weak_type=True), 'lambda_1': 300.90026851482503, 'lambda_2': 464.2285086549516}
+15:41 ninjax INFO    : The trial injection parameters are {'M_c': 1.3253073812581442, 'eta': 0.24966783573243223, 's1_z': -0.010161884789743357, 's2_z': -0.041397462114416285, 'lambda_1': 300.90026851482503, 'lambda_2': 464.2285086549516, 'd_L': 136.57851248628876, 'phase_c': 2.359986448121261, 'iota': 1.120085634813364, 't_c': -0.0996414168197243, 'psi': 2.7100657786740525, 'ra': 1.2068449020797782, 'dec': -0.38210316109019465}
+15:41 ninjax INFO    : Injecting signals . . .
+15:41 ninjax INFO    : self.ifos
+15:41 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
+15:41 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
+15:41 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
  2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-2.78639174e-23-8.45862256e-24j  7.22586438e-23-3.58979167e-23j
-  3.38827051e-24+1.73419163e-22j ...
-  2.25422483e-23-6.55111347e-24j  1.46120288e-23+4.92797357e-23j
-  5.10662865e-23-3.46449217e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
+15:41 ninjax INFO    : [ 6.52876074e-23+4.01602556e-23j -3.94680153e-23+1.19077544e-23j
+ -3.96910355e-23+3.00389675e-23j ...
+  3.66884190e-23-3.82198482e-23j -9.29935788e-24-2.07997016e-23j
+  3.32098042e-24+4.81606663e-23j]
+15:41 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
  2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
+15:41 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
+15:41 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
  2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.70136604e-23-2.35324995e-23j  4.88109926e-23-1.50695253e-23j
- -1.49801849e-22+1.29771901e-23j ...
- -2.53741207e-23-4.32953499e-23j -2.41682042e-23-3.21319862e-23j
-  7.93567389e-23-3.19354114e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
+15:41 ninjax INFO    : [-2.37644903e-23+2.64154830e-23j  2.74563894e-24+8.91404139e-23j
+ -3.60726039e-23-4.33353486e-23j ...
+ -9.77139068e-24-1.31390483e-23j -1.21694418e-23+5.45744289e-24j
+  6.57888796e-23-8.07961111e-23j]
+15:41 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
  2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
+15:41 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
+15:41 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
  2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.60025355e-23-4.25182118e-23j  6.64151998e-23+3.20265688e-23j
- -3.79863922e-23-5.85994535e-23j ...
- -2.60527474e-23+4.89183385e-23j  3.97766966e-23+4.60130803e-23j
- -4.17488685e-23+1.29686330e-22j]
-15:35 ninjax INFO    : [1.43183556e-46 1.43058540e-46 1.42935095e-46 ... 6.39793039e-47
+15:41 ninjax INFO    : [ 3.35581779e-23+1.22236404e-22j  7.21260155e-23+3.48672256e-23j
+  2.78072350e-23+7.49017068e-23j ...
+  6.74736804e-23-1.03561999e-22j  4.37600654e-23+4.93792234e-24j
+ -6.82353037e-23-2.18882549e-24j]
+15:41 ninjax INFO    : [1.43183556e-46 1.43058540e-46 1.42935095e-46 ... 6.39793039e-47
  6.39795354e-47 6.39797668e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 3.81338841142015
-15:35 ninjax INFO    : SNR for ifo L1 is 3.1310752987138444
-15:35 ninjax INFO    : SNR for ifo V1 is 4.622698007141559
-15:35 ninjax INFO    : The network SNR is 6.761279506705815
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.367382610492406, 'mass_2_source': 1.2788621296298581, 's1_z': 0.029819346235658364, 's2_z': 0.00145235238278478, 'cos_iota': -0.0774671761821275, 'd_L': 131.71829309797295, 't_c': -0.09057392136508696, 'phase_c': 4.86883531121733, 'psi': 2.875228997804091, 'ra': 0.3419726212598325, 'sin_dec': -0.41606385799045853}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 586.8425539411755
-15:35 ninjax INFO    : Injected lambda_2: 854.8973380154816
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.1853302627616187 is 256.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.367382610492406, 'mass_2_source': 1.2788621296298581, 's1_z': 0.029819346235658364, 's2_z': 0.00145235238278478, 'cos_iota': -0.0774671761821275, 'd_L': 131.71829309797295, 't_c': -0.09057392136508696, 'phase_c': 4.86883531121733, 'psi': 2.875228997804091, 'ra': 0.3419726212598325, 'sin_dec': -0.41606385799045853, 'q': 0.935262829742532, 'M_c': 1.1853302627616187, 'eta': 0.24972025165753237, 'iota': Array(1.6483412, dtype=float64, weak_type=True), 'dec': Array(-0.42911242, dtype=float64, weak_type=True), 'lambda_1': 586.8425539411755, 'lambda_2': 854.8973380154816}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.1853302627616187, 'eta': 0.24972025165753237, 's1_z': 0.029819346235658364, 's2_z': 0.00145235238278478, 'lambda_1': 586.8425539411755, 'lambda_2': 854.8973380154816, 'd_L': 131.71829309797295, 'phase_c': 4.86883531121733, 'iota': 1.6483411951669071, 't_c': -0.09057392136508696, 'psi': 2.875228997804091, 'ra': 0.3419726212598325, 'dec': -0.4291124194286477}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-2.79890106e-23-9.25414498e-24j  7.23623440e-23-3.58710118e-23j
-  2.48798146e-24+1.73360585e-22j ...
-  2.25422483e-23-6.55111347e-24j  1.46120288e-23+4.92797357e-23j
-  5.10662865e-23-3.46449217e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.94480969e-23-2.35067567e-23j  4.95289512e-23-1.25091020e-23j
- -1.47258622e-22+1.09244439e-23j ...
- -2.53741207e-23-4.32953499e-23j -2.41682042e-23-3.21319862e-23j
-  7.93567389e-23-3.19354114e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.94914491e-23-4.15611628e-23j  6.78950993e-23+3.52957526e-23j
- -3.45875305e-23-6.16092274e-23j ...
- -2.60527474e-23+4.89183385e-23j  3.97766966e-23+4.60130803e-23j
- -4.17488685e-23+1.29686330e-22j]
-15:35 ninjax INFO    : [1.43183556e-46 1.43058540e-46 1.42935095e-46 ... 6.39793039e-47
- 6.39795354e-47 6.39797668e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 3.614035957813336
-15:35 ninjax INFO    : SNR for ifo L1 is 8.412877789232475
-15:35 ninjax INFO    : SNR for ifo V1 is 10.532622115325427
-15:35 ninjax INFO    : The network SNR is 13.956141917635087
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.6662410723130157, 'mass_2_source': 1.8401173960963166, 's1_z': 0.04046057272586012, 's2_z': 0.038620635880480994, 'cos_iota': 0.6220924229289917, 'd_L': 223.34253326659297, 't_c': -0.027623997442623033, 'phase_c': 2.7582861769240106, 'psi': 1.2477966127230264, 'ra': 5.907871949633322, 'sin_dec': 0.845415351151539}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 91.15289364508091
-15:35 ninjax INFO    : Injected lambda_2: 177.90934061542106
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.6008867699521152 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.8401173960963166, 'mass_2_source': 1.6662410723130157, 's1_z': 0.04046057272586012, 's2_z': 0.038620635880480994, 'cos_iota': 0.6220924229289917, 'd_L': 223.34253326659297, 't_c': -0.027623997442623033, 'phase_c': 2.7582861769240106, 'psi': 1.2477966127230264, 'ra': 5.907871949633322, 'sin_dec': 0.845415351151539, 'q': 0.9055080267421156, 'M_c': 1.6008867699521152, 'eta': 0.24938523620856365, 'iota': Array(0.89938394, dtype=float64, weak_type=True), 'dec': Array(1.00734234, dtype=float64, weak_type=True), 'lambda_1': 91.15289364508091, 'lambda_2': 177.90934061542106}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.6008867699521152, 'eta': 0.24938523620856365, 's1_z': 0.04046057272586012, 's2_z': 0.038620635880480994, 'lambda_1': 91.15289364508091, 'lambda_2': 177.90934061542106, 'd_L': 223.34253326659297, 'phase_c': 2.7582861769240106, 'iota': 0.8993839447606281, 't_c': -0.027623997442623033, 'psi': 1.2477966127230264, 'ra': 5.907871949633322, 'dec': 1.0073423409091065}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.15935417e-23-3.26854174e-23j -7.31865384e-23-5.06766004e-23j
- -3.70167011e-23+1.83757441e-23j ...
-  5.40432022e-24+2.45613251e-24j  1.84144215e-23-8.43491829e-24j
-  3.41868147e-24+7.18078194e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 1.65212860e-23-8.07655927e-23j -4.88249289e-23+4.14398202e-23j
-  1.37487755e-23+6.18620509e-23j ...
-  1.86727292e-23-1.84928903e-23j  2.39386916e-24+2.92767259e-23j
- -6.76408870e-24-1.27857984e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-3.00452746e-23-2.99508902e-24j -2.68387916e-23+2.44713208e-23j
- -4.06260780e-23+3.42853823e-23j ...
-  2.68130624e-23+9.93653321e-24j  5.52092251e-23-5.32526440e-24j
- -2.70015431e-23-1.64136186e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 18.03328826577926
-15:35 ninjax INFO    : SNR for ifo L1 is 12.372956218719056
-15:35 ninjax INFO    : SNR for ifo V1 is 8.18648572632443
-15:35 ninjax INFO    : The network SNR is 23.351832472299556
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.0327993596546328, 'mass_2_source': 1.9148938072001411, 's1_z': -0.020356559857087286, 's2_z': 0.02607377747195637, 'cos_iota': -0.47525633326411665, 'd_L': 270.20993864197266, 't_c': -0.05129675340540518, 'phase_c': 4.832174108720866, 'psi': 1.6770299370666337, 'ra': 3.936774455705374, 'sin_dec': -0.0883497113456202}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 68.29593244650678
-15:35 ninjax INFO    : Injected lambda_2: 2665.3188604836196
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.2868801357953017 is 256.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.9148938072001411, 'mass_2_source': 1.0327993596546328, 's1_z': -0.020356559857087286, 's2_z': 0.02607377747195637, 'cos_iota': -0.47525633326411665, 'd_L': 270.20993864197266, 't_c': -0.05129675340540518, 'phase_c': 4.832174108720866, 'psi': 1.6770299370666337, 'ra': 3.936774455705374, 'sin_dec': -0.0883497113456202, 'q': 0.539350723142574, 'M_c': 1.2868801357953017, 'eta': 0.2276124980834654, 'iota': Array(2.06605167, dtype=float64, weak_type=True), 'dec': Array(-0.08846506, dtype=float64, weak_type=True), 'lambda_1': 68.29593244650678, 'lambda_2': 2665.3188604836196}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.2868801357953017, 'eta': 0.2276124980834654, 's1_z': -0.020356559857087286, 's2_z': 0.02607377747195637, 'lambda_1': 68.29593244650678, 'lambda_2': 2665.3188604836196, 'd_L': 270.20993864197266, 'phase_c': 4.832174108720866, 'iota': 2.066051673922175, 't_c': -0.05129675340540518, 'psi': 1.6770299370666337, 'ra': 3.936774455705374, 'dec': -0.08846505509489035}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-3.27193932e-23-5.77272826e-24j  7.77711833e-23-3.58401097e-23j
- -1.35220858e-24+1.70678004e-22j ...
-  2.25422483e-23-6.55111347e-24j  1.46120288e-23+4.92797357e-23j
-  5.10662865e-23-3.46449217e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.41597685e-23-2.84571144e-23j  4.39458934e-23-1.21941397e-23j
- -1.44193157e-22+1.28422895e-23j ...
- -2.53741207e-23-4.32953499e-23j -2.41682042e-23-3.21319862e-23j
-  7.93567389e-23-3.19354114e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.09322071e-23-4.33920136e-23j  6.16158403e-23+3.02581365e-23j
- -3.47273502e-23-5.46981882e-23j ...
- -2.60527474e-23+4.89183385e-23j  3.97766966e-23+4.60130803e-23j
- -4.17488685e-23+1.29686330e-22j]
-15:35 ninjax INFO    : [1.43183556e-46 1.43058540e-46 1.42935095e-46 ... 6.39793039e-47
- 6.39795354e-47 6.39797668e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 9.400335750251802
-15:35 ninjax INFO    : SNR for ifo L1 is 11.238365303693987
-15:35 ninjax INFO    : SNR for ifo V1 is 4.734950624305244
-15:35 ninjax INFO    : The network SNR is 15.397627230561973
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.2261425254704168, 'mass_2_source': 1.7921954534178481, 's1_z': 0.012926315936044722, 's2_z': 0.022876496585425093, 'cos_iota': 0.25720350398250114, 'd_L': 457.0085423105395, 't_c': 0.04341359208418466, 'phase_c': 2.525588891742042, 'psi': 2.209996966144125, 'ra': 4.027533465973799, 'sin_dec': 0.806636059334711}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 109.57813056086374
-15:35 ninjax INFO    : Injected lambda_2: 1077.2178593839521
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.4186708869163003 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.7921954534178481, 'mass_2_source': 1.2261425254704168, 's1_z': 0.012926315936044722, 's2_z': 0.022876496585425093, 'cos_iota': 0.25720350398250114, 'd_L': 457.0085423105395, 't_c': 0.04341359208418466, 'phase_c': 2.525588891742042, 'psi': 2.209996966144125, 'ra': 4.027533465973799, 'sin_dec': 0.806636059334711, 'q': 0.684156699054265, 'M_c': 1.4186708869163003, 'eta': 0.241207378986353, 'iota': Array(1.3106691, dtype=float64, weak_type=True), 'dec': Array(0.93843833, dtype=float64, weak_type=True), 'lambda_1': 109.57813056086374, 'lambda_2': 1077.2178593839521}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.4186708869163003, 'eta': 0.241207378986353, 's1_z': 0.012926315936044722, 's2_z': 0.022876496585425093, 'lambda_1': 109.57813056086374, 'lambda_2': 1077.2178593839521, 'd_L': 457.0085423105395, 'phase_c': 2.525588891742042, 'iota': 1.3106690964073566, 't_c': 0.04341359208418466, 'psi': 2.209996966144125, 'ra': 4.027533465973799, 'dec': 0.9384383258746869}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.60072137e-23-3.91142519e-23j -8.12851433e-23-4.86896212e-23j
- -3.87432521e-23+2.70818087e-23j ...
-  5.39276234e-24+2.45611913e-24j  1.84029243e-23-8.43609062e-24j
-  3.40736080e-24+7.17846270e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 2.16918938e-23-7.96961063e-23j -4.56798178e-23+3.65377550e-23j
-  1.05453642e-23+5.64976813e-23j ...
-  1.86703625e-23-1.85004590e-23j  2.39227072e-24+2.92689593e-23j
- -6.76490301e-24-1.27936851e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.44750592e-23-3.82584450e-24j -2.56748204e-23+2.07087198e-23j
- -4.37818728e-23+3.34566350e-23j ...
-  2.68093527e-23+9.93100495e-24j  5.52060851e-23-5.33113432e-24j
- -2.70040822e-23-1.64197717e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 1.3117552068659792
-15:35 ninjax INFO    : SNR for ifo L1 is 1.1942857978096462
-15:35 ninjax INFO    : SNR for ifo V1 is 2.759343370759346
-15:35 ninjax INFO    : The network SNR is 3.2803957272474586
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.1972946167867566, 'mass_2_source': 1.1470175336934672, 's1_z': -0.03522273684957862, 's2_z': 0.030429556349663295, 'cos_iota': 0.9878657951771657, 'd_L': 264.1086883995043, 't_c': 0.013820686394477158, 'phase_c': 1.4742414717244066, 'psi': 2.0875425091226076, 'ra': 1.655874900825841, 'sin_dec': -0.237905261553077}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 1225.5596829319727
-15:35 ninjax INFO    : Injected lambda_2: 1541.8664077453807
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.0810183932605515 is 256.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.1972946167867566, 'mass_2_source': 1.1470175336934672, 's1_z': -0.03522273684957862, 's2_z': 0.030429556349663295, 'cos_iota': 0.9878657951771657, 'd_L': 264.1086883995043, 't_c': 0.013820686394477158, 'phase_c': 1.4742414717244066, 'psi': 2.0875425091226076, 'ra': 1.655874900825841, 'sin_dec': -0.237905261553077, 'q': 0.9580077598375738, 'M_c': 1.0810183932605515, 'eta': 0.24988501285830758, 'iota': Array(0.15594117, dtype=float64, weak_type=True), 'dec': Array(-0.24020862, dtype=float64, weak_type=True), 'lambda_1': 1225.5596829319727, 'lambda_2': 1541.8664077453807}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.0810183932605515, 'eta': 0.24988501285830758, 's1_z': -0.03522273684957862, 's2_z': 0.030429556349663295, 'lambda_1': 1225.5596829319727, 'lambda_2': 1541.8664077453807, 'd_L': 264.1086883995043, 'phase_c': 1.4742414717244066, 'iota': 0.15594117070647057, 't_c': 0.013820686394477158, 'psi': 2.0875425091226076, 'ra': 1.655874900825841, 'dec': -0.24020861976503546}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-3.23579333e-23-1.14000755e-23j  7.05858198e-23-3.23685169e-23j
-  4.76108264e-24+1.75028878e-22j ...
-  2.25422483e-23-6.55111347e-24j  1.46120288e-23+4.92797357e-23j
-  5.10662865e-23-3.46449217e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.47402550e-23-1.73363733e-23j  5.37826041e-23-1.57994905e-23j
- -1.48213621e-22+8.19657383e-24j ...
- -2.53741207e-23-4.32953499e-23j -2.41682042e-23-3.21319862e-23j
-  7.93567389e-23-3.19354114e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.40354032e-23-4.22260792e-23j  6.40757477e-23+3.08745665e-23j
- -3.65753837e-23-5.56055071e-23j ...
- -2.60527474e-23+4.89183385e-23j  3.97766966e-23+4.60130803e-23j
- -4.17488685e-23+1.29686330e-22j]
-15:35 ninjax INFO    : [1.43183556e-46 1.43058540e-46 1.42935095e-46 ... 6.39793039e-47
- 6.39795354e-47 6.39797668e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 8.246396701216979
-15:35 ninjax INFO    : SNR for ifo L1 is 13.394049535696611
-15:35 ninjax INFO    : SNR for ifo V1 is 1.2426691841092081
-15:35 ninjax INFO    : The network SNR is 15.778081259128802
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 2.4267565586800535, 'mass_2_source': 1.3564774802379462, 's1_z': 0.026377006482059234, 's2_z': -0.004372914214510117, 'cos_iota': 0.7490382255004961, 'd_L': 431.73028125173886, 't_c': -0.03232415247471265, 'phase_c': 4.760688424473854, 'psi': 2.359074913261982, 'ra': 2.5811853772323876, 'sin_dec': -0.8070122515626088}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 6.0002657313163414
-15:35 ninjax INFO    : Injected lambda_2: 614.235857920714
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.7191580967817135 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 2.4267565586800535, 'mass_2_source': 1.3564774802379462, 's1_z': 0.026377006482059234, 's2_z': -0.004372914214510117, 'cos_iota': 0.7490382255004961, 'd_L': 431.73028125173886, 't_c': -0.03232415247471265, 'phase_c': 4.760688424473854, 'psi': 2.359074913261982, 'ra': 2.5811853772323876, 'sin_dec': -0.8070122515626088, 'q': 0.5589672665707157, 'M_c': 1.7191580967817135, 'eta': 0.22999181641021726, 'iota': Array(0.72418712, dtype=float64, weak_type=True), 'dec': Array(-0.93907509, dtype=float64, weak_type=True), 'lambda_1': 6.0002657313163414, 'lambda_2': 614.235857920714}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.7191580967817135, 'eta': 0.22999181641021726, 's1_z': 0.026377006482059234, 's2_z': -0.004372914214510117, 'lambda_1': 6.0002657313163414, 'lambda_2': 614.235857920714, 'd_L': 431.73028125173886, 'phase_c': 4.760688424473854, 'iota': 0.7241871179631175, 't_c': -0.03232415247471265, 'psi': 2.359074913261982, 'ra': 2.5811853772323876, 'dec': -0.9390750854924745}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-7.01604195e-23-4.23211327e-23j -8.33253129e-23-4.48543717e-23j
- -3.42297668e-23+2.76407805e-23j ...
-  5.39276234e-24+2.45611913e-24j  1.84029243e-23-8.43609062e-24j
-  3.40736080e-24+7.17846270e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 2.28207581e-23-7.63218234e-23j -4.25019186e-23+3.56958511e-23j
-  9.27310773e-24+5.43207102e-23j ...
-  1.86703625e-23-1.85004590e-23j  2.39227072e-24+2.92689593e-23j
- -6.76490301e-24-1.27936851e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.63625236e-23-1.85882698e-24j -2.37544198e-23+1.98687823e-23j
- -4.54118635e-23+2.93512391e-23j ...
-  2.68093527e-23+9.93100495e-24j  5.52060851e-23-5.33113432e-24j
- -2.70040822e-23-1.64197717e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 10.368011323989364
-15:35 ninjax INFO    : SNR for ifo L1 is 6.563527437579744
-15:35 ninjax INFO    : SNR for ifo V1 is 5.36856932250345
-15:35 ninjax INFO    : The network SNR is 13.393919807463346
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.1358146418208674, 'mass_2_source': 1.1089264039651217, 's1_z': 0.009072864589163898, 's2_z': 0.00761644368384766, 'cos_iota': -0.7915412400774922, 'd_L': 425.49580622807866, 't_c': 0.037775773245920824, 'phase_c': 5.33865987541317, 'psi': 0.8289319072761416, 'ra': 4.786137252748653, 'sin_dec': -0.7393565833099225}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 1624.2129397278677
-15:35 ninjax INFO    : Injected lambda_2: 1842.7942838888823
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.0709279715999738 is 256.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.1358146418208674, 'mass_2_source': 1.1089264039651217, 's1_z': 0.009072864589163898, 's2_z': 0.00761644368384766, 'cos_iota': -0.7915412400774922, 'd_L': 425.49580622807866, 't_c': 0.037775773245920824, 'phase_c': 5.33865987541317, 'psi': 0.8289319072761416, 'ra': 4.786137252748653, 'sin_dec': -0.7393565833099225, 'q': 0.9763269138592542, 'M_c': 1.0709279715999738, 'eta': 0.24996412993236586, 'iota': Array(2.48412323, dtype=float64, weak_type=True), 'dec': Array(-0.83211426, dtype=float64, weak_type=True), 'lambda_1': 1624.2129397278677, 'lambda_2': 1842.7942838888823}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.0709279715999738, 'eta': 0.24996412993236586, 's1_z': 0.009072864589163898, 's2_z': 0.00761644368384766, 'lambda_1': 1624.2129397278677, 'lambda_2': 1842.7942838888823, 'd_L': 425.49580622807866, 'phase_c': 5.33865987541317, 'iota': 2.4841232311049666, 't_c': 0.037775773245920824, 'psi': 0.8289319072761416, 'ra': 4.786137252748653, 'dec': -0.832114259628237}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-2.83003982e-23-1.23138118e-23j  7.04241273e-23-3.67567556e-23j
-  1.92913118e-25+1.74359933e-22j ...
-  2.25422483e-23-6.55111347e-24j  1.46120288e-23+4.92797357e-23j
-  5.10662865e-23-3.46449217e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.69672251e-23-1.95825534e-23j  5.10769514e-23-1.36643283e-23j
- -1.46270250e-22+1.13926646e-23j ...
- -2.53741207e-23-4.32953499e-23j -2.41682042e-23-3.21319862e-23j
-  7.93567389e-23-3.19354114e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.06902608e-23-3.99721460e-23j  6.69651042e-23+2.80856817e-23j
- -3.86967587e-23-5.89903707e-23j ...
- -2.60527474e-23+4.89183385e-23j  3.97766966e-23+4.60130803e-23j
- -4.17488685e-23+1.29686330e-22j]
-15:35 ninjax INFO    : [1.43183556e-46 1.43058540e-46 1.42935095e-46 ... 6.39793039e-47
- 6.39795354e-47 6.39797668e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 8.131507410943957
-15:35 ninjax INFO    : SNR for ifo L1 is 8.92605751861833
-15:35 ninjax INFO    : SNR for ifo V1 is 5.714523810405343
-15:35 ninjax INFO    : The network SNR is 13.358581435901378
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.6272322913319457, 'mass_2_source': 1.1949274668968926, 's1_z': 0.03156476905567261, 's2_z': -0.03175263339076699, 'cos_iota': -0.36508369420003906, 'd_L': 320.21449729689544, 't_c': 0.041522831878512495, 'phase_c': 0.8765715240391063, 'psi': 2.0094382828696262, 'ra': 5.00799918684993, 'sin_dec': 0.16612625251024538}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 206.95794719572166
-15:35 ninjax INFO    : Injected lambda_2: 1238.714553713701
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.2986637373427175 is 256.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.6272322913319457, 'mass_2_source': 1.1949274668968926, 's1_z': 0.03156476905567261, 's2_z': -0.03175263339076699, 'cos_iota': -0.36508369420003906, 'd_L': 320.21449729689544, 't_c': 0.041522831878512495, 'phase_c': 0.8765715240391063, 'psi': 2.0094382828696262, 'ra': 5.00799918684993, 'sin_dec': 0.16612625251024538, 'q': 0.7343312158086559, 'M_c': 1.2986637373427175, 'eta': 0.24413379840940286, 'iota': Array(1.94451903, dtype=float64, weak_type=True), 'dec': Array(0.16690002, dtype=float64, weak_type=True), 'lambda_1': 206.95794719572166, 'lambda_2': 1238.714553713701}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.2986637373427175, 'eta': 0.24413379840940286, 's1_z': 0.03156476905567261, 's2_z': -0.03175263339076699, 'lambda_1': 206.95794719572166, 'lambda_2': 1238.714553713701, 'd_L': 320.21449729689544, 'phase_c': 0.8765715240391063, 'iota': 1.9445190278284266, 't_c': 0.041522831878512495, 'psi': 2.0094382828696262, 'ra': 5.00799918684993, 'dec': 0.1669000245892957}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-3.06663976e-23-8.26943362e-24j  7.47647083e-23-3.47238379e-23j
-  1.78778852e-24+1.71218143e-22j ...
-  2.25422483e-23-6.55111347e-24j  1.46120288e-23+4.92797357e-23j
-  5.10662865e-23-3.46449217e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.67688493e-23-2.59186135e-23j  4.76088785e-23-1.31369013e-23j
- -1.47984729e-22+1.18207818e-23j ...
- -2.53741207e-23-4.32953499e-23j -2.41682042e-23-3.21319862e-23j
-  7.93567389e-23-3.19354114e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.33441896e-23-4.09912718e-23j  6.48420252e-23+2.93115626e-23j
- -3.79735130e-23-5.53928163e-23j ...
- -2.60527474e-23+4.89183385e-23j  3.97766966e-23+4.60130803e-23j
- -4.17488685e-23+1.29686330e-22j]
-15:35 ninjax INFO    : [1.43183556e-46 1.43058540e-46 1.42935095e-46 ... 6.39793039e-47
- 6.39795354e-47 6.39797668e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 2.593201911084966
-15:35 ninjax INFO    : SNR for ifo L1 is 5.940001490224947
-15:35 ninjax INFO    : SNR for ifo V1 is 1.7296839328626312
-15:35 ninjax INFO    : The network SNR is 6.708212903831575
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.5939887299357274, 'mass_2_source': 1.3063041469562917, 's1_z': 0.03620988733227906, 's2_z': 0.033581456642773344, 'cos_iota': 0.2511366244119828, 'd_L': 455.29839649795133, 't_c': 0.02444064616316148, 'phase_c': 4.893929082566584, 'psi': 1.9325012761631426, 'ra': 3.2869041802249828, 'sin_dec': -0.24524491857246922}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 235.60572950701288
-15:35 ninjax INFO    : Injected lambda_2: 759.64297943649
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.3840655408168174 is 256.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.5939887299357274, 'mass_2_source': 1.3063041469562917, 's1_z': 0.03620988733227906, 's2_z': 0.033581456642773344, 'cos_iota': 0.2511366244119828, 'd_L': 455.29839649795133, 't_c': 0.02444064616316148, 'phase_c': 4.893929082566584, 'psi': 1.9325012761631426, 'ra': 3.2869041802249828, 'sin_dec': -0.24524491857246922, 'q': 0.8195190608461607, 'M_c': 1.3840655408168174, 'eta': 0.24754025846830138, 'iota': Array(1.31694199, dtype=float64, weak_type=True), 'dec': Array(-0.24777232, dtype=float64, weak_type=True), 'lambda_1': 235.60572950701288, 'lambda_2': 759.64297943649}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.3840655408168174, 'eta': 0.24754025846830138, 's1_z': 0.03620988733227906, 's2_z': 0.033581456642773344, 'lambda_1': 235.60572950701288, 'lambda_2': 759.64297943649, 'd_L': 455.29839649795133, 'phase_c': 4.893929082566584, 'iota': 1.3169419927795918, 't_c': 0.02444064616316148, 'psi': 1.9325012761631426, 'ra': 3.2869041802249828, 'dec': -0.24777231817872086}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-3.06554644e-23-1.02405015e-23j  7.44821358e-23-3.31798185e-23j
-  2.10629004e-24+1.70116147e-22j ...
-  2.25422483e-23-6.55111347e-24j  1.46120288e-23+4.92797357e-23j
-  5.10662865e-23-3.46449217e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.60197687e-23-2.15473467e-23j  4.82513655e-23-1.77282138e-23j
- -1.50003040e-22+1.60612971e-23j ...
- -2.53741207e-23-4.32953499e-23j -2.41682042e-23-3.21319862e-23j
-  7.93567389e-23-3.19354114e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.36993549e-23-4.03178443e-23j  6.49195656e-23+2.85790630e-23j
- -3.78572756e-23-5.44335046e-23j ...
- -2.60527474e-23+4.89183385e-23j  3.97766966e-23+4.60130803e-23j
- -4.17488685e-23+1.29686330e-22j]
-15:35 ninjax INFO    : [1.43183556e-46 1.43058540e-46 1.42935095e-46 ... 6.39793039e-47
- 6.39795354e-47 6.39797668e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 3.879366875305753
-15:35 ninjax INFO    : SNR for ifo L1 is 4.229092040149958
-15:35 ninjax INFO    : SNR for ifo V1 is 2.9409635964042944
-15:35 ninjax INFO    : The network SNR is 6.448563693773562
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.489615290370045, 'mass_2_source': 2.1711782943586675, 's1_z': 0.010695534864196318, 's2_z': 0.015913827148294632, 'cos_iota': 0.7364999533441341, 'd_L': 303.0171185100266, 't_c': 0.0785802436899748, 'phase_c': 1.0829582058001914, 'psi': 0.669239425656921, 'ra': 2.633365035024201, 'sin_dec': 0.4070404301922994}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 24.1869059850703
-15:35 ninjax INFO    : Injected lambda_2: 356.0830951136178
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.666895962417515 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 2.1711782943586675, 'mass_2_source': 1.489615290370045, 's1_z': 0.010695534864196318, 's2_z': 0.015913827148294632, 'cos_iota': 0.7364999533441341, 'd_L': 303.0171185100266, 't_c': 0.0785802436899748, 'phase_c': 1.0829582058001914, 'psi': 0.669239425656921, 'ra': 2.633365035024201, 'sin_dec': 0.4070404301922994, 'q': 0.6860861193392016, 'M_c': 1.666895962417515, 'eta': 0.24133434206092905, 'iota': Array(0.74291488, dtype=float64, weak_type=True), 'dec': Array(0.41921158, dtype=float64, weak_type=True), 'lambda_1': 24.1869059850703, 'lambda_2': 356.0830951136178}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.666895962417515, 'eta': 0.24133434206092905, 's1_z': 0.010695534864196318, 's2_z': 0.015913827148294632, 'lambda_1': 24.1869059850703, 'lambda_2': 356.0830951136178, 'd_L': 303.0171185100266, 'phase_c': 1.0829582058001914, 'iota': 0.7429148838653441, 't_c': 0.0785802436899748, 'psi': 0.669239425656921, 'ra': 2.633365035024201, 'dec': 0.41921158150387355}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.53911612e-23-3.52470484e-23j -7.69123935e-23-4.96883520e-23j
- -3.90356951e-23+2.19821565e-23j ...
-  5.39276234e-24+2.45611913e-24j  1.84029243e-23-8.43609062e-24j
-  3.40736080e-24+7.17846270e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 2.66670415e-23-8.08544793e-23j -4.65523945e-23+3.22250009e-23j
-  6.18256467e-24+5.78250210e-23j ...
-  1.86703625e-23-1.85004590e-23j  2.39227072e-24+2.92689593e-23j
- -6.76490301e-24-1.27936851e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.23435244e-23-1.23835721e-23j -3.41057036e-23+1.58599411e-23j
- -4.93390355e-23+3.94311025e-23j ...
-  2.68093527e-23+9.93100495e-24j  5.52060851e-23-5.33113432e-24j
- -2.70040822e-23-1.64197717e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 9.74345224872662
-15:35 ninjax INFO    : SNR for ifo L1 is 10.501861363021561
-15:35 ninjax INFO    : SNR for ifo V1 is 13.828005196484021
-15:35 ninjax INFO    : The network SNR is 19.910742867239534
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 2.115888250567533, 'mass_2_source': 1.1493179148630241, 's1_z': -0.047192628332409385, 's2_z': 0.04647853202211907, 'cos_iota': -0.5718204988970363, 'd_L': 407.47117348897444, 't_c': 0.06674283387708088, 'phase_c': 0.6355851780147529, 'psi': 2.827591696593674, 'ra': 3.1047963336189324, 'sin_dec': 0.9254357078786506}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 30.596041427761172
-15:35 ninjax INFO    : Injected lambda_2: 1525.545079903224
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.4690222376543207 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 2.115888250567533, 'mass_2_source': 1.1493179148630241, 's1_z': -0.047192628332409385, 's2_z': 0.04647853202211907, 'cos_iota': -0.5718204988970363, 'd_L': 407.47117348897444, 't_c': 0.06674283387708088, 'phase_c': 0.6355851780147529, 'psi': 2.827591696593674, 'ra': 3.1047963336189324, 'sin_dec': 0.9254357078786506, 'q': 0.5431846008666804, 'M_c': 1.4690222376543207, 'eta': 0.2280928582820252, 'iota': Array(2.17951957, dtype=float64, weak_type=True), 'dec': Array(1.1821839, dtype=float64, weak_type=True), 'lambda_1': 30.596041427761172, 'lambda_2': 1525.545079903224}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.4690222376543207, 'eta': 0.2280928582820252, 's1_z': -0.047192628332409385, 's2_z': 0.04647853202211907, 'lambda_1': 30.596041427761172, 'lambda_2': 1525.545079903224, 'd_L': 407.47117348897444, 'phase_c': 0.6355851780147529, 'iota': 2.1795195658632203, 't_c': 0.06674283387708088, 'psi': 2.827591696593674, 'ra': 3.1047963336189324, 'dec': 1.1821838982157489}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.56147516e-23-3.74513939e-23j -8.00642713e-23-4.74045141e-23j
- -3.69169304e-23+2.76666488e-23j ...
-  5.39276234e-24+2.45611913e-24j  1.84029243e-23-8.43609062e-24j
-  3.40736080e-24+7.17846270e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 2.05959524e-23-8.03778531e-23j -4.70685380e-23+3.65090501e-23j
-  9.16421312e-24+5.71989589e-23j ...
-  1.86703625e-23-1.85004590e-23j  2.39227072e-24+2.92689593e-23j
- -6.76490301e-24-1.27936851e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.16243169e-23-3.97446180e-24j -2.28392608e-23+1.89433887e-23j
- -4.16569338e-23+3.01879522e-23j ...
-  2.68093527e-23+9.93100495e-24j  5.52060851e-23-5.33113432e-24j
- -2.70040822e-23-1.64197717e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 4.9851142553805765
-15:35 ninjax INFO    : SNR for ifo L1 is 3.933220789866822
-15:35 ninjax INFO    : SNR for ifo V1 is 7.030965459931828
-15:35 ninjax INFO    : The network SNR is 9.473967765397644
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.364967019987748, 'mass_2_source': 1.7200444647985822, 's1_z': -0.009291655246216932, 's2_z': 0.019761494100829835, 'cos_iota': 0.3458569808711296, 'd_L': 350.8672726177115, 't_c': -0.030796192713689538, 'phase_c': 3.872061871277724, 'psi': 0.16662357504203787, 'ra': 2.2258457614022826, 'sin_dec': -0.46484186247181203}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 144.56351829833818
-15:35 ninjax INFO    : Injected lambda_2: 592.7915483689663
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.437739299445784 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.7200444647985822, 'mass_2_source': 1.364967019987748, 's1_z': -0.009291655246216932, 's2_z': 0.019761494100829835, 'cos_iota': 0.3458569808711296, 'd_L': 350.8672726177115, 't_c': -0.030796192713689538, 'phase_c': 3.872061871277724, 'psi': 0.16662357504203787, 'ra': 2.2258457614022826, 'sin_dec': -0.46484186247181203, 'q': 0.7935649617916046, 'M_c': 1.437739299445784, 'eta': 0.24668813511602203, 'iota': Array(1.21764435, dtype=float64, weak_type=True), 'dec': Array(-0.483456, dtype=float64, weak_type=True), 'lambda_1': 144.56351829833818, 'lambda_2': 592.7915483689663}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.437739299445784, 'eta': 0.24668813511602203, 's1_z': -0.009291655246216932, 's2_z': 0.019761494100829835, 'lambda_1': 144.56351829833818, 'lambda_2': 592.7915483689663, 'd_L': 350.8672726177115, 'phase_c': 3.872061871277724, 'iota': 1.2176443492945388, 't_c': -0.030796192713689538, 'psi': 0.16662357504203787, 'ra': 2.2258457614022826, 'dec': -0.4834559958291777}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.67752546e-23-4.14960765e-23j -8.24181701e-23-5.09013085e-23j
- -4.02156561e-23+2.51114469e-23j ...
-  5.39276234e-24+2.45611913e-24j  1.84029243e-23-8.43609062e-24j
-  3.40736080e-24+7.17846270e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 2.24742630e-23-7.87371818e-23j -4.47771869e-23+3.73828921e-23j
-  1.15521364e-23+5.72047293e-23j ...
-  1.86703625e-23-1.85004590e-23j  2.39227072e-24+2.92689593e-23j
- -6.76490301e-24-1.27936851e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.72547071e-23-3.49523428e-24j -2.82125213e-23+2.13925097e-23j
- -4.60194310e-23+3.44475870e-23j ...
-  2.68093527e-23+9.93100495e-24j  5.52060851e-23-5.33113432e-24j
- -2.70040822e-23-1.64197717e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 4.117882504772299
-15:35 ninjax INFO    : SNR for ifo L1 is 1.4810074835631237
-15:35 ninjax INFO    : SNR for ifo V1 is 3.6844010671156258
-15:35 ninjax INFO    : The network SNR is 5.720590066841227
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.463315762278027, 'mass_2_source': 2.1231902198334094, 's1_z': 0.0036816589668651617, 's2_z': 0.026949118975185468, 'cos_iota': 0.27985264555942546, 'd_L': 453.059159345449, 't_c': -0.01486147932022544, 'phase_c': 4.657840668038145, 'psi': 0.5556710331496262, 'ra': 0.6820938057474241, 'sin_dec': 0.265228346640737}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 29.676149843596548
-15:35 ninjax INFO    : Injected lambda_2: 395.83682329928376
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.6857371955660874 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 2.1231902198334094, 'mass_2_source': 1.463315762278027, 's1_z': 0.0036816589668651617, 's2_z': 0.026949118975185468, 'cos_iota': 0.27985264555942546, 'd_L': 453.059159345449, 't_c': -0.01486147932022544, 'phase_c': 4.657840668038145, 'psi': 0.5556710331496262, 'ra': 0.6820938057474241, 'sin_dec': 0.265228346640737, 'q': 0.6892061524251192, 'M_c': 1.6857371955660874, 'eta': 0.24153709383431987, 'iota': Array(1.28715571, dtype=float64, weak_type=True), 'dec': Array(0.26844074, dtype=float64, weak_type=True), 'lambda_1': 29.676149843596548, 'lambda_2': 395.83682329928376}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.6857371955660874, 'eta': 0.24153709383431987, 's1_z': 0.0036816589668651617, 's2_z': 0.026949118975185468, 'lambda_1': 29.676149843596548, 'lambda_2': 395.83682329928376, 'd_L': 453.059159345449, 'phase_c': 4.657840668038145, 'iota': 1.2871557083603549, 't_c': -0.01486147932022544, 'psi': 0.5556710331496262, 'ra': 0.6820938057474241, 'dec': 0.2684407431132314}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.34655502e-23-3.85209122e-23j -8.02585059e-23-5.19323954e-23j
- -4.15825698e-23+2.53922969e-23j ...
-  5.39276234e-24+2.45611913e-24j  1.84029243e-23-8.43609062e-24j
-  3.40736080e-24+7.17846270e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 1.95636204e-23-7.99532626e-23j -4.59339325e-23+3.94303407e-23j
-  1.34658613e-23+5.74594953e-23j ...
-  1.86703625e-23-1.85004590e-23j  2.39227072e-24+2.92689593e-23j
- -6.76490301e-24-1.27936851e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.68039554e-23-6.27168390e-24j -2.82230303e-23+2.08393137e-23j
- -4.38868472e-23+3.37844005e-23j ...
-  2.68093527e-23+9.93100495e-24j  5.52060851e-23-5.33113432e-24j
- -2.70040822e-23-1.64197717e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 6.229255482628723
-15:35 ninjax INFO    : SNR for ifo L1 is 5.555730154422993
-15:35 ninjax INFO    : SNR for ifo V1 is 2.9896850035806537
-15:35 ninjax INFO    : The network SNR is 8.866114021219216
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 2.123490080000198, 'mass_2_source': 1.4550657722471034, 's1_z': -0.04986974896001786, 's2_z': 0.005870765698052491, 'cos_iota': -0.716971004224983, 'd_L': 231.0497809410777, 't_c': -0.040967308046556156, 'phase_c': 0.4328375284758221, 'psi': 0.23564818105728277, 'ra': 2.918681157599493, 'sin_dec': -0.7813863792026732}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 29.638799007129258
-15:35 ninjax INFO    : Injected lambda_2: 409.2711642902825
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.6044249562940964 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 2.123490080000198, 'mass_2_source': 1.4550657722471034, 's1_z': -0.04986974896001786, 's2_z': 0.005870765698052491, 'cos_iota': -0.716971004224983, 'd_L': 231.0497809410777, 't_c': -0.040967308046556156, 'phase_c': 0.4328375284758221, 'psi': 0.23564818105728277, 'ra': 2.918681157599493, 'sin_dec': -0.7813863792026732, 'q': 0.6852237201159743, 'M_c': 1.6044249562940964, 'eta': 0.24127774300120589, 'iota': Array(2.37024376, dtype=float64, weak_type=True), 'dec': Array(-0.89688433, dtype=float64, weak_type=True), 'lambda_1': 29.638799007129258, 'lambda_2': 409.2711642902825}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.6044249562940964, 'eta': 0.24127774300120589, 's1_z': -0.04986974896001786, 's2_z': 0.005870765698052491, 'lambda_1': 29.638799007129258, 'lambda_2': 409.2711642902825, 'd_L': 231.0497809410777, 'phase_c': 0.4328375284758221, 'iota': 2.370243759733789, 't_c': -0.040967308046556156, 'psi': 0.23564818105728277, 'ra': 2.918681157599493, 'dec': -0.896884330003468}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-7.49933668e-23-3.69316027e-23j -8.20957102e-23-3.99937633e-23j
- -3.05076652e-23+3.05011566e-23j ...
-  5.39276234e-24+2.45611913e-24j  1.84029243e-23-8.43609062e-24j
-  3.40736080e-24+7.17846270e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 2.66576228e-23-7.53323105e-23j -3.99326866e-23+3.41043785e-23j
-  1.02691920e-23+5.08463435e-23j ...
-  1.86703625e-23-1.85004590e-23j  2.39227072e-24+2.92689593e-23j
- -6.76490301e-24-1.27936851e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.78970564e-23-1.15129111e-24j -2.42165891e-23+2.31505172e-23j
- -4.08608203e-23+3.12538641e-23j ...
-  2.68093527e-23+9.93100495e-24j  5.52060851e-23-5.33113432e-24j
- -2.70040822e-23-1.64197717e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 20.07009224496446
-15:35 ninjax INFO    : SNR for ifo L1 is 13.060502776935758
-15:35 ninjax INFO    : SNR for ifo V1 is 7.489037987206252
-15:35 ninjax INFO    : The network SNR is 25.089261158542463
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 2.397483540557025, 'mass_2_source': 2.00928452338116, 's1_z': -0.04835902953838076, 's2_z': -0.04289522228875884, 'cos_iota': -0.47560752794965566, 'd_L': 394.3745380932031, 't_c': -0.08037813247494015, 'phase_c': 1.1046398399946873, 'psi': 2.314246221721918, 'ra': 4.292526444939946, 'sin_dec': 0.02829598591205107}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 7.5087552105622
-15:35 ninjax INFO    : Injected lambda_2: 47.170396216531955
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 2.079344828875233 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 2.397483540557025, 'mass_2_source': 2.00928452338116, 's1_z': -0.04835902953838076, 's2_z': -0.04289522228875884, 'cos_iota': -0.47560752794965566, 'd_L': 394.3745380932031, 't_c': -0.08037813247494015, 'phase_c': 1.1046398399946873, 'psi': 2.314246221721918, 'ra': 4.292526444939946, 'sin_dec': 0.02829598591205107, 'q': 0.8380806330433984, 'M_c': 2.079344828875233, 'eta': 0.2480599698252589, 'iota': Array(2.06645087, dtype=float64, weak_type=True), 'dec': Array(0.02829976, dtype=float64, weak_type=True), 'lambda_1': 7.5087552105622, 'lambda_2': 47.170396216531955}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 2.079344828875233, 'eta': 0.2480599698252589, 's1_z': -0.04835902953838076, 's2_z': -0.04289522228875884, 'lambda_1': 7.5087552105622, 'lambda_2': 47.170396216531955, 'd_L': 394.3745380932031, 'phase_c': 1.1046398399946873, 'iota': 2.0664508710666065, 't_c': -0.08037813247494015, 'psi': 2.314246221721918, 'ra': 4.292526444939946, 'dec': 0.028299763197131872}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.88961762e-23-4.27637728e-23j -7.92865176e-23-4.57372668e-23j
- -4.03026881e-23+2.26068988e-23j ...
-  5.38245548e-24+2.44986427e-24j  1.83933051e-23-8.44335774e-24j
-  3.39852829e-24+7.17025830e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 2.70409756e-23-7.97238936e-23j -5.02667352e-23+3.63740923e-23j
-  1.57228162e-23+5.83879375e-23j ...
-  1.86563037e-23-1.85043680e-23j  2.37867988e-24+2.92636492e-23j
- -6.77788672e-24-1.28003417e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.27491577e-23-3.85894460e-24j -2.95341350e-23+1.80209946e-23j
- -4.28421081e-23+3.46254710e-23j ...
-  2.68173481e-23+9.92682847e-24j  5.52144648e-23-5.33447213e-24j
- -2.69954059e-23-1.64222360e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 8.85957967914017
-15:35 ninjax INFO    : SNR for ifo L1 is 10.723009504129525
-15:35 ninjax INFO    : SNR for ifo V1 is 5.232378044695281
-15:35 ninjax INFO    : The network SNR is 14.86111923508101
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 2.0845395230295076, 'mass_2_source': 2.14579176587036, 's1_z': 0.026810435901334653, 's2_z': 0.028616322710455208, 'cos_iota': 0.847989888313907, 'd_L': 420.37263435728266, 't_c': 0.05735168572842331, 'phase_c': 5.106202085180471, 'psi': 1.1271404889775511, 'ra': 4.634240535120228, 'sin_dec': 0.23089701246188232}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 26.974558679877585
-15:35 ninjax INFO    : Injected lambda_2: 34.82962373265011
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 2.0160080276619614 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 2.14579176587036, 'mass_2_source': 2.0845395230295076, 's1_z': 0.026810435901334653, 's2_z': 0.028616322710455208, 'cos_iota': 0.847989888313907, 'd_L': 420.37263435728266, 't_c': 0.05735168572842331, 'phase_c': 5.106202085180471, 'psi': 1.1271404889775511, 'ra': 4.634240535120228, 'sin_dec': 0.23089701246188232, 'q': 0.97145471251447, 'M_c': 2.0160080276619614, 'eta': 0.24994758745588166, 'iota': Array(0.55861519, dtype=float64, weak_type=True), 'dec': Array(0.23299951, dtype=float64, weak_type=True), 'lambda_1': 26.974558679877585, 'lambda_2': 34.82962373265011}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 2.0160080276619614, 'eta': 0.24994758745588166, 's1_z': 0.026810435901334653, 's2_z': 0.028616322710455208, 'lambda_1': 26.974558679877585, 'lambda_2': 34.82962373265011, 'd_L': 420.37263435728266, 'phase_c': 5.106202085180471, 'iota': 0.5586151938362248, 't_c': 0.05735168572842331, 'psi': 1.1271404889775511, 'ra': 4.634240535120228, 'dec': 0.23299950669113753}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.24307971e-23-3.76499331e-23j -8.40850498e-23-5.25358309e-23j
- -3.75915720e-23+3.04933120e-23j ...
-  5.40026240e-24+2.46957846e-24j  1.84091122e-23-8.42197989e-24j
-  3.41218065e-24+7.19309726e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 1.60460070e-23-7.81800707e-23j -3.92985802e-23+3.80854917e-23j
-  5.77934795e-24+5.36378549e-23j ...
-  1.86500776e-23-1.85098380e-23j  2.37296366e-24+2.92577042e-23j
- -6.78305922e-24-1.28067154e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.42672068e-23-4.28393604e-24j -2.79595282e-23+1.85488448e-23j
- -4.45116502e-23+3.39149495e-23j ...
-  2.68048977e-23+9.93439842e-24j  5.52013269e-23-5.32818093e-24j
- -2.70091002e-23-1.64172853e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 9.046351671953815
-15:35 ninjax INFO    : SNR for ifo L1 is 13.121157913185156
-15:35 ninjax INFO    : SNR for ifo V1 is 2.593762413359501
-15:35 ninjax INFO    : The network SNR is 16.14710088568098
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 2.408840912093396, 'mass_2_source': 1.742444864168616, 's1_z': -0.035775196959653255, 's2_z': 0.0396005434935051, 'cos_iota': -0.21001544990857246, 'd_L': 175.54765973236567, 't_c': -0.059084883774923026, 'phase_c': 0.5400455930957615, 'psi': 0.023023844447748007, 'ra': 0.3418481569781704, 'sin_dec': 0.2588645647508456}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 6.919865621826883
-15:35 ninjax INFO    : Injected lambda_2: 132.64964828914847
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.8494289699791435 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 2.408840912093396, 'mass_2_source': 1.742444864168616, 's1_z': -0.035775196959653255, 's2_z': 0.0396005434935051, 'cos_iota': -0.21001544990857246, 'd_L': 175.54765973236567, 't_c': -0.059084883774923026, 'phase_c': 0.5400455930957615, 'psi': 0.023023844447748007, 'ra': 0.3418481569781704, 'sin_dec': 0.2588645647508456, 'q': 0.7233540643638229, 'M_c': 1.8494289699791435, 'eta': 0.24355772037270304, 'iota': Array(1.78238709, dtype=float64, weak_type=True), 'dec': Array(0.26184651, dtype=float64, weak_type=True), 'lambda_1': 6.919865621826883, 'lambda_2': 132.64964828914847}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.8494289699791435, 'eta': 0.24355772037270304, 's1_z': -0.035775196959653255, 's2_z': 0.0396005434935051, 'lambda_1': 6.919865621826883, 'lambda_2': 132.64964828914847, 'd_L': 175.54765973236567, 'phase_c': 0.5400455930957615, 'iota': 1.7823870888572702, 't_c': -0.059084883774923026, 'psi': 0.023023844447748007, 'ra': 0.3418481569781704, 'dec': 0.26184651350435334}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.24960922e-23-4.12768334e-23j -8.48753311e-23-5.11394207e-23j
- -3.82075180e-23+3.03607433e-23j ...
-  5.39212635e-24+2.45475043e-24j  1.84024310e-23-8.43751657e-24j
-  3.40701541e-24+7.17699434e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 1.79807983e-23-7.94363958e-23j -4.28913556e-23+4.02233040e-23j
-  1.20319409e-23+5.29370097e-23j ...
-  1.86694992e-23-1.84991527e-23j  2.39127933e-24+2.92701707e-23j
- -6.76601215e-24-1.27925811e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.81165417e-23-5.96024277e-24j -2.61759863e-23+2.22290325e-23j
- -4.35446079e-23+3.03219005e-23j ...
-  2.68103246e-23+9.93133218e-24j  5.52070189e-23-5.33071116e-24j
- -2.70031959e-23-1.64192569e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 8.4433738151977
-15:35 ninjax INFO    : SNR for ifo L1 is 8.759705046700835
-15:35 ninjax INFO    : SNR for ifo V1 is 4.525662756585251
-15:35 ninjax INFO    : The network SNR is 12.980932835305214
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.656016536384218, 'mass_2_source': 1.8809695005665086, 's1_z': 0.033474089086353215, 's2_z': 0.043144600135886765, 'cos_iota': -0.17269773773980823, 'd_L': 451.111473534916, 't_c': -0.05519525939800327, 'phase_c': 3.7891968652386123, 'psi': 1.7790657254714668, 'ra': 3.7222263268850573, 'sin_dec': -0.188622709746205}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 77.87823974997293
-15:35 ninjax INFO    : Injected lambda_2: 185.08812258837918
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.6923717911332548 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.8809695005665086, 'mass_2_source': 1.656016536384218, 's1_z': 0.033474089086353215, 's2_z': 0.043144600135886765, 'cos_iota': -0.17269773773980823, 'd_L': 451.111473534916, 't_c': -0.05519525939800327, 'phase_c': 3.7891968652386123, 'psi': 1.7790657254714668, 'ra': 3.7222263268850573, 'sin_dec': -0.188622709746205, 'q': 0.8804058417137868, 'M_c': 1.6923717911332548, 'eta': 0.2489887541359636, 'iota': Array(1.74436423, dtype=float64, weak_type=True), 'dec': Array(-0.18975949, dtype=float64, weak_type=True), 'lambda_1': 77.87823974997293, 'lambda_2': 185.08812258837918}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.6923717911332548, 'eta': 0.2489887541359636, 's1_z': 0.033474089086353215, 's2_z': 0.043144600135886765, 'lambda_1': 77.87823974997293, 'lambda_2': 185.08812258837918, 'd_L': 451.111473534916, 'phase_c': 3.7891968652386123, 'iota': 1.7443642319529995, 't_c': -0.05519525939800327, 'psi': 1.7790657254714668, 'ra': 3.7222263268850573, 'dec': -0.18975949210609777}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.39079500e-23-3.91298613e-23j -8.09200291e-23-5.14959518e-23j
- -4.11455470e-23+2.61047911e-23j ...
-  5.39271729e-24+2.45608613e-24j  1.84028828e-23-8.43612793e-24j
-  3.40732328e-24+7.17842146e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 1.91976404e-23-7.95630067e-23j -4.54624266e-23+3.97963560e-23j
-  1.38250687e-23+5.69050186e-23j ...
-  1.86704035e-23-1.85004014e-23j  2.39230573e-24+2.92690206e-23j
- -6.76487432e-24-1.27936207e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.67836088e-23-5.35717982e-24j -2.72814685e-23+2.08147683e-23j
- -4.39217285e-23+3.28157182e-23j ...
-  2.68093545e-23+9.93097527e-24j  5.52060899e-23-5.33116365e-24j
- -2.70040745e-23-1.64198004e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 4.89445781943903
-15:35 ninjax INFO    : SNR for ifo L1 is 6.190592334694086
-15:35 ninjax INFO    : SNR for ifo V1 is 2.054666597412229
-15:35 ninjax INFO    : The network SNR is 8.154802611171075
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.8974716198624928, 'mass_2_source': 1.1828091789160333, 's1_z': 0.043003326489060176, 's2_z': 0.03781226177065315, 'cos_iota': -0.38083200855755317, 'd_L': 441.867830567035, 't_c': -0.03427161689272702, 'phase_c': 5.763637746663152, 'psi': 1.3937102834137556, 'ra': 0.488083404187103, 'sin_dec': -0.763028685232574}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 73.06590612087997
-15:35 ninjax INFO    : Injected lambda_2: 1308.545914449417
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.4264828362119741 is 128.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.8974716198624928, 'mass_2_source': 1.1828091789160333, 's1_z': 0.043003326489060176, 's2_z': 0.03781226177065315, 'cos_iota': -0.38083200855755317, 'd_L': 441.867830567035, 't_c': -0.03427161689272702, 'phase_c': 5.763637746663152, 'psi': 1.3937102834137556, 'ra': 0.488083404187103, 'sin_dec': -0.763028685232574, 'q': 0.6233606692898784, 'M_c': 1.4264828362119741, 'eta': 0.23654259545079265, 'iota': Array(1.96149227, dtype=float64, weak_type=True), 'dec': Array(-0.86798597, dtype=float64, weak_type=True), 'lambda_1': 73.06590612087997, 'lambda_2': 1308.545914449417}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.4264828362119741, 'eta': 0.23654259545079265, 's1_z': 0.043003326489060176, 's2_z': 0.03781226177065315, 'lambda_1': 73.06590612087997, 'lambda_2': 1308.545914449417, 'd_L': 441.867830567035, 'phase_c': 5.763637746663152, 'iota': 1.961492271492952, 't_c': -0.03427161689272702, 'psi': 1.3937102834137556, 'ra': 0.488083404187103, 'dec': -0.8679859661626346}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-6.60543984e-23-4.00567842e-23j -8.14074078e-23-4.96279071e-23j
- -3.89460148e-23+2.61555858e-23j ...
-  5.39276234e-24+2.45611913e-24j  1.84029243e-23-8.43609062e-24j
-  3.40736080e-24+7.17846270e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [ 2.22079225e-23-7.90212700e-23j -4.51113226e-23+3.71704457e-23j
-  1.11662483e-23+5.70798721e-23j ...
-  1.86703625e-23-1.85004590e-23j  2.39227072e-24+2.92689593e-23j
- -6.76490301e-24-1.27936851e-23j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
- 2.17777440e-47 2.17778992e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
- 2047.984375  2047.9921875]
-15:35 ninjax INFO    : [-2.32812177e-23-5.53589630e-24j -2.46287899e-23+1.88100130e-23j
- -4.29211336e-23+3.13787509e-23j ...
-  2.68093527e-23+9.93100495e-24j  5.52060851e-23-5.33113432e-24j
- -2.70040822e-23-1.64197717e-23j]
-15:35 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
- 6.39790724e-47 6.39795354e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 0.7469043101468857
-15:35 ninjax INFO    : SNR for ifo L1 is 0.6473290437175486
-15:35 ninjax INFO    : SNR for ifo V1 is 4.15412322844661
-15:35 ninjax INFO    : The network SNR is 4.270086736411329
-15:35 ninjax INFO    : The network SNR does not pass the threshold, trying again
-15:35 ninjax INFO    : Generating new injection
-15:35 ninjax INFO    : Sanity check: generated parameters:
-15:35 ninjax INFO    : {'mass_1_source': 1.6212575100518167, 'mass_2_source': 1.2334421462601792, 's1_z': 0.022906383072068645, 's2_z': 0.04244378650121315, 'cos_iota': 0.4428705093342966, 'd_L': 83.90543884578904, 't_c': 0.02263498253391312, 'phase_c': 1.5622696676007386, 'psi': 2.6273629936609493, 'ra': 2.780695588898957, 'sin_dec': 0.8706920667315283}
-15:35 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/MPA1.npz . . . 
-15:35 ninjax INFO    : Injected lambda_1: 211.82500197946962
-15:35 ninjax INFO    : Injected lambda_2: 1042.917867777087
-15:35 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 1.2520655913203083 is 256.0
-15:35 ninjax INFO    : After transforms, the injection parameters are:
-15:35 ninjax INFO    : {'mass_1_source': 1.6212575100518167, 'mass_2_source': 1.2334421462601792, 's1_z': 0.022906383072068645, 's2_z': 0.04244378650121315, 'cos_iota': 0.4428705093342966, 'd_L': 83.90543884578904, 't_c': 0.02263498253391312, 'phase_c': 1.5622696676007386, 'psi': 2.6273629936609493, 'ra': 2.780695588898957, 'sin_dec': 0.8706920667315283, 'q': 0.760793481981007, 'M_c': 1.2520655913203083, 'eta': 0.24538608931200392, 'iota': Array(1.11199857, dtype=float64, weak_type=True), 'dec': Array(1.0566077, dtype=float64, weak_type=True), 'lambda_1': 211.82500197946962, 'lambda_2': 1042.917867777087}
-15:35 ninjax INFO    : The trial injection parameters are {'M_c': 1.2520655913203083, 'eta': 0.24538608931200392, 's1_z': 0.022906383072068645, 's2_z': 0.04244378650121315, 'lambda_1': 211.82500197946962, 'lambda_2': 1042.917867777087, 'd_L': 83.90543884578904, 'phase_c': 1.5622696676007386, 'iota': 1.1119985744897163, 't_c': 0.02263498253391312, 'psi': 2.6273629936609493, 'ra': 2.780695588898957, 'dec': 1.0566077027785672}
-15:35 ninjax INFO    : Injecting signals . . .
-15:35 ninjax INFO    : self.ifos
-15:35 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
-15:35 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-2.70153652e-23+8.61521207e-25j  7.76215207e-23-4.38561009e-23j
- -6.01214454e-24+1.76324088e-22j ...
-  2.25422483e-23-6.55111347e-24j  1.46120288e-23+4.92797357e-23j
-  5.10662865e-23-3.46449217e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.52338343e-23-3.19410120e-23j  4.20259682e-23-9.48176807e-24j
- -1.40826785e-22+1.27940299e-23j ...
- -2.53741207e-23-4.32953499e-23j -2.41682042e-23-3.21319862e-23j
-  7.93567389e-23-3.19354114e-24j]
-15:35 ninjax INFO    : [1.44906511e-46 1.44785671e-46 1.44667215e-46 ... 2.17778216e-47
- 2.17778992e-47 2.17779767e-47]
-15:35 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
-15:35 ninjax INFO    : [  20.           20.00390625   20.0078125  ... 2047.98828125
- 2047.9921875  2047.99609375]
-15:35 ninjax INFO    : [-6.46283449e-23-5.62566916e-23j  5.64530920e-23+4.21203482e-23j
- -2.35343698e-23-6.03190795e-23j ...
- -2.60527474e-23+4.89183385e-23j  3.97766966e-23+4.60130803e-23j
- -4.17488685e-23+1.29686330e-22j]
-15:35 ninjax INFO    : [1.43183556e-46 1.43058540e-46 1.42935095e-46 ... 6.39793039e-47
- 6.39795354e-47 6.39797668e-47]
-15:35 ninjax INFO    : SNR for ifo H1 is 21.668512578966002
-15:35 ninjax INFO    : SNR for ifo L1 is 18.420053920275784
-15:35 ninjax INFO    : SNR for ifo V1 is 24.428445610585896
-15:35 ninjax INFO    : The network SNR is 37.49095595953814
-15:35 ninjax INFO    : Network SNR passes threshold
-15:35 ninjax INFO    : Sanity checking the GW injection for ArrayImpl
-15:35 ninjax INFO    :    mass_1_source: 1.6212575100518167
-15:35 ninjax INFO    :    mass_2_source: 1.2334421462601792
-15:35 ninjax INFO    :    s1_z: 0.022906383072068645
-15:35 ninjax INFO    :    s2_z: 0.04244378650121315
-15:35 ninjax INFO    :    cos_iota: 0.4428705093342966
-15:35 ninjax INFO    :    d_L: 83.90543884578904
-15:35 ninjax INFO    :    t_c: 0.02263498253391312
-15:35 ninjax INFO    :    phase_c: 1.5622696676007386
-15:35 ninjax INFO    :    psi: 2.6273629936609493
-15:35 ninjax INFO    :    ra: 2.780695588898957
-15:35 ninjax INFO    :    sin_dec: 0.8706920667315283
-15:35 ninjax INFO    :    q: 0.760793481981007
-15:35 ninjax INFO    :    M_c: 1.2520655913203083
-15:35 ninjax INFO    :    eta: 0.24538608931200392
-15:35 ninjax INFO    :    iota: 1.1119985744897163
-15:35 ninjax INFO    :    dec: 1.0566077027785672
-15:35 ninjax INFO    :    lambda_1: 211.82500197946962
-15:35 ninjax INFO    :    lambda_2: 1042.917867777087
-15:35 ninjax INFO    :    H1_SNR: 21.668512578966002
-15:35 ninjax INFO    :    L1_SNR: 18.420053920275784
-15:35 ninjax INFO    :    V1_SNR: 24.428445610585896
-15:35 ninjax INFO    :    network_SNR: 37.49095595953814
-15:35 ninjax INFO    :    epoch: 254.0
-15:35 ninjax INFO    :    gmst: 2.7288901910520846
-15:35 ninjax INFO    :    duration: 256.0
-15:35 ninjax INFO    : Using GW HeterodynedTransientLikelihoodFD. Initializing likelihood
-15:35 ninjax INFO    : Using the injection parameters as reference parameters for the relative binning
-15:35 ninjax INFO    : Using the following kwargs for the GW likelihood: {}
+15:41 ninjax INFO    : SNR for ifo H1 is 14.854193139171263
+15:41 ninjax INFO    : SNR for ifo L1 is 18.37044261148936
+15:41 ninjax INFO    : SNR for ifo V1 is 6.653221439614541
+15:41 ninjax INFO    : The network SNR is 24.543544387116814
+15:41 ninjax INFO    : Network SNR passes threshold
+15:41 ninjax INFO    : Sanity checking the GW injection for ArrayImpl
+15:41 ninjax INFO    :    mass_1_source: 1.531855205788581
+15:41 ninjax INFO    :    mass_2_source: 1.424108129513599
+15:41 ninjax INFO    :    s1_z: -0.010161884789743357
+15:41 ninjax INFO    :    s2_z: -0.041397462114416285
+15:41 ninjax INFO    :    cos_iota: 0.4356053647459319
+15:41 ninjax INFO    :    d_L: 136.57851248628876
+15:41 ninjax INFO    :    t_c: -0.0996414168197243
+15:41 ninjax INFO    :    phase_c: 2.359986448121261
+15:41 ninjax INFO    :    psi: 2.7100657786740525
+15:41 ninjax INFO    :    ra: 1.2068449020797782
+15:41 ninjax INFO    :    sin_dec: -0.3728727789570274
+15:41 ninjax INFO    :    q: 0.929662362429669
+15:41 ninjax INFO    :    M_c: 1.3253073812581442
+15:41 ninjax INFO    :    eta: 0.24966783573243223
+15:41 ninjax INFO    :    iota: 1.120085634813364
+15:41 ninjax INFO    :    dec: -0.38210316109019465
+15:41 ninjax INFO    :    lambda_1: 300.90026851482503
+15:41 ninjax INFO    :    lambda_2: 464.2285086549516
+15:41 ninjax INFO    :    H1_SNR: 14.854193139171263
+15:41 ninjax INFO    :    L1_SNR: 18.37044261148936
+15:41 ninjax INFO    :    V1_SNR: 6.653221439614541
+15:41 ninjax INFO    :    network_SNR: 24.543544387116814
+15:41 ninjax INFO    :    epoch: 254.0
+15:41 ninjax INFO    :    gmst: 2.7288901910520846
+15:41 ninjax INFO    :    duration: 256.0
+15:41 ninjax INFO    : Using GW HeterodynedTransientLikelihoodFD. Initializing likelihood
+15:41 ninjax INFO    : Using the injection parameters as reference parameters for the relative binning
+15:41 ninjax INFO    : Using the following kwargs for the GW likelihood: {}
+15:45 ninjax INFO    : Initialization of HeterodynedTransientLikelihoodFD took 200.04407596588135 seconds = 3.334067932764689 minutes
+15:45 ninjax INFO    : The priors are not modified after their initialization
+15:45 ninjax INFO    : Required keys for the likelihood: ['M_c', 'eta', 's1_z', 's2_z', 'lambda_1', 'lambda_2', 'd_L', 'phase_c', 'iota', 't_c', 'psi', 'ra', 'dec']
+15:45 ninjax INFO    : Checking the setup between prior, transforms, and likelihood
+15:45 ninjax INFO    : sample: {'M_c': Array([1.89955354, 1.90949561, 2.37615455], dtype=float64), 'q': Array([0.7845853 , 0.99529937, 0.40460959], dtype=float64), 's1_z': Array([-0.03818088, -0.0275828 ,  0.02831156], dtype=float64), 's2_z': Array([ 0.03026341,  0.01173138, -0.01258093], dtype=float64), 'lambda_1': Array([1880.37626094, 4345.41670448, 2103.78537665], dtype=float64), 'lambda_2': Array([2189.32556338, 4064.33401623, 1373.48529271], dtype=float64), 'cos_iota': Array([0.67524106, 0.07076408, 0.1847089 ], dtype=float64), 'd_L': Array([530.82028851, 915.78942759, 609.29679934], dtype=float64), 't_c': Array([ 0.01767861,  0.03260922, -0.01705885], dtype=float64), 'phase_c': Array([1.58283666, 1.41689274, 2.76418161], dtype=float64), 'psi': Array([2.45622482, 2.60898092, 0.52855044], dtype=float64), 'ra': Array([3.92885622, 4.19721493, 1.59839791], dtype=float64), 'sin_dec': Array([-0.56613719, -0.27375716,  0.15427218], dtype=float64)}
+15:45 ninjax INFO    : log_prob: [-110.84441799   -2.7640255    -7.87000762]
+15:45 ninjax INFO    : Checking log_prob at injection parameters: {'mass_1_source': 1.531855205788581, 'mass_2_source': 1.424108129513599, 's1_z': -0.010161884789743357, 's2_z': -0.041397462114416285, 'cos_iota': 0.4356053647459319, 'd_L': 136.57851248628876, 't_c': -0.0996414168197243, 'phase_c': 2.359986448121261, 'psi': 2.7100657786740525, 'ra': 1.2068449020797782, 'sin_dec': -0.3728727789570274, 'q': 0.929662362429669, 'M_c': 1.3253073812581442, 'eta': 0.24966783573243223, 'iota': Array(1.12008563, dtype=float64, weak_type=True), 'dec': Array(-0.38210316, dtype=float64, weak_type=True), 'lambda_1': 300.90026851482503, 'lambda_2': 464.2285086549516, 'H1_SNR': 14.854193139171263, 'L1_SNR': 18.37044261148936, 'V1_SNR': 6.653221439614541, 'network_SNR': 24.543544387116814, 'epoch': 254.0, 'gmst': 2.7288901910520846, 'duration': 256.0}
+15:45 ninjax INFO    : log_prob at the injection parameters is: 244.76945758896045
+15:45 ninjax INFO    : Will plot these keys: ['M_c', 'q', 's1_z', 's2_z', 'lambda_1', 'lambda_2', 'd_L', 't_c', 'phase_c', 'iota', 'psi', 'ra', 'dec']
+15:45 ninjax INFO    : Will plot the labels: ['$M_c/M_\\odot$', '$q$', '$\\chi_1$', '$\\chi_2$', '$\\Lambda_1$', '$\\Lambda_2$', '$d_{\\rm{L}}/{\\rm Mpc}$', '$t_c$', '$\\phi_c$', '$\\iota$', '$\\psi$', '$\\alpha$', '$\\delta$']
+15:45 ninjax INFO    : Ninjax setup complete.
+15:45 ninjax INFO    : Saving output to ./Aplus/injection_14/
+15:45 ninjax INFO    : Using polynomial learning rate scheduler
+15:45 ninjax INFO    : The hyperparameters passed to flowMC and jim are
+15:45 ninjax INFO    :    n_loop_training: 200
+15:45 ninjax INFO    :    n_loop_production: 10
+15:45 ninjax INFO    :    n_local_steps: 100
+15:45 ninjax INFO    :    n_global_steps: 1000
+15:45 ninjax INFO    :    n_epochs: 25
+15:45 ninjax INFO    :    n_chains: 1000
+15:45 ninjax INFO    :    learning_rate: <function polynomial_schedule.<locals>.schedule at 0x1498701be320>
+15:45 ninjax INFO    :    max_samples: 50000
+15:45 ninjax INFO    :    momentum: 0.9
+15:45 ninjax INFO    :    batch_size: 30000
+15:45 ninjax INFO    :    use_global: True
+15:45 ninjax INFO    :    keep_quantile: 0.0
+15:45 ninjax INFO    :    train_thinning: 10
+15:45 ninjax INFO    :    output_thinning: 50
+15:45 ninjax INFO    :    n_sample_max: 10000
+15:45 ninjax INFO    :    num_layers: 10
+15:45 ninjax INFO    :    hidden_size: [128, 128]
+15:45 ninjax INFO    :    num_bins: 8
+15:45 ninjax INFO    :    save_training_chains: False
+15:45 ninjax INFO    :    eps_mass_matrix: 1e-05
+15:45 ninjax INFO    :    use_scheduler: True
+15:45 ninjax INFO    :    use_temperature: False
+15:45 ninjax INFO    :    which_temperature_schedule: exponential
+15:45 ninjax INFO    :    starting_temperature: 2.0
+15:45 ninjax INFO    :    stop_tempering_iteration: 75
+15:45 ninjax INFO    :    stopping_criterion_global_acc: 0.1
+15:45 ninjax INFO    :    stopping_criterion_loss: -inf
+15:45 ninjax INFO    :    nf_model_kwargs: {}
+15:45 ninjax INFO    :    local sampler arg not shown (pretty print)
+15:45 ninjax INFO    : Fetching the injected values for plotting
+Checking the noise that was generated in inject_signal ifo:
+[ 7.01643985e-23 -4.56727514e-23 -3.28678555e-23  1.36792636e-22
+ -1.65799301e-23  8.80653765e-24 -1.26335973e-23  2.01802464e-23
+  9.12488369e-23 -8.56301921e-23]
+[ 3.53313821e-23  1.48370545e-23  2.93302955e-23 -1.10716121e-23
+ -1.14019781e-23 -9.60703548e-23 -3.45280039e-23 -2.95464304e-23
+ -1.14733339e-22  4.57385828e-23]
+Checking the noise that was generated in inject_signal ifo:
+[-3.21993699e-23  1.10116939e-23 -4.32343265e-23 -5.33123177e-23
+ -3.51902629e-23  2.59141077e-24  7.80329620e-24  1.36249086e-22
+  3.36514253e-23 -4.26647365e-23]
+[ 2.73602401e-23  9.10585164e-23 -4.78832661e-23 -3.04415671e-23
+ -9.87396454e-23  3.44709245e-24 -4.57304422e-23  1.64999536e-22
+ -8.22654395e-23 -1.87087770e-23]
+Checking the noise that was generated in inject_signal ifo:
+[ 3.52609680e-23  6.93532151e-23  3.13309464e-23 -3.65043195e-23
+  8.25902398e-23  1.43537415e-23  2.08067733e-23 -6.83365831e-23
+  2.04544235e-23 -3.21862732e-24]
+[ 1.18725860e-22  3.76109500e-23  7.32304980e-23  2.99211194e-23
+  2.80189885e-23 -1.15435806e-22  1.27200334e-22 -3.55003765e-23
+ -9.93844584e-23  1.80592057e-24]
+NOTE: we are given a reference waveform!
+Initializing heterodyned likelihood..
+Comparing against relative binning in bilby
+Using 5941 bins for relative binning for epsilon 0.01
+Time for binning scheme: 0.1809697151184082 seconds
+Using provided reference parameters:
+ref_params for relative binning:
+{'mass_1_source': 1.531855205788581, 'mass_2_source': 1.424108129513599, 's1_z': -0.010161884789743357, 's2_z': -0.041397462114416285, 'cos_iota': 0.4356053647459319, 'd_L': 136.57851248628876, 't_c': -0.0996414168197243, 'phase_c': 2.359986448121261, 'psi': 2.7100657786740525, 'ra': 1.2068449020797782, 'sin_dec': -0.3728727789570274, 'q': 0.929662362429669, 'M_c': 1.3253073812581442, 'eta': 0.24966783573243223, 'iota': Array(1.12008563, dtype=float64, weak_type=True), 'dec': Array(-0.38210316, dtype=float64, weak_type=True), 'lambda_1': 300.90026851482503, 'lambda_2': 464.2285086549516, 'H1_SNR': 14.854193139171263, 'L1_SNR': 18.37044261148936, 'V1_SNR': 6.653221439614541, 'network_SNR': 24.543544387116814, 'epoch': 254.0, 'gmst': 2.7288901910520846, 'duration': 256.0}
+Constructing reference waveforms. . .
+Time for reference waveforms: 0.5127429962158203 seconds
+Time for h_sky_low and h_sky_center: 5.483459949493408 seconds
+Going to compute the masks . . .
+Time taken for f_index_array calculation is 0.7585227489471436
+Going to compute coefficients . . .
+Time for computing coefficients: 177.88093614578247 seconds
+Time for computing coefficients: 7.430758237838745 seconds
+Time for computing coefficients: 7.265196084976196 seconds
+['M_c', 'eta', 's1_z', 's2_z', 'lambda_1', 'lambda_2', 'd_L', 'phase_c', 'iota', 't_c', 'psi', 'ra', 'dec']
+INFO: Using MALA as local sampler
+Setting up a single Gaussian distribution
+No autotune found, use input sampler_params
+Training normalizing flow
+Tuning global sampler:   0%|          | 0/200 [00:00<?, ?it/s]Tuning global sampler:   0%|          | 1/200 [02:02<6:45:41, 122.32s/it]Tuning global sampler:   1%|          | 2/200 [02:06<2:55:04, 53.06s/it] Tuning global sampler:   2%|▏         | 3/200 [02:11<1:41:35, 30.94s/it]Tuning global sampler:   2%|▏         | 4/200 [02:16<1:07:08, 20.55s/it]Tuning global sampler:   2%|▎         | 5/200 [02:20<48:05, 14.80s/it]  Tuning global sampler:   3%|▎         | 6/200 [02:25<36:39, 11.34s/it]Tuning global sampler:   4%|▎         | 7/200 [02:29<29:18,  9.11s/it]Tuning global sampler:   4%|▍         | 8/200 [02:34<24:32,  7.67s/it]Tuning global sampler:   4%|▍         | 9/200 [02:38<21:16,  6.68s/it]Tuning global sampler:   5%|▌         | 10/200 [02:43<18:56,  5.98s/it]Tuning global sampler:   6%|▌         | 11/200 [02:48<17:33,  5.58s/it]Tuning global sampler:   6%|▌         | 12/200 [02:52<16:32,  5.28s/it]Tuning global sampler:   6%|▋         | 13/200 [02:57<15:45,  5.06s/it]Tuning global sampler:   7%|▋         | 14/200 [03:01<15:16,  4.93s/it]Tuning global sampler:   8%|▊         | 15/200 [03:06<14:56,  4.85s/it]Tuning global sampler:   8%|▊         | 16/200 [03:11<14:39,  4.78s/it]Tuning global sampler:   8%|▊         | 17/200 [03:15<14:26,  4.74s/it]Tuning global sampler:   9%|▉         | 18/200 [03:21<15:08,  4.99s/it]Tuning global sampler:  10%|▉         | 19/200 [03:25<14:45,  4.89s/it]Tuning global sampler:  10%|█         | 20/200 [03:30<14:29,  4.83s/it]Tuning global sampler:  10%|█         | 21/200 [03:35<14:13,  4.77s/it]Tuning global sampler:  11%|█         | 22/200 [03:39<14:00,  4.72s/it]Tuning global sampler:  12%|█▏        | 23/200 [03:44<13:49,  4.68s/it]Tuning global sampler:  12%|█▏        | 24/200 [03:48<13:30,  4.60s/it]Tuning global sampler:  12%|█▎        | 25/200 [03:53<13:17,  4.56s/it]Tuning global sampler:  13%|█▎        | 26/200 [03:57<13:03,  4.50s/it]Tuning global sampler:  14%|█▎        | 27/200 [04:02<12:53,  4.47s/it]Tuning global sampler:  14%|█▍        | 28/200 [04:06<12:44,  4.44s/it]Tuning global sampler:  14%|█▍        | 29/200 [04:10<12:37,  4.43s/it]Tuning global sampler:  15%|█▌        | 30/200 [04:15<12:30,  4.41s/it]Tuning global sampler:  16%|█▌        | 31/200 [04:20<13:14,  4.70s/it]Tuning global sampler:  16%|█▌        | 32/200 [04:25<12:53,  4.61s/it]Tuning global sampler:  16%|█▋        | 33/200 [04:29<12:36,  4.53s/it]Tuning global sampler:  17%|█▋        | 34/200 [04:33<12:23,  4.48s/it]Tuning global sampler:  18%|█▊        | 35/200 [04:38<12:14,  4.45s/it]Tuning global sampler:  18%|█▊        | 36/200 [04:42<12:06,  4.43s/it]Tuning global sampler:  18%|█▊        | 37/200 [04:47<12:48,  4.71s/it]Tuning global sampler:  19%|█▉        | 38/200 [04:52<12:27,  4.62s/it]Tuning global sampler:  20%|█▉        | 39/200 [04:56<12:11,  4.54s/it]Tuning global sampler:  20%|██        | 40/200 [05:01<12:04,  4.53s/it]Tuning global sampler:  20%|██        | 41/200 [05:05<11:53,  4.49s/it]Tuning global sampler:  21%|██        | 42/200 [05:09<11:43,  4.46s/it]Tuning global sampler:  22%|██▏       | 43/200 [05:14<11:36,  4.43s/it]Tuning global sampler:  22%|██▏       | 44/200 [05:18<11:28,  4.41s/it]Tuning global sampler:  22%|██▎       | 45/200 [05:23<11:20,  4.39s/it]Tuning global sampler:  23%|██▎       | 46/200 [05:27<11:15,  4.39s/it]Tuning global sampler:  24%|██▎       | 47/200 [05:31<11:11,  4.39s/it]Tuning global sampler:  24%|██▍       | 48/200 [05:36<11:06,  4.38s/it]Tuning global sampler:  24%|██▍       | 49/200 [05:40<11:02,  4.39s/it]Tuning global sampler:  25%|██▌       | 50/200 [05:44<10:58,  4.39s/it]Tuning global sampler:  26%|██▌       | 51/200 [05:49<10:54,  4.39s/it]Tuning global sampler:  26%|██▌       | 52/200 [05:53<10:49,  4.39s/it]Tuning global sampler:  26%|██▋       | 53/200 [05:58<10:44,  4.39s/it]Tuning global sampler:  27%|██▋       | 54/200 [06:02<10:40,  4.39s/it]Tuning global sampler:  28%|██▊       | 55/200 [06:06<10:34,  4.38s/it]Tuning global sampler:  28%|██▊       | 56/200 [06:11<10:28,  4.37s/it]Tuning global sampler:  28%|██▊       | 57/200 [06:16<11:10,  4.69s/it]Tuning global sampler:  29%|██▉       | 58/200 [06:21<10:53,  4.60s/it]Tuning global sampler:  30%|██▉       | 59/200 [06:25<10:40,  4.54s/it]Tuning global sampler:  30%|███       | 60/200 [06:29<10:30,  4.50s/it]Tuning global sampler:  30%|███       | 61/200 [06:34<10:20,  4.47s/it]Tuning global sampler:  31%|███       | 62/200 [06:38<10:13,  4.45s/it]Tuning global sampler:  32%|███▏      | 63/200 [06:43<10:07,  4.44s/it]Tuning global sampler:  32%|███▏      | 64/200 [06:47<10:00,  4.42s/it]Tuning global sampler:  32%|███▎      | 65/200 [06:51<10:01,  4.46s/it]Tuning global sampler:  33%|███▎      | 66/200 [06:56<09:52,  4.42s/it]Tuning global sampler:  34%|███▎      | 67/200 [07:00<09:45,  4.40s/it]Tuning global sampler:  34%|███▍      | 68/200 [07:05<09:40,  4.40s/it]Tuning global sampler:  34%|███▍      | 69/200 [07:09<09:36,  4.40s/it]Tuning global sampler:  35%|███▌      | 70/200 [07:13<09:31,  4.39s/it]Tuning global sampler:  36%|███▌      | 71/200 [07:18<09:26,  4.39s/it]Tuning global sampler:  36%|███▌      | 72/200 [07:22<09:21,  4.39s/it]Tuning global sampler:  36%|███▋      | 73/200 [07:26<09:17,  4.39s/it]Tuning global sampler:  37%|███▋      | 74/200 [07:31<09:13,  4.39s/it]Tuning global sampler:  38%|███▊      | 75/200 [07:35<09:10,  4.40s/it]Tuning global sampler:  38%|███▊      | 76/200 [07:40<09:06,  4.41s/it]Tuning global sampler:  38%|███▊      | 77/200 [07:45<09:39,  4.71s/it]Tuning global sampler:  39%|███▉      | 78/200 [07:50<09:22,  4.61s/it]Tuning global sampler:  40%|███▉      | 79/200 [07:54<09:08,  4.54s/it]Tuning global sampler:  40%|███▉      | 79/200 [07:58<12:13,  6.06s/it]
+Compiling MALA body
+Early stopping: global acceptance target rate achieved
+Starting Production run
+Production run:   0%|          | 0/10 [00:00<?, ?it/s]Production run:  10%|█         | 1/10 [00:03<00:28,  3.21s/it]Production run:  20%|██        | 2/10 [00:06<00:25,  3.21s/it]Production run:  30%|███       | 3/10 [00:09<00:22,  3.21s/it]Production run:  40%|████      | 4/10 [00:12<00:19,  3.21s/it]Production run:  50%|█████     | 5/10 [00:16<00:16,  3.21s/it]Production run:  60%|██████    | 6/10 [00:19<00:12,  3.21s/it]Production run:  70%|███████   | 7/10 [00:22<00:09,  3.21s/it]Production run:  80%|████████  | 8/10 [00:25<00:06,  3.21s/it]Production run:  90%|█████████ | 9/10 [00:28<00:03,  3.21s/it]Production run: 100%|██████████| 10/10 [00:32<00:00,  3.21s/it]Production run: 100%|██████████| 10/10 [00:32<00:00,  3.21s/it]
+15:54 ninjax INFO    : Saving samples to ./Aplus/injection_14/results_training.npz
+15:54 ninjax INFO    : Saving the NF
+15:54 ninjax INFO    : Time taken: 526.4079985618591 seconds (8.773466642697652 minutes)
+15:54 ninjax INFO    : Creating the final corner plot
+15:54 ninjax INFO    : Dumping the final production chains
+15:54 ninjax INFO    : Chains shape is: (13, 220000)
+15:54 ninjax INFO    : Key: M_c: ESS = 35996, Rhat = 1.0192026695581833
+15:54 ninjax INFO    : Key: q: ESS = 24897, Rhat = 1.0263732865406776
+15:54 ninjax INFO    : Key: s1_z: ESS = 31059, Rhat = 1.0212568438127354
+15:54 ninjax INFO    : Key: s2_z: ESS = 30222, Rhat = 1.0216976836897373
+15:54 ninjax INFO    : Key: lambda_1: ESS = 50986, Rhat = 1.0138670991127647
+15:54 ninjax INFO    : Key: lambda_2: ESS = 51109, Rhat = 1.0137109282703622
+15:54 ninjax INFO    : Key: cos_iota: ESS = 21516, Rhat = 1.028883956200569
+15:54 ninjax INFO    : Key: d_L: ESS = 20546, Rhat = 1.030293155716235
+15:54 ninjax INFO    : Key: t_c: ESS = 28003, Rhat = 1.0225138237876916
+15:54 ninjax INFO    : Key: phase_c: ESS = 38431, Rhat = 1.0177528623051395
+15:54 ninjax INFO    : Key: psi: ESS = 38691, Rhat = 1.0172854579781978
+15:54 ninjax INFO    : Key: ra: ESS = 29491, Rhat = 1.0221697535366148
+15:54 ninjax INFO    : Key: sin_dec: ESS = 27349, Rhat = 1.0231133931867327
+15:54 ninjax INFO    : Key: eta: ESS = 24897, Rhat = 1.0263732865406776
+15:54 ninjax INFO    : Key: iota: ESS = 21516, Rhat = 1.028883956200569
+15:54 ninjax INFO    : Key: dec: ESS = 27349, Rhat = 1.0231133931867327
+15:54 ninjax INFO    : Finished successfully!
+Training summary
+==========
+M_c: 1.374 +/- 0.209
+q: 0.749 +/- 0.182
+s1_z: 0.001 +/- 0.027
+s2_z: -0.007 +/- 0.027
+lambda_1: 1717.406 +/- 1424.704
+lambda_2: 1863.381 +/- 1406.069
+cos_iota: 0.484 +/- 0.521
+d_L: 507.441 +/- 275.819
+t_c: -0.080 +/- 0.040
+phase_c: 3.049 +/- 1.772
+psi: 1.395 +/- 0.879
+ra: 1.578 +/- 0.940
+sin_dec: -0.100 +/- 0.293
+Log probability: 123.049 +/- 105.144
+Local acceptance: 0.647 +/- 0.478
+Global acceptance: 0.012 +/- 0.107
+Max loss: 22.862, Min loss: 6.388
+Production summary
+==========
+M_c: 1.325 +/- 0.000
+q: 0.782 +/- 0.119
+s1_z: -0.009 +/- 0.025
+s2_z: -0.008 +/- 0.026
+lambda_1: 263.289 +/- 224.232
+lambda_2: 572.478 +/- 442.767
+cos_iota: 0.774 +/- 0.172
+d_L: 216.024 +/- 38.256
+t_c: -0.098 +/- 0.001
+phase_c: 3.121 +/- 1.796
+psi: 1.699 +/- 0.906
+ra: 1.230 +/- 0.014
+sin_dec: -0.286 +/- 0.045
+Log probability: 242.632 +/- 2.352
+Local acceptance: 0.289 +/- 0.453
+Global acceptance: 0.111 +/- 0.314
+DONE
+
+JOB STATISTICS
+==============
+Job ID: 10906029
+Cluster: snellius
+User/Group: twouters2/twouters2
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:11:18
+CPU Efficiency: 5.22% of 03:36:32 core-walltime
+Job Wall-clock time: 00:13:32
+Memory Utilized: 4.72 GB
+Memory Efficiency: 47.20% of 10.00 GB (10.00 GB/node)
