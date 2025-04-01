@@ -38,7 +38,16 @@ def parse_arguments():
     parser.add_argument("--id-list", 
                         type=str, 
                         nargs='+',
+                        default=None,
                         help="List of identifier of the GW injection for that EOS.")
+    parser.add_argument("--id-begin", 
+                        type=int, 
+                        default=1,
+                        help="Starting point of indices")
+    parser.add_argument("--id-end", 
+                        type=int, 
+                        default=30,
+                        help="Ending point of indices")
     parser.add_argument("--local-sampler-name", 
                         type=str, 
                         default="MALA", 
@@ -204,20 +213,36 @@ def main(args):
     
     else:
         # Likelihoods from GW posteriors
-        likelihoods_list_GW = [utils.GWlikelihood_with_masses(args.eos, args.ifo_network, idx) for idx in args.id_list]
+        if args.id_list is None:
+            id_list = np.arange(args.id_begin, args.id_end + 1)
+            print(f"Given id_list was None, so created id list {id_list}")
+        else:
+            id_list = args.id_list
+        
+        likelihoods_list_GW = []
+        for idx in id_list:
+            try:
+                new_likelihood = utils.GWlikelihood_with_masses(args.eos, args.ifo_network, idx)
+                likelihoods_list_GW.append(new_likelihood)
+            except Exception as e:
+                print(f"Could not load the likelihood for id {idx}, because of the following error: {e}")
+                print(f"Moving on")
+                
         print(f"There are {len(likelihoods_list_GW)} GW likelihoods used now")
         
-        # Add masses to the priors
-        mass_priors = []
-        for GW_likelihood in likelihoods_list_GW:
-            m1_min, m1_max = GW_likelihood.m1_min, GW_likelihood.m1_max
-            m2_min, m2_max = GW_likelihood.m2_min, GW_likelihood.m2_max
+        
+        # # FIXME: decide to delete if other method seems to be working or not
+        # mass_priors = []
+        # for GW_likelihood in likelihoods_list_GW:
+        #     m1_min, m1_max = GW_likelihood.m1_min, GW_likelihood.m1_max
+        #     m2_min, m2_max = GW_likelihood.m2_min, GW_likelihood.m2_max
             
-            mass_priors.append(UniformPrior(m1_min, m1_max, parameter_names=[f"m1_{GW_likelihood.name}"]))
-            mass_priors.append(UniformPrior(m2_min, m2_max, parameter_names=[f"m2_{GW_likelihood.name}"]))
+        #     mass_priors.append(UniformPrior(m1_min, m1_max, parameter_names=[f"m1_{GW_likelihood.name}"]))
+        #     mass_priors.append(UniformPrior(m2_min, m2_max, parameter_names=[f"m2_{GW_likelihood.name}"]))
             
-            keep_names += [f"m1_{GW_likelihood.name}", f"m2_{GW_likelihood.name}"]
+        #     keep_names += [f"m1_{GW_likelihood.name}", f"m2_{GW_likelihood.name}"]
 
+        keep_names += ["key"]
         # Radio timing mass measurement pulsars
         likelihoods_list_radio = []
         if args.sample_radio:
@@ -247,7 +272,9 @@ def main(args):
     print("prior_keys")
     print(prior_keys)
     
-    full_prior_list = prior_list + mass_priors
+    # full_prior_list = prior_list + mass_priors # TODO: remove me, this is for the old implementation with the masses
+    key_prior = utils.KeyPrior()
+    full_prior_list = prior_list + [key_prior]
     prior = CombinePrior(full_prior_list)
     all_prior_keys = prior.parameter_names
     

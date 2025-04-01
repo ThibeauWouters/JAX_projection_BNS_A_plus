@@ -1,0 +1,3 @@
+- `injection_5`: Mode collapse
+- `injection_7`: Mode collapse
+- `injection_14`: Mode collapse

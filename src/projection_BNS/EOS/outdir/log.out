@@ -1,4 +1,4 @@
-Mon Mar 31 13:19:52 CEST 2025
+Tue Apr  1 08:26:23 CEST 2025
 NVIDIA H100
 GPU found?
 [CudaDevice(id=0)]
@@ -8,27 +8,193 @@ Ignoring the Q and Z NEP parameters
 Using CSE grid with 8 points
 Fixed params loaded inside the MicroToMacroTransform:
     E_sat: -16.0
-Traceback (most recent call last):
-  File "/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/EOS/inference.py", line 385, in <module>
-    main(args)
-  File "/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/EOS/inference.py", line 207, in main
-    likelihoods_list_GW = [utils.GWlikelihood_with_masses(args.eos, idx) for idx in args.id_list]
-  File "/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/EOS/inference.py", line 207, in <listcomp>
-    likelihoods_list_GW = [utils.GWlikelihood_with_masses(args.eos, idx) for idx in args.id_list]
-TypeError: GWlikelihood_with_masses.__init__() missing 1 required positional argument: 'id'
-DONE
-
-JOB STATISTICS
-==============
-Job ID: 10886499
-Cluster: snellius
-User/Group: twouters2/twouters2
-State: RUNNING
-Nodes: 1
-Cores per node: 16
-CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 00:07:28 core-walltime
-Job Wall-clock time: 00:00:28
-Memory Utilized: 0.00 MB
-Memory Efficiency: 0.00% of 20.00 GB (20.00 GB/node)
-WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.
+Given id_list was None, so created id list [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30]
+Loading the trained NF model from: models/HQC18/Aplus/1
+Loaded the NF for run HQC18_1
+The range of m1 for HQC18_1 is: 1.5951060503721237 to 1.9727715104818344
+The range of m2 for HQC18_1 is: 1.312011256814003 to 1.6153650730848312
+Loading the trained NF model from: models/HQC18/Aplus/2
+Loaded the NF for run HQC18_2
+The range of m1 for HQC18_2 is: 1.3507076352834702 to 1.786174550652504
+The range of m2 for HQC18_2 is: 1.023673191666603 to 1.3354357331991196
+Loading the trained NF model from: models/HQC18/Aplus/3
+Loaded the NF for run HQC18_3
+The range of m1 for HQC18_3 is: 1.6290701180696487 to 2.099888101220131
+The range of m2 for HQC18_3 is: 1.2507999688386917 to 1.5923646837472916
+Loading the trained NF model from: models/HQC18/Aplus/4
+Loaded the NF for run HQC18_4
+The range of m1 for HQC18_4 is: 1.5584642440080643 to 2.062421664595604
+The range of m2 for HQC18_4 is: 0.9600573033094406 to 1.2403257936239243
+Loading the trained NF model from: models/HQC18/Aplus/5
+Loaded the NF for run HQC18_5
+The range of m1 for HQC18_5 is: 1.67008675634861 to 2.057117149233818
+The range of m2 for HQC18_5 is: 1.3671474903821945 to 1.6765356808900833
+Loading the trained NF model from: models/HQC18/Aplus/6
+Loaded the NF for run HQC18_6
+The range of m1 for HQC18_6 is: 1.1361979693174362 to 1.4794949442148209
+The range of m2 for HQC18_6 is: 0.8818090707063675 to 1.13137386739254
+Loading the trained NF model from: models/HQC18/Aplus/7
+Loaded the NF for run HQC18_7
+The range of m1 for HQC18_7 is: 1.7870812863111496 to 2.304913178086281
+The range of m2 for HQC18_7 is: 1.4346552640199661 to 1.8429436534643173
+Loading the trained NF model from: models/HQC18/Aplus/8
+Tried looking for the NF architecture at path /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/8.eqx, but it doesn't exist!
+Could not load the likelihood for id 8, because of the following error: [Errno 2] No such file or directory: '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/8_kwargs.json'
+Moving on
+Loading the trained NF model from: models/HQC18/Aplus/9
+Tried looking for the NF architecture at path /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/9.eqx, but it doesn't exist!
+Could not load the likelihood for id 9, because of the following error: [Errno 2] No such file or directory: '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/9_kwargs.json'
+Moving on
+Loading the trained NF model from: models/HQC18/Aplus/10
+Tried looking for the NF architecture at path /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/10.eqx, but it doesn't exist!
+Could not load the likelihood for id 10, because of the following error: [Errno 2] No such file or directory: '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/10_kwargs.json'
+Moving on
+Loading the trained NF model from: models/HQC18/Aplus/11
+Loaded the NF for run HQC18_11
+The range of m1 for HQC18_11 is: 1.299256756901741 to 1.62281833589077
+The range of m2 for HQC18_11 is: 1.0130832344293594 to 1.2501218169927597
+Loading the trained NF model from: models/HQC18/Aplus/12
+Loaded the NF for run HQC18_12
+The range of m1 for HQC18_12 is: 1.6495809704065323 to 1.9121313840150833
+The range of m2 for HQC18_12 is: 1.456182524561882 to 1.6875570267438889
+Loading the trained NF model from: models/HQC18/Aplus/13
+Loaded the NF for run HQC18_13
+The range of m1 for HQC18_13 is: 1.681915745139122 to 2.0141854137182236
+The range of m2 for HQC18_13 is: 1.4184422045946121 to 1.6963628679513931
+Loading the trained NF model from: models/HQC18/Aplus/14
+Loaded the NF for run HQC18_14
+The range of m1 for HQC18_14 is: 1.6363092511892319 to 2.130124792456627
+The range of m2 for HQC18_14 is: 1.2622100859880447 to 1.6241564601659775
+Loading the trained NF model from: models/HQC18/Aplus/15
+Loaded the NF for run HQC18_15
+The range of m1 for HQC18_15 is: 1.6567648202180862 to 2.0767778903245926
+The range of m2 for HQC18_15 is: 1.323576644062996 to 1.6471945494413376
+Loading the trained NF model from: models/HQC18/Aplus/16
+Loaded the NF for run HQC18_16
+The range of m1 for HQC18_16 is: 1.275683417916298 to 1.670367643237114
+The range of m2 for HQC18_16 is: 0.9745586663484573 to 1.2572485953569412
+Loading the trained NF model from: models/HQC18/Aplus/17
+Loaded the NF for run HQC18_17
+The range of m1 for HQC18_17 is: 1.0951978713274002 to 1.3199273496866226
+The range of m2 for HQC18_17 is: 0.9207233041524887 to 1.1096449941396713
+Loading the trained NF model from: models/HQC18/Aplus/18
+Loaded the NF for run HQC18_18
+The range of m1 for HQC18_18 is: 1.3384317606687546 to 1.6379211097955704
+The range of m2 for HQC18_18 is: 1.1141770333051682 to 1.3447678834199905
+Loading the trained NF model from: models/HQC18/Aplus/19
+Loaded the NF for run HQC18_19
+The range of m1 for HQC18_19 is: 1.537817046046257 to 1.8139878660440445
+The range of m2 for HQC18_19 is: 1.3155234605073929 to 1.5559086948633194
+Loading the trained NF model from: models/HQC18/Aplus/20
+Loaded the NF for run HQC18_20
+The range of m1 for HQC18_20 is: 1.2490694969892502 to 1.608438566327095
+The range of m2 for HQC18_20 is: 0.9914573282003403 to 1.254277303814888
+Loading the trained NF model from: models/HQC18/Aplus/21
+Loaded the NF for run HQC18_21
+The range of m1 for HQC18_21 is: 1.69859878718853 to 2.150139734148979
+The range of m2 for HQC18_21 is: 1.0096531361341476 to 1.2563065439462662
+Loading the trained NF model from: models/HQC18/Aplus/22
+Loaded the NF for run HQC18_22
+The range of m1 for HQC18_22 is: 1.9517839699983597 to 2.2153454273939133
+The range of m2 for HQC18_22 is: 1.7249678820371628 to 1.966801956295967
+Loading the trained NF model from: models/HQC18/Aplus/23
+Loaded the NF for run HQC18_23
+The range of m1 for HQC18_23 is: 1.3920056074857712 to 1.7409268766641617
+The range of m2 for HQC18_23 is: 1.1153361946344376 to 1.3798607140779495
+Loading the trained NF model from: models/HQC18/Aplus/24
+Loaded the NF for run HQC18_24
+The range of m1 for HQC18_24 is: 1.3898760825395584 to 1.6547567397356033
+The range of m2 for HQC18_24 is: 1.189572736620903 to 1.417006179690361
+Loading the trained NF model from: models/HQC18/Aplus/25
+Loaded the NF for run HQC18_25
+The range of m1 for HQC18_25 is: 1.2258315831422806 to 1.3944337517023087
+The range of m2 for HQC18_25 is: 1.103745624423027 to 1.2540871649980545
+Loading the trained NF model from: models/HQC18/Aplus/26
+Loaded the NF for run HQC18_26
+The range of m1 for HQC18_26 is: 1.4261224120855331 to 1.7603421956300735
+The range of m2 for HQC18_26 is: 1.1617300659418106 to 1.4280133694410324
+Loading the trained NF model from: models/HQC18/Aplus/27
+Loaded the NF for run HQC18_27
+The range of m1 for HQC18_27 is: 1.373770758509636 to 1.6603817790746689
+The range of m2 for HQC18_27 is: 1.1460060626268387 to 1.390162631869316
+Loading the trained NF model from: models/HQC18/Aplus/28
+Loaded the NF for run HQC18_28
+The range of m1 for HQC18_28 is: 1.6580089181661606 to 1.990496888756752
+The range of m2 for HQC18_28 is: 1.4186658710241318 to 1.7019408196210861
+Loading the trained NF model from: models/HQC18/Aplus/29
+Loaded the NF for run HQC18_29
+The range of m1 for HQC18_29 is: 1.3753966242074966 to 1.7970957607030869
+The range of m2 for HQC18_29 is: 1.0696286708116531 to 1.3709748536348343
+Loading the trained NF model from: models/HQC18/Aplus/30
+Loaded the NF for run HQC18_30
+The range of m1 for HQC18_30 is: 1.4894217997789383 to 2.021694555878639
+The range of m2 for HQC18_30 is: 1.1030303686857224 to 1.4583279937505722
+There are 27 GW likelihoods used now
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x149064a951b0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e62040a30>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e61f8e110>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e601400a0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e60ff9f00>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e61331d80>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e2371ac20>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e2352fc70>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e22ccac50>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e2352f910>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e2250a170>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e600ea6b0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e22de8160>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e22976860>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e22619f90>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e21f1ffa0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e2252f820>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e220cc730>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e210d7580>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e21602680>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e2194ea10>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e217afd00>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e21dd5630>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e2087ecb0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e209e6dd0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e2192de40>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x147e20118e50>
+prior_keys
+['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
+all_prior_keys
+['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
+Prior parameter 0: E_sym
+Prior parameter 1: L_sym
+Prior parameter 2: K_sym
+Prior parameter 3: K_sat
+Prior parameter 4: nbreak
+Prior parameter 5: n_CSE_0_u
+Prior parameter 6: cs2_CSE_0
+Prior parameter 7: n_CSE_1_u
+Prior parameter 8: cs2_CSE_1
+Prior parameter 9: n_CSE_2_u
+Prior parameter 10: cs2_CSE_2
+Prior parameter 11: n_CSE_3_u
+Prior parameter 12: cs2_CSE_3
+Prior parameter 13: n_CSE_4_u
+Prior parameter 14: cs2_CSE_4
+Prior parameter 15: n_CSE_5_u
+Prior parameter 16: cs2_CSE_5
+Prior parameter 17: n_CSE_6_u
+Prior parameter 18: cs2_CSE_6
+Prior parameter 19: n_CSE_7_u
+Prior parameter 20: cs2_CSE_7
+Prior parameter 21: cs2_CSE_8
+Prior parameter 22: key
+Fixed params loaded inside the MicroToMacroTransform:
+    E_sat: -16.0
+We are going to give these kwargs to Jim:
+{'n_loop_training': 30, 'n_loop_production': 30, 'n_chains': 1000, 'n_local_steps': 2, 'n_global_steps': 100, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
+We are going to sample the following parameters:
+['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
+No sample transforms provided. Using prior parameters as sampling parameters
+Jim received the local sampler name: MALA
+['n_dim', 'n_chains', 'n_local_steps', 'n_global_steps', 'n_loop', 'output_thinning', 'verbose']
+log_prob
+[-409.49397164 -334.59458858 -306.72069059]
+Sampling seed is set to: 11
+Global Tuning:   0%|          | 0/30 [00:00<?, ?it/s]

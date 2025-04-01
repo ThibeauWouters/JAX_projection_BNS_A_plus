@@ -7,7 +7,7 @@ TEMPLATE_CONFIG=$OUTDIR/template.ini  # Path to the config template, located in 
 TEMPLATE_PRIOR=$OUTDIR/template.prior  # Path to the config template, located in $OUTDIR
 
 # Loop over each GW event ID
-for ID in $(seq 31 31); do
+for ID in $(seq 1 20); do
   EVENT_DIR="${OUTDIR}/injection_${ID}"
   NEW_SCRIPT="./slurm_scripts/submit_${ID}.sh"
 
