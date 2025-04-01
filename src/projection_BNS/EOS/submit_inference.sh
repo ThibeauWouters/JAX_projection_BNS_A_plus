@@ -28,7 +28,7 @@ python inference.py \
     --id-begin 1 \
     --id-end 30 \
     --outdir ./outdir/ \
-    --local-sampler-name MALA \
+    --local-sampler-name GaussianRandomWalk \
     --eps-mass-matrix 1e-5 \
     --n-loop-training 30 \
     --n-loop-production 30 \

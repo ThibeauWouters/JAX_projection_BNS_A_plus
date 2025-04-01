@@ -1,99 +1,17 @@
-Tue Apr  1 11:21:49 CEST 2025
+Tue Apr  1 13:25:53 CEST 2025
 NVIDIA H100
-Checking the convergence for ./outdir/
-list(data.keys())
-['log_prob', 'E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
-Key: E_sym
-    rhat = 1.484837530297458
-    ess = 1916.458362998497
-Key: L_sym
-    rhat = 1.5138073521859612
-    ess = 1844.5268846302633
-Key: K_sym
-    rhat = 1.4898814835163299
-    ess = 1975.6607100020078
-Key: K_sat
-    rhat = 1.4916647988034655
-    ess = 1910.7744889655016
-Key: nbreak
-    rhat = 1.5079071029201896
-    ess = 1902.2877100625212
-Key: n_CSE_0_u
-    rhat = 1.4590771869208357
-    ess = 1985.337810943163
-Key: cs2_CSE_0
-    rhat = 1.4497151149183103
-    ess = 1995.5592207153236
-Key: n_CSE_1_u
-    rhat = 1.4674668164380575
-    ess = 1953.8452835363094
-Key: cs2_CSE_1
-    rhat = 1.4733875512271373
-    ess = 1963.5142310884098
-Key: n_CSE_2_u
-    rhat = 1.4804049571060387
-    ess = 1921.2078880608792
-Key: cs2_CSE_2
-    rhat = 1.4794313153927656
-    ess = 1924.3621947315228
-Key: n_CSE_3_u
-    rhat = 1.4639935735891947
-    ess = 1963.8428234457501
-Key: cs2_CSE_3
-    rhat = 1.4982258482803836
-    ess = 1880.4211246483087
-Key: n_CSE_4_u
-    rhat = 1.4828261139607233
-    ess = 1916.5743183699456
-Key: cs2_CSE_4
-    rhat = 1.4577328678267598
-    ess = 1977.9176857652988
-Key: n_CSE_5_u
-    rhat = 1.4720927414239977
-    ess = 1939.240783553099
-Key: cs2_CSE_5
-    rhat = 1.479130232995762
-    ess = 1963.1530824019942
-Key: n_CSE_6_u
-    rhat = 1.4708217122573524
-    ess = 1970.884179485446
-Key: cs2_CSE_6
-    rhat = 1.4830686466354381
-    ess = 1908.7754282051988
-Key: n_CSE_7_u
-    rhat = 1.4537942088351885
-    ess = 1989.0611381091217
-Key: cs2_CSE_7
-    rhat = 1.4698798197608691
-    ess = 1953.8656852748027
-Key: cs2_CSE_8
-    rhat = 1.4864984172064701
-    ess = 1942.6395729378496
-Key: key
-    rhat = 1.4446811035334695
-    ess = 2012.2553962721172
-Plotting the cornerplot for ./outdir/
-Making the cornerplot, these are the chains: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
-(22, 10000)
-Making plots for ./outdir/
-Number of samples: 10000
-Creating NS plot . . .
-  0%|          | 0/3001 [00:00<?, ?it/s]  5%|▍         | 149/3001 [00:00<00:01, 1484.68it/s] 10%|█         | 304/3001 [00:00<00:01, 1522.57it/s] 15%|█▌        | 457/3001 [00:00<00:01, 1525.48it/s] 20%|██        | 613/3001 [00:00<00:01, 1535.43it/s] 26%|██▌       | 771/3001 [00:00<00:01, 1548.71it/s] 31%|███       | 926/3001 [00:00<00:01, 1548.07it/s] 36%|███▌      | 1083/3001 [00:00<00:01, 1552.95it/s] 41%|████▏     | 1243/3001 [00:00<00:01, 1565.79it/s] 47%|████▋     | 1404/3001 [00:00<00:01, 1577.43it/s] 52%|█████▏    | 1563/3001 [00:01<00:00, 1579.30it/s] 57%|█████▋    | 1723/3001 [00:01<00:00, 1584.84it/s] 63%|██████▎   | 1882/3001 [00:01<00:00, 1582.80it/s] 68%|██████▊   | 2041/3001 [00:02<00:02, 357.04it/s]  73%|███████▎  | 2201/3001 [00:02<00:01, 467.09it/s] 79%|███████▊  | 2362/3001 [00:02<00:01, 595.36it/s] 84%|████████▍ | 2524/3001 [00:02<00:00, 736.87it/s] 90%|████████▉ | 2687/3001 [00:02<00:00, 883.65it/s] 95%|█████████▍| 2848/3001 [00:02<00:00, 1021.71it/s]100%|██████████| 3001/3001 [00:03<00:00, 987.23it/s] 
-Bad counter: 8
-Creating NS plot . . . DONE
-DONE
+slurmstepd: error: *** JOB 10902411 ON gcn128 CANCELLED AT 2025-04-01T13:25:57 ***
 
 JOB STATISTICS
 ==============
-Job ID: 10898564
+Job ID: 10902411
 Cluster: snellius
 User/Group: twouters2/twouters2
-State: RUNNING
+State: CANCELLED (exit code 0)
 Nodes: 1
 Cores per node: 16
 CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 00:11:28 core-walltime
-Job Wall-clock time: 00:00:43
-Memory Utilized: 0.00 MB
-Memory Efficiency: 0.00% of 3.00 GB (3.00 GB/node)
-WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.
+CPU Efficiency: 0.00% of 00:04:00 core-walltime
+Job Wall-clock time: 00:00:15
+Memory Utilized: 1.58 MB
+Memory Efficiency: 0.05% of 3.00 GB (3.00 GB/node)

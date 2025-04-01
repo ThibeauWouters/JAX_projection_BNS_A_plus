@@ -383,16 +383,15 @@ def make_plots(outdir: str,
     # If this is the run where we combine all constraints, then also make the master plot
     if make_master_plot:
         print(f"Making the master plot")
-        NB_POINTS = 100
-        nmin_grid = 0.5 
-        nmax_grid = 8.0
-        
+        NB_POINTS = 100 # number of points from which we construct the uncertainty bands
         filename = os.path.join(outdir, "eos_samples.npz")
         
         data = np.load(filename)
         log_prob = data["log_prob"]
         
         m_min = 1.0
+        m_max = 2.5
+        
         m, r, l = data["masses_EOS"], data["radii_EOS"], data["Lambdas_EOS"]
         logpc_EOS = data["logpc_EOS"]
         pc_EOS = np.exp(logpc_EOS) / jose_utils.MeV_fm_inv3_to_geometric
@@ -405,46 +404,10 @@ def make_plots(outdir: str,
         # Get the maximum log prob index
         max_log_prob_idx = np.argmax(log_prob)
         
-        # TODO: decide whether to ignore/delete this
-        # First comparison plot of max log prob:
-        cutoff_mass = 0.6
-        # plt.subplots(1, 2, figsize=(12, 6))
-        # plt.subplot(121)
-        # _r, _m, _l = r[max_log_prob_idx], m[max_log_prob_idx], l[max_log_prob_idx]
-        # mask_jester = _m > cutoff_mass
-        
-        # plt.plot(_r[mask_jester], _m[mask_jester], color="blue", lw=2)
-        # # Plot the target as well:
-        # mask_target = m_target > cutoff_mass
-        # _m_target = m_target[mask_target]
-        # _r_target = r_target[mask_target]
-        # _l_target = l_target[mask_target]
-        # plt.plot(_r_target, _m_target, color="red", **TARGET_KWARGS)
-        # plt.xlabel(r"$R$ [km]")
-        # plt.ylabel(r"$M$ [$M_{\odot}$]")
-        # plt.ylim(bottom = cutoff_mass)
-        
-        # plt.subplot(122)
-        # plt.plot(_m[mask_jester], _l[mask_jester], color="blue", lw=2)
-        # plt.plot(_m_target, _l_target, color="red", **TARGET_KWARGS)
-        # plt.yscale("log")
-        # plt.xlabel(r"$M$ [$M_{\odot}$]")
-        # plt.ylabel(r"$\Lambda$")
-        # plt.xlim(left = cutoff_mass)
-        # plt.legend()
-        
-        # plt.savefig(os.path.join(outdir, "master_max_log_prob_comparison.pdf"), bbox_inches = "tight")
-        # plt.close()
-        
         # Interpolate for the NS quantities
-        m_grid = np.linspace(cutoff_mass, 3.0, NB_POINTS)
+        m_grid = np.linspace(m_min, m_max, NB_POINTS)
         r_interp_array = np.array([np.interp(m_grid, m[i], r[i], left = -1, right = -1) for i in range(nb_samples)]).T
         l_interp_array = np.array([np.interp(m_grid, m[i], l[i], left = -1, right = -1) for i in range(nb_samples)]).T
-        
-        # Interpolate for the EOS quantities
-        # # Check the EOS -- for instance the speed of sound
-        # n_grid = np.linspace(nmin_grid, nmax_grid, NB_POINTS)
-        # cs2_interp_array = np.array([np.interp(n_grid, n[i], cs2[i]) for i in range(nb_samples)]).T
         
         # Neutron stars:
         plt.subplots(nrows = 1, ncols = 2, figsize=(12, 6))
@@ -460,42 +423,65 @@ def make_plots(outdir: str,
             print(np.shape(interp_array))
             
             for i in range(NB_POINTS):
-                # Determine median
+                # Determine, at this grid point of interpolation, the median values and the credible interval
                 values_here = interp_array[i]
                 mask = values_here > 0
                 values_here = values_here[mask]
+                
                 median = np.median(values_here)
                 median_values.append(median)
                 
-                # Use arviz to compute the 90% CI
-                low, high = arviz.hdi(values_here, hdi_prob = 0.95)
+                # TODO: extend this to have multiple credible intervals
+                # Use arviz to compute the credible interval
+                low, high = arviz.hdi(values_here, hdi_prob = 0.90)
                 low_values.append(low)
                 high_values.append(high)
+
+            color = "red"
         
             # Now, make the final plot
             if plot_idx == 0:
-                m_max, r_max = m[max_log_prob_idx], r[max_log_prob_idx]
-                mask = m_max > 1.0
-                plt.plot(r_max[mask], m_max[mask], color="blue") # maximal log prob
-                plt.fill_betweenx(m_grid, low_values, high_values, color="blue", alpha=0.25) # 95% CI
+                # Mass-radius
+                m_max_likelihood, r_max_likelihood = m[max_log_prob_idx], r[max_log_prob_idx]
+                mask = m_max_likelihood > m_min
+                plt.plot(r_max_likelihood[mask], m_max_likelihood[mask], color=color, linestyle = "--", label = "Max likelihood")
+                plt.plot(median_values, m_grid, color=color, linestyle = "-", label = "Median")
+                plt.fill_betweenx(m_grid, low_values, high_values, color=color, alpha=0.25, )
             else:
-                m_max, r_max = m[max_log_prob_idx], r[max_log_prob_idx]
-                mask = m_max > 0.75
-                plt.plot(m_max[mask], l_max[mask], color="blue")
-                plt.fill_betweenx(m_grid, low_values, high_values, color="blue", alpha=0.25)
+                # Mass-tidal deformability
+                m_max_likelihood, l_max_likelihood = m[max_log_prob_idx], l[max_log_prob_idx]
+                mask = m_max_likelihood > m_min
+                plt.plot(m_grid, median_values, color=color, linestyle = "-", label = "Median")
+                plt.plot(m_max_likelihood[mask], l_max_likelihood[mask], color=color, linestyle = "--", label = "Max likelihood")
+                plt.fill_between(m_grid, low_values, high_values, color=color, alpha=0.25)
         
         # Add the labels here manually
         plt.subplot(121)
         plt.xlabel(r"$R$ [km]")
         plt.ylabel(r"$M$ [$M_\odot$]")
-        plt.ylim(bottom = 1.0, top = 2.5)
+        plt.ylim(m_min, m_max)
         
         # Add the labels here manually
         plt.subplot(122)
         plt.xlabel(r"$M$ [$M_\odot$]")
         plt.ylabel(r"$\Lambda$")
-        plt.xlim(bottom = 1.0, top = 2.5)
+        plt.xlim(m_min, m_max)
         plt.yscale("log")
+        
+        # Plot the three target EOS
+        for eos_name in all_eos_names:
+            r_target, m_target, l_target = targets_dict[eos_name]["r_target"], targets_dict[eos_name]["m_target"], targets_dict[eos_name]["l_target"]
+            color = TARGET_COLORS_DICT[eos_name]
+            
+            plt.subplot(121)
+            plt.plot(r_target, m_target, color=color, label=eos_name, **TARGET_KWARGS)
+            
+            plt.subplot(122)
+            plt.plot(m_target, l_target, color=color, label=eos_name, **TARGET_KWARGS)
+        
+        # Add legend
+        plt.subplot(122)
+        plt.legend()
         
         # Save it
         plt.savefig(os.path.join(outdir, "master_plot.pdf"), bbox_inches = "tight")
