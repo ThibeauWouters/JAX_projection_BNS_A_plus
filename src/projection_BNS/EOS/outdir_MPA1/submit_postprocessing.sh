@@ -7,7 +7,7 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --cpus-per-gpu=1
 #SBATCH --mem-per-gpu=3G
-#SBATCH --output="./log_postprocessing.out"
+#SBATCH --output="./outdir_MPA1/log_postprocessing.out"
 #SBATCH --job-name="postprocessing"
 
 now=$(date)

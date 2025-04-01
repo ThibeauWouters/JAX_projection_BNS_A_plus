@@ -4,6 +4,7 @@ Convert ASD to PSD and save as new files for our own convenience.
 The noise curves are taken from LIGO Document T2000012-v2
 """
 
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,7 +20,9 @@ NAMES = ["LIGO",
 psd_dict = {}
 for name, filename in zip(NAMES, PSD_FILENAMES):
     # Open it and read the data
-    f, psd = np.loadtxt(filename, unpack=True)
+    full_filename = os.path.join("psds", filename)
+    full_filename = os.path.abspath(full_filename)
+    f, psd = np.loadtxt(full_filename, unpack=True)
     psd = psd ** 2
     psd_dict[name] = {"f": f, "psd": psd}
     
