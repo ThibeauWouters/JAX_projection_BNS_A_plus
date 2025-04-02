@@ -1,4 +1,4 @@
-Wed Apr  2 14:05:58 CEST 2025
+Wed Apr  2 14:22:50 CEST 2025
 NVIDIA H100
 Checking the convergence for ./outdir_jester_hard/
 Key: E_sym
@@ -119,14 +119,14 @@ DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10928644
+Job ID: 10929580
 Cluster: snellius
 User/Group: twouters2/twouters2
 State: COMPLETED (exit code 0)
 Nodes: 1
 Cores per node: 16
-CPU Utilized: 00:00:38
-CPU Efficiency: 5.52% of 00:11:28 core-walltime
-Job Wall-clock time: 00:00:43
-Memory Utilized: 643.20 MB
-Memory Efficiency: 20.94% of 3.00 GB (3.00 GB/node)
+CPU Utilized: 00:00:39
+CPU Efficiency: 5.30% of 00:12:16 core-walltime
+Job Wall-clock time: 00:00:46
+Memory Utilized: 665.00 MB
+Memory Efficiency: 21.65% of 3.00 GB (3.00 GB/node)

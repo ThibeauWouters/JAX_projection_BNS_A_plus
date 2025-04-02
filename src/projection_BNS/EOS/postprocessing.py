@@ -43,10 +43,9 @@ default_corner_kwargs = dict(bins=40,
                         min_n_ticks=3,
                         save=False)
 
-# TODO: change this again, but I am testing now
 TARGET_KWARGS = {"zorder": 1e12,
                  "lw": 2,
-                 "linestyle": "-"}
+                 "linestyle": "--"}
 
 def plot_corner(outdir):
     print(f"Plotting the cornerplot for {outdir}")
@@ -187,25 +186,29 @@ def make_plots(outdir: str,
     indices = np.random.choice(nb_samples, max_samples, replace=False)
     indices = np.append(indices, max_log_prob_idx)
     
-    # Normalize log_prob for colormap
-    log_prob_norm = (log_prob - np.min(log_prob)) / (np.max(log_prob) - np.min(log_prob))
-    cmap = sns.color_palette("rocket_r", as_cmap=True)
-    # cmap = sns.color_palette("rocket_r", as_cmap=True)
-    # cmap = sns.color_palette("dark:salmon", as_cmap=True)
-    cmap = sns.color_palette("light:#e31f26", as_cmap=True)
-    log_prob_norm = (log_prob - np.min(log_prob)) / (np.max(log_prob) - np.min(log_prob))
-    colors = cmap(log_prob_norm[indices])
-    
     print("\n\n\n")
     print(f"Showing the max log prob EOS values:")
     for key in EOS_keys:
         print(f"{key}: {data[key][max_log_prob_idx]}")
     print("\n\n\n")
+    
+    # Log prob now only the sampled indices for scaling in the plot:
+    log_prob = log_prob[indices]
+    
+    # Normalize log_prob for colormap
+    log_prob_norm = (log_prob - np.min(log_prob)) / (np.max(log_prob) - np.min(log_prob))
+    cmap = sns.color_palette("rocket_r", as_cmap=True)
+    # cmap = sns.color_palette("rocket_r", as_cmap=True)
+    # cmap = sns.color_palette("dark:salmon", as_cmap=True)
+    # cmap = sns.color_palette("YlOrBr", as_cmap=True)
+    cmap = sns.color_palette("light:#e31f26", as_cmap=True)
+    colors = cmap(log_prob_norm)
+    
 
     plt.subplots(1, 2, figsize=(12, 8))
     print("Creating NS plot . . .")
     bad_counter = 0
-    for i, col in zip(indices, colors):
+    for counter, (i, col) in enumerate(zip(indices, colors)):
 
         if any(np.isnan(m[i])) or any(np.isnan(r[i])) or any(np.isnan(l[i])):
             bad_counter += 1
@@ -221,7 +224,7 @@ def make_plots(outdir: str,
         
         # Mass-radius plot
         samples_kwargs["color"] = col
-        samples_kwargs["zorder"] = log_prob_norm[i]
+        samples_kwargs["zorder"] = log_prob_norm[counter]
         plt.subplot(121)
         plt.plot(r[i], m[i], **samples_kwargs)
         plt.xlim(r_min, r_max)
