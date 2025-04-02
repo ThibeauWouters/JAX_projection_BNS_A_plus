@@ -1,8 +1,6 @@
-Wed Apr  2 09:35:49 CEST 2025
+Wed Apr  2 09:53:53 CEST 2025
 NVIDIA H100
 Checking the convergence for ./outdir_jester_soft/
-list(data.keys())
-['log_prob', 'E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
 Key: E_sym
     rhat = 1.4401381608051105
     ess = 2039.9917638159234
@@ -110,7 +108,7 @@ cs2_CSE_8: 0.1484501515137768
 
 
 Creating NS plot . . .
-Bad counter: 71
+Bad counter: 90
 Creating NS plot . . . DONE
 Making the master plot
 np.shape(interp_array)
@@ -121,14 +119,14 @@ DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10919583
+Job ID: 10920445
 Cluster: snellius
 User/Group: twouters2/twouters2
 State: COMPLETED (exit code 0)
 Nodes: 1
 Cores per node: 16
-CPU Utilized: 00:00:37
-CPU Efficiency: 5.64% of 00:10:56 core-walltime
-Job Wall-clock time: 00:00:41
-Memory Utilized: 672.58 MB
-Memory Efficiency: 21.89% of 3.00 GB (3.00 GB/node)
+CPU Utilized: 00:00:38
+CPU Efficiency: 5.52% of 00:11:28 core-walltime
+Job Wall-clock time: 00:00:43
+Memory Utilized: 614.93 MB
+Memory Efficiency: 20.02% of 3.00 GB (3.00 GB/node)

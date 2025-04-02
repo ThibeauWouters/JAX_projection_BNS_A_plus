@@ -167,27 +167,35 @@ def make_plots(outdir: str,
                       "alpha": 0.1,
                       "rasterized": True}
 
-    plt.subplots(1, 2, figsize=(12, 8))
-
     m_min, m_max = 0.975, 3.0
     r_min, r_max = 9.0, 14.0
     l_min, l_max = 2.0, 1e4
     
     # Sample requested number of indices randomly:
     log_prob = data["log_prob"]
-    log_prob = np.exp(log_prob) # so actually no longer log prob but prob... whatever
     
+    # First, we make a simple histogram of the log prob values
+    plt.figure()
+    plt.hist(log_prob, bins=50, color="blue", histtype="step", lw=2, density=True)
+    plt.axvline(np.max(log_prob), color="red", lw=2)
+    plt.xlabel("Log prob")
+    plt.ylabel("Density")
+    plt.savefig(os.path.join(outdir, "log_prob_histogram.pdf"), bbox_inches = "tight")
+    plt.close()
+    
+    # Then do exp
+    log_prob = np.exp(log_prob) # so actually no longer log prob but prob... whatever
     max_log_prob_idx = np.argmax(log_prob)
-    indices = np.random.choice(nb_samples, max_samples, replace=False) # p=log_prob/np.sum(log_prob)
+    indices = np.random.choice(nb_samples, max_samples, replace=False)
     indices = np.append(indices, max_log_prob_idx)
     
     print("\n\n\n")
     print(f"Showing the max log prob EOS values:")
     for key in EOS_keys:
         print(f"{key}: {data[key][max_log_prob_idx]}")
-        
     print("\n\n\n")
 
+    plt.subplots(1, 2, figsize=(12, 8))
     print("Creating NS plot . . .")
     bad_counter = 0
     for i in indices:
