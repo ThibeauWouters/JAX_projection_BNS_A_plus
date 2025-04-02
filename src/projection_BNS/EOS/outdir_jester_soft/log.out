@@ -201,4 +201,86 @@ log_prob
 [-394.14220694 -329.2265294  -317.06221227]
 Sampling seed is set to: 11
 
-Global Tuning:   0%|          | 0/60 [00:00<?, ?it/s]Global Tuning:   2%|▏         | 1/60 [05:43<5:37:52, 343.60s/it]
+Global Tuning:   0%|          | 0/60 [00:00<?, ?it/s]Global Tuning:   2%|▏         | 1/60 [05:43<5:37:52, 343.60s/it]Global Tuning:   3%|▎         | 2/60 [06:31<2:44:11, 169.85s/it]Global Tuning:   5%|▌         | 3/60 [07:19<1:48:13, 113.92s/it]Global Tuning:   7%|▋         | 4/60 [08:07<1:22:18, 88.18s/it] Global Tuning:   8%|▊         | 5/60 [08:56<1:07:42, 73.86s/it]Global Tuning:  10%|█         | 6/60 [09:44<58:39, 65.18s/it]  Global Tuning:  12%|█▏        | 7/60 [10:33<52:53, 59.88s/it]Global Tuning:  13%|█▎        | 8/60 [11:21<48:42, 56.20s/it]Global Tuning:  15%|█▌        | 9/60 [12:10<45:45, 53.82s/it]Global Tuning:  17%|█▋        | 10/60 [12:59<43:38, 52.38s/it]Global Tuning:  18%|█▊        | 11/60 [13:47<41:43, 51.09s/it]Global Tuning:  20%|██        | 12/60 [14:36<40:18, 50.39s/it]Global Tuning:  22%|██▏       | 13/60 [15:25<39:12, 50.05s/it]Global Tuning:  23%|██▎       | 14/60 [16:14<38:01, 49.60s/it]Global Tuning:  25%|██▌       | 15/60 [17:03<37:01, 49.36s/it]Global Tuning:  27%|██▋       | 16/60 [17:52<36:06, 49.23s/it]Global Tuning:  28%|██▊       | 17/60 [18:41<35:15, 49.19s/it]Global Tuning:  30%|███       | 18/60 [19:30<34:20, 49.05s/it]Global Tuning:  32%|███▏      | 19/60 [20:18<33:26, 48.95s/it]Global Tuning:  33%|███▎      | 20/60 [21:07<32:30, 48.75s/it]Global Tuning:  35%|███▌      | 21/60 [21:55<31:37, 48.64s/it]Global Tuning:  37%|███▋      | 22/60 [22:44<30:49, 48.67s/it]Global Tuning:  38%|███▊      | 23/60 [23:32<29:58, 48.60s/it]Global Tuning:  40%|████      | 24/60 [24:21<29:16, 48.78s/it]Global Tuning:  42%|████▏     | 25/60 [25:11<28:35, 49.01s/it]Global Tuning:  43%|████▎     | 26/60 [25:59<27:40, 48.82s/it]Global Tuning:  45%|████▌     | 27/60 [26:49<27:01, 49.13s/it]Global Tuning:  47%|████▋     | 28/60 [27:38<26:07, 48.99s/it]Global Tuning:  48%|████▊     | 29/60 [28:29<25:42, 49.75s/it]Global Tuning:  50%|█████     | 30/60 [29:19<24:54, 49.82s/it]Global Tuning:  52%|█████▏    | 31/60 [30:09<24:05, 49.83s/it]Global Tuning:  53%|█████▎    | 32/60 [30:59<23:15, 49.84s/it]Global Tuning:  55%|█████▌    | 33/60 [31:47<22:14, 49.41s/it]Global Tuning:  57%|█████▋    | 34/60 [32:36<21:21, 49.30s/it]Global Tuning:  58%|█████▊    | 35/60 [33:25<20:29, 49.17s/it]Global Tuning:  60%|██████    | 36/60 [34:14<19:36, 49.04s/it]Global Tuning:  62%|██████▏   | 37/60 [35:04<18:52, 49.22s/it]Global Tuning:  63%|██████▎   | 38/60 [35:54<18:06, 49.39s/it]Global Tuning:  65%|██████▌   | 39/60 [36:43<17:18, 49.45s/it]Global Tuning:  67%|██████▋   | 40/60 [37:35<16:42, 50.12s/it]Global Tuning:  68%|██████▊   | 41/60 [38:25<15:51, 50.06s/it]Global Tuning:  70%|███████   | 42/60 [39:14<14:58, 49.92s/it]Global Tuning:  72%|███████▏  | 43/60 [40:03<14:03, 49.63s/it]Global Tuning:  73%|███████▎  | 44/60 [40:53<13:13, 49.60s/it]Global Tuning:  75%|███████▌  | 45/60 [41:43<12:28, 49.89s/it]Global Tuning:  77%|███████▋  | 46/60 [42:32<11:33, 49.56s/it]Global Tuning:  78%|███████▊  | 47/60 [43:22<10:44, 49.57s/it]Global Tuning:  80%|████████  | 48/60 [44:13<10:00, 50.07s/it]Global Tuning:  82%|████████▏ | 49/60 [45:02<09:06, 49.70s/it]Global Tuning:  83%|████████▎ | 50/60 [45:50<08:13, 49.38s/it]Global Tuning:  85%|████████▌ | 51/60 [46:40<07:23, 49.29s/it]Global Tuning:  87%|████████▋ | 52/60 [47:28<06:31, 48.99s/it]Global Tuning:  88%|████████▊ | 53/60 [48:21<05:51, 50.20s/it]Global Tuning:  90%|█████████ | 54/60 [49:10<04:59, 49.92s/it]Global Tuning:  92%|█████████▏| 55/60 [50:00<04:08, 49.79s/it]Global Tuning:  93%|█████████▎| 56/60 [50:49<03:19, 49.78s/it]Global Tuning:  95%|█████████▌| 57/60 [51:38<02:28, 49.39s/it]Global Tuning:  97%|█████████▋| 58/60 [52:27<01:38, 49.22s/it]Global Tuning:  98%|█████████▊| 59/60 [53:15<00:48, 48.93s/it]Global Tuning: 100%|██████████| 60/60 [54:05<00:00, 49.15s/it]Global Tuning: 100%|██████████| 60/60 [54:05<00:00, 54.08s/it]
+Global Sampling:   0%|          | 0/20 [00:00<?, ?it/s]Global Sampling:   5%|▌         | 1/20 [00:49<15:44, 49.70s/it]Global Sampling:  10%|█         | 2/20 [01:37<14:37, 48.76s/it]Global Sampling:  15%|█▌        | 3/20 [02:26<13:46, 48.62s/it]Global Sampling:  20%|██        | 4/20 [03:15<13:03, 48.97s/it]Global Sampling:  25%|██▌       | 5/20 [04:04<12:12, 48.84s/it]Global Sampling:  30%|███       | 6/20 [04:53<11:26, 49.02s/it]Global Sampling:  35%|███▌      | 7/20 [05:42<10:35, 48.89s/it]Global Sampling:  40%|████      | 8/20 [06:30<09:45, 48.79s/it]Global Sampling:  45%|████▌     | 9/20 [07:27<09:24, 51.30s/it]Global Sampling:  50%|█████     | 10/20 [08:15<08:23, 50.35s/it]Global Sampling:  55%|█████▌    | 11/20 [09:04<07:27, 49.68s/it]Global Sampling:  60%|██████    | 12/20 [09:52<06:35, 49.40s/it]Global Sampling:  65%|██████▌   | 13/20 [10:41<05:44, 49.26s/it]Global Sampling:  70%|███████   | 14/20 [11:30<04:54, 49.14s/it]Global Sampling:  75%|███████▌  | 15/20 [12:19<04:05, 49.01s/it]Global Sampling:  80%|████████  | 16/20 [13:07<03:14, 48.67s/it]Global Sampling:  85%|████████▌ | 17/20 [13:55<02:25, 48.65s/it]Global Sampling:  90%|█████████ | 18/20 [14:44<01:37, 48.63s/it]Global Sampling:  95%|█████████▌| 19/20 [15:32<00:48, 48.52s/it]Global Sampling: 100%|██████████| 20/20 [16:21<00:00, 48.65s/it]Global Sampling: 100%|██████████| 20/20 [16:21<00:00, 49.08s/it]
+Training summary
+==========
+E_sym: 36.297 +/- 4.631
+L_sym: 38.915 +/- 22.436
+K_sym: -193.477 +/- 78.558
+K_sat: 208.384 +/- 38.027
+nbreak: 0.266 +/- 0.040
+n_CSE_0_u: 0.467 +/- 0.265
+cs2_CSE_0: 0.352 +/- 0.280
+n_CSE_1_u: 0.452 +/- 0.261
+cs2_CSE_1: 0.689 +/- 0.254
+n_CSE_2_u: 0.495 +/- 0.272
+cs2_CSE_2: 0.681 +/- 0.240
+n_CSE_3_u: 0.492 +/- 0.271
+cs2_CSE_3: 0.605 +/- 0.264
+n_CSE_4_u: 0.451 +/- 0.264
+cs2_CSE_4: 0.542 +/- 0.276
+n_CSE_5_u: 0.459 +/- 0.261
+cs2_CSE_5: 0.544 +/- 0.271
+n_CSE_6_u: 0.504 +/- 0.268
+cs2_CSE_6: 0.529 +/- 0.274
+n_CSE_7_u: 0.495 +/- 0.265
+cs2_CSE_7: 0.491 +/- 0.275
+cs2_CSE_8: 0.550 +/- 0.276
+key: -504343118.817 +/- 4865511419.832
+Log probability: -3177.655 +/- 90246.292
+Local acceptance: 0.990 +/- 0.100
+Global acceptance: 0.022 +/- 0.146
+Max loss: 39.317, Min loss: 26.842
+Production summary
+==========
+E_sym: 36.069 +/- 4.405
+L_sym: 33.401 +/- 17.571
+K_sym: -189.593 +/- 85.281
+K_sat: 206.900 +/- 38.329
+nbreak: 0.268 +/- 0.040
+n_CSE_0_u: 0.445 +/- 0.246
+cs2_CSE_0: 0.407 +/- 0.288
+n_CSE_1_u: 0.368 +/- 0.222
+cs2_CSE_1: 0.766 +/- 0.203
+n_CSE_2_u: 0.541 +/- 0.275
+cs2_CSE_2: 0.751 +/- 0.216
+n_CSE_3_u: 0.490 +/- 0.252
+cs2_CSE_3: 0.578 +/- 0.261
+n_CSE_4_u: 0.375 +/- 0.239
+cs2_CSE_4: 0.476 +/- 0.285
+n_CSE_5_u: 0.423 +/- 0.236
+cs2_CSE_5: 0.537 +/- 0.278
+n_CSE_6_u: 0.479 +/- 0.260
+cs2_CSE_6: 0.547 +/- 0.267
+n_CSE_7_u: 0.497 +/- 0.252
+cs2_CSE_7: 0.429 +/- 0.258
+cs2_CSE_8: 0.634 +/- 0.272
+key: -4398649687.134 +/- 12569565038.538
+Log probability: -302.433 +/- 3.098
+Local acceptance: 0.991 +/- 0.094
+Global acceptance: 0.005 +/- 0.068
+Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 71 mins
+Saving the final results
+Number of samples generated in training: 1200000
+Number of samples generated in production: 400000
+Number of samples generated: 1600000
+Time taken for TOV map: 2.3634583950042725 s
+The corner plot will plot the parameters: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
+DONE entire script
+DONE
+
+JOB STATISTICS
+==============
+Job ID: 10920422
+Cluster: snellius
+User/Group: twouters2/twouters2
+State: RUNNING
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 19:39:28 core-walltime
+Job Wall-clock time: 01:13:43
+Memory Utilized: 0.00 MB
+Memory Efficiency: 0.00% of 20.00 GB (20.00 GB/node)
+WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.

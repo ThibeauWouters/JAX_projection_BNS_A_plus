@@ -1,7 +1,6 @@
-# TODO: but reminder that we can fetch the correct EOS and plot it on top with dashes
-
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 import os
 import arviz
 import corner
@@ -45,7 +44,7 @@ default_corner_kwargs = dict(bins=40,
                         save=False)
 
 # TODO: change this again, but I am testing now
-TARGET_KWARGS = {"zorder": 1e10,
+TARGET_KWARGS = {"zorder": 1e12,
                  "lw": 2,
                  "linestyle": "-"}
 
@@ -126,7 +125,7 @@ def make_plots(outdir: str,
         
     else:
         print("This is a run for a default target EOS")
-        TARGET_COLORS_DICT = {k: v for k, v in TARGET_COLORS_DICT.items() if "jester" in k}
+        TARGET_COLORS_DICT = {k: v for k, v in TARGET_COLORS_DICT.items() if "jester" not in k}
         labels_mapping_dict = {k: k for k in TARGET_COLORS_DICT.keys()} # unity mapping
         targets_dict = {"HQC18": {},
                         "SLY230A": {},
@@ -163,9 +162,7 @@ def make_plots(outdir: str,
     print(f"Number of samples: {nb_samples}")
 
     # Plotting
-    samples_kwargs = {"color": "gray",
-                      "alpha": 0.1,
-                      "rasterized": True}
+    samples_kwargs = {"rasterized": True}
 
     m_min, m_max = 0.975, 3.0
     r_min, r_max = 9.0, 14.0
@@ -184,10 +181,19 @@ def make_plots(outdir: str,
     plt.close()
     
     # Then do exp
-    log_prob = np.exp(log_prob) # so actually no longer log prob but prob... whatever
+    # log_prob = np.exp(log_prob) # so actually no longer log prob but prob... whatever
     max_log_prob_idx = np.argmax(log_prob)
     indices = np.random.choice(nb_samples, max_samples, replace=False)
     indices = np.append(indices, max_log_prob_idx)
+    
+    # Normalize log_prob for colormap
+    log_prob_norm = (log_prob - np.min(log_prob)) / (np.max(log_prob) - np.min(log_prob))
+    cmap = sns.color_palette("rocket_r", as_cmap=True)
+    # cmap = sns.color_palette("rocket_r", as_cmap=True)
+    # cmap = sns.color_palette("dark:salmon", as_cmap=True)
+    cmap = sns.color_palette("light:#e31f26", as_cmap=True)
+    log_prob_norm = (log_prob - np.min(log_prob)) / (np.max(log_prob) - np.min(log_prob))
+    colors = cmap(log_prob_norm[indices])
     
     print("\n\n\n")
     print(f"Showing the max log prob EOS values:")
@@ -198,7 +204,7 @@ def make_plots(outdir: str,
     plt.subplots(1, 2, figsize=(12, 8))
     print("Creating NS plot . . .")
     bad_counter = 0
-    for i in indices:
+    for i, col in zip(indices, colors):
 
         if any(np.isnan(m[i])) or any(np.isnan(r[i])) or any(np.isnan(l[i])):
             bad_counter += 1
@@ -213,6 +219,8 @@ def make_plots(outdir: str,
             continue
         
         # Mass-radius plot
+        samples_kwargs["color"] = col
+        samples_kwargs["zorder"] = log_prob_norm[i]
         plt.subplot(121)
         plt.plot(r[i], m[i], **samples_kwargs)
         plt.xlim(r_min, r_max)
@@ -235,6 +243,7 @@ def make_plots(outdir: str,
     plt.ylabel(r"$M$ [$M_{\odot}$]")
     plt.xlim(r_min, r_max)
     plt.ylim(m_min, m_max)
+    plt.grid(False)
     
     plt.subplot(122)
     plt.xlabel(r"$M$ [$M_{\odot}$]")
@@ -242,6 +251,15 @@ def make_plots(outdir: str,
     plt.xlim(m_min, m_max)
     plt.ylim(l_min, l_max)
     plt.yscale("log")
+    plt.grid(False)
+    
+    # Add colorbar
+    ax1 = plt.subplot(121)
+    ax2 = plt.subplot(122)
+    sm = plt.cm.ScalarMappable(cmap=cmap, norm=plt.Normalize(vmin=np.min(log_prob), vmax=np.max(log_prob)))
+    sm.set_array([])
+    cbar = plt.colorbar(sm, ax=[ax1, ax2], orientation='vertical', fraction=0.05, pad=0.02)
+    cbar.set_label("Log Probability")
     
     # Plot the targets
     for eos_name in all_eos_names:

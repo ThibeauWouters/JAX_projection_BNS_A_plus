@@ -1,8 +1,6 @@
-Tue Apr  1 20:16:13 CEST 2025
+Wed Apr  2 11:28:55 CEST 2025
 NVIDIA H100
 Checking the convergence for ./outdir_MPA1/
-list(data.keys())
-['log_prob', 'E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
 Key: E_sym
     rhat = 1.4743803445807329
     ess = 2030.4524697259105
@@ -76,9 +74,40 @@ Plotting the cornerplot for ./outdir_MPA1/
 Making the cornerplot, these are the chains: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
 (22, 10000)
 Making plots for ./outdir_MPA1/
+This is a run for a default target EOS
 Number of samples: 10000
+
+
+
+
+Showing the max log prob EOS values:
+E_sym: 43.843778077663856
+L_sym: 79.33394061119682
+K_sym: -191.17837107525338
+K_sat: 198.73266495857678
+nbreak: 0.2913999442282526
+n_CSE_0_u: 0.8207997580694261
+cs2_CSE_0: 0.9518887844394123
+n_CSE_1_u: 0.5775207611534722
+cs2_CSE_1: 0.955533251334474
+n_CSE_2_u: 0.8580147780371854
+cs2_CSE_2: 0.7336851637364528
+n_CSE_3_u: 0.610150806680992
+cs2_CSE_3: 0.2630067479271086
+n_CSE_4_u: 0.2702218200265822
+cs2_CSE_4: 0.44457153256464765
+n_CSE_5_u: 0.3810600436216726
+cs2_CSE_5: 0.9959405626927664
+n_CSE_6_u: 0.1605945872708218
+cs2_CSE_6: 0.7550883994841312
+n_CSE_7_u: 0.20552492471202594
+cs2_CSE_7: 0.32618059068660926
+cs2_CSE_8: 0.383517284005436
+
+
+
+
 Creating NS plot . . .
-  0%|          | 0/3001 [00:00<?, ?it/s]  5%|▍         | 150/3001 [00:00<00:01, 1498.87it/s] 10%|█         | 308/3001 [00:00<00:01, 1541.08it/s] 16%|█▌        | 467/3001 [00:00<00:01, 1561.98it/s] 21%|██        | 626/3001 [00:00<00:01, 1572.92it/s] 26%|██▌       | 785/3001 [00:00<00:01, 1578.91it/s] 31%|███▏      | 945/3001 [00:00<00:01, 1585.65it/s] 37%|███▋      | 1104/3001 [00:00<00:01, 1586.92it/s] 42%|████▏     | 1264/3001 [00:00<00:01, 1588.52it/s] 47%|████▋     | 1423/3001 [00:00<00:00, 1585.76it/s] 53%|█████▎    | 1582/3001 [00:01<00:00, 1583.65it/s] 58%|█████▊    | 1741/3001 [00:01<00:00, 1578.38it/s] 63%|██████▎   | 1899/3001 [00:01<00:00, 1574.16it/s] 69%|██████▊   | 2057/3001 [00:02<00:02, 359.92it/s]  74%|███████▎  | 2213/3001 [00:02<00:01, 467.17it/s] 79%|███████▉  | 2374/3001 [00:02<00:01, 596.54it/s] 84%|████████▍ | 2529/3001 [00:02<00:00, 729.07it/s] 90%|████████▉ | 2689/3001 [00:02<00:00, 873.45it/s] 95%|█████████▍| 2848/3001 [00:02<00:00, 1009.98it/s]100%|██████████| 3001/3001 [00:03<00:00, 992.18it/s] 
 Bad counter: 0
 Creating NS plot . . . DONE
 Making the master plot
@@ -90,15 +119,14 @@ DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10912709
+Job ID: 10922976
 Cluster: snellius
 User/Group: twouters2/twouters2
-State: RUNNING
+State: COMPLETED (exit code 0)
 Nodes: 1
 Cores per node: 16
-CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 00:12:32 core-walltime
-Job Wall-clock time: 00:00:47
-Memory Utilized: 0.00 MB
-Memory Efficiency: 0.00% of 3.00 GB (3.00 GB/node)
-WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.
+CPU Utilized: 00:00:38
+CPU Efficiency: 5.79% of 00:10:56 core-walltime
+Job Wall-clock time: 00:00:41
+Memory Utilized: 661.95 MB
+Memory Efficiency: 21.55% of 3.00 GB (3.00 GB/node)
