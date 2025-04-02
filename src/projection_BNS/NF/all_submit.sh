@@ -3,10 +3,10 @@
 # Choose an EOS, and then a range of IDs for which the training script has to be submitted
 TEMPLATE_FILE="template.sh"
 
-EOS="MPA1"
+EOS="jester_soft"
 IFO_NETWORK="Aplus"
 
-for ID in $(seq 30 30); do
+for ID in $(seq 8 30); do
   NEW_SCRIPT="./slurm_scripts/submit_${EOS}_${ID}.sh"
 
   echo

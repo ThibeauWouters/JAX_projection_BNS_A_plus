@@ -1,104 +1,0 @@
-Tue Apr  1 20:16:13 CEST 2025
-NVIDIA H100
-Checking the convergence for ./outdir_MPA1/
-list(data.keys())
-['log_prob', 'E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
-Key: E_sym
-    rhat = 1.4743803445807329
-    ess = 2030.4524697259105
-Key: L_sym
-    rhat = 1.4498287244604116
-    ess = 2019.2617083899183
-Key: K_sym
-    rhat = 1.4789102198614137
-    ess = 1939.5676300588034
-Key: K_sat
-    rhat = 1.5004193110155084
-    ess = 1887.74723985322
-Key: nbreak
-    rhat = 1.5439280605585124
-    ess = 1803.1649720467422
-Key: n_CSE_0_u
-    rhat = 1.4696058228767273
-    ess = 2005.986418628733
-Key: cs2_CSE_0
-    rhat = 1.497008146976103
-    ess = 1901.2662152348244
-Key: n_CSE_1_u
-    rhat = 1.4641909785873306
-    ess = 1991.6386558247593
-Key: cs2_CSE_1
-    rhat = 1.502197743554026
-    ess = 1898.5029058797504
-Key: n_CSE_2_u
-    rhat = 1.4481238624464385
-    ess = 2018.7810744214285
-Key: cs2_CSE_2
-    rhat = 1.4916104198312516
-    ess = 1907.137641730743
-Key: n_CSE_3_u
-    rhat = 1.4759926477978098
-    ess = 1964.2367220772196
-Key: cs2_CSE_3
-    rhat = 1.4781380577389698
-    ess = 1948.4976905989033
-Key: n_CSE_4_u
-    rhat = 1.4644402209889882
-    ess = 1972.4810823492062
-Key: cs2_CSE_4
-    rhat = 1.4930735415948357
-    ess = 1902.6079303176546
-Key: n_CSE_5_u
-    rhat = 1.4686839672633496
-    ess = 2005.8567447490718
-Key: cs2_CSE_5
-    rhat = 1.4594521412352832
-    ess = 1985.3451632729418
-Key: n_CSE_6_u
-    rhat = 1.4650991875487105
-    ess = 1976.560002113963
-Key: cs2_CSE_6
-    rhat = 1.4721732288723453
-    ess = 1955.9877418837086
-Key: n_CSE_7_u
-    rhat = 1.491948432082446
-    ess = 1917.6983487770244
-Key: cs2_CSE_7
-    rhat = 1.459501947741897
-    ess = 2017.769084022027
-Key: cs2_CSE_8
-    rhat = 1.4371550003254132
-    ess = 2064.7650715992822
-Key: key
-    rhat = 1.5425415669994043
-    ess = 1804.3783700768213
-Plotting the cornerplot for ./outdir_MPA1/
-Making the cornerplot, these are the chains: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
-(22, 10000)
-Making plots for ./outdir_MPA1/
-Number of samples: 10000
-Creating NS plot . . .
-  0%|          | 0/3001 [00:00<?, ?it/s]  5%|▍         | 150/3001 [00:00<00:01, 1498.87it/s] 10%|█         | 308/3001 [00:00<00:01, 1541.08it/s] 16%|█▌        | 467/3001 [00:00<00:01, 1561.98it/s] 21%|██        | 626/3001 [00:00<00:01, 1572.92it/s] 26%|██▌       | 785/3001 [00:00<00:01, 1578.91it/s] 31%|███▏      | 945/3001 [00:00<00:01, 1585.65it/s] 37%|███▋      | 1104/3001 [00:00<00:01, 1586.92it/s] 42%|████▏     | 1264/3001 [00:00<00:01, 1588.52it/s] 47%|████▋     | 1423/3001 [00:00<00:00, 1585.76it/s] 53%|█████▎    | 1582/3001 [00:01<00:00, 1583.65it/s] 58%|█████▊    | 1741/3001 [00:01<00:00, 1578.38it/s] 63%|██████▎   | 1899/3001 [00:01<00:00, 1574.16it/s] 69%|██████▊   | 2057/3001 [00:02<00:02, 359.92it/s]  74%|███████▎  | 2213/3001 [00:02<00:01, 467.17it/s] 79%|███████▉  | 2374/3001 [00:02<00:01, 596.54it/s] 84%|████████▍ | 2529/3001 [00:02<00:00, 729.07it/s] 90%|████████▉ | 2689/3001 [00:02<00:00, 873.45it/s] 95%|█████████▍| 2848/3001 [00:02<00:00, 1009.98it/s]100%|██████████| 3001/3001 [00:03<00:00, 992.18it/s] 
-Bad counter: 0
-Creating NS plot . . . DONE
-Making the master plot
-np.shape(interp_array)
-(100, 10000)
-np.shape(interp_array)
-(100, 10000)
-DONE
-
-JOB STATISTICS
-==============
-Job ID: 10912709
-Cluster: snellius
-User/Group: twouters2/twouters2
-State: RUNNING
-Nodes: 1
-Cores per node: 16
-CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 00:12:32 core-walltime
-Job Wall-clock time: 00:00:47
-Memory Utilized: 0.00 MB
-Memory Efficiency: 0.00% of 3.00 GB (3.00 GB/node)
-WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.

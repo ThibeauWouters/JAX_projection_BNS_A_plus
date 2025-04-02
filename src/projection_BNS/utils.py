@@ -14,9 +14,9 @@ NF_PATH = os.path.join(this_dir, "NF")
 EOS_PATH = os.path.join(this_dir, "EOS")
 DATA_PATH = os.path.join(this_dir, "data")
 
-HQC18_EOS_FILENAME = os.path.join(DATA_PATH, "HQC18.npz")
-SLY230A_EOS_FILENAME = os.path.join(DATA_PATH, "SLY230A.npz")
-MPA1_EOS_FILENAME = os.path.join(DATA_PATH, "MPA1.npz")
+HQC18_EOS_FILENAME = os.path.join(DATA_PATH, "eos", "HQC18.npz")
+SLY230A_EOS_FILENAME = os.path.join(DATA_PATH, "eos", "SLY230A.npz")
+MPA1_EOS_FILENAME = os.path.join(DATA_PATH, "eos", "MPA1.npz")
 
 EOS_FILENAMES_DICT = {"HQC18": HQC18_EOS_FILENAME,
                       "SLY230A": SLY230A_EOS_FILENAME,
@@ -26,6 +26,7 @@ EOS_FILENAMES_DICT = {"HQC18": HQC18_EOS_FILENAME,
 TARGET_COLORS_DICT = {"HQC18": "#5e97f6", 
                       "SLY230A": "#26a69a",
                       "MPA1": "#9c27b0",
+                      
                       "jester_soft": "#5e97f6", 
                       "jester_middle": "#26a69a",
                       "jester_hard": "#9c27b0"}

@@ -1,0 +1,3 @@
+- `injection_7`: Mode collapse
+- `injection_18`: Not that great -- what happened with the Lambdas?
+- `injection_23`: Spins and Lambdas are a bit off at the same time, not the best run

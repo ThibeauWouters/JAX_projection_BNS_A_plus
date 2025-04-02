@@ -2,24 +2,14 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import jax
 import os
-import json
 import arviz
 import corner
 import tqdm
 import sys
-import jax.numpy as jnp
-from jax.scipy.special import logsumexp
-from jaxtyping import Array, Float
-from jax.scipy.stats import gaussian_kde
-import pandas as pd
-import seaborn as sns
 
-from joseTOV import utils
 import joseTOV.utils as jose_utils
-
-from projection_BNS.utils import DATA_PATH, TARGET_COLORS_DICT
+from projection_BNS.utils import DATA_PATH
 
 mpl_params = {"axes.grid": True,
               "text.usetex" : True,
@@ -95,18 +85,12 @@ def report_credible_interval(values: np.array,
     print(f"\n\n\n{med:.2f}-{low:.2f}+{high:.2f} (at {hdi_prob} HDI prob)\n\n\n")
     
     return med, low, high
-    
 
 def check_convergence(outdir: str):
 
     print(f"Checking the convergence for {outdir}")
     
-    # Load the samples
     data = np.load(os.path.join(outdir, "results_production.npz"))
-    
-    print("list(data.keys())")
-    print(list(data.keys()))
-
     for key in data.keys():
         if key == "log_prob":
             continue
@@ -114,28 +98,45 @@ def check_convergence(outdir: str):
         values = data[key]
         values = np.array(values)
         rhat = arviz.rhat(values)
+        ess = arviz.ess(values)
         
         print(f"    rhat = {rhat}")
-        
-        ess = arviz.ess(values)
         print(f"    ess = {ess}")
 
 def make_plots(outdir: str,
                plot_histograms: bool = True,
                make_master_plot: bool = True,
                max_samples: int = 3_000):
+    """This is the master function to create all postprocessing plots"""
     
-    filename = os.path.join(outdir, "eos_samples.npz")
+    from projection_BNS.utils import TARGET_COLORS_DICT
     
-    targets_dict = {"HQC18": {},
-                    "SLY230A": {},
-                    "MPA1": {},
-                    }
-    all_eos_names = list(targets_dict.keys())
+    if "jester" in outdir:
+        print("This is a run for a jester target EOS")
+        TARGET_COLORS_DICT = {k: v for k, v in TARGET_COLORS_DICT.items() if "jester" in k}
+        labels_mapping_dict = {"jester_soft": "Soft",
+                               "jester_middle": "Medium",
+                               "jester_hard": "Stiff"}
+    
+        targets_dict = {"jester_soft": {},
+                        "jester_middle": {},
+                        "jester_hard": {},
+                        }
+        all_eos_names = list(targets_dict.keys())
+        
+    else:
+        print("This is a run for a default target EOS")
+        TARGET_COLORS_DICT = {k: v for k, v in TARGET_COLORS_DICT.items() if "jester" in k}
+        labels_mapping_dict = {k: k for k in TARGET_COLORS_DICT.keys()} # unity mapping
+        targets_dict = {"HQC18": {},
+                        "SLY230A": {},
+                        "MPA1": {},
+                        }
+        all_eos_names = list(targets_dict.keys())
     
     # Load the targets
     for eos_name in all_eos_names:
-        target_filepath = os.path.join(DATA_PATH, f"{eos_name}.npz")
+        target_filepath = os.path.join(DATA_PATH, "eos", f"{eos_name}.npz")
         target_filepath = np.load(target_filepath)
         m_target, r_target, l_target = target_filepath["masses_EOS"], target_filepath["radii_EOS"], target_filepath["Lambdas_EOS"]
         
@@ -143,7 +144,11 @@ def make_plots(outdir: str,
         targets_dict[eos_name]["r_target"] = r_target
         targets_dict[eos_name]["l_target"] = l_target
     
+    # Load the posterior dataset
+    filename = os.path.join(outdir, "eos_samples.npz")
     data = np.load(filename)
+    EOS_keys = ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
+    
     m, r, l = data["masses_EOS"], data["radii_EOS"], data["Lambdas_EOS"]
     logpc_EOS = data["logpc_EOS"]
     n, p, e, cs2 = data["n"], data["p"], data["e"], data["cs2"]
@@ -175,22 +180,18 @@ def make_plots(outdir: str,
     max_log_prob_idx = np.argmax(log_prob)
     indices = np.random.choice(nb_samples, max_samples, replace=False) # p=log_prob/np.sum(log_prob)
     indices = np.append(indices, max_log_prob_idx)
-
-    # # Get a colorbar for log prob, but normalized
-    # norm = plt.Normalize(vmin=np.min(log_prob), vmax=np.max(log_prob))
-    # cmap = sns.color_palette("crest", as_cmap=True)
-    # sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+    
+    print("\n\n\n")
+    print(f"Showing the max log prob EOS values:")
+    for key in EOS_keys:
+        print(f"{key}: {data[key][max_log_prob_idx]}")
+        
+    print("\n\n\n")
 
     print("Creating NS plot . . .")
     bad_counter = 0
-    for i in tqdm.tqdm(indices):
+    for i in indices:
 
-        # # Get color
-        # normalized_value = norm(log_prob[i])
-        # color = cmap(normalized_value)
-        # samples_kwargs["color"] = color
-        # samples_kwargs["zorder"] = 1e2 + normalized_value
-        
         if any(np.isnan(m[i])) or any(np.isnan(r[i])) or any(np.isnan(l[i])):
             bad_counter += 1
             continue
@@ -212,10 +213,6 @@ def make_plots(outdir: str,
         # Pressure as a function of density TODO: rather, plot M-Lambda curves here
         plt.subplot(122)
         plt.plot(m[i], l[i], **samples_kwargs)
-        # last_pc = pc_EOS[i, -1]
-        # n_TOV = np.interp(last_pc, p[i], n[i])
-        # mask = (n[i] > 0.5) * (n[i] < n_TOV)
-        # plt.plot(n[i][mask], p[i][mask], **samples_kwargs)
         
     # Plot the max log prob values in black alpha = 1.0
     plt.subplot(121)
@@ -242,34 +239,17 @@ def make_plots(outdir: str,
     for eos_name in all_eos_names:
         r_target, m_target, l_target = targets_dict[eos_name]["r_target"], targets_dict[eos_name]["m_target"], targets_dict[eos_name]["l_target"]
         color = TARGET_COLORS_DICT[eos_name]
+        label = labels_mapping_dict[eos_name]
         
         plt.subplot(121)
-        plt.plot(r_target, m_target, color=color, label=eos_name, **TARGET_KWARGS)
+        plt.plot(r_target, m_target, color=color, label=label, **TARGET_KWARGS)
         
         plt.subplot(122)
-        plt.plot(m_target, l_target, color=color, label=eos_name, **TARGET_KWARGS)
+        plt.plot(m_target, l_target, color=color, label=label, **TARGET_KWARGS)
     
     plt.subplot(121)
     plt.legend()
     
-    # # Set the colorbar
-    # sm.set_array([])
-    # cbar_ax = fig.add_axes([0.15, 0.94, 0.7, 0.03])  # [left, bottom, width, height]
-    # cbar = plt.colorbar(sm, cax=cbar_ax, orientation='horizontal')
-    # cbar.set_label("Normalized posterior probability", fontsize = 16)
-    # cbar.set_ticks([])
-    # cbar.ax.xaxis.labelpad = 5
-    # cbar.ax.tick_params(labelsize=0, length=0)
-    # cbar.ax.xaxis.set_label_position('top')
-    # cbar.ax.xaxis.get_offset_text().set_visible(False)
-    # cbar.set_label(r"Normalized posterior probability")
-    
-    # Save
-    # Add the colorbar
-    fig = plt.gcf()
-    # cbar = plt.colorbar(sm, ax=fig.axes)
-    # Add a single colorbar at the top spanning both subplots
-
     plt.savefig(os.path.join(outdir, "postprocessing_NS.pdf"), bbox_inches = "tight", dpi=300)
     plt.close()
     print("Creating NS plot . . . DONE")
@@ -284,8 +264,6 @@ def make_plots(outdir: str,
         l14_list = []
         ntov_list = []
         p3nsat_list = []
-        
-        mass_at_2nat_list = []
         
         negative_counter = 0
         for i in tqdm.tqdm(range(nb_samples)):
@@ -313,12 +291,6 @@ def make_plots(outdir: str,
                 l14_list.append(l14)
             ntov_list.append(n_TOV)
             p3nsat_list.append(p3nsat)
-            
-            # # TODO: remove? No longer interested in this
-            # p_at_2nsat = np.interp(2.0, _n, _p)
-            # mass_at_2nat = np.interp(p_at_2nsat, _pc, _m)
-            # mass_at_2nat_list.append(mass_at_2nat)
-            # report_credible_interval(np.array(mass_at_2nat_list))
             
         print(f"Negative counter: {negative_counter}")
         
@@ -460,6 +432,7 @@ def make_plots(outdir: str,
         plt.xlabel(r"$R$ [km]")
         plt.ylabel(r"$M$ [$M_\odot$]")
         plt.ylim(m_min, m_max)
+        plt.xlim(right = 15.0)
         
         # Add the labels here manually
         plt.subplot(122)
@@ -473,12 +446,13 @@ def make_plots(outdir: str,
         for eos_name in all_eos_names:
             r_target, m_target, l_target = targets_dict[eos_name]["r_target"], targets_dict[eos_name]["m_target"], targets_dict[eos_name]["l_target"]
             color = TARGET_COLORS_DICT[eos_name]
+            label = labels_mapping_dict[eos_name]
             
             plt.subplot(121)
-            plt.plot(r_target, m_target, color=color, label=eos_name, **TARGET_KWARGS)
+            plt.plot(r_target, m_target, color=color, label=label, **TARGET_KWARGS)
             
             plt.subplot(122)
-            plt.plot(m_target, l_target, color=color, label=eos_name, **TARGET_KWARGS)
+            plt.plot(m_target, l_target, color=color, label=label, **TARGET_KWARGS)
         
         # Add legend
         plt.subplot(122)

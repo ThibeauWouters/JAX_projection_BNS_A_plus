@@ -58,12 +58,12 @@ from flowjax.train import fit_to_data
 from flowjax.distributions import Normal
 jax.config.update("jax_enable_x64", True) # this needs to be activated if we wish to have x64 in the EOS inference
 
+from projection_BNS.utils import GW_PATH, NF_PATH
+
 print("GPU found?")
 print(jax.devices())
 
-GW_PATH = "/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/GW"
-NF_PATH = "/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF"
-ALLOWED_EOS = ["HQC18", "MPA1", "SLY230A"]
+ALLOWED_EOS = ["HQC18", "MPA1", "SLY230A", "jester_soft", "jester_middle", "jester_hard"]
 c = 299_792.458 # km/s
 H0 = 67.74 # km/s/Mpc
 
@@ -71,7 +71,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Trains an NF to approximate the marginal of the component masses and the tidal deformabilities")
     parser.add_argument("--eos", 
                         type=str, 
-                        help="Name of the EOS. Choose from [HQC18, MPA1, SLY230A].")
+                        help="Name of the EOS. Choose from [HQC18, MPA1, SLY230A, jester_soft, jester_middle, jester_hard].")
     parser.add_argument("--ifo-network", 
                         type=str, 
                         help="Name of the network of detectors. Choose from [Aplus, Asharp, ET].")

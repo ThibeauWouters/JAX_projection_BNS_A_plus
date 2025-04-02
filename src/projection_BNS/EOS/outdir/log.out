@@ -1,282 +1,0 @@
-Tue Apr  1 11:24:35 CEST 2025
-NVIDIA H100
-GPU found?
-[CudaDevice(id=0)]
-GPU found?
-[CudaDevice(id=0)]
-Ignoring the Q and Z NEP parameters
-Using CSE grid with 8 points
-Fixed params loaded inside the MicroToMacroTransform:
-    E_sat: -16.0
-Given id_list was None, so created id list [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
- 25 26 27 28 29 30]
-Loading the trained NF model from: models/HQC18/Aplus/1
-Loaded the NF for run HQC18_1
-The range of m1 for HQC18_1 is: 1.5951060503721237 to 1.9727715104818344
-The range of m2 for HQC18_1 is: 1.312011256814003 to 1.6153650730848312
-Loading the trained NF model from: models/HQC18/Aplus/2
-Loaded the NF for run HQC18_2
-The range of m1 for HQC18_2 is: 1.3507076352834702 to 1.786174550652504
-The range of m2 for HQC18_2 is: 1.023673191666603 to 1.3354357331991196
-Loading the trained NF model from: models/HQC18/Aplus/3
-Loaded the NF for run HQC18_3
-The range of m1 for HQC18_3 is: 1.6290701180696487 to 2.099888101220131
-The range of m2 for HQC18_3 is: 1.2507999688386917 to 1.5923646837472916
-Loading the trained NF model from: models/HQC18/Aplus/4
-Loaded the NF for run HQC18_4
-The range of m1 for HQC18_4 is: 1.5584642440080643 to 2.062421664595604
-The range of m2 for HQC18_4 is: 0.9600573033094406 to 1.2403257936239243
-Loading the trained NF model from: models/HQC18/Aplus/5
-Loaded the NF for run HQC18_5
-The range of m1 for HQC18_5 is: 1.67008675634861 to 2.057117149233818
-The range of m2 for HQC18_5 is: 1.3671474903821945 to 1.6765356808900833
-Loading the trained NF model from: models/HQC18/Aplus/6
-Loaded the NF for run HQC18_6
-The range of m1 for HQC18_6 is: 1.1361979693174362 to 1.4794949442148209
-The range of m2 for HQC18_6 is: 0.8818090707063675 to 1.13137386739254
-Loading the trained NF model from: models/HQC18/Aplus/7
-Loaded the NF for run HQC18_7
-The range of m1 for HQC18_7 is: 1.7870812863111496 to 2.304913178086281
-The range of m2 for HQC18_7 is: 1.4346552640199661 to 1.8429436534643173
-Loading the trained NF model from: models/HQC18/Aplus/8
-Tried looking for the NF architecture at path /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/8.eqx, but it doesn't exist!
-Could not load the likelihood for id 8, because of the following error: [Errno 2] No such file or directory: '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/8_kwargs.json'
-Moving on
-Loading the trained NF model from: models/HQC18/Aplus/9
-Tried looking for the NF architecture at path /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/9.eqx, but it doesn't exist!
-Could not load the likelihood for id 9, because of the following error: [Errno 2] No such file or directory: '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/9_kwargs.json'
-Moving on
-Loading the trained NF model from: models/HQC18/Aplus/10
-Tried looking for the NF architecture at path /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/10.eqx, but it doesn't exist!
-Could not load the likelihood for id 10, because of the following error: [Errno 2] No such file or directory: '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/HQC18/Aplus/10_kwargs.json'
-Moving on
-Loading the trained NF model from: models/HQC18/Aplus/11
-Loaded the NF for run HQC18_11
-The range of m1 for HQC18_11 is: 1.299256756901741 to 1.62281833589077
-The range of m2 for HQC18_11 is: 1.0130832344293594 to 1.2501218169927597
-Loading the trained NF model from: models/HQC18/Aplus/12
-Loaded the NF for run HQC18_12
-The range of m1 for HQC18_12 is: 1.6495809704065323 to 1.9121313840150833
-The range of m2 for HQC18_12 is: 1.456182524561882 to 1.6875570267438889
-Loading the trained NF model from: models/HQC18/Aplus/13
-Loaded the NF for run HQC18_13
-The range of m1 for HQC18_13 is: 1.681915745139122 to 2.0141854137182236
-The range of m2 for HQC18_13 is: 1.4184422045946121 to 1.6963628679513931
-Loading the trained NF model from: models/HQC18/Aplus/14
-Loaded the NF for run HQC18_14
-The range of m1 for HQC18_14 is: 1.6363092511892319 to 2.130124792456627
-The range of m2 for HQC18_14 is: 1.2622100859880447 to 1.6241564601659775
-Loading the trained NF model from: models/HQC18/Aplus/15
-Loaded the NF for run HQC18_15
-The range of m1 for HQC18_15 is: 1.6567648202180862 to 2.0767778903245926
-The range of m2 for HQC18_15 is: 1.323576644062996 to 1.6471945494413376
-Loading the trained NF model from: models/HQC18/Aplus/16
-Loaded the NF for run HQC18_16
-The range of m1 for HQC18_16 is: 1.275683417916298 to 1.670367643237114
-The range of m2 for HQC18_16 is: 0.9745586663484573 to 1.2572485953569412
-Loading the trained NF model from: models/HQC18/Aplus/17
-Loaded the NF for run HQC18_17
-The range of m1 for HQC18_17 is: 1.0951978713274002 to 1.3199273496866226
-The range of m2 for HQC18_17 is: 0.9207233041524887 to 1.1096449941396713
-Loading the trained NF model from: models/HQC18/Aplus/18
-Loaded the NF for run HQC18_18
-The range of m1 for HQC18_18 is: 1.3384317606687546 to 1.6379211097955704
-The range of m2 for HQC18_18 is: 1.1141770333051682 to 1.3447678834199905
-Loading the trained NF model from: models/HQC18/Aplus/19
-Loaded the NF for run HQC18_19
-The range of m1 for HQC18_19 is: 1.537817046046257 to 1.8139878660440445
-The range of m2 for HQC18_19 is: 1.3155234605073929 to 1.5559086948633194
-Loading the trained NF model from: models/HQC18/Aplus/20
-Loaded the NF for run HQC18_20
-The range of m1 for HQC18_20 is: 1.2490694969892502 to 1.608438566327095
-The range of m2 for HQC18_20 is: 0.9914573282003403 to 1.254277303814888
-Loading the trained NF model from: models/HQC18/Aplus/21
-Loaded the NF for run HQC18_21
-The range of m1 for HQC18_21 is: 1.69859878718853 to 2.150139734148979
-The range of m2 for HQC18_21 is: 1.0096531361341476 to 1.2563065439462662
-Loading the trained NF model from: models/HQC18/Aplus/22
-Loaded the NF for run HQC18_22
-The range of m1 for HQC18_22 is: 1.9517839699983597 to 2.2153454273939133
-The range of m2 for HQC18_22 is: 1.7249678820371628 to 1.966801956295967
-Loading the trained NF model from: models/HQC18/Aplus/23
-Loaded the NF for run HQC18_23
-The range of m1 for HQC18_23 is: 1.3920056074857712 to 1.7409268766641617
-The range of m2 for HQC18_23 is: 1.1153361946344376 to 1.3798607140779495
-Loading the trained NF model from: models/HQC18/Aplus/24
-Loaded the NF for run HQC18_24
-The range of m1 for HQC18_24 is: 1.3898760825395584 to 1.6547567397356033
-The range of m2 for HQC18_24 is: 1.189572736620903 to 1.417006179690361
-Loading the trained NF model from: models/HQC18/Aplus/25
-Loaded the NF for run HQC18_25
-The range of m1 for HQC18_25 is: 1.2258315831422806 to 1.3944337517023087
-The range of m2 for HQC18_25 is: 1.103745624423027 to 1.2540871649980545
-Loading the trained NF model from: models/HQC18/Aplus/26
-Loaded the NF for run HQC18_26
-The range of m1 for HQC18_26 is: 1.4261224120855331 to 1.7603421956300735
-The range of m2 for HQC18_26 is: 1.1617300659418106 to 1.4280133694410324
-Loading the trained NF model from: models/HQC18/Aplus/27
-Loaded the NF for run HQC18_27
-The range of m1 for HQC18_27 is: 1.373770758509636 to 1.6603817790746689
-The range of m2 for HQC18_27 is: 1.1460060626268387 to 1.390162631869316
-Loading the trained NF model from: models/HQC18/Aplus/28
-Loaded the NF for run HQC18_28
-The range of m1 for HQC18_28 is: 1.6580089181661606 to 1.990496888756752
-The range of m2 for HQC18_28 is: 1.4186658710241318 to 1.7019408196210861
-Loading the trained NF model from: models/HQC18/Aplus/29
-Loaded the NF for run HQC18_29
-The range of m1 for HQC18_29 is: 1.3753966242074966 to 1.7970957607030869
-The range of m2 for HQC18_29 is: 1.0696286708116531 to 1.3709748536348343
-Loading the trained NF model from: models/HQC18/Aplus/30
-Loaded the NF for run HQC18_30
-The range of m1 for HQC18_30 is: 1.4894217997789383 to 2.021694555878639
-The range of m2 for HQC18_30 is: 1.1030303686857224 to 1.4583279937505722
-There are 27 GW likelihoods used now
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x151db9bc47f0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x151db8f01d80>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x151db9a8c520>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150bb61dcf10>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150bb6390af0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150bb6390070>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150bb49d4640>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150bb5f638b0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150bb5fe8970>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b77f1b8e0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150bb5fe9120>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b77651ba0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b77289630>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150bb61772b0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b777396c0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b77047040>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b775bce80>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b765bee60>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b779528f0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b77651450>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b75fa0610>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b77debd90>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b765ce380>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b75937520>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b74e8bac0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b74d04100>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150b75dbaf50>
-prior_keys
-['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
-all_prior_keys
-['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
-Prior parameter 0: E_sym
-Prior parameter 1: L_sym
-Prior parameter 2: K_sym
-Prior parameter 3: K_sat
-Prior parameter 4: nbreak
-Prior parameter 5: n_CSE_0_u
-Prior parameter 6: cs2_CSE_0
-Prior parameter 7: n_CSE_1_u
-Prior parameter 8: cs2_CSE_1
-Prior parameter 9: n_CSE_2_u
-Prior parameter 10: cs2_CSE_2
-Prior parameter 11: n_CSE_3_u
-Prior parameter 12: cs2_CSE_3
-Prior parameter 13: n_CSE_4_u
-Prior parameter 14: cs2_CSE_4
-Prior parameter 15: n_CSE_5_u
-Prior parameter 16: cs2_CSE_5
-Prior parameter 17: n_CSE_6_u
-Prior parameter 18: cs2_CSE_6
-Prior parameter 19: n_CSE_7_u
-Prior parameter 20: cs2_CSE_7
-Prior parameter 21: cs2_CSE_8
-Prior parameter 22: key
-Fixed params loaded inside the MicroToMacroTransform:
-    E_sat: -16.0
-We are going to give these kwargs to Jim:
-{'n_loop_training': 30, 'n_loop_production': 30, 'n_chains': 1000, 'n_local_steps': 2, 'n_global_steps': 100, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
-We are going to sample the following parameters:
-['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
-No sample transforms provided. Using prior parameters as sampling parameters
-Jim received the local sampler name: GaussianRandomWalk
-Step size given was a matrix, converting to diagonal for GaussianRandomWalk
-['n_dim', 'n_chains', 'n_local_steps', 'n_global_steps', 'n_loop', 'output_thinning', 'verbose']
-log_prob
-[-409.49397164 -334.59458858 -306.72069059]
-Sampling seed is set to: 11
-Global Tuning:   0%|          | 0/30 [00:00<?, ?it/s]Global Tuning:   3%|▎         | 1/30 [05:18<2:34:06, 318.83s/it]Global Tuning:   7%|▋         | 2/30 [05:53<1:10:50, 151.81s/it]Global Tuning:  10%|█         | 3/30 [06:31<44:54, 99.81s/it]   Global Tuning:  13%|█▎        | 4/30 [07:04<31:45, 73.29s/it]Global Tuning:  17%|█▋        | 5/30 [07:38<24:40, 59.20s/it]Global Tuning:  20%|██        | 6/30 [08:12<20:11, 50.47s/it]Global Tuning:  23%|██▎       | 7/30 [08:47<17:29, 45.61s/it]Global Tuning:  27%|██▋       | 8/30 [09:21<15:22, 41.95s/it]Global Tuning:  30%|███       | 9/30 [09:55<13:49, 39.48s/it]Global Tuning:  33%|███▎      | 10/30 [10:36<13:19, 39.98s/it]Global Tuning:  37%|███▋      | 11/30 [11:14<12:23, 39.12s/it]Global Tuning:  40%|████      | 12/30 [11:50<11:28, 38.27s/it]Global Tuning:  43%|████▎     | 13/30 [12:24<10:27, 36.92s/it]Global Tuning:  47%|████▋     | 14/30 [12:59<09:41, 36.32s/it]Global Tuning:  50%|█████     | 15/30 [13:37<09:15, 37.00s/it]Global Tuning:  53%|█████▎    | 16/30 [14:14<08:37, 36.97s/it]Global Tuning:  57%|█████▋    | 17/30 [14:49<07:51, 36.30s/it]Global Tuning:  60%|██████    | 18/30 [15:24<07:11, 35.97s/it]Global Tuning:  63%|██████▎   | 19/30 [15:58<06:28, 35.32s/it]Global Tuning:  67%|██████▋   | 20/30 [16:33<05:52, 35.21s/it]Global Tuning:  70%|███████   | 21/30 [17:10<05:21, 35.69s/it]Global Tuning:  73%|███████▎  | 22/30 [17:45<04:45, 35.70s/it]Global Tuning:  77%|███████▋  | 23/30 [18:23<04:14, 36.38s/it]Global Tuning:  80%|████████  | 24/30 [19:03<03:44, 37.39s/it]Global Tuning:  83%|████████▎ | 25/30 [19:37<03:01, 36.39s/it]Global Tuning:  87%|████████▋ | 26/30 [20:13<02:24, 36.15s/it]Global Tuning:  90%|█████████ | 27/30 [20:50<01:49, 36.54s/it]Global Tuning:  93%|█████████▎| 28/30 [21:27<01:13, 36.57s/it]Global Tuning:  97%|█████████▋| 29/30 [22:05<00:37, 37.18s/it]Global Tuning: 100%|██████████| 30/30 [22:45<00:00, 37.90s/it]Global Tuning: 100%|██████████| 30/30 [22:45<00:00, 45.52s/it]
-Global Sampling:   0%|          | 0/30 [00:00<?, ?it/s]Global Sampling:   3%|▎         | 1/30 [00:35<17:19, 35.85s/it]Global Sampling:   7%|▋         | 2/30 [01:11<16:42, 35.80s/it]Global Sampling:  10%|█         | 3/30 [01:47<16:13, 36.06s/it]Global Sampling:  13%|█▎        | 4/30 [02:24<15:46, 36.41s/it]Global Sampling:  17%|█▋        | 5/30 [03:00<15:00, 36.02s/it]Global Sampling:  20%|██        | 6/30 [03:36<14:24, 36.01s/it]Global Sampling:  23%|██▎       | 7/30 [04:13<13:57, 36.43s/it]Global Sampling:  27%|██▋       | 8/30 [04:50<13:27, 36.70s/it]Global Sampling:  30%|███       | 9/30 [05:27<12:50, 36.67s/it]Global Sampling:  33%|███▎      | 10/30 [06:02<12:00, 36.04s/it]Global Sampling:  37%|███▋      | 11/30 [06:39<11:30, 36.36s/it]Global Sampling:  40%|████      | 12/30 [07:16<10:57, 36.52s/it]Global Sampling:  43%|████▎     | 13/30 [07:53<10:26, 36.84s/it]Global Sampling:  47%|████▋     | 14/30 [08:30<09:49, 36.83s/it]Global Sampling:  50%|█████     | 15/30 [09:07<09:12, 36.81s/it]Global Sampling:  53%|█████▎    | 16/30 [09:42<08:28, 36.33s/it]Global Sampling:  57%|█████▋    | 17/30 [10:19<07:55, 36.54s/it]Global Sampling:  60%|██████    | 18/30 [10:55<07:17, 36.46s/it]Global Sampling:  63%|██████▎   | 19/30 [11:33<06:44, 36.78s/it]Global Sampling:  67%|██████▋   | 20/30 [12:09<06:05, 36.60s/it]Global Sampling:  70%|███████   | 21/30 [12:46<05:30, 36.71s/it]Global Sampling:  73%|███████▎  | 22/30 [13:22<04:53, 36.64s/it]Global Sampling:  77%|███████▋  | 23/30 [13:58<04:13, 36.21s/it]Global Sampling:  80%|████████  | 24/30 [14:33<03:36, 36.08s/it]Global Sampling:  83%|████████▎ | 25/30 [15:09<03:00, 36.08s/it]Global Sampling:  87%|████████▋ | 26/30 [15:47<02:25, 36.49s/it]Global Sampling:  90%|█████████ | 27/30 [16:23<01:49, 36.42s/it]Global Sampling:  93%|█████████▎| 28/30 [16:59<01:12, 36.27s/it]Global Sampling:  97%|█████████▋| 29/30 [17:36<00:36, 36.44s/it]Global Sampling: 100%|██████████| 30/30 [18:12<00:00, 36.40s/it]Global Sampling: 100%|██████████| 30/30 [18:12<00:00, 36.42s/it]
-Training summary
-==========
-E_sym: 36.513 +/- 4.768
-L_sym: 38.369 +/- 20.641
-K_sym: -196.318 +/- 74.047
-K_sat: 209.310 +/- 39.327
-nbreak: 0.273 +/- 0.036
-n_CSE_0_u: 0.489 +/- 0.273
-cs2_CSE_0: 0.533 +/- 0.288
-n_CSE_1_u: 0.488 +/- 0.270
-cs2_CSE_1: 0.630 +/- 0.260
-n_CSE_2_u: 0.509 +/- 0.277
-cs2_CSE_2: 0.603 +/- 0.267
-n_CSE_3_u: 0.505 +/- 0.273
-cs2_CSE_3: 0.541 +/- 0.278
-n_CSE_4_u: 0.502 +/- 0.275
-cs2_CSE_4: 0.524 +/- 0.279
-n_CSE_5_u: 0.494 +/- 0.275
-cs2_CSE_5: 0.513 +/- 0.280
-n_CSE_6_u: 0.509 +/- 0.277
-cs2_CSE_6: 0.504 +/- 0.279
-n_CSE_7_u: 0.507 +/- 0.274
-cs2_CSE_7: 0.494 +/- 0.279
-cs2_CSE_8: 0.515 +/- 0.281
-key: 621469968.422 +/- 4572227347.644
-Log probability: -1682.340 +/- 54305.836
-Local acceptance: 0.984 +/- 0.125
-Global acceptance: 0.022 +/- 0.147
-Max loss: 39.321, Min loss: 27.478
-Production summary
-==========
-E_sym: 36.101 +/- 4.662
-L_sym: 33.480 +/- 18.316
-K_sym: -196.800 +/- 67.935
-K_sat: 206.130 +/- 38.682
-nbreak: 0.282 +/- 0.030
-n_CSE_0_u: 0.495 +/- 0.265
-cs2_CSE_0: 0.699 +/- 0.221
-n_CSE_1_u: 0.453 +/- 0.253
-cs2_CSE_1: 0.620 +/- 0.260
-n_CSE_2_u: 0.547 +/- 0.276
-cs2_CSE_2: 0.604 +/- 0.264
-n_CSE_3_u: 0.473 +/- 0.260
-cs2_CSE_3: 0.463 +/- 0.288
-n_CSE_4_u: 0.510 +/- 0.263
-cs2_CSE_4: 0.478 +/- 0.279
-n_CSE_5_u: 0.463 +/- 0.259
-cs2_CSE_5: 0.517 +/- 0.280
-n_CSE_6_u: 0.524 +/- 0.265
-cs2_CSE_6: 0.510 +/- 0.275
-n_CSE_7_u: 0.539 +/- 0.267
-cs2_CSE_7: 0.485 +/- 0.278
-cs2_CSE_8: 0.538 +/- 0.273
-key: -12316517525.506 +/- 12617471801.875
-Log probability: -295.267 +/- 2.399
-Local acceptance: 0.992 +/- 0.089
-Global acceptance: 0.003 +/- 0.055
-Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 42 mins
-Saving the final results
-Number of samples generated in training: 630000
-Number of samples generated in production: 630000
-Number of samples generated: 1260000
-Time taken for TOV map: 2.4511220455169678 s
-The corner plot will plot the parameters: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
-DONE entire script
-DONE
-
-JOB STATISTICS
-==============
-Job ID: 10898606
-Cluster: snellius
-User/Group: twouters2/twouters2
-State: COMPLETED (exit code 0)
-Nodes: 1
-Cores per node: 16
-CPU Utilized: 00:44:30
-CPU Efficiency: 6.29% of 11:47:12 core-walltime
-Job Wall-clock time: 00:44:12
-Memory Utilized: 5.05 GB
-Memory Efficiency: 25.24% of 20.00 GB (20.00 GB/node)
