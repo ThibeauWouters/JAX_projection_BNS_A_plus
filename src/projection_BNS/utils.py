@@ -25,24 +25,16 @@ EOS_FILENAMES_DICT = {"HQC18": HQC18_EOS_FILENAME,
 # These are the colors of the jax logo (order J, A, X)
 TARGET_COLORS_DICT = {"HQC18": "#5e97f6", 
                       "SLY230A": "#26a69a",
-                      "MPA1": "#9c27b0"}
+                      "MPA1": "#9c27b0",
+                      "jester_soft": "#5e97f6", 
+                      "jester_middle": "#26a69a",
+                      "jester_hard": "#9c27b0"}
 
 def get_eos_name_from_dirname(dirname: str):
-    if "HQC18" in dirname:
-        eos_name = "HQC18"
-    elif "SLY230A" in dirname:
-        eos_name = "SLY230A"
-    elif "MPA1" in dirname:
-        eos_name = "MPA1"
-    elif "jester_soft" in dirname:
-        eos_name = "jester_soft"
-    elif "jester_middle" in dirname:
-        eos_name = "jester_middle"
-    elif "jester_hard" in dirname:
-        eos_name = "jester_middle"
-    else:
-        raise ValueError("EOS name not found for target directory {}".format(dirname))
-    return eos_name
+    for eos_name in TARGET_COLORS_DICT.keys():
+        if eos_name in dirname:
+            return eos_name
+    raise ValueError(f"EOS name not recognized")
 
 def get_eos_file_from_dirname(dirname: str):
     eos_name = get_eos_name_from_dirname(dirname)
