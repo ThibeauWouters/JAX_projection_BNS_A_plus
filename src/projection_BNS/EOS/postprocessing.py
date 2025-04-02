@@ -127,6 +127,7 @@ def make_plots(outdir: str,
         print("This is a run for a default target EOS")
         TARGET_COLORS_DICT = {k: v for k, v in TARGET_COLORS_DICT.items() if "jester" not in k}
         labels_mapping_dict = {k: k for k in TARGET_COLORS_DICT.keys()} # unity mapping
+        
         targets_dict = {"HQC18": {},
                         "SLY230A": {},
                         "MPA1": {},

@@ -1,4 +1,4 @@
-Wed Apr  2 11:24:26 CEST 2025
+Wed Apr  2 14:05:20 CEST 2025
 NVIDIA H100
 Checking the convergence for ./outdir_jester_soft/
 Key: E_sym
@@ -108,7 +108,7 @@ cs2_CSE_8: 0.7150851766521172
 
 
 Creating NS plot . . .
-Bad counter: 67
+Bad counter: 69
 Creating NS plot . . . DONE
 Making the master plot
 np.shape(interp_array)
@@ -119,14 +119,14 @@ DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10922901
+Job ID: 10928590
 Cluster: snellius
 User/Group: twouters2/twouters2
 State: COMPLETED (exit code 0)
 Nodes: 1
 Cores per node: 16
-CPU Utilized: 00:00:37
-CPU Efficiency: 5.64% of 00:10:56 core-walltime
-Job Wall-clock time: 00:00:41
-Memory Utilized: 663.30 MB
-Memory Efficiency: 21.59% of 3.00 GB (3.00 GB/node)
+CPU Utilized: 00:00:38
+CPU Efficiency: 5.16% of 00:12:16 core-walltime
+Job Wall-clock time: 00:00:46
+Memory Utilized: 675.04 MB
+Memory Efficiency: 21.97% of 3.00 GB (3.00 GB/node)

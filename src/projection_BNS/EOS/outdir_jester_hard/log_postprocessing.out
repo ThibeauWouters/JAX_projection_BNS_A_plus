@@ -1,0 +1,132 @@
+Wed Apr  2 14:05:58 CEST 2025
+NVIDIA H100
+Checking the convergence for ./outdir_jester_hard/
+Key: E_sym
+    rhat = 1.548807000013656
+    ess = 1804.5136117900574
+Key: L_sym
+    rhat = 1.5518868413502391
+    ess = 1797.6169441425109
+Key: K_sym
+    rhat = 1.5626626077318126
+    ess = 1831.8896276554422
+Key: K_sat
+    rhat = 1.5944215949780458
+    ess = 1725.5764285399207
+Key: nbreak
+    rhat = 1.5652525727681768
+    ess = 1775.3987260238212
+Key: n_CSE_0_u
+    rhat = 1.5724020925001638
+    ess = 1798.739221409076
+Key: cs2_CSE_0
+    rhat = 1.5820710895858
+    ess = 1746.5072172407083
+Key: n_CSE_1_u
+    rhat = 1.644572450806559
+    ess = 1782.2898049328835
+Key: cs2_CSE_1
+    rhat = 1.5494925448642536
+    ess = 1801.1634965478906
+Key: n_CSE_2_u
+    rhat = 1.5717481978061212
+    ess = 1763.1435995680026
+Key: cs2_CSE_2
+    rhat = 1.5799544361387157
+    ess = 1746.7321270406674
+Key: n_CSE_3_u
+    rhat = 1.5528204809109634
+    ess = 1794.6664978743754
+Key: cs2_CSE_3
+    rhat = 1.5980464779438786
+    ess = 1723.2895439931012
+Key: n_CSE_4_u
+    rhat = 1.6044170185931803
+    ess = 1719.789703967296
+Key: cs2_CSE_4
+    rhat = 1.555995353753201
+    ess = 1788.6948471215942
+Key: n_CSE_5_u
+    rhat = 1.5733688277197886
+    ess = 1771.4805448827692
+Key: cs2_CSE_5
+    rhat = 1.570319979235211
+    ess = 1808.7962313745986
+Key: n_CSE_6_u
+    rhat = 1.5803380167785186
+    ess = 1763.063260972389
+Key: cs2_CSE_6
+    rhat = 1.5759336015444378
+    ess = 1750.0734047453598
+Key: n_CSE_7_u
+    rhat = 1.5904654568520638
+    ess = 1732.9374682948815
+Key: cs2_CSE_7
+    rhat = 1.5817960911613065
+    ess = 1805.7664414002304
+Key: cs2_CSE_8
+    rhat = 1.609918500224358
+    ess = 1703.582346838777
+Key: key
+    rhat = 1.610785632221711
+    ess = 1730.2164829894891
+Plotting the cornerplot for ./outdir_jester_hard/
+Making the cornerplot, these are the chains: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
+(22, 10000)
+Making plots for ./outdir_jester_hard/
+This is a run for a jester target EOS
+Number of samples: 10000
+
+
+
+
+Showing the max log prob EOS values:
+E_sym: 35.83066913177621
+L_sym: 20.590344378550444
+K_sym: 55.15173246560159
+K_sat: 283.2415526137144
+nbreak: 0.2615056909130777
+n_CSE_0_u: 0.3165157562056348
+cs2_CSE_0: 0.8055686136411173
+n_CSE_1_u: 0.23440044093611379
+cs2_CSE_1: 0.22328940726778462
+n_CSE_2_u: 0.12261464460257283
+cs2_CSE_2: 0.3495280642841412
+n_CSE_3_u: 0.5557250322716489
+cs2_CSE_3: 0.8015199886702653
+n_CSE_4_u: 0.1900039145078789
+cs2_CSE_4: 0.34577932335682576
+n_CSE_5_u: 0.452129179161968
+cs2_CSE_5: 0.5934381808758077
+n_CSE_6_u: 0.9185249533039965
+cs2_CSE_6: 0.9553716514879327
+n_CSE_7_u: 0.533297567841687
+cs2_CSE_7: 0.6937849544023917
+cs2_CSE_8: 0.9723404175445082
+
+
+
+
+Creating NS plot . . .
+Bad counter: 0
+Creating NS plot . . . DONE
+Making the master plot
+np.shape(interp_array)
+(100, 10000)
+np.shape(interp_array)
+(100, 10000)
+DONE
+
+JOB STATISTICS
+==============
+Job ID: 10928644
+Cluster: snellius
+User/Group: twouters2/twouters2
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:38
+CPU Efficiency: 5.52% of 00:11:28 core-walltime
+Job Wall-clock time: 00:00:43
+Memory Utilized: 643.20 MB
+Memory Efficiency: 20.94% of 3.00 GB (3.00 GB/node)
