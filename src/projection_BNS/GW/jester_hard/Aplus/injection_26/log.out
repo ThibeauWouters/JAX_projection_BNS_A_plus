@@ -1,0 +1,415 @@
+Wed Apr  2 11:33:01 CEST 2025
+NVIDIA H100
+/gpfs/home6/twouters2/ninjax_dev/jim/src/jimgw/prior.py:94: UserWarning: As of jaxtyping version 0.2.24, jaxtyping now prefers the syntax
+```
+from jaxtyping import jaxtyped
+# Use your favourite typechecker: usually one of the two lines below.
+from typeguard import typechecked as typechecker
+from beartype import beartype as typechecker
+
+@jaxtyped(typechecker=typechecker)
+def foo(...):
+```
+and the old double-decorator syntax
+```
+@jaxtyped
+@typechecker
+def foo(...):
+```
+should no longer be used. (It will continue to work as it did before, but the new approach will produce more readable error messages.)
+In particular note that `typechecker` must be passed via keyword argument; the following is not valid:
+```
+@jaxtyped(typechecker)
+def foo(...):
+```
+
+  class Uniform(Prior):
+/gpfs/home6/twouters2/ninjax_dev/jim/src/jimgw/prior.py:149: UserWarning: As of jaxtyping version 0.2.24, jaxtyping now prefers the syntax
+```
+from jaxtyping import jaxtyped
+# Use your favourite typechecker: usually one of the two lines below.
+from typeguard import typechecked as typechecker
+from beartype import beartype as typechecker
+
+@jaxtyped(typechecker=typechecker)
+def foo(...):
+```
+and the old double-decorator syntax
+```
+@jaxtyped
+@typechecker
+def foo(...):
+```
+should no longer be used. (It will continue to work as it did before, but the new approach will produce more readable error messages.)
+In particular note that `typechecker` must be passed via keyword argument; the following is not valid:
+```
+@jaxtyped(typechecker)
+def foo(...):
+```
+
+  class Unconstrained_Uniform(Prior):
+/gpfs/home6/twouters2/ninjax_dev/jim/src/jimgw/prior.py:263: UserWarning: As of jaxtyping version 0.2.24, jaxtyping now prefers the syntax
+```
+from jaxtyping import jaxtyped
+# Use your favourite typechecker: usually one of the two lines below.
+from typeguard import typechecked as typechecker
+from beartype import beartype as typechecker
+
+@jaxtyped(typechecker=typechecker)
+def foo(...):
+```
+and the old double-decorator syntax
+```
+@jaxtyped
+@typechecker
+def foo(...):
+```
+should no longer be used. (It will continue to work as it did before, but the new approach will produce more readable error messages.)
+In particular note that `typechecker` must be passed via keyword argument; the following is not valid:
+```
+@jaxtyped(typechecker)
+def foo(...):
+```
+
+  class AlignedSpin(Prior):
+/gpfs/home6/twouters2/ninjax_dev/jim/src/jimgw/prior.py:377: UserWarning: As of jaxtyping version 0.2.24, jaxtyping now prefers the syntax
+```
+from jaxtyping import jaxtyped
+# Use your favourite typechecker: usually one of the two lines below.
+from typeguard import typechecked as typechecker
+from beartype import beartype as typechecker
+
+@jaxtyped(typechecker=typechecker)
+def foo(...):
+```
+and the old double-decorator syntax
+```
+@jaxtyped
+@typechecker
+def foo(...):
+```
+should no longer be used. (It will continue to work as it did before, but the new approach will produce more readable error messages.)
+In particular note that `typechecker` must be passed via keyword argument; the following is not valid:
+```
+@jaxtyped(typechecker)
+def foo(...):
+```
+
+  class PowerLaw(Prior):
+/gpfs/home6/twouters2/ninjax_dev/jim/src/jimgw/single_event/detector.py:496: UserWarning: As of jaxtyping version 0.2.24, jaxtyping now prefers the syntax
+```
+from jaxtyping import jaxtyped
+# Use your favourite typechecker: usually one of the two lines below.
+from typeguard import typechecked as typechecker
+from beartype import beartype as typechecker
+
+@jaxtyped(typechecker=typechecker)
+def foo(...):
+```
+and the old double-decorator syntax
+```
+@jaxtyped
+@typechecker
+def foo(...):
+```
+should no longer be used. (It will continue to work as it did before, but the new approach will produce more readable error messages.)
+In particular note that `typechecker` must be passed via keyword argument; the following is not valid:
+```
+@jaxtyped(typechecker)
+def foo(...):
+```
+
+  def load_psd(
+11:33 ninjax INFO    : Checking and setting outdir
+11:33 ninjax INFO    : Found generation prior file ./Aplus/injection_26/generation_prior.prior
+11:33 ninjax INFO    : The outdir is set to ./Aplus/injection_26
+11:33 ninjax INFO    : Loading the given config
+11:33 ninjax WARNING : Unrecognized keys given: {'n_max_examples'}. These will be ignored
+11:33 ninjax INFO    : Arguments loaded into the config: {'likelihood': 'HeterodynedTransientLikelihoodFD', 'gw_injection': 'True', 'gw_load_existing_injection': 'False', 'gw_dump_injection_data': 'False', 'gw_SNR_threshold_low': '11.2', 'gw_SNR_threshold_high': '100', 'waveform_approximant': 'IMRPhenomD_NRTidalv2', 'waveform_approximant_1': 'None', 'waveform_approximant_2': 'None', 'gw_overlapping_tight_priors': 'False', 'ifos': 'H1,L1,V1', 'eos_file': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/eos/jester_hard.npz', 'fmin': '20.0', 'fref': '20.0', 'fmax': '2048.0', 'duration': 'None', 'post_trigger_duration': '2.0', 'trigger_time': '1187008882.4', 'psd_file_H1': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/psds/AplusDesign_PSD.txt', 'psd_file_L1': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/psds/AplusDesign_PSD.txt', 'psd_file_V1': '/home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/psds/avirgo_O5high_NEW_PSD.txt', 'psd_file_ET1': '/home/twouters2/psds/ET_D_psd.txt', 'psd_file_ET2': '/home/twouters2/psds/ET_D_psd.txt', 'psd_file_ET3': '/home/twouters2/psds/ET_D_psd.txt', 'psd_file_CE': '/home/twouters2/psds/CE_psd.txt', 'data_file_H1': 'None', 'data_file_L1': 'None', 'data_file_V1': 'None', 'data_file_ET1': 'None', 'data_file_ET2': 'None', 'data_file_ET3': 'None', 'relative_binning_binsize': '1000', 'relative_binning_ref_params_equal_true_params': 'True', 'relative_binning_ref_params': 'None', 'transforms': 'q_to_eta,cos_iota_to_iota,sin_dec_to_dec', 'gw_kwargs': 'None', 'filters': 'None', 'tmin': '0.05', 'tmax': '15.0', 'em_injection': 'False', 'em_trigger_time': '0.0', 'em_data_path': 'None', 'KN_model_name': 'None', 'KN_class_name': 'None', 'KN_model_dir': 'None', 'GRB_model_name': 'None', 'GRB_class_name': 'None', 'GRB_model_dir': 'None', 'detection_limit': 'None', 'n_loop_training': '200', 'n_loop_production': '10', 'n_local_steps': '100', 'n_global_steps': '1_000', 'n_epochs': '25', 'n_chains': '1_000', 'learning_rate': '0.001', 'max_samples': '50000', 'momentum': '0.9', 'batch_size': '30000', 'use_global': 'True', 'keep_quantile': '0.0', 'train_thinning': '10', 'output_thinning': '50', 'n_sample_max': '10000', 'verbose': 'False', 'save_training_chains': 'False', 'eps_mass_matrix': '1e-5', 'use_scheduler': 'True', 'use_temperature': 'False', 'which_temperature_schedule': 'exponential', 'starting_temperature': '2.0', 'stop_tempering_iteration': '75', 'stopping_criterion_global_acc': '0.10', 'stopping_criterion_loss': '-inf', 'seed': 'None', 'sampling_seed': 'None', 'injection_generation_seed': 'None', 'num_layers': '10', 'hidden_size': '128,128', 'num_bins': '8', 'nf_model_kwargs': 'None', 'run_sampler': 'True', 'keys_to_plot': 'M_c, q, s1_z, s2_z, lambda_1, lambda_2, d_L, t_c, phase_c, iota, psi, ra, dec'}
+11:33 ninjax INFO    : Complete config file written to /gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/GW/jester_hard/Aplus/injection_26/complete_config.json
+11:33 ninjax INFO    : No seed specified. Generating a random seed: 415140
+11:33 ninjax INFO    : No sampling_seed specified. Generating a random sampling_seed: 617248
+11:33 ninjax INFO    : No injection_generation_seed specified. Generating a random injection_generation_seed: 761560
+11:33 ninjax INFO    : Loading the priors
+11:33 ninjax INFO    : Setting up the prior
+11:33 ninjax INFO    :    Mc_prior = Uniform(0.98, 2.6, naming=["M_c"])
+11:33 ninjax INFO    :    q_prior = Uniform(0.125, 1.0, naming=["q"])
+11:33 ninjax INFO    :    s1_z_prior = Uniform(-0.05, 0.05, naming=["s1_z"])
+11:33 ninjax INFO    :    s2_z_prior = Uniform(-0.05, 0.05, naming=["s2_z"])
+11:33 ninjax INFO    :    lambda1_prior = Uniform(0.0, 5000.0, naming=["lambda_1"])
+11:33 ninjax INFO    :    lambda2_prior = Uniform(0.0, 5000.0, naming=["lambda_2"])
+11:33 ninjax INFO    :    cos_iota_prior = Uniform(-1.0, 1.0, naming=["cos_iota"])
+11:33 ninjax INFO    :    dL_prior = PowerLaw(1.0, 1000.0, 2.0, naming=["d_L"])
+11:33 ninjax INFO    :    t_c_prior = Uniform(-0.1, 0.1, naming=["t_c"])
+11:33 ninjax INFO    :    phase_c_prior = Uniform(0.0, 2 * jnp.pi, naming=["phase_c"])
+11:33 ninjax INFO    :    psi_prior = Uniform(0.0, jnp.pi, naming=["psi"])
+11:33 ninjax INFO    :    ra_prior = Uniform(0.0, 2 * jnp.pi, naming=["ra"])
+11:33 ninjax INFO    :    sin_dec_prior = Uniform(-1.0, 1.0, naming=["sin_dec"])
+11:33 ninjax INFO    : Setting up the generation prior
+11:33 ninjax INFO    :    mass_1_source_prior = Uniform(1.0, 2.4, naming=["mass_1_source"])
+11:33 ninjax INFO    :    mass_2_source_prior = Uniform(1.0, 2.4, naming=["mass_2_source"])
+11:33 ninjax INFO    :    s1_z_prior = Uniform(-0.05, 0.05, naming=["s1_z"])
+11:33 ninjax INFO    :    s2_z_prior = Uniform(-0.05, 0.05, naming=["s2_z"])
+11:33 ninjax INFO    :    cos_iota_prior = Uniform(-1.0, 1.0, naming=["cos_iota"])
+11:33 ninjax INFO    :    dL_prior = PowerLaw(10.0, 460.0, 2.0, naming=["d_L"])
+11:33 ninjax INFO    :    t_c_prior = Uniform(-0.1, 0.1, naming=["t_c"])
+11:33 ninjax INFO    :    phase_c_prior = Uniform(0.0, 2 * jnp.pi, naming=["phase_c"])
+11:33 ninjax INFO    :    psi_prior = Uniform(0.0, jnp.pi, naming=["psi"])
+11:33 ninjax INFO    :    ra_prior = Uniform(0.0, 2 * jnp.pi, naming=["ra"])
+11:33 ninjax INFO    :    sin_dec_prior = Uniform(-1.0, 1.0, naming=["sin_dec"])
+11:33 ninjax INFO    : Finished prior setup
+11:33 ninjax INFO    : Setting the transforms
+11:33 ninjax INFO    : Raw transforms list is q_to_eta,cos_iota_to_iota,sin_dec_to_dec
+11:33 ninjax INFO    : transforms_str_list has 3 elements
+11:33 ninjax INFO    : DEBUG: Checking that all_transforms is OK: the list is ['binary_Love', 'binary_love_fit', 'cos_iota1_to_iota1', 'cos_iota2_to_iota2', 'cos_iota_to_iota', 'log_lambda_to_lambda', 'm1_m2_to_Mc_q', 'q1_to_eta1', 'q2_to_eta2', 'q_to_eta', 'sin_dec1_to_dec1', 'sin_dec2_to_dec2', 'sin_dec_to_dec', 'spin_sphere_to_cartesian_s1', 'spin_sphere_to_cartesian_s2', 'swap_lambdas_eos', 't_c_dt_to_tcs']
+11:33 ninjax INFO    : Setting the likelihood
+11:33 ninjax INFO    : GW likelihood provided, setting up the GW pipe
+11:33 ninjax INFO    : eos_file is /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/eos/jester_hard.npz
+11:33 ninjax INFO    : Using eos_file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/eos/jester_hard.npz for BNS injections
+11:33 ninjax INFO    : Note: No specific waveform approximant 1 so defaulting to IMRPhenomD_NRTidalv2
+11:33 ninjax INFO    : self.is_BNS_run is True
+11:33 ninjax INFO    : Using IMRPhenomD_NRTidalv2 waveform. Therefore, we will use no taper as the reference waveform for the likelihood if relative binning is used
+11:33 ninjax INFO    : GW run is an injection
+11:33 ninjax INFO    : Setting up GW injection . . . 
+11:33 ninjax INFO    : The SNR thresholds are: 11.2 - 100.0
+11:33 ninjax INFO    : Generating new injection
+11:33 ninjax INFO    : Sanity check: generated parameters:
+11:33 ninjax INFO    : {'mass_1_source': 2.3241920506029254, 'mass_2_source': 2.1606748699528637, 's1_z': -0.029544474293157808, 's2_z': 0.010822333421603172, 'cos_iota': 0.7349284117469206, 'd_L': 295.7012112828725, 't_c': -0.0679028899968543, 'phase_c': 0.2852357998171564, 'psi': 1.9757240610876043, 'ra': 4.665862060453753, 'sin_dec': 0.40220006436697986}
+11:33 ninjax INFO    : Computing lambdas from EOS file /home/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/data/eos/jester_hard.npz . . . 
+11:33 ninjax INFO    : Injected lambda_1: 20.910532239322162
+11:33 ninjax INFO    : Injected lambda_2: 42.51053914326914
+11:33 ninjax INFO    : Duration is not specified in the config. Computed chirp time: for fmin = 20.0 and M_c = 2.0809243274153557 is 128.0
+11:33 ninjax INFO    : After transforms, the injection parameters are:
+11:33 ninjax INFO    : {'mass_1_source': 2.3241920506029254, 'mass_2_source': 2.1606748699528637, 's1_z': -0.029544474293157808, 's2_z': 0.010822333421603172, 'cos_iota': 0.7349284117469206, 'd_L': 295.7012112828725, 't_c': -0.0679028899968543, 'phase_c': 0.2852357998171564, 'psi': 1.9757240610876043, 'ra': 4.665862060453753, 'sin_dec': 0.40220006436697986, 'q': 0.9296455813074297, 'M_c': 2.0809243274153557, 'eta': 0.24966767143821808, 'iota': Array(0.74523522, dtype=float64, weak_type=True), 'dec': Array(0.41391857, dtype=float64, weak_type=True), 'lambda_1': 20.910532239322162, 'lambda_2': 42.51053914326914}
+11:33 ninjax INFO    : The trial injection parameters are {'M_c': 2.0809243274153557, 'eta': 0.24966767143821808, 's1_z': -0.029544474293157808, 's2_z': 0.010822333421603172, 'lambda_1': 20.910532239322162, 'lambda_2': 42.51053914326914, 'd_L': 295.7012112828725, 'phase_c': 0.2852357998171564, 'iota': 0.74523521671309, 't_c': -0.0679028899968543, 'psi': 1.9757240610876043, 'ra': 4.665862060453753, 'dec': 0.41391857414435773}
+11:33 ninjax INFO    : Injecting signals . . .
+11:33 ninjax INFO    : self.ifos
+11:33 ninjax INFO    : [GroundBased2G(H1), GroundBased2G(L1), GroundBased2G(V1)]
+11:33 ninjax INFO    : Signal injected in ifo H1. Frequencies, data, and PSD:
+11:33 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
+ 2047.984375  2047.9921875]
+11:33 ninjax INFO    : [-9.69691263e-23-4.18283181e-24j -3.50993810e-23+5.81487792e-23j
+  5.62358037e-23+6.03241545e-23j ...
+  2.39530026e-23+7.19964290e-24j  1.25864829e-23+1.57292690e-23j
+  3.82805634e-24+1.26539400e-23j]
+11:33 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
+ 2.17777440e-47 2.17778992e-47]
+11:33 ninjax INFO    : Signal injected in ifo L1. Frequencies, data, and PSD:
+11:33 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
+ 2047.984375  2047.9921875]
+11:33 ninjax INFO    : [-1.45138518e-23-1.87616103e-23j  2.00236762e-23-1.96122052e-23j
+ -2.99220084e-23-3.94789448e-23j ...
+  2.78608099e-23-1.64213629e-24j -2.26625230e-23+8.71090485e-24j
+ -3.17916208e-24-3.36948047e-23j]
+11:33 ninjax INFO    : [1.44906511e-46 1.44667215e-46 1.44435812e-46 ... 2.17775889e-47
+ 2.17777440e-47 2.17778992e-47]
+11:33 ninjax INFO    : Signal injected in ifo V1. Frequencies, data, and PSD:
+11:33 ninjax INFO    : [  20.          20.0078125   20.015625  ... 2047.9765625
+ 2047.984375  2047.9921875]
+11:33 ninjax INFO    : [-5.32429107e-23-4.76966232e-23j  6.00732442e-23-3.40278864e-25j
+ -3.84846159e-23+7.51141485e-23j ...
+ -6.44096226e-23-5.33948005e-25j  1.41364876e-23+6.25578155e-23j
+ -4.57806016e-24-3.95443838e-24j]
+11:33 ninjax INFO    : [1.43183556e-46 1.42935095e-46 1.42688205e-46 ... 6.39786094e-47
+ 6.39790724e-47 6.39795354e-47]
+11:33 ninjax INFO    : SNR for ifo H1 is 11.570826140984737
+11:33 ninjax INFO    : SNR for ifo L1 is 15.275322571442963
+11:33 ninjax INFO    : SNR for ifo V1 is 2.919717079558733
+11:33 ninjax INFO    : The network SNR is 19.38412353115811
+11:33 ninjax INFO    : Network SNR passes threshold
+11:33 ninjax INFO    : Sanity checking the GW injection for ArrayImpl
+11:33 ninjax INFO    :    mass_1_source: 2.3241920506029254
+11:33 ninjax INFO    :    mass_2_source: 2.1606748699528637
+11:33 ninjax INFO    :    s1_z: -0.029544474293157808
+11:33 ninjax INFO    :    s2_z: 0.010822333421603172
+11:33 ninjax INFO    :    cos_iota: 0.7349284117469206
+11:33 ninjax INFO    :    d_L: 295.7012112828725
+11:33 ninjax INFO    :    t_c: -0.0679028899968543
+11:33 ninjax INFO    :    phase_c: 0.2852357998171564
+11:33 ninjax INFO    :    psi: 1.9757240610876043
+11:33 ninjax INFO    :    ra: 4.665862060453753
+11:33 ninjax INFO    :    sin_dec: 0.40220006436697986
+11:33 ninjax INFO    :    q: 0.9296455813074297
+11:33 ninjax INFO    :    M_c: 2.0809243274153557
+11:33 ninjax INFO    :    eta: 0.24966767143821808
+11:33 ninjax INFO    :    iota: 0.74523521671309
+11:33 ninjax INFO    :    dec: 0.41391857414435773
+11:33 ninjax INFO    :    lambda_1: 20.910532239322162
+11:33 ninjax INFO    :    lambda_2: 42.51053914326914
+11:33 ninjax INFO    :    H1_SNR: 11.570826140984737
+11:33 ninjax INFO    :    L1_SNR: 15.275322571442963
+11:33 ninjax INFO    :    V1_SNR: 2.919717079558733
+11:33 ninjax INFO    :    network_SNR: 19.38412353115811
+11:33 ninjax INFO    :    epoch: 126.0
+11:33 ninjax INFO    :    gmst: 2.7288901910520846
+11:33 ninjax INFO    :    duration: 128.0
+11:33 ninjax INFO    : Using GW HeterodynedTransientLikelihoodFD. Initializing likelihood
+11:33 ninjax INFO    : Using the injection parameters as reference parameters for the relative binning
+11:33 ninjax INFO    : Using the following kwargs for the GW likelihood: {}
+11:35 ninjax INFO    : Initialization of HeterodynedTransientLikelihoodFD took 146.40250372886658 seconds = 2.440041728814443 minutes
+11:35 ninjax INFO    : The priors are not modified after their initialization
+11:35 ninjax INFO    : Required keys for the likelihood: ['M_c', 'eta', 's1_z', 's2_z', 'lambda_1', 'lambda_2', 'd_L', 'phase_c', 'iota', 't_c', 'psi', 'ra', 'dec']
+11:35 ninjax INFO    : Checking the setup between prior, transforms, and likelihood
+11:35 ninjax INFO    : sample: {'M_c': Array([2.47294361, 1.83646808, 1.57012895], dtype=float64), 'q': Array([0.8305829 , 0.40241344, 0.56183667], dtype=float64), 's1_z': Array([ 0.00828056,  0.04247675, -0.01206388], dtype=float64), 's2_z': Array([0.0474011 , 0.02007728, 0.01757513], dtype=float64), 'lambda_1': Array([4348.96097482, 2124.167241  , 3306.13184499], dtype=float64), 'lambda_2': Array([ 267.378089  , 2196.45655078, 4489.52469144], dtype=float64), 'cos_iota': Array([ 0.85688535, -0.15547178, -0.60796583], dtype=float64), 'd_L': Array([497.9425465 , 737.3539233 , 723.43184321], dtype=float64), 't_c': Array([0.01349612, 0.03295435, 0.04978015], dtype=float64), 'phase_c': Array([6.21559492, 0.70245725, 1.67260661], dtype=float64), 'psi': Array([2.04338243, 0.481422  , 2.75001899], dtype=float64), 'ra': Array([6.20021582, 0.17738506, 2.10178109], dtype=float64), 'sin_dec': Array([ 0.48389771, -0.47767852, -0.18332775], dtype=float64)}
+11:35 ninjax INFO    : log_prob: [-157.01932721   -9.02309875   -2.20188299]
+11:35 ninjax INFO    : Checking log_prob at injection parameters: {'mass_1_source': 2.3241920506029254, 'mass_2_source': 2.1606748699528637, 's1_z': -0.029544474293157808, 's2_z': 0.010822333421603172, 'cos_iota': 0.7349284117469206, 'd_L': 295.7012112828725, 't_c': -0.0679028899968543, 'phase_c': 0.2852357998171564, 'psi': 1.9757240610876043, 'ra': 4.665862060453753, 'sin_dec': 0.40220006436697986, 'q': 0.9296455813074297, 'M_c': 2.0809243274153557, 'eta': 0.24966767143821808, 'iota': Array(0.74523522, dtype=float64, weak_type=True), 'dec': Array(0.41391857, dtype=float64, weak_type=True), 'lambda_1': 20.910532239322162, 'lambda_2': 42.51053914326914, 'H1_SNR': 11.570826140984737, 'L1_SNR': 15.275322571442963, 'V1_SNR': 2.919717079558733, 'network_SNR': 19.38412353115811, 'epoch': 126.0, 'gmst': 2.7288901910520846, 'duration': 128.0}
+11:35 ninjax INFO    : log_prob at the injection parameters is: 162.3197415058623
+11:35 ninjax INFO    : Will plot these keys: ['M_c', 'q', 's1_z', 's2_z', 'lambda_1', 'lambda_2', 'd_L', 't_c', 'phase_c', 'iota', 'psi', 'ra', 'dec']
+11:35 ninjax INFO    : Will plot the labels: ['$M_c/M_\\odot$', '$q$', '$\\chi_1$', '$\\chi_2$', '$\\Lambda_1$', '$\\Lambda_2$', '$d_{\\rm{L}}/{\\rm Mpc}$', '$t_c$', '$\\phi_c$', '$\\iota$', '$\\psi$', '$\\alpha$', '$\\delta$']
+11:35 ninjax INFO    : Ninjax setup complete.
+11:35 ninjax INFO    : Saving output to ./Aplus/injection_26/
+11:35 ninjax INFO    : Using polynomial learning rate scheduler
+11:35 ninjax INFO    : The hyperparameters passed to flowMC and jim are
+11:35 ninjax INFO    :    n_loop_training: 200
+11:35 ninjax INFO    :    n_loop_production: 10
+11:35 ninjax INFO    :    n_local_steps: 100
+11:35 ninjax INFO    :    n_global_steps: 1000
+11:35 ninjax INFO    :    n_epochs: 25
+11:35 ninjax INFO    :    n_chains: 1000
+11:35 ninjax INFO    :    learning_rate: <function polynomial_schedule.<locals>.schedule at 0x1466a4b3fbe0>
+11:35 ninjax INFO    :    max_samples: 50000
+11:35 ninjax INFO    :    momentum: 0.9
+11:35 ninjax INFO    :    batch_size: 30000
+11:35 ninjax INFO    :    use_global: True
+11:35 ninjax INFO    :    keep_quantile: 0.0
+11:35 ninjax INFO    :    train_thinning: 10
+11:35 ninjax INFO    :    output_thinning: 50
+11:35 ninjax INFO    :    n_sample_max: 10000
+11:35 ninjax INFO    :    num_layers: 10
+11:35 ninjax INFO    :    hidden_size: [128, 128]
+11:35 ninjax INFO    :    num_bins: 8
+11:35 ninjax INFO    :    save_training_chains: False
+11:35 ninjax INFO    :    eps_mass_matrix: 1e-05
+11:35 ninjax INFO    :    use_scheduler: True
+11:35 ninjax INFO    :    use_temperature: False
+11:35 ninjax INFO    :    which_temperature_schedule: exponential
+11:35 ninjax INFO    :    starting_temperature: 2.0
+11:35 ninjax INFO    :    stop_tempering_iteration: 75
+11:35 ninjax INFO    :    stopping_criterion_global_acc: 0.1
+11:35 ninjax INFO    :    stopping_criterion_loss: -inf
+11:35 ninjax INFO    :    nf_model_kwargs: {}
+11:35 ninjax INFO    :    local sampler arg not shown (pretty print)
+11:35 ninjax INFO    : Fetching the injected values for plotting
+Checking the noise that was generated in inject_signal ifo:
+[-9.33821618e-23 -3.94125165e-23  6.10954427e-23 -5.68753852e-24
+ -2.65113017e-24  4.69221009e-23  5.07794174e-23 -6.13412348e-23
+ -5.70168637e-23  7.24388071e-23]
+[-8.21460040e-24  6.13878580e-23  5.79892006e-23 -8.70614022e-24
+  4.56524348e-23 -5.46786254e-23  1.19174981e-22  5.83949233e-23
+  3.15474502e-23 -2.40987138e-23]
+Checking the noise that was generated in inject_signal ifo:
+[-1.48377931e-23  2.17483904e-23 -3.29563974e-23 -2.12777317e-23
+  1.53215227e-24 -7.65067483e-24  3.47263749e-23  1.85723799e-23
+  3.52378706e-23  8.35394931e-23]
+[-1.16448350e-23 -2.65210582e-23 -3.30405527e-23 -3.30375753e-23
+ -3.06322916e-23  1.53940034e-23  9.54517139e-24 -1.63254754e-23
+ -5.07436621e-25 -8.32555070e-23]
+Checking the noise that was generated in inject_signal ifo:
+[-5.40553866e-23  6.05670940e-23 -3.86462598e-23  1.61596748e-23
+ -1.48008466e-23  7.48842693e-23  3.56883706e-23 -3.40889349e-23
+  4.65184830e-23 -3.14837832e-23]
+[-4.92188720e-23  1.31221647e-24  7.33978231e-23 -1.75674183e-23
+  1.04813979e-23 -1.59622767e-23 -5.08941580e-23  6.69032116e-23
+ -3.24244082e-24 -4.89683984e-24]
+NOTE: we are given a reference waveform!
+Initializing heterodyned likelihood..
+Comparing against relative binning in bilby
+Using 5941 bins for relative binning for epsilon 0.01
+Time for binning scheme: 0.11144185066223145 seconds
+Using provided reference parameters:
+ref_params for relative binning:
+{'mass_1_source': 2.3241920506029254, 'mass_2_source': 2.1606748699528637, 's1_z': -0.029544474293157808, 's2_z': 0.010822333421603172, 'cos_iota': 0.7349284117469206, 'd_L': 295.7012112828725, 't_c': -0.0679028899968543, 'phase_c': 0.2852357998171564, 'psi': 1.9757240610876043, 'ra': 4.665862060453753, 'sin_dec': 0.40220006436697986, 'q': 0.9296455813074297, 'M_c': 2.0809243274153557, 'eta': 0.24966767143821808, 'iota': Array(0.74523522, dtype=float64, weak_type=True), 'dec': Array(0.41391857, dtype=float64, weak_type=True), 'lambda_1': 20.910532239322162, 'lambda_2': 42.51053914326914, 'H1_SNR': 11.570826140984737, 'L1_SNR': 15.275322571442963, 'V1_SNR': 2.919717079558733, 'network_SNR': 19.38412353115811, 'epoch': 126.0, 'gmst': 2.7288901910520846, 'duration': 128.0}
+Constructing reference waveforms. . .
+Time for reference waveforms: 0.5096628665924072 seconds
+Time for h_sky_low and h_sky_center: 5.308490991592407 seconds
+Going to compute the masks . . .
+Time taken for f_index_array calculation is 0.6524698734283447
+Going to compute coefficients . . .
+Time for computing coefficients: 124.96570992469788 seconds
+Time for computing coefficients: 7.04924464225769 seconds
+Time for computing coefficients: 7.261654853820801 seconds
+['M_c', 'eta', 's1_z', 's2_z', 'lambda_1', 'lambda_2', 'd_L', 'phase_c', 'iota', 't_c', 'psi', 'ra', 'dec']
+INFO: Using MALA as local sampler
+Setting up a single Gaussian distribution
+No autotune found, use input sampler_params
+Training normalizing flow
+Tuning global sampler:   0%|          | 0/200 [00:00<?, ?it/s]Tuning global sampler:   0%|          | 1/200 [02:01<6:41:44, 121.13s/it]Tuning global sampler:   1%|          | 2/200 [02:05<2:53:28, 52.57s/it] Tuning global sampler:   2%|▏         | 3/200 [02:10<1:40:40, 30.66s/it]Tuning global sampler:   2%|▏         | 4/200 [02:14<1:06:33, 20.37s/it]Tuning global sampler:   2%|▎         | 5/200 [02:19<47:45, 14.70s/it]  Tuning global sampler:   3%|▎         | 6/200 [02:24<36:26, 11.27s/it]Tuning global sampler:   4%|▎         | 7/200 [02:29<30:05,  9.36s/it]Tuning global sampler:   4%|▍         | 8/200 [02:34<25:08,  7.85s/it]Tuning global sampler:   4%|▍         | 9/200 [02:38<21:43,  6.82s/it]Tuning global sampler:   5%|▌         | 10/200 [02:43<19:16,  6.08s/it]Tuning global sampler:   6%|▌         | 11/200 [02:47<17:44,  5.63s/it]Tuning global sampler:   6%|▌         | 12/200 [02:52<16:39,  5.32s/it]Tuning global sampler:   6%|▋         | 13/200 [02:56<15:51,  5.09s/it]Tuning global sampler:   7%|▋         | 14/200 [03:01<15:21,  4.96s/it]Tuning global sampler:   8%|▊         | 15/200 [03:06<15:00,  4.87s/it]Tuning global sampler:   8%|▊         | 16/200 [03:10<14:44,  4.81s/it]Tuning global sampler:   8%|▊         | 17/200 [03:15<14:30,  4.76s/it]Tuning global sampler:   9%|▉         | 18/200 [03:20<14:18,  4.72s/it]Tuning global sampler:  10%|▉         | 19/200 [03:24<14:08,  4.69s/it]Tuning global sampler:  10%|█         | 20/200 [03:29<14:00,  4.67s/it]Tuning global sampler:  10%|█         | 21/200 [03:34<13:53,  4.65s/it]Tuning global sampler:  11%|█         | 22/200 [03:39<14:32,  4.90s/it]Tuning global sampler:  12%|█▏        | 23/200 [03:44<14:11,  4.81s/it]Tuning global sampler:  12%|█▏        | 24/200 [03:48<13:45,  4.69s/it]Tuning global sampler:  12%|█▎        | 25/200 [03:53<13:44,  4.71s/it]Tuning global sampler:  13%|█▎        | 26/200 [03:57<13:22,  4.61s/it]Tuning global sampler:  14%|█▎        | 27/200 [04:02<13:05,  4.54s/it]Tuning global sampler:  14%|█▍        | 28/200 [04:06<12:52,  4.49s/it]Tuning global sampler:  14%|█▍        | 29/200 [04:10<12:43,  4.46s/it]Tuning global sampler:  15%|█▌        | 30/200 [04:15<12:35,  4.44s/it]Tuning global sampler:  16%|█▌        | 31/200 [04:19<12:28,  4.43s/it]Tuning global sampler:  16%|█▌        | 32/200 [04:24<12:21,  4.41s/it]Tuning global sampler:  16%|█▋        | 33/200 [04:28<12:13,  4.39s/it]Tuning global sampler:  17%|█▋        | 34/200 [04:32<12:07,  4.38s/it]Tuning global sampler:  18%|█▊        | 35/200 [04:37<12:04,  4.39s/it]Tuning global sampler:  18%|█▊        | 36/200 [04:41<11:59,  4.39s/it]Tuning global sampler:  18%|█▊        | 37/200 [04:45<11:54,  4.39s/it]Tuning global sampler:  19%|█▉        | 38/200 [04:50<11:50,  4.38s/it]Tuning global sampler:  20%|█▉        | 39/200 [04:54<11:45,  4.38s/it]Tuning global sampler:  20%|██        | 40/200 [04:59<11:41,  4.38s/it]Tuning global sampler:  20%|██        | 41/200 [05:04<12:20,  4.66s/it]Tuning global sampler:  21%|██        | 42/200 [05:08<12:03,  4.58s/it]Tuning global sampler:  22%|██▏       | 43/200 [05:13<11:50,  4.52s/it]Tuning global sampler:  22%|██▏       | 44/200 [05:17<11:38,  4.48s/it]Tuning global sampler:  22%|██▎       | 45/200 [05:21<11:27,  4.44s/it]Tuning global sampler:  23%|██▎       | 46/200 [05:26<11:21,  4.42s/it]Tuning global sampler:  24%|██▎       | 47/200 [05:30<11:15,  4.41s/it]Tuning global sampler:  24%|██▍       | 48/200 [05:34<11:09,  4.40s/it]Tuning global sampler:  24%|██▍       | 49/200 [05:39<11:04,  4.40s/it]Tuning global sampler:  25%|██▌       | 50/200 [05:43<10:59,  4.39s/it]Tuning global sampler:  26%|██▌       | 51/200 [05:48<10:54,  4.39s/it]Tuning global sampler:  26%|██▌       | 52/200 [05:52<10:49,  4.39s/it]Tuning global sampler:  26%|██▋       | 53/200 [05:56<10:44,  4.39s/it]Tuning global sampler:  27%|██▋       | 54/200 [06:01<10:40,  4.39s/it]Tuning global sampler:  28%|██▊       | 55/200 [06:05<10:34,  4.38s/it]Tuning global sampler:  28%|██▊       | 55/200 [06:09<16:15,  6.73s/it]
+Compiling MALA body
+Early stopping: global acceptance target rate achieved
+Starting Production run
+Production run:   0%|          | 0/10 [00:00<?, ?it/s]Production run:  10%|█         | 1/10 [00:03<00:28,  3.22s/it]Production run:  20%|██        | 2/10 [00:06<00:25,  3.22s/it]Production run:  30%|███       | 3/10 [00:09<00:22,  3.22s/it]Production run:  40%|████      | 4/10 [00:12<00:19,  3.22s/it]Production run:  50%|█████     | 5/10 [00:16<00:16,  3.22s/it]Production run:  60%|██████    | 6/10 [00:19<00:12,  3.22s/it]Production run:  70%|███████   | 7/10 [00:22<00:09,  3.22s/it]Production run:  80%|████████  | 8/10 [00:25<00:06,  3.22s/it]Production run:  90%|█████████ | 9/10 [00:28<00:03,  3.22s/it]Production run: 100%|██████████| 10/10 [00:32<00:00,  3.22s/it]Production run: 100%|██████████| 10/10 [00:32<00:00,  3.22s/it]
+11:42 ninjax INFO    : Saving samples to ./Aplus/injection_26/results_training.npz
+11:42 ninjax INFO    : Saving the NF
+11:42 ninjax INFO    : Time taken: 408.78833293914795 seconds (6.813138882319133 minutes)
+11:42 ninjax INFO    : Creating the final corner plot
+11:42 ninjax INFO    : Dumping the final production chains
+11:42 ninjax INFO    : Chains shape is: (13, 220000)
+11:42 ninjax INFO    : Key: M_c: ESS = 30311, Rhat = 1.0212621895877605
+11:42 ninjax INFO    : Key: q: ESS = 15146, Rhat = 1.0402474653662155
+11:42 ninjax INFO    : Key: s1_z: ESS = 16027, Rhat = 1.0382200002286646
+11:42 ninjax INFO    : Key: s2_z: ESS = 17024, Rhat = 1.0363186389760517
+11:42 ninjax INFO    : Key: lambda_1: ESS = 27465, Rhat = 1.0224027380219318
+11:42 ninjax INFO    : Key: lambda_2: ESS = 22929, Rhat = 1.0276802379310503
+11:42 ninjax INFO    : Key: cos_iota: ESS = 18571, Rhat = 1.0335095376401473
+11:42 ninjax INFO    : Key: d_L: ESS = 17115, Rhat = 1.0359781117488518
+11:42 ninjax INFO    : Key: t_c: ESS = 22074, Rhat = 1.027641250278346
+11:42 ninjax INFO    : Key: phase_c: ESS = 10036, Rhat = 1.0610966878858055
+11:42 ninjax INFO    : Key: psi: ESS = 17394, Rhat = 1.0356509230841235
+11:42 ninjax INFO    : Key: ra: ESS = 23268, Rhat = 1.0268048772217724
+11:42 ninjax INFO    : Key: sin_dec: ESS = 22940, Rhat = 1.0266297681503205
+11:42 ninjax INFO    : Key: eta: ESS = 15146, Rhat = 1.0402474653662155
+11:42 ninjax INFO    : Key: iota: ESS = 18571, Rhat = 1.0335095376401473
+11:42 ninjax INFO    : Key: dec: ESS = 22940, Rhat = 1.0266297681503205
+11:42 ninjax INFO    : Finished successfully!
+Training summary
+==========
+M_c: 2.053 +/- 0.150
+q: 0.763 +/- 0.183
+s1_z: 0.009 +/- 0.026
+s2_z: 0.002 +/- 0.027
+lambda_1: 1542.767 +/- 1477.556
+lambda_2: 1489.647 +/- 1444.989
+cos_iota: 0.544 +/- 0.468
+d_L: 519.819 +/- 227.749
+t_c: -0.062 +/- 0.020
+phase_c: 2.983 +/- 1.736
+psi: 1.378 +/- 0.834
+ra: 4.606 +/- 0.657
+sin_dec: 0.307 +/- 0.263
+Log probability: 93.146 +/- 69.545
+Local acceptance: 0.987 +/- 0.113
+Global acceptance: 0.010 +/- 0.098
+Max loss: 22.802, Min loss: 7.792
+Production summary
+==========
+M_c: 2.081 +/- 0.000
+q: 0.843 +/- 0.100
+s1_z: 0.011 +/- 0.025
+s2_z: 0.005 +/- 0.027
+lambda_1: 154.429 +/- 139.489
+lambda_2: 263.164 +/- 228.081
+cos_iota: 0.805 +/- 0.150
+d_L: 323.560 +/- 54.574
+t_c: -0.067 +/- 0.001
+phase_c: 3.123 +/- 1.800
+psi: 1.559 +/- 0.900
+ra: 4.677 +/- 0.026
+sin_dec: 0.376 +/- 0.059
+Log probability: 158.924 +/- 2.344
+Local acceptance: 0.978 +/- 0.148
+Global acceptance: 0.106 +/- 0.308
+DONE
+
+JOB STATISTICS
+==============
+Job ID: 10923059
+Cluster: snellius
+User/Group: twouters2/twouters2
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:09:21
+CPU Efficiency: 5.76% of 02:42:24 core-walltime
+Job Wall-clock time: 00:10:09
+Memory Utilized: 4.08 GB
+Memory Efficiency: 40.76% of 10.00 GB (10.00 GB/node)
