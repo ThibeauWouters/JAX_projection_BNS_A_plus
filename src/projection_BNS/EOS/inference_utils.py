@@ -216,7 +216,7 @@ class GWlikelihood_with_masses(LikelihoodBase):
                  transform: MicroToMacroTransform = None,
                  very_negative_value: float = -99999.0,
                  N_samples_masses: int = 2_000,
-                 N_masses_evaluation: int = 10,
+                 N_masses_evaluation: int = 1_000,
                  hdi_prob: float = 0.90):
         
         self.eos = eos
@@ -278,14 +278,14 @@ class GWlikelihood_with_masses(LikelihoodBase):
         # Generate some samples from the NS posterior to know the mass range
         sampled_key = params["key"].astype("int64")
         key = jax.random.key(sampled_key)
-        nf_samples = self.NS_posterior.sample(key, (self.N_masses_evaluation,))
+        masses_EOS, Lambdas_EOS = params['masses_EOS'], params['Lambdas_EOS']
+        mtov = jnp.max(masses_EOS)
         
+        ### Old method -- using large array of samples at once. This works fine but is restricted in memory quite easily
+        nf_samples = self.NS_posterior.sample(key, (self.N_masses_evaluation,))
         # Use the NF to sample the masses, then we discard Lambdas and instead infer them from the sampled EOS
         m1 = nf_samples[:, 0].flatten()
         m2 = nf_samples[:, 1].flatten()
-        
-        masses_EOS, Lambdas_EOS = params['masses_EOS'], params['Lambdas_EOS']
-        mtov = jnp.max(masses_EOS)
         
         penalty_mass1_mtov = jnp.where(m1 > mtov, self.very_negative_value, 0.0)
         penalty_mass2_mtov = jnp.where(m2 > mtov, self.very_negative_value, 0.0)
@@ -302,6 +302,44 @@ class GWlikelihood_with_masses(LikelihoodBase):
         
         log_likelihood = logpdf_NS + penalty_mass1_mtov + penalty_mass2_mtov
         
+        # logpdf_NS = self.NS_posterior.log_prob(ml_grid)
+        # logpdf_NS = jnp.mean(logpdf_NS)
+        # log_likelihood = logpdf_NS + penalty_mass1_mtov + penalty_mass2_mtov
+        
+        # ### New method -- using jax.lax.scan
+        # def scan_fn(carry, _):
+        #     """Single step: sample from NF, interpolate Lambdas, compute log_prob."""
+        #     key, logpdf_sum = carry
+        #     key, subkey = jax.random.split(key)  # Split key for new sample
+            
+        #     nf_sample = self.NS_posterior.sample(subkey, (1,))
+        #     m1 = nf_sample[:, 0].at[0].get()
+        #     m2 = nf_sample[:, 1].at[0].get()
+            
+        #     # Apply mass cut penalties
+        #     penalty_mass1_mtov = jnp.where(m1 > mtov, self.very_negative_value, 0.0)
+        #     penalty_mass2_mtov = jnp.where(m2 > mtov, self.very_negative_value, 0.0)
+
+        #     # Interpolate Lambdas
+        #     lambda_1 = jnp.interp(m1, masses_EOS, Lambdas_EOS, right=1.0)
+        #     lambda_2 = jnp.interp(m2, masses_EOS, Lambdas_EOS, right=1.0)
+
+        #     # Compute log_prob
+        #     ml_point = jnp.array([m1, m2, lambda_1, lambda_2])
+        #     logpdf_i = self.NS_posterior.log_prob(ml_point)
+
+        #     # Accumulate log probability
+        #     new_logpdf_sum = logpdf_sum + logpdf_i + penalty_mass1_mtov + penalty_mass2_mtov
+
+        #     return (key, new_logpdf_sum), None
+
+        # # Initialize accumulation variables
+        # initial_carry = (key, 0.0)
+
+        # # Run scan over N_masses_evaluation iterations
+        # (_, logpdf_total), _ = jax.lax.scan(scan_fn, initial_carry, None, length=self.N_masses_evaluation)
+        # log_likelihood = logpdf_total / self.N_masses_evaluation
+
         return log_likelihood
 
 class RadioTimingLikelihood(LikelihoodBase):
@@ -416,6 +454,9 @@ class CombinedLikelihood(LikelihoodBase):
         self.counter = 0
         
     def evaluate(self, params: dict[str, Float], data: dict) -> Float:
+        # FIXME: figure out if the for loop is a performance leak
+        # all_log_likelihoods = jax.lax.map(lambda likelihood: likelihood.evaluate(params, data), self.likelihoods_list)
+        
         all_log_likelihoods = jnp.array([likelihood.evaluate(params, data) for likelihood in self.likelihoods_list])
         return jnp.sum(all_log_likelihoods)
     
