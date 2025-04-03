@@ -290,56 +290,21 @@ class GWlikelihood_with_masses(LikelihoodBase):
         penalty_mass1_mtov = jnp.where(m1 > mtov, self.very_negative_value, 0.0)
         penalty_mass2_mtov = jnp.where(m2 > mtov, self.very_negative_value, 0.0)
         
-        # Lambdas: interpolate to get the values
-        lambda_1 = jnp.interp(m1, masses_EOS, Lambdas_EOS, right = 1.0)
-        lambda_2 = jnp.interp(m2, masses_EOS, Lambdas_EOS, right = 1.0)
+        def single_eval(m1_value, m2_value):
         
-        # Make a 4D array of the m1, m2, and lambda values and evalaute NF log prob on it
-        ml_grid = jnp.array([m1, m2, lambda_1, lambda_2]).T
+            # Lambdas: interpolate to get the values
+            lambda_1 = jnp.interp(m1_value, masses_EOS, Lambdas_EOS, right = 1.0)
+            lambda_2 = jnp.interp(m2_value, masses_EOS, Lambdas_EOS, right = 1.0)
+            
+            # Make a 4D array of the m1, m2, and lambda values and evalaute NF log prob on it
+            ml_grid = jnp.array([m1_value, m2_value, lambda_1, lambda_2])
         
-        logpdf_NS = self.NS_posterior.log_prob(ml_grid)
-        logpdf_NS = jnp.mean(logpdf_NS)
+            logpdf_NS = self.NS_posterior.log_prob(ml_grid)
+            return logpdf_NS
         
+        logpdf_NS = jnp.mean([single_eval(m1_value, m2_value) for m1_value, m2_value in zip(m1, m2)])
         log_likelihood = logpdf_NS + penalty_mass1_mtov + penalty_mass2_mtov
         
-        # logpdf_NS = self.NS_posterior.log_prob(ml_grid)
-        # logpdf_NS = jnp.mean(logpdf_NS)
-        # log_likelihood = logpdf_NS + penalty_mass1_mtov + penalty_mass2_mtov
-        
-        # ### New method -- using jax.lax.scan
-        # def scan_fn(carry, _):
-        #     """Single step: sample from NF, interpolate Lambdas, compute log_prob."""
-        #     key, logpdf_sum = carry
-        #     key, subkey = jax.random.split(key)  # Split key for new sample
-            
-        #     nf_sample = self.NS_posterior.sample(subkey, (1,))
-        #     m1 = nf_sample[:, 0].at[0].get()
-        #     m2 = nf_sample[:, 1].at[0].get()
-            
-        #     # Apply mass cut penalties
-        #     penalty_mass1_mtov = jnp.where(m1 > mtov, self.very_negative_value, 0.0)
-        #     penalty_mass2_mtov = jnp.where(m2 > mtov, self.very_negative_value, 0.0)
-
-        #     # Interpolate Lambdas
-        #     lambda_1 = jnp.interp(m1, masses_EOS, Lambdas_EOS, right=1.0)
-        #     lambda_2 = jnp.interp(m2, masses_EOS, Lambdas_EOS, right=1.0)
-
-        #     # Compute log_prob
-        #     ml_point = jnp.array([m1, m2, lambda_1, lambda_2])
-        #     logpdf_i = self.NS_posterior.log_prob(ml_point)
-
-        #     # Accumulate log probability
-        #     new_logpdf_sum = logpdf_sum + logpdf_i + penalty_mass1_mtov + penalty_mass2_mtov
-
-        #     return (key, new_logpdf_sum), None
-
-        # # Initialize accumulation variables
-        # initial_carry = (key, 0.0)
-
-        # # Run scan over N_masses_evaluation iterations
-        # (_, logpdf_total), _ = jax.lax.scan(scan_fn, initial_carry, None, length=self.N_masses_evaluation)
-        # log_likelihood = logpdf_total / self.N_masses_evaluation
-
         return log_likelihood
 
 class RadioTimingLikelihood(LikelihoodBase):
