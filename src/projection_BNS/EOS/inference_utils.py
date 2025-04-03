@@ -216,6 +216,7 @@ class GWlikelihood_with_masses(LikelihoodBase):
                  transform: MicroToMacroTransform = None,
                  very_negative_value: float = -99999.0,
                  N_samples_masses: int = 2_000,
+                 N_masses_evaluation: int = 10,
                  hdi_prob: float = 0.90):
         
         self.eos = eos
@@ -224,6 +225,7 @@ class GWlikelihood_with_masses(LikelihoodBase):
         self.name = f"{self.eos}_{self.ifo_network}_{self.id}"
         self.transform = transform
         self.very_negative_value = very_negative_value
+        self.N_masses_evaluation = N_masses_evaluation
         
         # Locate the file
         saved_location = f"models/{self.eos}/{self.ifo_network}/{self.id}"
@@ -276,53 +278,32 @@ class GWlikelihood_with_masses(LikelihoodBase):
         # Generate some samples from the NS posterior to know the mass range
         sampled_key = params["key"].astype("int64")
         key = jax.random.key(sampled_key)
-        nf_samples = self.NS_posterior.sample(key, (1,))
+        nf_samples = self.NS_posterior.sample(key, (self.N_masses_evaluation,))
         
-        # Use it to get the range of m1 and m2
-        m1 = nf_samples[:, 0].at[0].get()
-        m2 = nf_samples[:, 1].at[0].get()
+        # Use the NF to sample the masses, then we discard Lambdas and instead infer them from the sampled EOS
+        m1 = nf_samples[:, 0].flatten()
+        m2 = nf_samples[:, 1].flatten()
         
         masses_EOS, Lambdas_EOS = params['masses_EOS'], params['Lambdas_EOS']
         mtov = jnp.max(masses_EOS)
         
         penalty_mass1_mtov = jnp.where(m1 > mtov, self.very_negative_value, 0.0)
         penalty_mass2_mtov = jnp.where(m2 > mtov, self.very_negative_value, 0.0)
-
+        
         # Lambdas: interpolate to get the values
         lambda_1 = jnp.interp(m1, masses_EOS, Lambdas_EOS, right = 1.0)
         lambda_2 = jnp.interp(m2, masses_EOS, Lambdas_EOS, right = 1.0)
-
+        
         # Make a 4D array of the m1, m2, and lambda values and evalaute NF log prob on it
-        ml_grid = jnp.array([m1, m2, lambda_1, lambda_2])
+        ml_grid = jnp.array([m1, m2, lambda_1, lambda_2]).T
+        
         logpdf_NS = self.NS_posterior.log_prob(ml_grid)
+        logpdf_NS = jnp.mean(logpdf_NS)
         
         log_likelihood = logpdf_NS + penalty_mass1_mtov + penalty_mass2_mtov
         
         return log_likelihood
 
-    # def evaluate(self, params: dict[str, float], data: dict) -> float:
-        
-    #     m1, m2 = params[f"m1_{self.name}"], params[f"m2_{self.name}"]
-    #     penalty_masses = jnp.where(m1 < m2, self.very_negative_value, 0.0)
-        
-    #     masses_EOS, Lambdas_EOS = params['masses_EOS'], params['Lambdas_EOS']
-    #     mtov = jnp.max(masses_EOS)
-        
-    #     penalty_mass1_mtov = jnp.where(m1 > mtov, self.very_negative_value, 0.0)
-    #     penalty_mass2_mtov = jnp.where(m2 > mtov, self.very_negative_value, 0.0)
-
-    #     # Lambdas: interpolate to get the values
-    #     lambda_1 = jnp.interp(m1, masses_EOS, Lambdas_EOS, right = 1.0)
-    #     lambda_2 = jnp.interp(m2, masses_EOS, Lambdas_EOS, right = 1.0)
-
-    #     # Make a 4D array of the m1, m2, and lambda values and evalaute NF log prob on it
-    #     ml_grid = jnp.array([m1, m2, lambda_1, lambda_2])
-    #     logpdf_NS = self.NS_posterior.log_prob(ml_grid)
-        
-    #     log_likelihood = logpdf_NS + penalty_masses + penalty_mass1_mtov + penalty_mass2_mtov
-        
-    #     return log_likelihood
-    
 class RadioTimingLikelihood(LikelihoodBase):
     
     def __init__(self,

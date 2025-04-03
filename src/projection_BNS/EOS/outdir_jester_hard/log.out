@@ -1,4 +1,4 @@
-Wed Apr  2 12:07:06 CEST 2025
+Thu Apr  3 13:38:42 CEST 2025
 NVIDIA H100
 GPU found?
 [CudaDevice(id=0)]
@@ -131,32 +131,32 @@ Loaded the NF for run jester_hard_30
 The range of m1 for jester_hard_30 is: 1.4881259948015213 to 1.7888837307691574
 The range of m2 for jester_hard_30 is: 1.2951310724020004 to 1.5385397523641586
 There are 26 GW likelihoods used now
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14e7ef09fd60>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5ec10ac20>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cf6fc8e0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cf548ac0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5ec0907f0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cf5dfdf0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cd900250>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cdf27ca0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cd932e60>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cdc40820>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5ccee0160>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cca16e60>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cc5ee4a0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cd0178b0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cf643580>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cc439060>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d57f90d4e0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d57f8b3f70>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cc2ac310>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d57fc28160>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d57f6c1f00>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d5cc756530>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d57eb5e800>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d57e9e2830>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d579febc10>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d579ee71f0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x151e81637490>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c7deaa110>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c7ddd1780>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c7de0eb00>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c7de83e20>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c7db966e0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c7c561480>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c7db521d0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c53b48ee0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c53e0d0c0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c53c52c50>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c53458b80>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c533ffac0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c52bdb1c0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c52bfbbb0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c524afeb0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c521a0760>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c527bef20>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c522abbb0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c51f63bb0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c7dc754e0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c536ebb20>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c521c6440>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c51853a30>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c50977820>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x150c50c20ac0>
 prior_keys
 ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
 all_prior_keys
@@ -195,172 +195,88 @@ Jim received the local sampler name: GaussianRandomWalk
 Step size given was a matrix, converting to diagonal for GaussianRandomWalk
 ['n_dim', 'n_chains', 'n_local_steps', 'n_global_steps', 'n_loop', 'output_thinning', 'verbose']
 log_prob
-[-324.65395994 -270.15012685 -284.95431397]
+[   -3260.00884127    -2798.02855163 -1202822.67820023]
 Sampling seed is set to: 11
-
-Global Tuning:   0%|          | 0/60 [00:00<?, ?it/s]
-Global Tuning:   2%|▏         | 1/60 [05:06<5:01:23, 306.50s/it]
-Global Tuning:   3%|▎         | 2/60 [05:50<2:27:17, 152.37s/it]
-Global Tuning:   5%|▌         | 3/60 [06:30<1:35:37, 100.66s/it]
-Global Tuning:   7%|▋         | 4/60 [07:06<1:10:06, 75.12s/it] 
-Global Tuning:   8%|▊         | 5/60 [07:43<56:15, 61.36s/it]  
-Global Tuning:  10%|█         | 6/60 [08:19<47:42, 53.01s/it]
-Global Tuning:  12%|█▏        | 7/60 [08:56<42:04, 47.64s/it]
-Global Tuning:  13%|█▎        | 8/60 [09:36<39:11, 45.22s/it]
-Global Tuning:  15%|█▌        | 9/60 [10:12<36:01, 42.38s/it]
-Global Tuning:  17%|█▋        | 10/60 [10:52<34:44, 41.70s/it]
-Global Tuning:  18%|█▊        | 11/60 [11:29<32:41, 40.03s/it]
-Global Tuning:  20%|██        | 12/60 [12:05<31:10, 38.98s/it]
-Global Tuning:  22%|██▏       | 13/60 [12:41<29:54, 38.19s/it]
-Global Tuning:  23%|██▎       | 14/60 [13:22<29:48, 38.87s/it]
-Global Tuning:  25%|██▌       | 15/60 [13:58<28:37, 38.17s/it]
-Global Tuning:  27%|██▋       | 16/60 [14:35<27:41, 37.75s/it]
-Global Tuning:  28%|██▊       | 17/60 [15:12<26:50, 37.46s/it]
-Global Tuning:  30%|███       | 18/60 [15:53<27:01, 38.62s/it]
-Global Tuning:  32%|███▏      | 19/60 [16:35<27:07, 39.69s/it]
-Global Tuning:  33%|███▎      | 20/60 [17:16<26:32, 39.82s/it]
-Global Tuning:  35%|███▌      | 21/60 [17:56<26:04, 40.11s/it]
-Global Tuning:  37%|███▋      | 22/60 [18:36<25:23, 40.09s/it]
-Global Tuning:  38%|███▊      | 23/60 [19:15<24:30, 39.74s/it]
-Global Tuning:  40%|████      | 24/60 [19:54<23:41, 39.50s/it]
-Global Tuning:  42%|████▏     | 25/60 [20:30<22:26, 38.49s/it]
-Global Tuning:  43%|████▎     | 26/60 [21:08<21:40, 38.25s/it]
-Global Tuning:  45%|████▌     | 27/60 [21:45<20:50, 37.90s/it]
-Global Tuning:  47%|████▋     | 28/60 [22:23<20:07, 37.73s/it]
-Global Tuning:  48%|████▊     | 29/60 [22:59<19:17, 37.33s/it]
-Global Tuning:  50%|█████     | 30/60 [23:39<19:08, 38.27s/it]
-Global Tuning:  52%|█████▏    | 31/60 [24:16<18:16, 37.82s/it]
-Global Tuning:  53%|█████▎    | 32/60 [24:54<17:37, 37.78s/it]
-Global Tuning:  55%|█████▌    | 33/60 [25:30<16:48, 37.34s/it]
-Global Tuning:  57%|█████▋    | 34/60 [26:06<16:01, 36.98s/it]
-Global Tuning:  58%|█████▊    | 35/60 [26:43<15:19, 36.77s/it]
-Global Tuning:  60%|██████    | 36/60 [27:19<14:36, 36.53s/it]
-Global Tuning:  62%|██████▏   | 37/60 [27:54<13:54, 36.29s/it]
-Global Tuning:  63%|██████▎   | 38/60 [28:31<13:22, 36.49s/it]
-Global Tuning:  65%|██████▌   | 39/60 [29:09<12:54, 36.86s/it]
-Global Tuning:  67%|██████▋   | 40/60 [29:45<12:12, 36.64s/it]
-Global Tuning:  68%|██████▊   | 41/60 [30:21<11:33, 36.49s/it]
-Global Tuning:  70%|███████   | 42/60 [30:59<11:05, 36.95s/it]
-Global Tuning:  72%|███████▏  | 43/60 [31:36<10:25, 36.77s/it]
-Global Tuning:  73%|███████▎  | 44/60 [32:12<09:48, 36.77s/it]
-Global Tuning:  75%|███████▌  | 45/60 [32:49<09:09, 36.62s/it]
-Global Tuning:  77%|███████▋  | 46/60 [33:25<08:30, 36.48s/it]
-Global Tuning:  78%|███████▊  | 47/60 [34:01<07:52, 36.37s/it]
-Global Tuning:  80%|████████  | 48/60 [34:37<07:14, 36.24s/it]
-Global Tuning:  82%|████████▏ | 49/60 [35:15<06:43, 36.69s/it]
-Global Tuning:  83%|████████▎ | 50/60 [35:51<06:07, 36.74s/it]
-Global Tuning:  85%|████████▌ | 51/60 [36:27<05:26, 36.26s/it]
-Global Tuning:  87%|████████▋ | 52/60 [37:03<04:50, 36.36s/it]
-Global Tuning:  88%|████████▊ | 53/60 [37:40<04:14, 36.42s/it]
-Global Tuning:  90%|█████████ | 54/60 [38:16<03:38, 36.46s/it]
-Global Tuning:  92%|█████████▏| 55/60 [38:52<03:00, 36.19s/it]
-Global Tuning:  93%|█████████▎| 56/60 [39:28<02:24, 36.22s/it]
-Global Tuning:  95%|█████████▌| 57/60 [40:04<01:48, 36.07s/it]
-Global Tuning:  97%|█████████▋| 58/60 [40:39<01:11, 35.90s/it]
-Global Tuning:  98%|█████████▊| 59/60 [41:16<00:36, 36.15s/it]
-Global Tuning: 100%|██████████| 60/60 [41:54<00:00, 36.58s/it]
-Global Tuning: 100%|██████████| 60/60 [41:54<00:00, 41.90s/it]
-
-Global Sampling:   0%|          | 0/20 [00:00<?, ?it/s]
-Global Sampling:   5%|▌         | 1/20 [00:35<11:14, 35.52s/it]
-Global Sampling:  10%|█         | 2/20 [01:11<10:43, 35.77s/it]
-Global Sampling:  15%|█▌        | 3/20 [01:47<10:06, 35.68s/it]
-Global Sampling:  20%|██        | 4/20 [02:23<09:34, 35.88s/it]
-Global Sampling:  25%|██▌       | 5/20 [03:00<09:03, 36.23s/it]
-Global Sampling:  30%|███       | 6/20 [03:36<08:26, 36.19s/it]
-Global Sampling:  35%|███▌      | 7/20 [04:11<07:47, 35.94s/it]
-Global Sampling:  40%|████      | 8/20 [04:46<07:06, 35.53s/it]
-Global Sampling:  45%|████▌     | 9/20 [05:21<06:29, 35.44s/it]
-Global Sampling:  50%|█████     | 10/20 [05:57<05:55, 35.53s/it]
-Global Sampling:  55%|█████▌    | 11/20 [06:32<05:18, 35.39s/it]
-Global Sampling:  60%|██████    | 12/20 [07:07<04:41, 35.21s/it]
-Global Sampling:  65%|██████▌   | 13/20 [07:42<04:06, 35.18s/it]
-Global Sampling:  70%|███████   | 14/20 [08:16<03:30, 35.02s/it]
-Global Sampling:  75%|███████▌  | 15/20 [08:51<02:55, 35.02s/it]
-Global Sampling:  80%|████████  | 16/20 [09:27<02:20, 35.08s/it]
-Global Sampling:  85%|████████▌ | 17/20 [10:02<01:45, 35.15s/it]
-Global Sampling:  90%|█████████ | 18/20 [10:37<01:10, 35.19s/it]
-Global Sampling:  95%|█████████▌| 19/20 [11:13<00:35, 35.33s/it]
-Global Sampling: 100%|██████████| 20/20 [11:48<00:00, 35.42s/it]
-Global Sampling: 100%|██████████| 20/20 [11:48<00:00, 35.45s/it]
+Global Tuning:   0%|          | 0/60 [00:00<?, ?it/s]Global Tuning:   2%|▏         | 1/60 [06:02<5:56:30, 362.56s/it]Global Tuning:   3%|▎         | 2/60 [06:58<2:55:57, 182.03s/it]Global Tuning:   5%|▌         | 3/60 [07:51<1:56:53, 123.04s/it]Global Tuning:   7%|▋         | 4/60 [08:39<1:27:14, 93.48s/it] Global Tuning:   8%|▊         | 5/60 [09:26<1:10:29, 76.90s/it]Global Tuning:  10%|█         | 6/60 [10:14<1:00:09, 66.85s/it]Global Tuning:  12%|█▏        | 7/60 [11:00<53:01, 60.04s/it]  Global Tuning:  13%|█▎        | 8/60 [11:47<48:33, 56.03s/it]Global Tuning:  15%|█▌        | 9/60 [12:34<45:17, 53.28s/it]Global Tuning:  17%|█▋        | 10/60 [13:24<43:22, 52.05s/it]Global Tuning:  18%|█▊        | 11/60 [14:11<41:24, 50.71s/it]Global Tuning:  20%|██        | 12/60 [14:59<39:55, 49.90s/it]Global Tuning:  22%|██▏       | 13/60 [15:47<38:40, 49.38s/it]Global Tuning:  23%|██▎       | 14/60 [16:35<37:31, 48.95s/it]Global Tuning:  25%|██▌       | 15/60 [17:23<36:17, 48.40s/it]Global Tuning:  27%|██▋       | 16/60 [18:09<35:00, 47.74s/it]Global Tuning:  28%|██▊       | 17/60 [18:55<33:57, 47.39s/it]Global Tuning:  30%|███       | 18/60 [19:43<33:09, 47.38s/it]Global Tuning:  32%|███▏      | 19/60 [20:29<32:06, 47.00s/it]Global Tuning:  33%|███▎      | 20/60 [21:15<31:09, 46.73s/it]Global Tuning:  35%|███▌      | 21/60 [22:01<30:09, 46.41s/it]Global Tuning:  37%|███▋      | 22/60 [22:47<29:24, 46.43s/it]Global Tuning:  38%|███▊      | 23/60 [23:34<28:40, 46.51s/it]Global Tuning:  40%|████      | 24/60 [24:20<27:50, 46.40s/it]Global Tuning:  42%|████▏     | 25/60 [25:07<27:10, 46.58s/it]Global Tuning:  43%|████▎     | 26/60 [25:53<26:21, 46.51s/it]Global Tuning:  45%|████▌     | 27/60 [26:40<25:32, 46.45s/it]Global Tuning:  47%|████▋     | 28/60 [27:26<24:50, 46.58s/it]Global Tuning:  48%|████▊     | 29/60 [28:13<24:01, 46.49s/it]Global Tuning:  50%|█████     | 30/60 [28:59<23:13, 46.45s/it]Global Tuning:  52%|█████▏    | 31/60 [29:45<22:19, 46.18s/it]Global Tuning:  53%|█████▎    | 32/60 [30:31<21:37, 46.35s/it]Global Tuning:  55%|█████▌    | 33/60 [31:17<20:45, 46.11s/it]Global Tuning:  57%|█████▋    | 34/60 [32:04<20:03, 46.27s/it]Global Tuning:  58%|█████▊    | 35/60 [32:49<19:13, 46.14s/it]Global Tuning:  60%|██████    | 36/60 [33:35<18:24, 46.04s/it]Global Tuning:  62%|██████▏   | 37/60 [34:22<17:42, 46.21s/it]Global Tuning:  63%|██████▎   | 38/60 [35:08<16:58, 46.31s/it]Global Tuning:  65%|██████▌   | 39/60 [35:55<16:13, 46.34s/it]Global Tuning:  67%|██████▋   | 40/60 [36:41<15:27, 46.37s/it]Global Tuning:  68%|██████▊   | 41/60 [37:28<14:43, 46.50s/it]Global Tuning:  70%|███████   | 42/60 [38:14<13:55, 46.42s/it]Global Tuning:  72%|███████▏  | 43/60 [39:00<13:04, 46.17s/it]Global Tuning:  73%|███████▎  | 44/60 [39:47<12:21, 46.35s/it]Global Tuning:  75%|███████▌  | 45/60 [40:33<11:36, 46.40s/it]Global Tuning:  77%|███████▋  | 46/60 [41:19<10:46, 46.17s/it]Global Tuning:  78%|███████▊  | 47/60 [42:05<10:00, 46.22s/it]Global Tuning:  80%|████████  | 48/60 [42:51<09:13, 46.16s/it]Global Tuning:  82%|████████▏ | 49/60 [43:38<08:30, 46.38s/it]Global Tuning:  83%|████████▎ | 50/60 [44:25<07:44, 46.45s/it]Global Tuning:  85%|████████▌ | 51/60 [45:11<06:58, 46.49s/it]Global Tuning:  87%|████████▋ | 52/60 [45:58<06:12, 46.54s/it]Global Tuning:  88%|████████▊ | 53/60 [46:44<05:25, 46.53s/it]Global Tuning:  90%|█████████ | 54/60 [47:31<04:40, 46.67s/it]Global Tuning:  92%|█████████▏| 55/60 [48:18<03:52, 46.57s/it]Global Tuning:  93%|█████████▎| 56/60 [49:04<03:05, 46.42s/it]Global Tuning:  95%|█████████▌| 57/60 [49:49<02:18, 46.19s/it]Global Tuning:  97%|█████████▋| 58/60 [50:35<01:31, 45.95s/it]Global Tuning:  98%|█████████▊| 59/60 [51:21<00:46, 46.06s/it]Global Tuning: 100%|██████████| 60/60 [52:07<00:00, 46.11s/it]Global Tuning: 100%|██████████| 60/60 [52:07<00:00, 52.13s/it]
+Global Sampling:   0%|          | 0/20 [00:00<?, ?it/s]Global Sampling:   5%|▌         | 1/20 [00:45<14:26, 45.62s/it]Global Sampling:  10%|█         | 2/20 [01:30<13:36, 45.35s/it]Global Sampling:  15%|█▌        | 3/20 [02:16<12:50, 45.31s/it]Global Sampling:  20%|██        | 4/20 [03:00<12:01, 45.06s/it]Global Sampling:  25%|██▌       | 5/20 [03:45<11:15, 45.04s/it]Global Sampling:  30%|███       | 6/20 [04:31<10:34, 45.31s/it]Global Sampling:  35%|███▌      | 7/20 [05:17<09:52, 45.58s/it]Global Sampling:  40%|████      | 8/20 [06:03<09:06, 45.55s/it]Global Sampling:  45%|████▌     | 9/20 [06:48<08:19, 45.37s/it]Global Sampling:  50%|█████     | 10/20 [07:33<07:33, 45.35s/it]Global Sampling:  55%|█████▌    | 11/20 [08:18<06:48, 45.35s/it]Global Sampling:  60%|██████    | 12/20 [09:04<06:02, 45.33s/it]Global Sampling:  65%|██████▌   | 13/20 [09:50<05:19, 45.62s/it]Global Sampling:  70%|███████   | 14/20 [10:35<04:32, 45.43s/it]Global Sampling:  75%|███████▌  | 15/20 [11:20<03:46, 45.33s/it]Global Sampling:  80%|████████  | 16/20 [12:05<03:01, 45.38s/it]Global Sampling:  85%|████████▌ | 17/20 [12:51<02:16, 45.39s/it]Global Sampling:  90%|█████████ | 18/20 [13:36<01:30, 45.42s/it]Global Sampling:  95%|█████████▌| 19/20 [14:22<00:45, 45.58s/it]Global Sampling: 100%|██████████| 20/20 [15:08<00:00, 45.50s/it]Global Sampling: 100%|██████████| 20/20 [15:08<00:00, 45.41s/it]
 Training summary
 ==========
-E_sym: 36.999 +/- 4.614
-L_sym: 68.352 +/- 28.378
-K_sym: -76.066 +/- 106.015
-K_sat: 233.951 +/- 40.401
-nbreak: 0.253 +/- 0.036
-n_CSE_0_u: 0.464 +/- 0.279
-cs2_CSE_0: 0.725 +/- 0.193
-n_CSE_1_u: 0.451 +/- 0.278
-cs2_CSE_1: 0.645 +/- 0.252
-n_CSE_2_u: 0.506 +/- 0.285
-cs2_CSE_2: 0.558 +/- 0.272
-n_CSE_3_u: 0.506 +/- 0.280
-cs2_CSE_3: 0.473 +/- 0.276
-n_CSE_4_u: 0.476 +/- 0.278
-cs2_CSE_4: 0.488 +/- 0.277
-n_CSE_5_u: 0.485 +/- 0.277
-cs2_CSE_5: 0.490 +/- 0.277
-n_CSE_6_u: 0.500 +/- 0.284
-cs2_CSE_6: 0.519 +/- 0.279
-n_CSE_7_u: 0.501 +/- 0.282
-cs2_CSE_7: 0.509 +/- 0.277
-cs2_CSE_8: 0.552 +/- 0.281
-key: -2675043635.230 +/- 34573778515.846
-Log probability: -6540.627 +/- 120004.552
-Local acceptance: 0.991 +/- 0.096
-Global acceptance: 0.029 +/- 0.168
-Max loss: 39.317, Min loss: 27.673
+E_sym: 37.009 +/- 4.273
+L_sym: 54.109 +/- 25.023
+K_sym: -89.083 +/- 104.502
+K_sat: 222.889 +/- 36.245
+nbreak: 0.243 +/- 0.026
+n_CSE_0_u: 0.496 +/- 0.254
+cs2_CSE_0: 0.851 +/- 0.120
+n_CSE_1_u: 0.399 +/- 0.262
+cs2_CSE_1: 0.781 +/- 0.153
+n_CSE_2_u: 0.481 +/- 0.273
+cs2_CSE_2: 0.702 +/- 0.227
+n_CSE_3_u: 0.563 +/- 0.270
+cs2_CSE_3: 0.578 +/- 0.247
+n_CSE_4_u: 0.501 +/- 0.277
+cs2_CSE_4: 0.516 +/- 0.254
+n_CSE_5_u: 0.443 +/- 0.297
+cs2_CSE_5: 0.495 +/- 0.243
+n_CSE_6_u: 0.436 +/- 0.290
+cs2_CSE_6: 0.495 +/- 0.255
+n_CSE_7_u: 0.450 +/- 0.286
+cs2_CSE_7: 0.514 +/- 0.243
+cs2_CSE_8: 0.483 +/- 0.262
+key: 516741731.612 +/- 286145691.362
+Log probability: -70890.508 +/- 1216628.731
+Local acceptance: 0.945 +/- 0.229
+Global acceptance: 0.005 +/- 0.073
+Max loss: 39.317, Min loss: 14.056
 Production summary
 ==========
-E_sym: 37.522 +/- 4.401
-L_sym: 72.518 +/- 26.479
-K_sym: -61.504 +/- 99.297
-K_sat: 247.856 +/- 36.499
-nbreak: 0.256 +/- 0.034
-n_CSE_0_u: 0.433 +/- 0.260
-cs2_CSE_0: 0.693 +/- 0.172
-n_CSE_1_u: 0.392 +/- 0.266
-cs2_CSE_1: 0.753 +/- 0.205
-n_CSE_2_u: 0.593 +/- 0.276
-cs2_CSE_2: 0.632 +/- 0.249
-n_CSE_3_u: 0.511 +/- 0.271
-cs2_CSE_3: 0.374 +/- 0.262
-n_CSE_4_u: 0.453 +/- 0.270
-cs2_CSE_4: 0.448 +/- 0.273
-n_CSE_5_u: 0.427 +/- 0.274
-cs2_CSE_5: 0.468 +/- 0.272
-n_CSE_6_u: 0.531 +/- 0.279
-cs2_CSE_6: 0.605 +/- 0.263
-n_CSE_7_u: 0.585 +/- 0.281
-cs2_CSE_7: 0.563 +/- 0.263
-cs2_CSE_8: 0.620 +/- 0.284
-key: -130225856789.767 +/- 133370893191.418
-Log probability: -282.664 +/- 2.364
-Local acceptance: 0.994 +/- 0.079
-Global acceptance: 0.005 +/- 0.074
-Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 54 mins
+E_sym: 37.387 +/- 4.290
+L_sym: 50.789 +/- 24.160
+K_sym: -75.141 +/- 101.202
+K_sat: 226.138 +/- 37.012
+nbreak: 0.240 +/- 0.024
+n_CSE_0_u: 0.522 +/- 0.247
+cs2_CSE_0: 0.864 +/- 0.095
+n_CSE_1_u: 0.354 +/- 0.244
+cs2_CSE_1: 0.814 +/- 0.127
+n_CSE_2_u: 0.459 +/- 0.263
+cs2_CSE_2: 0.721 +/- 0.204
+n_CSE_3_u: 0.594 +/- 0.246
+cs2_CSE_3: 0.596 +/- 0.232
+n_CSE_4_u: 0.529 +/- 0.262
+cs2_CSE_4: 0.523 +/- 0.255
+n_CSE_5_u: 0.472 +/- 0.291
+cs2_CSE_5: 0.505 +/- 0.248
+n_CSE_6_u: 0.417 +/- 0.279
+cs2_CSE_6: 0.490 +/- 0.259
+n_CSE_7_u: 0.453 +/- 0.277
+cs2_CSE_7: 0.510 +/- 0.229
+cs2_CSE_8: 0.491 +/- 0.267
+key: 485599814.212 +/- 302304960.122
+Log probability: -2706.716 +/- 15.138
+Local acceptance: 0.952 +/- 0.214
+Global acceptance: 0.001 +/- 0.038
+Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 68 mins
 Saving the final results
 Number of samples generated in training: 1200000
 Number of samples generated in production: 400000
 Number of samples generated: 1600000
-Time taken for TOV map: 1.5980088710784912 s
+Time taken for TOV map: 1.5761115550994873 s
 The corner plot will plot the parameters: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
 DONE entire script
 DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10924734
+Job ID: 10954589
 Cluster: snellius
 User/Group: twouters2/twouters2
 State: RUNNING
 Nodes: 1
 Cores per node: 16
 CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 15:10:24 core-walltime
-Job Wall-clock time: 00:56:54
+CPU Efficiency: 0.00% of 18:50:40 core-walltime
+Job Wall-clock time: 01:10:40
 Memory Utilized: 0.00 MB
 Memory Efficiency: 0.00% of 20.00 GB (20.00 GB/node)
 WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.
