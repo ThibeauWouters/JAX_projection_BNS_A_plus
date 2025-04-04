@@ -33,7 +33,7 @@ python inference.py \
     --n-loop-training 20 \
     --n-loop-production 20 \
     --n-local-steps 2 \
-    --n-global-steps 100 \
+    --n-global-steps 1000 \
     --n-chains 100 \
     --output-thinning 1 \
     
