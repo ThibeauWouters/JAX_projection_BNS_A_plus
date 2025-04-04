@@ -28,6 +28,10 @@ import projection_BNS.EOS.inference_utils as utils
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Full-scale inference script with customizable options.")
+    parser.add_argument("--sample-GW", 
+                        type=bool,
+                        default=False,
+                        help="Whether to sample (some of) the GW events or not.")
     parser.add_argument("--eos", 
                         type=str, 
                         help="Name of the EOS. Choose from [HQC18, MPA1, SLY230A].")
@@ -213,26 +217,30 @@ def main(args):
     
     else:
         # Likelihoods from GW posteriors
-        if args.id_list is None:
-            id_list = np.arange(args.id_begin, args.id_end + 1)
-            print(f"Given id_list was None, so created id list {id_list}")
-        else:
-            id_list = args.id_list
-        
         likelihoods_list_GW = []
-        for idx in id_list:
-            try:
-                new_likelihood = utils.GWlikelihood_with_masses(args.eos, 
-                                                                args.ifo_network, 
-                                                                idx, 
-                                                                N_masses_evaluation=args.N_masses_evaluation)
-                likelihoods_list_GW.append(new_likelihood)
-            except Exception as e:
-                print(f"Could not load the likelihood for id {idx}, because of the following error: {e}")
-                print(f"Moving on")
-                
-        print(f"There are {len(likelihoods_list_GW)} GW likelihoods used now")
-        keep_names += ["key"]
+        if args.sample_GW:
+            print(f"Sampling GW likelihoods, constructing them now")
+            if args.id_list is None:
+                id_list = np.arange(args.id_begin, args.id_end + 1)
+                print(f"Given id_list was None, so created id list {id_list}")
+            else:
+                id_list = args.id_list
+            
+            for idx in id_list:
+                try:
+                    new_likelihood = utils.GWlikelihood_with_masses(args.eos, 
+                                                                    args.ifo_network, 
+                                                                    idx, 
+                                                                    N_masses_evaluation=args.N_masses_evaluation)
+                    likelihoods_list_GW.append(new_likelihood)
+                except Exception as e:
+                    print(f"Could not load the likelihood for id {idx}, because of the following error: {e}")
+                    print(f"Moving on")
+                    
+            print(f"There are {len(likelihoods_list_GW)} GW likelihoods used now")
+            keep_names += ["key"]
+        else:
+            print("NOT sampling GW likelihoods")
         
         # Radio timing mass measurement pulsars
         likelihoods_list_radio = []
@@ -256,32 +264,21 @@ def main(args):
         likelihoods_list = likelihoods_list_GW + likelihoods_list_radio + likelihoods_list_chiEFT
         for l in likelihoods_list:
             print(l)
-            
-        # Combine into a full likelihood
-        if len(likelihoods_list) > 1:
-            print(f"Combining likelihoods into one final likelihood . . .")
-            likelihood = utils.CombinedLikelihood(likelihoods_list)
-        else:
-            print(f"There is only one likelihood so we will not combine them")
-            likelihood = likelihoods_list[0]
+        likelihood = utils.CombinedLikelihood(likelihoods_list)
         
     # Construct the transform object
     TOV_output_keys = ["masses_EOS", "Lambdas_EOS"]
     prior_keys = [p.parameter_names[0] for p in prior_list]
-    print("prior_keys")
-    print(prior_keys)
     
-    # full_prior_list = prior_list + mass_priors # TODO: remove me, this is for the old implementation with the masses
-    key_prior = utils.KeyPrior()
-    full_prior_list = prior_list + [key_prior]
+    if args.sample_GW:
+        key_prior = utils.KeyPrior()
+        full_prior_list = prior_list + [key_prior]
+    else:
+        full_prior_list = prior_list
     prior = CombinePrior(full_prior_list)
-    all_prior_keys = prior.parameter_names
-    
-    print("all_prior_keys")
-    print(all_prior_keys)
     
     for i in range(len(prior.parameter_names)):
-        print(f"Prior parameter {i}: {prior.parameter_names[i]}")
+        print(f"Prior parameter {i+1}: {prior.parameter_names[i]}")
     sampled_param_names = prior.parameter_names
     name_mapping = (sampled_param_names, TOV_output_keys)
     my_transform = utils.MicroToMacroTransform(name_mapping,

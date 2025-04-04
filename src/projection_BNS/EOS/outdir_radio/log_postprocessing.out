@@ -1,0 +1,129 @@
+Fri Apr  4 14:48:33 CEST 2025
+NVIDIA H100
+Checking the convergence for ./outdir_radio/
+Key: E_sym
+    rhat = 1.071250241368549
+    ess = 8933.666772953708
+Key: L_sym
+    rhat = 1.0757516769387234
+    ess = 8599.592205804187
+Key: K_sym
+    rhat = 1.0771083119438394
+    ess = 8378.560361189051
+Key: K_sat
+    rhat = 1.084586909471511
+    ess = 7651.731969583906
+Key: nbreak
+    rhat = 1.0628081009784205
+    ess = 10349.794218296802
+Key: n_CSE_0_u
+    rhat = 1.071169926997842
+    ess = 9065.648010575973
+Key: cs2_CSE_0
+    rhat = 1.0732942210885337
+    ess = 8806.404373282885
+Key: n_CSE_1_u
+    rhat = 1.0740186379301104
+    ess = 8690.023229751843
+Key: cs2_CSE_1
+    rhat = 1.0855043377029177
+    ess = 7530.339165490056
+Key: n_CSE_2_u
+    rhat = 1.0667803938937324
+    ess = 10324.890433690696
+Key: cs2_CSE_2
+    rhat = 1.0997300799837584
+    ess = 6601.054663893314
+Key: n_CSE_3_u
+    rhat = 1.0653193569664878
+    ess = 10159.974750122772
+Key: cs2_CSE_3
+    rhat = 1.062874265413707
+    ess = 10649.259671560745
+Key: n_CSE_4_u
+    rhat = 1.0692567999427383
+    ess = 9240.044766981951
+Key: cs2_CSE_4
+    rhat = 1.0694722657132583
+    ess = 9211.554077956507
+Key: n_CSE_5_u
+    rhat = 1.0705815024318304
+    ess = 9016.850406302796
+Key: cs2_CSE_5
+    rhat = 1.0793440847187687
+    ess = 8940.079523329643
+Key: n_CSE_6_u
+    rhat = 1.0694425166117718
+    ess = 9573.890817168545
+Key: cs2_CSE_6
+    rhat = 1.0837018624429426
+    ess = 7649.237749637226
+Key: n_CSE_7_u
+    rhat = 1.0700341696498819
+    ess = 9194.513552140212
+Key: cs2_CSE_7
+    rhat = 1.0728161826043727
+    ess = 9037.110160541617
+Key: cs2_CSE_8
+    rhat = 1.0726188110421517
+    ess = 8978.079443818262
+Plotting the cornerplot for ./outdir_radio/
+Making the cornerplot, these are the chains: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
+(22, 10000)
+Making plots for ./outdir_radio/
+This is a run for a default target EOS
+Number of samples: 10000
+
+
+
+
+Showing the max log prob EOS values:
+E_sym: 32.00097283381211
+L_sym: 53.03995081604328
+K_sym: -35.5797021297461
+K_sat: 190.8299817135414
+nbreak: 0.16170960586857716
+n_CSE_0_u: 0.5040904459890121
+cs2_CSE_0: 0.5854280423862754
+n_CSE_1_u: 0.5936504112286161
+cs2_CSE_1: 0.27650962728250567
+n_CSE_2_u: 0.5205885108831854
+cs2_CSE_2: 0.12057304305342857
+n_CSE_3_u: 0.39628854492976545
+cs2_CSE_3: 0.4484043573253401
+n_CSE_4_u: 0.07020624904320855
+cs2_CSE_4: 0.5993798932434488
+n_CSE_5_u: 0.10250922392424273
+cs2_CSE_5: 0.561777114821196
+n_CSE_6_u: 0.46431066435366963
+cs2_CSE_6: 0.4426547591292375
+n_CSE_7_u: 0.05881960131196617
+cs2_CSE_7: 0.9903909812551098
+cs2_CSE_8: 0.08665167494841146
+
+
+
+
+Creating NS plot . . .
+Bad counter: 15
+Creating NS plot . . . DONE
+Making the master plot
+np.shape(interp_array)
+(100, 10000)
+np.shape(interp_array)
+(100, 10000)
+DONE
+
+JOB STATISTICS
+==============
+Job ID: 10978554
+Cluster: snellius
+User/Group: twouters2/twouters2
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:39
+CPU Efficiency: 5.30% of 00:12:16 core-walltime
+Job Wall-clock time: 00:00:46
+Memory Utilized: 680.04 MB
+Memory Efficiency: 22.14% of 3.00 GB (3.00 GB/node)

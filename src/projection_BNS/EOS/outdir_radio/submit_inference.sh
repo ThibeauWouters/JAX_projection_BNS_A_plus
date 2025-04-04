@@ -7,8 +7,8 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --cpus-per-gpu=1
 #SBATCH --mem-per-gpu=20G
-#SBATCH --output="./test_jester_hard/log.out"
-#SBATCH --job-name="test"
+#SBATCH --output="./outdir_radio/log.out"
+#SBATCH --job-name="inference"
 
 now=$(date)
 echo "$now"
@@ -23,21 +23,13 @@ nvidia-smi --query-gpu=name --format=csv,noheader
 
 # Run the script
 python inference.py \
-    --sample-GW True \
-    --eos jester_hard \
-    --ifo-network Aplus \
-    --id-begin 1 \
-    --id-end 30 \
-    --outdir ./test_jester_hard/ \
+    --outdir ./outdir_radio/ \
     --local-sampler-name GaussianRandomWalk \
     --eps-mass-matrix 1e-5 \
-    --n-loop-training 100 \
-    --n-loop-production 100 \
-    --n-local-steps 10 \
-    --n-global-steps 10 \
-    --n-chains 1000 \
-    --output-thinning 1 \
-    --train-thinning 1 \
-    --N-masses-evaluation 10 \
+    --n-loop-training 20 \
+    --n-loop-production 20 \
+    --n-local-steps 50 \
+    --n-global-steps 50 \
+    --sample-radio True \
     
 echo "DONE"

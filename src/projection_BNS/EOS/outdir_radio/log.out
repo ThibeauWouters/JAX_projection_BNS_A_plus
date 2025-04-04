@@ -1,0 +1,131 @@
+Fri Apr  4 14:17:49 CEST 2025
+NVIDIA H100
+GPU found?
+[CudaDevice(id=0)]
+GPU found?
+[CudaDevice(id=0)]
+Ignoring the Q and Z NEP parameters
+Using CSE grid with 8 points
+Fixed params loaded inside the MicroToMacroTransform:
+    E_sat: -16.0
+NOT sampling GW likelihoods
+We are also sampling the radio timing mass measurement pulsars for MTOV constraints
+<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x14aaf774d720>
+<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x14aaf774e4d0>
+<projection_BNS.EOS.inference_utils.RadioTimingLikelihood object at 0x14aaf774e1d0>
+Prior parameter 1: E_sym
+Prior parameter 2: L_sym
+Prior parameter 3: K_sym
+Prior parameter 4: K_sat
+Prior parameter 5: nbreak
+Prior parameter 6: n_CSE_0_u
+Prior parameter 7: cs2_CSE_0
+Prior parameter 8: n_CSE_1_u
+Prior parameter 9: cs2_CSE_1
+Prior parameter 10: n_CSE_2_u
+Prior parameter 11: cs2_CSE_2
+Prior parameter 12: n_CSE_3_u
+Prior parameter 13: cs2_CSE_3
+Prior parameter 14: n_CSE_4_u
+Prior parameter 15: cs2_CSE_4
+Prior parameter 16: n_CSE_5_u
+Prior parameter 17: cs2_CSE_5
+Prior parameter 18: n_CSE_6_u
+Prior parameter 19: cs2_CSE_6
+Prior parameter 20: n_CSE_7_u
+Prior parameter 21: cs2_CSE_7
+Prior parameter 22: cs2_CSE_8
+Fixed params loaded inside the MicroToMacroTransform:
+    E_sat: -16.0
+We are going to give these kwargs to Jim:
+{'n_loop_training': 20, 'n_loop_production': 20, 'n_chains': 1000, 'n_local_steps': 50, 'n_global_steps': 50, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
+We are going to sample the following parameters:
+['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
+No sample transforms provided. Using prior parameters as sampling parameters
+Jim received the local sampler name: GaussianRandomWalk
+Step size given was a matrix, converting to diagonal for GaussianRandomWalk
+['n_dim', 'n_chains', 'n_local_steps', 'n_global_steps', 'n_loop', 'output_thinning', 'verbose']
+log_prob
+[-15.44190697 -13.93019302 -12.5946568 ]
+Sampling seed is set to: 11
+Global Tuning:   0%|          | 0/20 [00:00<?, ?it/s]Global Tuning:   5%|▌         | 1/20 [01:22<26:16, 82.97s/it]Global Tuning:  10%|█         | 2/20 [01:58<16:36, 55.34s/it]Global Tuning:  15%|█▌        | 3/20 [02:33<13:02, 46.01s/it]Global Tuning:  20%|██        | 4/20 [03:10<11:19, 42.48s/it]Global Tuning:  25%|██▌       | 5/20 [03:46<09:58, 39.92s/it]Global Tuning:  30%|███       | 6/20 [04:21<08:56, 38.29s/it]Global Tuning:  35%|███▌      | 7/20 [04:57<08:08, 37.57s/it]Global Tuning:  40%|████      | 8/20 [05:32<07:21, 36.82s/it]Global Tuning:  45%|████▌     | 9/20 [06:08<06:41, 36.54s/it]Global Tuning:  50%|█████     | 10/20 [06:46<06:08, 36.87s/it]Global Tuning:  55%|█████▌    | 11/20 [07:21<05:28, 36.49s/it]Global Tuning:  60%|██████    | 12/20 [07:57<04:49, 36.20s/it]Global Tuning:  65%|██████▌   | 13/20 [08:32<04:11, 35.87s/it]Global Tuning:  70%|███████   | 14/20 [09:08<03:35, 35.92s/it]Global Tuning:  75%|███████▌  | 15/20 [09:43<02:58, 35.72s/it]Global Tuning:  80%|████████  | 16/20 [10:18<02:21, 35.32s/it]Global Tuning:  85%|████████▌ | 17/20 [10:54<01:46, 35.51s/it]Global Tuning:  90%|█████████ | 18/20 [11:30<01:11, 35.75s/it]Global Tuning:  95%|█████████▌| 19/20 [12:04<00:35, 35.29s/it]Global Tuning: 100%|██████████| 20/20 [12:42<00:00, 35.90s/it]Global Tuning: 100%|██████████| 20/20 [12:42<00:00, 38.10s/it]
+Global Sampling:   0%|          | 0/20 [00:00<?, ?it/s]Global Sampling:   5%|▌         | 1/20 [00:36<11:33, 36.52s/it]Global Sampling:  10%|█         | 2/20 [01:11<10:37, 35.43s/it]Global Sampling:  15%|█▌        | 3/20 [01:47<10:06, 35.68s/it]Global Sampling:  20%|██        | 4/20 [02:23<09:32, 35.76s/it]Global Sampling:  25%|██▌       | 5/20 [03:00<09:03, 36.20s/it]Global Sampling:  30%|███       | 6/20 [03:41<08:53, 38.12s/it]Global Sampling:  35%|███▌      | 7/20 [04:17<08:06, 37.44s/it]Global Sampling:  40%|████      | 8/20 [04:53<07:23, 36.92s/it]Global Sampling:  45%|████▌     | 9/20 [05:29<06:41, 36.52s/it]Global Sampling:  50%|█████     | 10/20 [06:05<06:05, 36.54s/it]Global Sampling:  55%|█████▌    | 11/20 [06:42<05:28, 36.53s/it]Global Sampling:  60%|██████    | 12/20 [07:19<04:52, 36.55s/it]Global Sampling:  65%|██████▌   | 13/20 [07:57<04:20, 37.15s/it]Global Sampling:  70%|███████   | 14/20 [08:33<03:41, 36.92s/it]Global Sampling:  75%|███████▌  | 15/20 [09:10<03:03, 36.71s/it]Global Sampling:  80%|████████  | 16/20 [09:46<02:26, 36.50s/it]Global Sampling:  85%|████████▌ | 17/20 [10:22<01:48, 36.30s/it]Global Sampling:  90%|█████████ | 18/20 [10:59<01:13, 36.62s/it]Global Sampling:  95%|█████████▌| 19/20 [11:35<00:36, 36.42s/it]Global Sampling: 100%|██████████| 20/20 [12:11<00:00, 36.22s/it]Global Sampling: 100%|██████████| 20/20 [12:11<00:00, 36.56s/it]
+Training summary
+==========
+E_sym: 36.367 +/- 4.890
+L_sym: 64.015 +/- 31.779
+K_sym: -101.126 +/- 115.591
+K_sat: 225.786 +/- 43.161
+nbreak: 0.249 +/- 0.045
+n_CSE_0_u: 0.491 +/- 0.287
+cs2_CSE_0: 0.481 +/- 0.253
+n_CSE_1_u: 0.503 +/- 0.285
+cs2_CSE_1: 0.486 +/- 0.278
+n_CSE_2_u: 0.495 +/- 0.287
+cs2_CSE_2: 0.506 +/- 0.284
+n_CSE_3_u: 0.509 +/- 0.286
+cs2_CSE_3: 0.506 +/- 0.288
+n_CSE_4_u: 0.484 +/- 0.286
+cs2_CSE_4: 0.505 +/- 0.289
+n_CSE_5_u: 0.498 +/- 0.287
+cs2_CSE_5: 0.504 +/- 0.289
+n_CSE_6_u: 0.496 +/- 0.287
+cs2_CSE_6: 0.507 +/- 0.287
+n_CSE_7_u: 0.498 +/- 0.289
+cs2_CSE_7: 0.501 +/- 0.289
+cs2_CSE_8: 0.494 +/- 0.288
+Log probability: -29.379 +/- 3.754
+Local acceptance: 1.000 +/- 0.017
+Global acceptance: 0.153 +/- 0.360
+Max loss: 35.828, Min loss: 27.379
+Production summary
+==========
+E_sym: 36.232 +/- 4.862
+L_sym: 62.554 +/- 31.934
+K_sym: -103.077 +/- 114.610
+K_sat: 225.667 +/- 44.229
+nbreak: 0.250 +/- 0.045
+n_CSE_0_u: 0.489 +/- 0.285
+cs2_CSE_0: 0.483 +/- 0.247
+n_CSE_1_u: 0.515 +/- 0.288
+cs2_CSE_1: 0.474 +/- 0.283
+n_CSE_2_u: 0.504 +/- 0.284
+cs2_CSE_2: 0.497 +/- 0.292
+n_CSE_3_u: 0.510 +/- 0.282
+cs2_CSE_3: 0.503 +/- 0.280
+n_CSE_4_u: 0.482 +/- 0.284
+cs2_CSE_4: 0.515 +/- 0.285
+n_CSE_5_u: 0.491 +/- 0.284
+cs2_CSE_5: 0.502 +/- 0.294
+n_CSE_6_u: 0.503 +/- 0.283
+cs2_CSE_6: 0.516 +/- 0.287
+n_CSE_7_u: 0.490 +/- 0.284
+cs2_CSE_7: 0.509 +/- 0.287
+cs2_CSE_8: 0.494 +/- 0.285
+Log probability: -29.128 +/- 0.736
+Local acceptance: 0.999 +/- 0.023
+Global acceptance: 0.098 +/- 0.297
+Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 25 mins
+Saving the final results
+Number of samples generated in training: 400000
+Number of samples generated in production: 400000
+Number of samples generated: 800000
+Time taken for TOV map: 2.597623586654663 s
+The corner plot will plot the parameters: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
+DONE entire script
+DONE
+
+JOB STATISTICS
+==============
+Job ID: 10977715
+Cluster: snellius
+User/Group: twouters2/twouters2
+State: RUNNING
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 07:06:56 core-walltime
+Job Wall-clock time: 00:26:41
+Memory Utilized: 0.00 MB
+Memory Efficiency: 0.00% of 20.00 GB (20.00 GB/node)
+WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.

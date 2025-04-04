@@ -34,6 +34,7 @@ python inference.py \
     --n-loop-production 20 \
     --n-local-steps 50 \
     --n-global-steps 50 \
+    --sample-GW True \
     # --sample-radio True \
     # --sample-chiEFT True \
     
