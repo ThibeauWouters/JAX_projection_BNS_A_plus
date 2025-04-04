@@ -45,6 +45,8 @@ class MicroToMacroTransform(NtoMTransform):
                  ndat_CSE: int = 100,
                  nb_masses: int = 100,
                  fixed_params: dict[str, float] = None,
+                 # other kwargs
+                 return_eos_quantities: bool = False,
                 ):
     
         # By default, keep all names
@@ -61,22 +63,14 @@ class MicroToMacroTransform(NtoMTransform):
         self.ndat_TOV = ndat_TOV
         self.ndat_CSE = ndat_CSE
         self.nb_masses = nb_masses
+        self.return_eos_quantities = return_eos_quantities
         
         # Create the EOS object -- there are several choices for the parametrizations
-        if nb_CSE > 0:
-            eos = MetaModel_with_CSE_EOS_model(nmax_nsat=self.nmax_nsat,
-                                               ndat_metamodel=self.ndat_metamodel,
-                                               ndat_CSE=self.ndat_CSE,
-                    )
-            self.transform_func = self.transform_func_MM_CSE
-        else:
-            print(f"WARNING: This is a metamodel run with no CSE parameters!")
-            eos = MetaModel_EOS_model(nmax_nsat = self.nmax_nsat,
-                                      ndat = self.ndat_metamodel)
-        
-            self.transform_func = self.transform_func_MM
-        
-        self.eos = eos
+        self.eos = MetaModel_with_CSE_EOS_model(nmax_nsat=self.nmax_nsat,
+                                            ndat_metamodel=self.ndat_metamodel,
+                                            ndat_CSE=self.ndat_CSE,
+                )
+        self.transform_func = self.transform_func_MM_CSE
         
         # Remove those NEPs from the fixed values that we sample over
         if fixed_params is None:
@@ -94,35 +88,6 @@ class MicroToMacroTransform(NtoMTransform):
         # Construct a lambda function for solving the TOV equations, fix the given parameters
         self.construct_family_lambda = lambda x: construct_family(x, ndat = self.ndat_TOV, min_nsat = self.min_nsat_TOV)
         
-    def transform_func_MM(self, params: dict[str, Float]) -> dict[str, Float]:
-        
-        params.update(self.fixed_params)
-        NEP = {key: value for key, value in params.items() if "_sat" in key or "_sym" in key}
-        
-        # Create the EOS, ignore mu and cs2 (final 2 outputs)
-        ns, ps, hs, es, dloge_dlogps, _, cs2 = self.eos.construct_eos(NEP)
-        
-        # Limit cs2 so that it is causal
-        idx = jnp.argmax(cs2 >= 1.0)
-        final_n = ns.at[idx].get()
-        first_n = ns.at[0].get()
-        
-        ns_interp = jnp.linspace(first_n, final_n, len(ns))
-        ps_interp = jnp.interp(ns_interp, ns, ps)
-        hs_interp = jnp.interp(ns_interp, ns, hs)
-        es_interp = jnp.interp(ns_interp, ns, es)
-        dloge_dlogps_interp = jnp.interp(ns_interp, ns, dloge_dlogps)
-        cs2_interp = jnp.interp(ns_interp, ns, cs2)
-        
-        # Solve the TOV equations
-        eos_tuple = (ns_interp, ps_interp, hs_interp, es_interp, dloge_dlogps_interp)
-        logpc_EOS, masses_EOS, radii_EOS, Lambdas_EOS = self.construct_family_lambda(eos_tuple)
-    
-        return_dict = {"logpc_EOS": logpc_EOS, "masses_EOS": masses_EOS, "radii_EOS": radii_EOS, "Lambdas_EOS": Lambdas_EOS,
-                       "n": ns_interp, "p": ps_interp, "h": hs_interp, "e": es_interp, "dloge_dlogp": dloge_dlogps_interp, "cs2": cs2_interp}
-
-        return return_dict
-
     def transform_func_MM_CSE(self, params: dict[str, Float]) -> dict[str, Float]:
         
         params.update(self.fixed_params)
@@ -150,8 +115,11 @@ class MicroToMacroTransform(NtoMTransform):
         # Solve the TOV equations
         logpc_EOS, masses_EOS, radii_EOS, Lambdas_EOS = self.construct_family_lambda(eos_tuple)
     
-        return_dict = {"logpc_EOS": logpc_EOS, "masses_EOS": masses_EOS, "radii_EOS": radii_EOS, "Lambdas_EOS": Lambdas_EOS,
+        if self.return_eos_quantities:
+            return_dict = {"logpc_EOS": logpc_EOS, "masses_EOS": masses_EOS, "radii_EOS": radii_EOS, "Lambdas_EOS": Lambdas_EOS,
                        "n": ns, "p": ps, "h": hs, "e": es, "dloge_dlogp": dloge_dlogps, "cs2": cs2}
+        else:
+            return_dict = {"masses_EOS": masses_EOS, "radii_EOS": radii_EOS, "Lambdas_EOS": Lambdas_EOS}
         
         return return_dict
     
@@ -280,11 +248,8 @@ class GWlikelihood_with_masses(LikelihoodBase):
         m1 = nf_samples[:, 0].flatten()
         m2 = nf_samples[:, 1].flatten()
         
-        # penalty_mass1_mtov = jnp.heaviside(m1 - mtov, 0.0) * self.very_negative_value
-        # penalty_mass2_mtov = jnp.heaviside(m2 - mtov, 0.0) * self.very_negative_value
-        
-        penalty_mass1_mtov = 0.0
-        penalty_mass2_mtov = 0.0
+        penalty_mass1_mtov = jnp.where(m1 > mtov, self.very_negative_value, 0.0).at[0].get()
+        penalty_mass2_mtov = jnp.where(m2 > mtov, self.very_negative_value, 0.0).at[0].get()
         
         # Lambdas: interpolate to get the values
         lambda_1 = jnp.interp(m1, masses_EOS, Lambdas_EOS, right = 1.0)
@@ -295,24 +260,6 @@ class GWlikelihood_with_masses(LikelihoodBase):
         
         logpdf_NS = self.NS_posterior.log_prob(ml_grid)
         logpdf_NS = jnp.mean(logpdf_NS)
-        
-        print("penalty_mass1_mtov")
-        print(penalty_mass1_mtov)
-        
-        print("jnp.shape(penalty_mass1_mtov)")
-        print(jnp.shape(penalty_mass1_mtov))
-        
-        print("penalty_mass2_mtov")
-        print(penalty_mass2_mtov)
-        
-        print("jnp.shape(penalty_mass2_mtov)")
-        print(jnp.shape(penalty_mass2_mtov))
-        
-        print("logpdf_NS")
-        print(logpdf_NS)
-        
-        print("jnp.shape(logpdf_NS)")
-        print(jnp.shape(logpdf_NS))
         
         log_likelihood = logpdf_NS + penalty_mass1_mtov + penalty_mass2_mtov
         
