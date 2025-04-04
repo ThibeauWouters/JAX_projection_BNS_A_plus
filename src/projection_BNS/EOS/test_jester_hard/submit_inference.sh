@@ -30,11 +30,13 @@ python inference.py \
     --outdir ./test_jester_hard/ \
     --local-sampler-name GaussianRandomWalk \
     --eps-mass-matrix 1e-5 \
-    --n-loop-training 20 \
-    --n-loop-production 20 \
-    --n-local-steps 2 \
-    --n-global-steps 1000 \
+    --n-loop-training 100 \
+    --n-loop-production 100 \
+    --n-local-steps 10 \
+    --n-global-steps 10 \
     --n-chains 100 \
     --output-thinning 1 \
+    --train-thinning 1 \
+    --N-masses-evaluation 100 \
     
 echo "DONE"
