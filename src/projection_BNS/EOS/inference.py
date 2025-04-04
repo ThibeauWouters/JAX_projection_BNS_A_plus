@@ -15,7 +15,6 @@ import jax.numpy as jnp
 jax.config.update("jax_enable_x64", True)
 from jimgw.prior import UniformPrior, CombinePrior
 from jimgw.jim import Jim
-import postprocessing
 import argparse
 
 print(f"GPU found?")
@@ -48,14 +47,14 @@ def parse_arguments():
                         type=int, 
                         default=30,
                         help="Ending point of indices")
+    parser.add_argument("--N-masses-evaluation", 
+                        type=int, 
+                        default=1,
+                        help="This is the N_masses_evaluation argument passed on to the GW likelihood function, which essentially determines how many samples are used to marginalize over the masses.")
     parser.add_argument("--local-sampler-name", 
                         type=str, 
                         default="MALA", 
                         help="Name of the local sampler to use. Choose from [MALA, GaussianRandomWalk].")
-    parser.add_argument("--make-cornerplot", 
-                        type=bool, 
-                        default=True, 
-                        help="Whether to make the cornerplot. Turn off by default since can be expensive in memory.")
     parser.add_argument("--ignore-Q-Z", 
                         type=bool,
                         default=True, 
@@ -222,27 +221,18 @@ def main(args):
         likelihoods_list_GW = []
         for idx in id_list:
             try:
-                new_likelihood = utils.GWlikelihood_with_masses(args.eos, args.ifo_network, idx)
+                new_likelihood = utils.GWlikelihood_with_masses(args.eos, 
+                                                                args.ifo_network, 
+                                                                idx, 
+                                                                N_masses_evaluation=args.N_masses_evaluation)
                 likelihoods_list_GW.append(new_likelihood)
             except Exception as e:
                 print(f"Could not load the likelihood for id {idx}, because of the following error: {e}")
                 print(f"Moving on")
                 
         print(f"There are {len(likelihoods_list_GW)} GW likelihoods used now")
-        
-        
-        # # FIXME: decide to delete if other method seems to be working or not
-        # mass_priors = []
-        # for GW_likelihood in likelihoods_list_GW:
-        #     m1_min, m1_max = GW_likelihood.m1_min, GW_likelihood.m1_max
-        #     m2_min, m2_max = GW_likelihood.m2_min, GW_likelihood.m2_max
-            
-        #     mass_priors.append(UniformPrior(m1_min, m1_max, parameter_names=[f"m1_{GW_likelihood.name}"]))
-        #     mass_priors.append(UniformPrior(m2_min, m2_max, parameter_names=[f"m2_{GW_likelihood.name}"]))
-            
-        #     keep_names += [f"m1_{GW_likelihood.name}", f"m2_{GW_likelihood.name}"]
-
         keep_names += ["key"]
+        
         # Radio timing mass measurement pulsars
         likelihoods_list_radio = []
         if args.sample_radio:
@@ -254,9 +244,12 @@ def main(args):
         # Chiral EFT
         likelihoods_list_chiEFT = []
         if args.sample_chiEFT and args.nb_cse > 0:
-            keep_names += ["nbreak"]
-            print(f"Loading data necessary for the Chiral EFT")
-            likelihoods_list_chiEFT += [utils.ChiEFTLikelihood()]
+            # FIXME: decide whether to remove this permanently
+            # keep_names += ["nbreak"]
+            # print(f"Loading data necessary for the Chiral EFT")
+            # likelihoods_list_chiEFT += [utils.ChiEFTLikelihood()]
+            
+            raise ValueError("Chiral EFT likelihood is no longer supported in this project (at least for now)")
 
         # Total likelihoods list:
         likelihoods_list = likelihoods_list_GW + likelihoods_list_radio + likelihoods_list_chiEFT
@@ -264,10 +257,15 @@ def main(args):
             print(l)
             
         # Combine into a full likelihood
-        likelihood = utils.CombinedLikelihood(likelihoods_list)
+        if len(likelihoods_list) > 1:
+            print(f"Combining likelihoods into one final likelihood . . .")
+            likelihood = utils.CombinedLikelihood(likelihoods_list)
+        else:
+            print(f"There is only one likelihood so we will not combine them")
+            likelihood = likelihoods_list[0]
         
     # Construct the transform object
-    TOV_output_keys = ["masses_EOS", "radii_EOS", "Lambdas_EOS"]
+    TOV_output_keys = ["masses_EOS", "Lambdas_EOS"]
     prior_keys = [p.parameter_names[0] for p in prior_list]
     print("prior_keys")
     print(prior_keys)

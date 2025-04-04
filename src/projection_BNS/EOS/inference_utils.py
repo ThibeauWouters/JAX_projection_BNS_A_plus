@@ -258,19 +258,12 @@ class GWlikelihood_with_masses(LikelihoodBase):
         m1 = nf_samples[:, 0]
         m2 = nf_samples[:, 1]
         
-        # # Old method
-        # self.m1_min = float(jnp.min(m1))
-        # self.m1_max = float(jnp.max(m1))
-        
-        # self.m2_min = float(jnp.min(m2))
-        # self.m2_max = float(jnp.max(m2))
-        
         # Instead, we use the 99% credible interval:
         self.m1_min, self.m1_max = arviz.hdi(np.array(m1), hdi_prob=hdi_prob)
         self.m2_min, self.m2_max = arviz.hdi(np.array(m2), hdi_prob=hdi_prob)
         
-        print(f"The range of m1 for {self.eos}_{self.id} is: {self.m1_min} to {self.m1_max}")
-        print(f"The range of m2 for {self.eos}_{self.id} is: {self.m2_min} to {self.m2_max}")
+        print(f"The range of m1 for {self.eos}_{self.id} is: {self.m1_min:.4f} to {self.m1_max:.4f}")
+        print(f"The range of m2 for {self.eos}_{self.id} is: {self.m2_min:.4f} to {self.m2_max:.4f}")
         
 
     def evaluate(self, params: dict[str, float], data: dict) -> float:
@@ -287,8 +280,11 @@ class GWlikelihood_with_masses(LikelihoodBase):
         m1 = nf_samples[:, 0].flatten()
         m2 = nf_samples[:, 1].flatten()
         
-        penalty_mass1_mtov = jnp.where(m1 > mtov, self.very_negative_value, 0.0)
-        penalty_mass2_mtov = jnp.where(m2 > mtov, self.very_negative_value, 0.0)
+        # penalty_mass1_mtov = jnp.heaviside(m1 - mtov, 0.0) * self.very_negative_value
+        # penalty_mass2_mtov = jnp.heaviside(m2 - mtov, 0.0) * self.very_negative_value
+        
+        penalty_mass1_mtov = 0.0
+        penalty_mass2_mtov = 0.0
         
         # Lambdas: interpolate to get the values
         lambda_1 = jnp.interp(m1, masses_EOS, Lambdas_EOS, right = 1.0)
@@ -299,6 +295,24 @@ class GWlikelihood_with_masses(LikelihoodBase):
         
         logpdf_NS = self.NS_posterior.log_prob(ml_grid)
         logpdf_NS = jnp.mean(logpdf_NS)
+        
+        print("penalty_mass1_mtov")
+        print(penalty_mass1_mtov)
+        
+        print("jnp.shape(penalty_mass1_mtov)")
+        print(jnp.shape(penalty_mass1_mtov))
+        
+        print("penalty_mass2_mtov")
+        print(penalty_mass2_mtov)
+        
+        print("jnp.shape(penalty_mass2_mtov)")
+        print(jnp.shape(penalty_mass2_mtov))
+        
+        print("logpdf_NS")
+        print(logpdf_NS)
+        
+        print("jnp.shape(logpdf_NS)")
+        print(jnp.shape(logpdf_NS))
         
         log_likelihood = logpdf_NS + penalty_mass1_mtov + penalty_mass2_mtov
         
@@ -405,20 +419,12 @@ class ChiEFTLikelihood(LikelihoodBase):
 class CombinedLikelihood(LikelihoodBase):
     
     def __init__(self,
-                 likelihoods_list: list[LikelihoodBase],
-                 transform: MicroToMacroTransform = None):
-        
-        # TODO: remove transform input?
+                 likelihoods_list: list[LikelihoodBase]):
         
         super().__init__()
         self.likelihoods_list = likelihoods_list
-        self.transform = transform
-        self.counter = 0
         
     def evaluate(self, params: dict[str, Float], data: dict) -> Float:
-        # FIXME: figure out if the for loop is a performance leak
-        # all_log_likelihoods = jax.lax.map(lambda likelihood: likelihood.evaluate(params, data), self.likelihoods_list)
-        
         all_log_likelihoods = jnp.array([likelihood.evaluate(params, data) for likelihood in self.likelihoods_list])
         return jnp.sum(all_log_likelihoods)
     
