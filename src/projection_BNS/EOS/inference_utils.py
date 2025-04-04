@@ -216,7 +216,7 @@ class GWlikelihood_with_masses(LikelihoodBase):
                  transform: MicroToMacroTransform = None,
                  very_negative_value: float = -99999.0,
                  N_samples_masses: int = 2_000,
-                 N_masses_evaluation: int = 1_000,
+                 N_masses_evaluation: int = 1,
                  hdi_prob: float = 0.90):
         
         self.eos = eos
@@ -290,19 +290,16 @@ class GWlikelihood_with_masses(LikelihoodBase):
         penalty_mass1_mtov = jnp.where(m1 > mtov, self.very_negative_value, 0.0)
         penalty_mass2_mtov = jnp.where(m2 > mtov, self.very_negative_value, 0.0)
         
-        def single_eval(m1_value, m2_value):
+        # Lambdas: interpolate to get the values
+        lambda_1 = jnp.interp(m1, masses_EOS, Lambdas_EOS, right = 1.0)
+        lambda_2 = jnp.interp(m2, masses_EOS, Lambdas_EOS, right = 1.0)
         
-            # Lambdas: interpolate to get the values
-            lambda_1 = jnp.interp(m1_value, masses_EOS, Lambdas_EOS, right = 1.0)
-            lambda_2 = jnp.interp(m2_value, masses_EOS, Lambdas_EOS, right = 1.0)
-            
-            # Make a 4D array of the m1, m2, and lambda values and evalaute NF log prob on it
-            ml_grid = jnp.array([m1_value, m2_value, lambda_1, lambda_2])
+        # Make a 4D array of the m1, m2, and lambda values and evalaute NF log prob on it
+        ml_grid = jnp.array([m1, m2, lambda_1, lambda_2]).T
         
-            logpdf_NS = self.NS_posterior.log_prob(ml_grid)
-            return logpdf_NS
+        logpdf_NS = self.NS_posterior.log_prob(ml_grid)
+        logpdf_NS = jnp.mean(logpdf_NS)
         
-        logpdf_NS = jnp.mean([single_eval(m1_value, m2_value) for m1_value, m2_value in zip(m1, m2)])
         log_likelihood = logpdf_NS + penalty_mass1_mtov + penalty_mass2_mtov
         
         return log_likelihood

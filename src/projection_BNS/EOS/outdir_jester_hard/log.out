@@ -1,2 +1,282 @@
-Thu Apr  3 17:15:43 CEST 2025
+Thu Apr  3 22:00:06 CEST 2025
 NVIDIA H100
+GPU found?
+[CudaDevice(id=0)]
+GPU found?
+[CudaDevice(id=0)]
+Ignoring the Q and Z NEP parameters
+Using CSE grid with 8 points
+Fixed params loaded inside the MicroToMacroTransform:
+    E_sat: -16.0
+Given id_list was None, so created id list [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30]
+Loading the trained NF model from: models/jester_hard/Aplus/1
+Loaded the NF for run jester_hard_1
+The range of m1 for jester_hard_1 is: 1.7465119808912277 to 2.3622963577508926
+The range of m2 for jester_hard_1 is: 1.2045315653085709 to 1.5910588949918747
+Loading the trained NF model from: models/jester_hard/Aplus/2
+Loaded the NF for run jester_hard_2
+The range of m1 for jester_hard_2 is: 1.814965233206749 to 2.3711102455854416
+The range of m2 for jester_hard_2 is: 1.4201939851045609 to 1.8279214948415756
+Loading the trained NF model from: models/jester_hard/Aplus/3
+Loaded the NF for run jester_hard_3
+The range of m1 for jester_hard_3 is: 1.9702450186014175 to 2.3298730701208115
+The range of m2 for jester_hard_3 is: 1.7432858794927597 to 2.0543528348207474
+Loading the trained NF model from: models/jester_hard/Aplus/4
+Loaded the NF for run jester_hard_4
+The range of m1 for jester_hard_4 is: 1.841561421751976 to 2.2119949012994766
+The range of m2 for jester_hard_4 is: 1.5665366500616074 to 1.8705197423696518
+Loading the trained NF model from: models/jester_hard/Aplus/5
+Loaded the NF for run jester_hard_5
+The range of m1 for jester_hard_5 is: 1.4936184138059616 to 1.8181998282670975
+The range of m2 for jester_hard_5 is: 1.2342091649770737 to 1.4972759038209915
+Loading the trained NF model from: models/jester_hard/Aplus/6
+Loaded the NF for run jester_hard_6
+The range of m1 for jester_hard_6 is: 1.8313641101121902 to 2.2880829125642776
+The range of m2 for jester_hard_6 is: 1.4760550111532211 to 1.8167086690664291
+Loading the trained NF model from: models/jester_hard/Aplus/7
+Loaded the NF for run jester_hard_7
+The range of m1 for jester_hard_7 is: 2.050231024622917 to 2.43766225874424
+The range of m2 for jester_hard_7 is: 1.7554452270269394 to 2.0873714238405228
+Loading the trained NF model from: models/jester_hard/Aplus/8
+Loaded the NF for run jester_hard_8
+The range of m1 for jester_hard_8 is: 1.920502409338951 to 2.3103324323892593
+The range of m2 for jester_hard_8 is: 1.6033486276865005 to 1.9157945364713669
+Loading the trained NF model from: models/jester_hard/Aplus/9
+Loaded the NF for run jester_hard_9
+The range of m1 for jester_hard_9 is: 1.5325210243463516 to 1.8213678151369095
+The range of m2 for jester_hard_9 is: 1.3025472313165665 to 1.54096819460392
+Loading the trained NF model from: models/jester_hard/Aplus/10
+Loaded the NF for run jester_hard_10
+The range of m1 for jester_hard_10 is: 2.0645999163389206 to 2.4422255903482437
+The range of m2 for jester_hard_10 is: 1.7474835366010666 to 2.065040245652199
+Loading the trained NF model from: models/jester_hard/Aplus/11
+Loaded the NF for run jester_hard_11
+The range of m1 for jester_hard_11 is: 1.6571005433797836 to 2.253212109208107
+The range of m2 for jester_hard_11 is: 1.2311486154794693 to 1.639464870095253
+Loading the trained NF model from: models/jester_hard/Aplus/12
+Loaded the NF for run jester_hard_12
+The range of m1 for jester_hard_12 is: 1.1529163271188736 to 1.36446975171566
+The range of m2 for jester_hard_12 is: 0.9735127538442612 to 1.150006279349327
+Loading the trained NF model from: models/jester_hard/Aplus/13
+Loaded the NF for run jester_hard_13
+The range of m1 for jester_hard_13 is: 1.9008948653936386 to 2.468802109360695
+The range of m2 for jester_hard_13 is: 1.2721935659646988 to 1.625615581870079
+Loading the trained NF model from: models/jester_hard/Aplus/14
+Loaded the NF for run jester_hard_14
+The range of m1 for jester_hard_14 is: 1.6096246987581253 to 2.0193731039762497
+The range of m2 for jester_hard_14 is: 1.2899405509233475 to 1.6061829775571823
+Loading the trained NF model from: models/jester_hard/Aplus/15
+Loaded the NF for run jester_hard_15
+The range of m1 for jester_hard_15 is: 1.5470882505178452 to 1.884106770157814
+The range of m2 for jester_hard_15 is: 1.2946134060621262 to 1.5632084757089615
+Loading the trained NF model from: models/jester_hard/Aplus/16
+Loaded the NF for run jester_hard_16
+The range of m1 for jester_hard_16 is: 1.3126174360513687 to 1.5244395285844803
+The range of m2 for jester_hard_16 is: 1.1614318937063217 to 1.349821612238884
+Loading the trained NF model from: models/jester_hard/Aplus/17
+Loaded the NF for run jester_hard_17
+The range of m1 for jester_hard_17 is: 1.8562886863946915 to 2.2426820546388626
+The range of m2 for jester_hard_17 is: 0.9395141154527664 to 1.1080893129110336
+Loading the trained NF model from: models/jester_hard/Aplus/18
+Loaded the NF for run jester_hard_18
+The range of m1 for jester_hard_18 is: 1.3985108584165573 to 1.7225342243909836
+The range of m2 for jester_hard_18 is: 1.1413543671369553 to 1.4000559598207474
+Loading the trained NF model from: models/jester_hard/Aplus/19
+Loaded the NF for run jester_hard_19
+The range of m1 for jester_hard_19 is: 1.6172172874212265 to 1.9136884063482285
+The range of m2 for jester_hard_19 is: 1.3775890320539474 to 1.6212638467550278
+Loading the trained NF model from: models/jester_hard/Aplus/20
+Loaded the NF for run jester_hard_20
+The range of m1 for jester_hard_20 is: 1.7659715563058853 to 2.3196782916784286
+The range of m2 for jester_hard_20 is: 1.2250345200300217 to 1.5755338221788406
+Loading the trained NF model from: models/jester_hard/Aplus/21
+Tried looking for the NF architecture at path /gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/jester_hard/Aplus/21.eqx, but it doesn't exist!
+Could not load the likelihood for id 21, because of the following error: [Errno 2] No such file or directory: '/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/jester_hard/Aplus/21_kwargs.json'
+Moving on
+Loading the trained NF model from: models/jester_hard/Aplus/22
+Loaded the NF for run jester_hard_22
+The range of m1 for jester_hard_22 is: 1.6060354560613632 to 2.0495422929525375
+The range of m2 for jester_hard_22 is: 1.2845046073198318 to 1.6221312433481216
+Loading the trained NF model from: models/jester_hard/Aplus/23
+Tried looking for the NF architecture at path /gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/jester_hard/Aplus/23.eqx, but it doesn't exist!
+Could not load the likelihood for id 23, because of the following error: [Errno 2] No such file or directory: '/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/jester_hard/Aplus/23_kwargs.json'
+Moving on
+Loading the trained NF model from: models/jester_hard/Aplus/24
+Loaded the NF for run jester_hard_24
+The range of m1 for jester_hard_24 is: 1.4223139733076096 to 1.7562010139226913
+The range of m2 for jester_hard_24 is: 1.1745583266019821 to 1.443253979086876
+Loading the trained NF model from: models/jester_hard/Aplus/25
+Loaded the NF for run jester_hard_25
+The range of m1 for jester_hard_25 is: 1.6875102370977402 to 1.8675268441438675
+The range of m2 for jester_hard_25 is: 1.5420307964086533 to 1.7106600850820541
+Loading the trained NF model from: models/jester_hard/Aplus/26
+Loaded the NF for run jester_hard_26
+The range of m1 for jester_hard_26 is: 2.2128383070230484 to 2.663474604487419
+The range of m2 for jester_hard_26 is: 1.8612044304609299 to 2.236974760890007
+Loading the trained NF model from: models/jester_hard/Aplus/27
+Tried looking for the NF architecture at path /gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/jester_hard/Aplus/27.eqx, but it doesn't exist!
+Could not load the likelihood for id 27, because of the following error: [Errno 2] No such file or directory: '/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/jester_hard/Aplus/27_kwargs.json'
+Moving on
+Loading the trained NF model from: models/jester_hard/Aplus/28
+Tried looking for the NF architecture at path /gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/jester_hard/Aplus/28.eqx, but it doesn't exist!
+Could not load the likelihood for id 28, because of the following error: [Errno 2] No such file or directory: '/gpfs/home6/twouters2/projects/projection_BNS_A_plus/src/projection_BNS/NF/models/jester_hard/Aplus/28_kwargs.json'
+Moving on
+Loading the trained NF model from: models/jester_hard/Aplus/29
+Loaded the NF for run jester_hard_29
+The range of m1 for jester_hard_29 is: 1.7424345761537552 to 1.9667413085699081
+The range of m2 for jester_hard_29 is: 1.5730378776788712 to 1.7787473648786545
+Loading the trained NF model from: models/jester_hard/Aplus/30
+Loaded the NF for run jester_hard_30
+The range of m1 for jester_hard_30 is: 1.4881259948015213 to 1.7888837307691574
+The range of m2 for jester_hard_30 is: 1.2951310724020004 to 1.5385397523641586
+There are 26 GW likelihoods used now
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15174637e7a0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053f940eb0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053ead4730>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053e859000>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053d3371f0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053e933a60>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053ccc7910>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053e815780>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053cb242e0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053c59dba0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053c704f40>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053c404fa0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x151746167d90>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053e9dcb80>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d7736cb0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053c1b3130>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x15053d30db70>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d78bdf30>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d78bf220>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d6722050>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d6c9cac0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d1c92500>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d6aeb130>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d6e5b880>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d6c6fee0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x1504d1ebbd30>
+prior_keys
+['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
+all_prior_keys
+['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
+Prior parameter 0: E_sym
+Prior parameter 1: L_sym
+Prior parameter 2: K_sym
+Prior parameter 3: K_sat
+Prior parameter 4: nbreak
+Prior parameter 5: n_CSE_0_u
+Prior parameter 6: cs2_CSE_0
+Prior parameter 7: n_CSE_1_u
+Prior parameter 8: cs2_CSE_1
+Prior parameter 9: n_CSE_2_u
+Prior parameter 10: cs2_CSE_2
+Prior parameter 11: n_CSE_3_u
+Prior parameter 12: cs2_CSE_3
+Prior parameter 13: n_CSE_4_u
+Prior parameter 14: cs2_CSE_4
+Prior parameter 15: n_CSE_5_u
+Prior parameter 16: cs2_CSE_5
+Prior parameter 17: n_CSE_6_u
+Prior parameter 18: cs2_CSE_6
+Prior parameter 19: n_CSE_7_u
+Prior parameter 20: cs2_CSE_7
+Prior parameter 21: cs2_CSE_8
+Prior parameter 22: key
+Fixed params loaded inside the MicroToMacroTransform:
+    E_sat: -16.0
+We are going to give these kwargs to Jim:
+{'n_loop_training': 100, 'n_loop_production': 20, 'n_chains': 1000, 'n_local_steps': 50, 'n_global_steps': 50, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
+We are going to sample the following parameters:
+['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
+No sample transforms provided. Using prior parameters as sampling parameters
+Jim received the local sampler name: GaussianRandomWalk
+Step size given was a matrix, converting to diagonal for GaussianRandomWalk
+['n_dim', 'n_chains', 'n_local_steps', 'n_global_steps', 'n_loop', 'output_thinning', 'verbose']
+log_prob
+[   -3260.00884127    -2798.02855163 -1202822.67820023]
+Sampling seed is set to: 11
+Global Tuning:   0%|          | 0/100 [00:00<?, ?it/s]Global Tuning:   1%|          | 1/100 [06:04<10:01:27, 364.52s/it]Global Tuning:   2%|▏         | 2/100 [07:00<4:58:44, 182.90s/it] Global Tuning:   3%|▎         | 3/100 [07:53<3:19:46, 123.57s/it]Global Tuning:   4%|▍         | 4/100 [08:41<2:30:07, 93.83s/it] Global Tuning:   5%|▌         | 5/100 [09:29<2:02:10, 77.16s/it]Global Tuning:   6%|▌         | 6/100 [10:16<1:45:01, 67.04s/it]Global Tuning:   7%|▋         | 7/100 [11:02<1:33:16, 60.18s/it]Global Tuning:   8%|▊         | 8/100 [11:50<1:26:04, 56.13s/it]Global Tuning:   9%|▉         | 9/100 [12:37<1:20:56, 53.37s/it]Global Tuning:  10%|█         | 10/100 [13:26<1:18:10, 52.12s/it]Global Tuning:  11%|█         | 11/100 [14:14<1:15:19, 50.78s/it]Global Tuning:  12%|█▏        | 12/100 [15:02<1:13:15, 49.95s/it]Global Tuning:  13%|█▎        | 13/100 [15:50<1:11:40, 49.43s/it]Global Tuning:  14%|█▍        | 14/100 [16:38<1:10:13, 48.99s/it]Global Tuning:  15%|█▌        | 15/100 [17:25<1:08:37, 48.44s/it]Global Tuning:  16%|█▌        | 16/100 [18:11<1:06:52, 47.76s/it]Global Tuning:  17%|█▋        | 17/100 [18:58<1:05:35, 47.42s/it]Global Tuning:  18%|█▊        | 18/100 [19:45<1:04:34, 47.25s/it]Global Tuning:  19%|█▉        | 19/100 [20:31<1:03:20, 46.92s/it]Global Tuning:  20%|██        | 20/100 [21:17<1:02:14, 46.68s/it]Global Tuning:  21%|██        | 21/100 [22:03<1:01:04, 46.39s/it]Global Tuning:  22%|██▏       | 22/100 [22:50<1:00:22, 46.44s/it]Global Tuning:  23%|██▎       | 23/100 [23:36<59:43, 46.54s/it]  Global Tuning:  24%|██▍       | 24/100 [24:22<58:48, 46.42s/it]Global Tuning:  25%|██▌       | 25/100 [25:10<58:17, 46.63s/it]Global Tuning:  26%|██▌       | 26/100 [25:56<57:26, 46.57s/it]Global Tuning:  27%|██▋       | 27/100 [26:42<56:34, 46.50s/it]Global Tuning:  28%|██▊       | 28/100 [27:29<55:57, 46.63s/it]Global Tuning:  29%|██▉       | 29/100 [28:16<55:02, 46.52s/it]Global Tuning:  30%|███       | 30/100 [29:02<54:13, 46.47s/it]Global Tuning:  31%|███       | 31/100 [29:47<53:08, 46.21s/it]Global Tuning:  32%|███▏      | 32/100 [30:34<52:33, 46.38s/it]Global Tuning:  33%|███▎      | 33/100 [31:20<51:31, 46.14s/it]Global Tuning:  34%|███▍      | 34/100 [32:07<50:56, 46.31s/it]Global Tuning:  35%|███▌      | 35/100 [32:52<50:01, 46.17s/it]Global Tuning:  36%|███▌      | 36/100 [33:38<49:08, 46.07s/it]Global Tuning:  37%|███▋      | 37/100 [34:25<48:33, 46.25s/it]Global Tuning:  38%|███▊      | 38/100 [35:11<47:54, 46.36s/it]Global Tuning:  39%|███▉      | 39/100 [35:58<47:07, 46.35s/it]Global Tuning:  40%|████      | 40/100 [36:44<46:23, 46.40s/it]Global Tuning:  41%|████      | 41/100 [37:31<45:44, 46.52s/it]Global Tuning:  42%|████▏     | 42/100 [38:17<44:51, 46.41s/it]Global Tuning:  43%|████▎     | 43/100 [39:03<43:51, 46.16s/it]Global Tuning:  44%|████▍     | 44/100 [39:50<43:16, 46.37s/it]Global Tuning:  45%|████▌     | 45/100 [40:36<42:33, 46.43s/it]Global Tuning:  46%|████▌     | 46/100 [41:22<41:35, 46.21s/it]Global Tuning:  47%|████▋     | 47/100 [42:08<40:51, 46.25s/it]Global Tuning:  48%|████▊     | 48/100 [42:54<40:03, 46.22s/it]Global Tuning:  49%|████▉     | 49/100 [43:41<39:28, 46.44s/it]Global Tuning:  50%|█████     | 50/100 [44:28<38:42, 46.45s/it]Global Tuning:  51%|█████     | 51/100 [45:15<37:58, 46.50s/it]Global Tuning:  52%|█████▏    | 52/100 [46:01<37:15, 46.57s/it]Global Tuning:  53%|█████▎    | 53/100 [46:48<36:28, 46.57s/it]Global Tuning:  54%|█████▍    | 54/100 [47:35<35:45, 46.64s/it]Global Tuning:  55%|█████▌    | 55/100 [48:21<34:55, 46.58s/it]Global Tuning:  56%|█████▌    | 56/100 [49:07<34:03, 46.44s/it]Global Tuning:  57%|█████▋    | 57/100 [49:53<33:07, 46.22s/it]Global Tuning:  58%|█████▊    | 58/100 [50:38<32:11, 45.98s/it]Global Tuning:  59%|█████▉    | 59/100 [51:25<31:30, 46.10s/it]Global Tuning:  60%|██████    | 60/100 [52:11<30:45, 46.14s/it]Global Tuning:  61%|██████    | 61/100 [52:57<29:59, 46.15s/it]Global Tuning:  62%|██████▏   | 62/100 [53:43<29:06, 45.96s/it]Global Tuning:  63%|██████▎   | 63/100 [54:29<28:29, 46.20s/it]Global Tuning:  64%|██████▍   | 64/100 [55:15<27:40, 46.12s/it]Global Tuning:  65%|██████▌   | 65/100 [56:02<26:55, 46.17s/it]Global Tuning:  66%|██████▌   | 66/100 [56:48<26:12, 46.25s/it]Global Tuning:  67%|██████▋   | 67/100 [57:34<25:22, 46.15s/it]Global Tuning:  68%|██████▊   | 68/100 [58:19<24:30, 45.96s/it]Global Tuning:  69%|██████▉   | 69/100 [59:06<23:45, 46.00s/it]Global Tuning:  70%|███████   | 70/100 [59:52<23:02, 46.08s/it]Global Tuning:  71%|███████   | 71/100 [1:00:38<22:15, 46.07s/it]Global Tuning:  72%|███████▏  | 72/100 [1:01:25<21:35, 46.28s/it]Global Tuning:  73%|███████▎  | 73/100 [1:02:11<20:49, 46.27s/it]Global Tuning:  74%|███████▍  | 74/100 [1:02:57<19:58, 46.09s/it]Global Tuning:  75%|███████▌  | 75/100 [1:03:44<19:19, 46.39s/it]Global Tuning:  76%|███████▌  | 76/100 [1:04:30<18:30, 46.26s/it]Global Tuning:  77%|███████▋  | 77/100 [1:05:17<17:52, 46.63s/it]Global Tuning:  78%|███████▊  | 78/100 [1:06:03<17:02, 46.46s/it]Global Tuning:  79%|███████▉  | 79/100 [1:06:50<16:17, 46.53s/it]Global Tuning:  80%|████████  | 80/100 [1:07:37<15:33, 46.69s/it]Global Tuning:  81%|████████  | 81/100 [1:08:24<14:51, 46.90s/it]Global Tuning:  82%|████████▏ | 82/100 [1:09:12<14:06, 47.01s/it]Global Tuning:  83%|████████▎ | 83/100 [1:10:00<13:28, 47.56s/it]Global Tuning:  84%|████████▍ | 84/100 [1:10:49<12:44, 47.79s/it]Global Tuning:  85%|████████▌ | 85/100 [1:11:37<11:58, 47.87s/it]Global Tuning:  86%|████████▌ | 86/100 [1:12:25<11:13, 48.07s/it]Global Tuning:  87%|████████▋ | 87/100 [1:13:14<10:25, 48.12s/it]Global Tuning:  88%|████████▊ | 88/100 [1:14:01<09:36, 48.02s/it]Global Tuning:  89%|████████▉ | 89/100 [1:14:52<08:57, 48.85s/it]Global Tuning:  90%|█████████ | 90/100 [1:15:40<08:04, 48.47s/it]Global Tuning:  91%|█████████ | 91/100 [1:16:27<07:13, 48.22s/it]Global Tuning:  92%|█████████▏| 92/100 [1:17:15<06:23, 47.97s/it]Global Tuning:  93%|█████████▎| 93/100 [1:18:02<05:33, 47.71s/it]Global Tuning:  94%|█████████▍| 94/100 [1:18:50<04:47, 47.95s/it]Global Tuning:  95%|█████████▌| 95/100 [1:19:38<03:59, 47.82s/it]Global Tuning:  96%|█████████▌| 96/100 [1:20:26<03:11, 47.85s/it]Global Tuning:  97%|█████████▋| 97/100 [1:21:13<02:23, 47.72s/it]Global Tuning:  98%|█████████▊| 98/100 [1:22:02<01:35, 47.89s/it]Global Tuning:  99%|█████████▉| 99/100 [1:22:49<00:47, 47.67s/it]Global Tuning: 100%|██████████| 100/100 [1:23:36<00:00, 47.69s/it]Global Tuning: 100%|██████████| 100/100 [1:23:36<00:00, 50.17s/it]
+Global Sampling:   0%|          | 0/20 [00:00<?, ?it/s]Global Sampling:   5%|▌         | 1/20 [00:47<14:55, 47.11s/it]Global Sampling:  10%|█         | 2/20 [01:33<13:58, 46.60s/it]Global Sampling:  15%|█▌        | 3/20 [02:19<13:09, 46.47s/it]Global Sampling:  20%|██        | 4/20 [03:06<12:25, 46.62s/it]Global Sampling:  25%|██▌       | 5/20 [03:53<11:40, 46.69s/it]Global Sampling:  30%|███       | 6/20 [04:39<10:51, 46.54s/it]Global Sampling:  35%|███▌      | 7/20 [05:26<10:06, 46.67s/it]Global Sampling:  40%|████      | 8/20 [06:12<09:19, 46.60s/it]Global Sampling:  45%|████▌     | 9/20 [06:58<08:29, 46.34s/it]Global Sampling:  50%|█████     | 10/20 [07:44<07:42, 46.27s/it]Global Sampling:  55%|█████▌    | 11/20 [08:31<06:56, 46.31s/it]Global Sampling:  60%|██████    | 12/20 [09:17<06:10, 46.36s/it]Global Sampling:  65%|██████▌   | 13/20 [10:03<05:24, 46.33s/it]Global Sampling:  70%|███████   | 14/20 [10:49<04:37, 46.18s/it]Global Sampling:  75%|███████▌  | 15/20 [11:36<03:51, 46.32s/it]Global Sampling:  80%|████████  | 16/20 [12:23<03:05, 46.41s/it]Global Sampling:  85%|████████▌ | 17/20 [13:09<02:19, 46.36s/it]Global Sampling:  90%|█████████ | 18/20 [13:55<01:32, 46.29s/it]Global Sampling:  95%|█████████▌| 19/20 [14:41<00:46, 46.33s/it]Global Sampling: 100%|██████████| 20/20 [15:28<00:00, 46.40s/it]Global Sampling: 100%|██████████| 20/20 [15:28<00:00, 46.42s/it]
+Training summary
+==========
+E_sym: 37.258 +/- 4.258
+L_sym: 53.459 +/- 24.566
+K_sym: -82.163 +/- 103.203
+K_sat: 222.648 +/- 35.870
+nbreak: 0.243 +/- 0.025
+n_CSE_0_u: 0.499 +/- 0.251
+cs2_CSE_0: 0.858 +/- 0.109
+n_CSE_1_u: 0.379 +/- 0.254
+cs2_CSE_1: 0.794 +/- 0.145
+n_CSE_2_u: 0.472 +/- 0.270
+cs2_CSE_2: 0.721 +/- 0.213
+n_CSE_3_u: 0.582 +/- 0.255
+cs2_CSE_3: 0.586 +/- 0.237
+n_CSE_4_u: 0.517 +/- 0.267
+cs2_CSE_4: 0.516 +/- 0.252
+n_CSE_5_u: 0.467 +/- 0.293
+cs2_CSE_5: 0.512 +/- 0.243
+n_CSE_6_u: 0.420 +/- 0.281
+cs2_CSE_6: 0.488 +/- 0.251
+n_CSE_7_u: 0.440 +/- 0.278
+cs2_CSE_7: 0.508 +/- 0.233
+cs2_CSE_8: 0.488 +/- 0.259
+key: 504596562.945 +/- 294811792.575
+Log probability: -43617.427 +/- 942988.342
+Local acceptance: 0.947 +/- 0.223
+Global acceptance: 0.004 +/- 0.067
+Max loss: 39.317, Min loss: 11.040
+Production summary
+==========
+E_sym: 38.005 +/- 4.241
+L_sym: 52.648 +/- 24.615
+K_sym: -69.841 +/- 98.203
+K_sat: 223.863 +/- 33.535
+nbreak: 0.241 +/- 0.023
+n_CSE_0_u: 0.497 +/- 0.240
+cs2_CSE_0: 0.874 +/- 0.086
+n_CSE_1_u: 0.324 +/- 0.231
+cs2_CSE_1: 0.816 +/- 0.127
+n_CSE_2_u: 0.463 +/- 0.265
+cs2_CSE_2: 0.783 +/- 0.172
+n_CSE_3_u: 0.602 +/- 0.213
+cs2_CSE_3: 0.579 +/- 0.227
+n_CSE_4_u: 0.562 +/- 0.239
+cs2_CSE_4: 0.512 +/- 0.242
+n_CSE_5_u: 0.518 +/- 0.279
+cs2_CSE_5: 0.545 +/- 0.237
+n_CSE_6_u: 0.400 +/- 0.261
+cs2_CSE_6: 0.458 +/- 0.235
+n_CSE_7_u: 0.402 +/- 0.256
+cs2_CSE_7: 0.488 +/- 0.200
+cs2_CSE_8: 0.499 +/- 0.247
+key: 486868270.794 +/- 332931387.813
+Log probability: -2707.754 +/- 16.223
+Local acceptance: 0.953 +/- 0.212
+Global acceptance: 0.001 +/- 0.036
+Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 100 mins
+Saving the final results
+Number of samples generated in training: 2000000
+Number of samples generated in production: 400000
+Number of samples generated: 2400000
+Time taken for TOV map: 1.6007452011108398 s
+The corner plot will plot the parameters: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
+DONE entire script
+DONE
+
+JOB STATISTICS
+==============
+Job ID: 10969643
+Cluster: snellius
+User/Group: twouters2/twouters2
+State: RUNNING
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 1-03:25:04 core-walltime
+Job Wall-clock time: 01:42:49
+Memory Utilized: 0.00 MB
+Memory Efficiency: 0.00% of 20.00 GB (20.00 GB/node)
+WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.

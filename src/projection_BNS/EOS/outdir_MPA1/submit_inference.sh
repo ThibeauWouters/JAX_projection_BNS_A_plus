@@ -32,6 +32,8 @@ python inference.py \
     --eps-mass-matrix 1e-5 \
     --n-loop-training 60 \
     --n-loop-production 20 \
+    --n-local-steps 50 \
+    --n-global-steps 50 \
     # --sample-radio True \
     # --sample-chiEFT True \
     
