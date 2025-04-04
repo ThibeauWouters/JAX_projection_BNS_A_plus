@@ -1,4 +1,4 @@
-Fri Apr  4 10:33:05 CEST 2025
+Fri Apr  4 11:00:45 CEST 2025
 NVIDIA H100
 GPU found?
 [CudaDevice(id=0)]
@@ -131,32 +131,32 @@ Loaded the NF for run jester_hard_30
 The range of m1 for jester_hard_30 is: 1.4881 to 1.7889
 The range of m2 for jester_hard_30 is: 1.2951 to 1.5385
 There are 26 GW likelihoods used now
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14e2fe004880>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14e2fd10cb80>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14e2fd10d3f0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14e67c87ff40>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14e2fc27feb0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0f8e746a0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0fa296e00>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14e2fc1fb010>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14e2fc2e68f0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0f8d917b0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0f8dc1540>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c3c4ebf0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0f8584490>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c3947220>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c32821d0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c36299c0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0f8e87640>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c28732e0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c28734c0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c241ecb0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c240a4a0>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c281de40>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c2746e30>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c28eaf80>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c1f96e90>
-<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d0c1fbbee0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d19db75ab0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d19cdd31c0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d19cdd3e50>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d51c403f40>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf9a16bb50>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf98afdb40>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf98afe7a0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14d19ccc0850>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf9818bca0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf9a33e6b0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf99f162f0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf5b9a4280>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf5b3eb160>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf98963940>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf5bbb1cc0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf5bbb2a70>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf5ac23be0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf98612140>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf5a382800>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf5acd1f30>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf59cb8c40>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf5a0694b0>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf59872470>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf5a621f60>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf59bf8d30>
+<projection_BNS.EOS.inference_utils.GWlikelihood_with_masses object at 0x14bf59386710>
 Combining likelihoods into one final likelihood . . .
 prior_keys
 ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
@@ -188,7 +188,7 @@ Prior parameter 22: key
 Fixed params loaded inside the MicroToMacroTransform:
     E_sat: -16.0
 We are going to give these kwargs to Jim:
-{'n_loop_training': 20, 'n_loop_production': 20, 'n_chains': 100, 'n_local_steps': 50, 'n_global_steps': 50, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 5}
+{'n_loop_training': 20, 'n_loop_production': 20, 'n_chains': 100, 'n_local_steps': 2, 'n_global_steps': 100, 'n_epochs': 20, 'train_thinning': 1, 'output_thinning': 1}
 We are going to sample the following parameters:
 ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8', 'key']
 No sample transforms provided. Using prior parameters as sampling parameters
@@ -198,85 +198,85 @@ Step size given was a matrix, converting to diagonal for GaussianRandomWalk
 log_prob
 [-324.65395994 -270.15012685 -284.95431397]
 Sampling seed is set to: 11
-Global Tuning:   0%|          | 0/20 [00:00<?, ?it/s]Global Tuning:   5%|▌         | 1/20 [04:45<1:30:26, 285.63s/it]Global Tuning:  10%|█         | 2/20 [05:06<39:00, 130.00s/it]  Global Tuning:  15%|█▌        | 3/20 [05:27<22:41, 80.10s/it] Global Tuning:  20%|██        | 4/20 [05:47<15:05, 56.58s/it]Global Tuning:  25%|██▌       | 5/20 [06:08<10:53, 43.59s/it]Global Tuning:  30%|███       | 6/20 [06:29<08:21, 35.79s/it]Global Tuning:  35%|███▌      | 7/20 [06:49<06:39, 30.70s/it]Global Tuning:  40%|████      | 8/20 [07:09<05:27, 27.28s/it]Global Tuning:  45%|████▌     | 9/20 [07:29<04:35, 25.01s/it]Global Tuning:  50%|█████     | 10/20 [07:49<03:55, 23.54s/it]Global Tuning:  55%|█████▌    | 11/20 [08:09<03:22, 22.48s/it]Global Tuning:  60%|██████    | 12/20 [08:29<02:54, 21.78s/it]Global Tuning:  65%|██████▌   | 13/20 [08:49<02:28, 21.28s/it]Global Tuning:  70%|███████   | 14/20 [09:09<02:04, 20.83s/it]Global Tuning:  75%|███████▌  | 15/20 [09:29<01:42, 20.58s/it]Global Tuning:  80%|████████  | 16/20 [09:49<01:21, 20.37s/it]Global Tuning:  85%|████████▌ | 17/20 [10:09<01:00, 20.28s/it]Global Tuning:  90%|█████████ | 18/20 [10:29<00:40, 20.26s/it]Global Tuning:  95%|█████████▌| 19/20 [10:49<00:20, 20.18s/it]Global Tuning: 100%|██████████| 20/20 [11:09<00:00, 20.14s/it]Global Tuning: 100%|██████████| 20/20 [11:09<00:00, 33.50s/it]
-Global Sampling:   0%|          | 0/20 [00:00<?, ?it/s]Global Sampling:   5%|▌         | 1/20 [00:19<06:10, 19.49s/it]Global Sampling:  10%|█         | 2/20 [00:38<05:47, 19.32s/it]Global Sampling:  15%|█▌        | 3/20 [00:58<05:28, 19.33s/it]Global Sampling:  20%|██        | 4/20 [01:17<05:08, 19.31s/it]Global Sampling:  25%|██▌       | 5/20 [01:36<04:50, 19.34s/it]Global Sampling:  30%|███       | 6/20 [01:56<04:31, 19.41s/it]Global Sampling:  35%|███▌      | 7/20 [02:15<04:12, 19.44s/it]Global Sampling:  40%|████      | 8/20 [02:35<03:53, 19.43s/it]Global Sampling:  45%|████▌     | 9/20 [02:54<03:33, 19.44s/it]Global Sampling:  50%|█████     | 10/20 [03:14<03:15, 19.52s/it]Global Sampling:  55%|█████▌    | 11/20 [03:33<02:55, 19.54s/it]Global Sampling:  60%|██████    | 12/20 [03:53<02:36, 19.57s/it]Global Sampling:  65%|██████▌   | 13/20 [04:13<02:17, 19.58s/it]Global Sampling:  70%|███████   | 14/20 [04:32<01:57, 19.64s/it]Global Sampling:  75%|███████▌  | 15/20 [04:53<01:38, 19.77s/it]Global Sampling:  80%|████████  | 16/20 [05:13<01:19, 19.95s/it]Global Sampling:  85%|████████▌ | 17/20 [05:33<00:59, 19.93s/it]Global Sampling:  90%|█████████ | 18/20 [05:53<00:39, 19.93s/it]Global Sampling:  95%|█████████▌| 19/20 [06:13<00:19, 19.94s/it]Global Sampling: 100%|██████████| 20/20 [06:32<00:00, 19.87s/it]Global Sampling: 100%|██████████| 20/20 [06:32<00:00, 19.64s/it]
+Global Tuning:   0%|          | 0/20 [00:00<?, ?it/s]Global Tuning:   5%|▌         | 1/20 [04:23<1:23:28, 263.63s/it]Global Tuning:  10%|█         | 2/20 [04:28<33:25, 111.40s/it]  Global Tuning:  15%|█▌        | 3/20 [04:33<17:51, 63.01s/it] Global Tuning:  20%|██        | 4/20 [04:38<10:37, 39.86s/it]Global Tuning:  25%|██▌       | 5/20 [04:42<06:44, 26.97s/it]Global Tuning:  30%|███       | 6/20 [04:46<04:29, 19.23s/it]Global Tuning:  35%|███▌      | 7/20 [04:51<03:08, 14.48s/it]Global Tuning:  40%|████      | 8/20 [04:55<02:14, 11.23s/it]Global Tuning:  45%|████▌     | 9/20 [04:59<01:39,  9.09s/it]Global Tuning:  50%|█████     | 10/20 [05:04<01:15,  7.58s/it]Global Tuning:  55%|█████▌    | 11/20 [05:08<00:58,  6.52s/it]Global Tuning:  60%|██████    | 12/20 [05:12<00:46,  5.79s/it]Global Tuning:  65%|██████▌   | 13/20 [05:16<00:37,  5.29s/it]Global Tuning:  70%|███████   | 14/20 [05:20<00:29,  4.93s/it]Global Tuning:  75%|███████▌  | 15/20 [05:24<00:23,  4.75s/it]Global Tuning:  80%|████████  | 16/20 [05:29<00:18,  4.61s/it]Global Tuning:  85%|████████▌ | 17/20 [05:33<00:13,  4.59s/it]Global Tuning:  90%|█████████ | 18/20 [05:37<00:08,  4.45s/it]Global Tuning:  95%|█████████▌| 19/20 [05:42<00:04,  4.36s/it]Global Tuning: 100%|██████████| 20/20 [05:46<00:00,  4.30s/it]Global Tuning: 100%|██████████| 20/20 [05:46<00:00, 17.31s/it]
+Global Sampling:   0%|          | 0/20 [00:00<?, ?it/s]Global Sampling:   5%|▌         | 1/20 [00:03<01:07,  3.53s/it]Global Sampling:  10%|█         | 2/20 [00:07<01:04,  3.60s/it]Global Sampling:  15%|█▌        | 3/20 [00:10<01:01,  3.64s/it]Global Sampling:  20%|██        | 4/20 [00:14<00:58,  3.63s/it]Global Sampling:  25%|██▌       | 5/20 [00:18<00:54,  3.63s/it]Global Sampling:  30%|███       | 6/20 [00:21<00:50,  3.63s/it]Global Sampling:  35%|███▌      | 7/20 [00:25<00:47,  3.66s/it]Global Sampling:  40%|████      | 8/20 [00:29<00:44,  3.71s/it]Global Sampling:  45%|████▌     | 9/20 [00:33<00:41,  3.74s/it]Global Sampling:  50%|█████     | 10/20 [00:37<00:38,  3.80s/it]Global Sampling:  55%|█████▌    | 11/20 [00:40<00:33,  3.76s/it]Global Sampling:  60%|██████    | 12/20 [00:44<00:29,  3.74s/it]Global Sampling:  65%|██████▌   | 13/20 [00:48<00:27,  3.96s/it]Global Sampling:  70%|███████   | 14/20 [00:52<00:23,  3.84s/it]Global Sampling:  75%|███████▌  | 15/20 [00:56<00:18,  3.78s/it]Global Sampling:  80%|████████  | 16/20 [00:59<00:15,  3.77s/it]Global Sampling:  85%|████████▌ | 17/20 [01:03<00:11,  3.79s/it]Global Sampling:  90%|█████████ | 18/20 [01:07<00:07,  3.81s/it]Global Sampling:  95%|█████████▌| 19/20 [01:11<00:03,  3.82s/it]Global Sampling: 100%|██████████| 20/20 [01:15<00:00,  3.77s/it]Global Sampling: 100%|██████████| 20/20 [01:15<00:00,  3.75s/it]
 Training summary
 ==========
-E_sym: 36.540 +/- 4.294
-L_sym: 63.303 +/- 26.904
-K_sym: -69.440 +/- 90.905
-K_sat: 230.767 +/- 34.597
-nbreak: 0.246 +/- 0.033
-n_CSE_0_u: 0.511 +/- 0.246
-cs2_CSE_0: 0.717 +/- 0.198
-n_CSE_1_u: 0.421 +/- 0.258
-cs2_CSE_1: 0.646 +/- 0.220
-n_CSE_2_u: 0.522 +/- 0.258
-cs2_CSE_2: 0.539 +/- 0.239
-n_CSE_3_u: 0.485 +/- 0.279
-cs2_CSE_3: 0.519 +/- 0.252
-n_CSE_4_u: 0.445 +/- 0.242
-cs2_CSE_4: 0.483 +/- 0.270
-n_CSE_5_u: 0.388 +/- 0.264
-cs2_CSE_5: 0.501 +/- 0.260
-n_CSE_6_u: 0.471 +/- 0.272
-cs2_CSE_6: 0.482 +/- 0.238
-n_CSE_7_u: 0.574 +/- 0.246
-cs2_CSE_7: 0.493 +/- 0.253
-cs2_CSE_8: 0.492 +/- 0.231
-key: 483127518.723 +/- 290654543.521
-Log probability: -23276.358 +/- 231625.834
-Local acceptance: 0.988 +/- 0.108
-Global acceptance: 0.043 +/- 0.204
-Max loss: 39.366, Min loss: 19.873
+E_sym: 36.580 +/- 4.365
+L_sym: 62.616 +/- 25.080
+K_sym: -57.716 +/- 98.480
+K_sat: 231.222 +/- 37.499
+nbreak: 0.251 +/- 0.029
+n_CSE_0_u: 0.504 +/- 0.244
+cs2_CSE_0: 0.764 +/- 0.160
+n_CSE_1_u: 0.409 +/- 0.266
+cs2_CSE_1: 0.642 +/- 0.228
+n_CSE_2_u: 0.516 +/- 0.278
+cs2_CSE_2: 0.518 +/- 0.272
+n_CSE_3_u: 0.452 +/- 0.263
+cs2_CSE_3: 0.498 +/- 0.259
+n_CSE_4_u: 0.409 +/- 0.248
+cs2_CSE_4: 0.471 +/- 0.265
+n_CSE_5_u: 0.423 +/- 0.262
+cs2_CSE_5: 0.491 +/- 0.257
+n_CSE_6_u: 0.492 +/- 0.266
+cs2_CSE_6: 0.496 +/- 0.240
+n_CSE_7_u: 0.530 +/- 0.254
+cs2_CSE_7: 0.477 +/- 0.269
+cs2_CSE_8: 0.497 +/- 0.257
+key: 480114220.329 +/- 398836591.714
+Log probability: -2804.810 +/- 66962.462
+Local acceptance: 0.980 +/- 0.142
+Global acceptance: 0.033 +/- 0.178
+Max loss: 39.350, Min loss: 23.844
 Production summary
 ==========
-E_sym: 36.230 +/- 4.467
-L_sym: 58.850 +/- 27.349
-K_sym: -77.624 +/- 84.318
-K_sat: 230.376 +/- 33.605
-nbreak: 0.244 +/- 0.032
-n_CSE_0_u: 0.512 +/- 0.243
-cs2_CSE_0: 0.743 +/- 0.175
-n_CSE_1_u: 0.383 +/- 0.268
-cs2_CSE_1: 0.653 +/- 0.202
-n_CSE_2_u: 0.526 +/- 0.267
-cs2_CSE_2: 0.526 +/- 0.243
-n_CSE_3_u: 0.462 +/- 0.290
-cs2_CSE_3: 0.489 +/- 0.278
-n_CSE_4_u: 0.387 +/- 0.214
-cs2_CSE_4: 0.455 +/- 0.265
-n_CSE_5_u: 0.344 +/- 0.260
-cs2_CSE_5: 0.472 +/- 0.275
-n_CSE_6_u: 0.450 +/- 0.274
-cs2_CSE_6: 0.461 +/- 0.237
-n_CSE_7_u: 0.585 +/- 0.237
-cs2_CSE_7: 0.441 +/- 0.230
-cs2_CSE_8: 0.548 +/- 0.223
-key: 512168328.776 +/- 305269932.643
-Log probability: -283.113 +/- 3.301
-Local acceptance: 0.990 +/- 0.098
-Global acceptance: 0.007 +/- 0.084
-Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 17 mins
+E_sym: 37.123 +/- 4.598
+L_sym: 67.992 +/- 27.616
+K_sym: -55.096 +/- 91.026
+K_sat: 224.663 +/- 36.741
+nbreak: 0.259 +/- 0.026
+n_CSE_0_u: 0.508 +/- 0.247
+cs2_CSE_0: 0.802 +/- 0.121
+n_CSE_1_u: 0.302 +/- 0.232
+cs2_CSE_1: 0.660 +/- 0.225
+n_CSE_2_u: 0.494 +/- 0.286
+cs2_CSE_2: 0.580 +/- 0.274
+n_CSE_3_u: 0.470 +/- 0.291
+cs2_CSE_3: 0.451 +/- 0.258
+n_CSE_4_u: 0.315 +/- 0.204
+cs2_CSE_4: 0.429 +/- 0.288
+n_CSE_5_u: 0.454 +/- 0.269
+cs2_CSE_5: 0.446 +/- 0.307
+n_CSE_6_u: 0.536 +/- 0.270
+cs2_CSE_6: 0.445 +/- 0.248
+n_CSE_7_u: 0.559 +/- 0.254
+cs2_CSE_7: 0.425 +/- 0.288
+cs2_CSE_8: 0.630 +/- 0.223
+key: 219642114.303 +/- 544189719.618
+Log probability: -282.058 +/- 1.836
+Local acceptance: 0.990 +/- 0.099
+Global acceptance: 0.005 +/- 0.072
+Sampling has been successful, now we will do some postprocessing. Sampling time: roughly 7 mins
 Saving the final results
-Number of samples generated in training: 40000
-Number of samples generated in production: 40000
-Number of samples generated: 80000
-Time taken for TOV map: 1.5677404403686523 s
+Number of samples generated in training: 204000
+Number of samples generated in production: 204000
+Number of samples generated: 408000
+Time taken for TOV map: 1.5090322494506836 s
 The corner plot will plot the parameters: ['E_sym', 'L_sym', 'K_sym', 'K_sat', 'nbreak', 'n_CSE_0_u', 'cs2_CSE_0', 'n_CSE_1_u', 'cs2_CSE_1', 'n_CSE_2_u', 'cs2_CSE_2', 'n_CSE_3_u', 'cs2_CSE_3', 'n_CSE_4_u', 'cs2_CSE_4', 'n_CSE_5_u', 'cs2_CSE_5', 'n_CSE_6_u', 'cs2_CSE_6', 'n_CSE_7_u', 'cs2_CSE_7', 'cs2_CSE_8']
 DONE entire script
 DONE
 
 JOB STATISTICS
 ==============
-Job ID: 10972500
+Job ID: 10972774
 Cluster: snellius
 User/Group: twouters2/twouters2
 State: COMPLETED (exit code 0)
 Nodes: 1
 Cores per node: 16
-CPU Utilized: 00:20:31
-CPU Efficiency: 6.46% of 05:17:36 core-walltime
-Job Wall-clock time: 00:19:51
+CPU Utilized: 00:09:50
+CPU Efficiency: 6.68% of 02:27:12 core-walltime
+Job Wall-clock time: 00:09:12
 Memory Utilized: 4.84 GB
 Memory Efficiency: 24.18% of 20.00 GB (20.00 GB/node)
